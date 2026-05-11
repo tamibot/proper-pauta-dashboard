@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-11T17:07:27.590292+00:00",
+  "generated_at": "2026-05-11T17:28:52.473669+00:00",
   "since": "2026-03-12",
   "until": "2026-05-11",
   "source": "bitrix.hs_deals (utm_campaign LIKE %landing%) + Meta Ads API + Google Ads API",
@@ -23,9 +23,28 @@
       "no_aprobado_nac": 0,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 0,
+      "asistentes": 0,
+      "simulados": 5,
+      "cotizados": 4,
       "cpl": null,
       "cpl_aprobado": null,
-      "canales": {}
+      "canales": {
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 5,
+          "cotizados": 4
+        }
+      }
     },
     {
       "fecha": "2026-03-25",
@@ -46,9 +65,56 @@
       "no_aprobado_nac": 0,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 0,
+      "asistentes": 157,
+      "simulados": 2,
+      "cotizados": 0,
       "cpl": null,
       "cpl_aprobado": null,
-      "canales": {}
+      "canales": {
+        "Google": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 1,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Instagram": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 1,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 155,
+          "simulados": 2,
+          "cotizados": 0
+        }
+      }
     },
     {
       "fecha": "2026-03-26",
@@ -69,9 +135,56 @@
       "no_aprobado_nac": 0,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 0,
+      "asistentes": 123,
+      "simulados": 17,
+      "cotizados": 17,
       "cpl": null,
       "cpl_aprobado": null,
-      "canales": {}
+      "canales": {
+        "Google": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 2,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Instagram": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 2,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 119,
+          "simulados": 17,
+          "cotizados": 17
+        }
+      }
     },
     {
       "fecha": "2026-03-27",
@@ -92,9 +205,28 @@
       "no_aprobado_nac": 0,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 0,
+      "asistentes": 0,
+      "simulados": 15,
+      "cotizados": 13,
       "cpl": null,
       "cpl_aprobado": null,
-      "canales": {}
+      "canales": {
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 15,
+          "cotizados": 13
+        }
+      }
     },
     {
       "fecha": "2026-03-28",
@@ -115,9 +247,28 @@
       "no_aprobado_nac": 0,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 0,
+      "asistentes": 0,
+      "simulados": 5,
+      "cotizados": 4,
       "cpl": null,
       "cpl_aprobado": null,
-      "canales": {}
+      "canales": {
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 5,
+          "cotizados": 4
+        }
+      }
     },
     {
       "fecha": "2026-03-29",
@@ -138,9 +289,28 @@
       "no_aprobado_nac": 0,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 0,
+      "asistentes": 0,
+      "simulados": 2,
+      "cotizados": 0,
       "cpl": null,
       "cpl_aprobado": null,
-      "canales": {}
+      "canales": {
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 2,
+          "cotizados": 0
+        }
+      }
     },
     {
       "fecha": "2026-03-30",
@@ -161,9 +331,28 @@
       "no_aprobado_nac": 0,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 0,
+      "asistentes": 8,
+      "simulados": 5,
+      "cotizados": 3,
       "cpl": null,
       "cpl_aprobado": null,
-      "canales": {}
+      "canales": {
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 8,
+          "simulados": 5,
+          "cotizados": 3
+        }
+      }
     },
     {
       "fecha": "2026-03-31",
@@ -184,9 +373,28 @@
       "no_aprobado_nac": 0,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 0,
+      "asistentes": 0,
+      "simulados": 7,
+      "cotizados": 2,
       "cpl": null,
       "cpl_aprobado": null,
-      "canales": {}
+      "canales": {
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 7,
+          "cotizados": 2
+        }
+      }
     },
     {
       "fecha": "2026-04-01",
@@ -207,6 +415,10 @@
       "no_aprobado_nac": 0,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 2,
+      "asistentes": 7,
+      "simulados": 10,
+      "cotizados": 9,
       "cpl": 116.75,
       "cpl_aprobado": 116.75,
       "canales": {
@@ -219,7 +431,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 7,
+          "simulados": 10,
+          "cotizados": 9
         }
       }
     },
@@ -242,6 +471,10 @@
       "no_aprobado_nac": 0,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 0,
+      "asistentes": 0,
+      "simulados": 0,
+      "cotizados": 0,
       "cpl": null,
       "cpl_aprobado": null,
       "canales": {}
@@ -265,6 +498,10 @@
       "no_aprobado_nac": 0,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 0,
+      "asistentes": 0,
+      "simulados": 0,
+      "cotizados": 0,
       "cpl": null,
       "cpl_aprobado": null,
       "canales": {}
@@ -288,6 +525,10 @@
       "no_aprobado_nac": 0,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 1,
+      "asistentes": 0,
+      "simulados": 2,
+      "cotizados": 2,
       "cpl": 143.92,
       "cpl_aprobado": 143.92,
       "canales": {
@@ -300,7 +541,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 2,
+          "cotizados": 2
         }
       }
     },
@@ -323,6 +581,10 @@
       "no_aprobado_nac": 2,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 1,
+      "asistentes": 0,
+      "simulados": 3,
+      "cotizados": 2,
       "cpl": 109.55,
       "cpl_aprobado": 328.64,
       "canales": {
@@ -335,7 +597,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 1,
@@ -346,7 +611,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "meta_ads_form": {
           "leads": 1,
@@ -357,7 +625,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 3,
+          "cotizados": 2
         }
       }
     },
@@ -380,6 +665,10 @@
       "no_aprobado_nac": 3,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 9,
+      "asistentes": 11,
+      "simulados": 13,
+      "cotizados": 11,
       "cpl": 10.94,
       "cpl_aprobado": 13.46,
       "canales": {
@@ -392,7 +681,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 2,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 10,
@@ -403,7 +695,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 2,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 9,
+          "simulados": 13,
+          "cotizados": 11
         }
       }
     },
@@ -426,6 +735,10 @@
       "no_aprobado_nac": 5,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 11,
+      "asistentes": 0,
+      "simulados": 6,
+      "cotizados": 6,
       "cpl": 20.6,
       "cpl_aprobado": 26.33,
       "canales": {
@@ -438,7 +751,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 4,
@@ -449,7 +765,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 2,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 9,
@@ -460,7 +779,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 3,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 6,
+          "cotizados": 6
         }
       }
     },
@@ -483,6 +819,10 @@
       "no_aprobado_nac": 13,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 22,
+      "asistentes": 7,
+      "simulados": 14,
+      "cotizados": 10,
       "cpl": 7.84,
       "cpl_aprobado": 11.03,
       "canales": {
@@ -495,7 +835,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 6,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 26,
@@ -506,7 +849,38 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 7,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Google": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 1,
+          "simulados": 1,
+          "cotizados": 1
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 6,
+          "simulados": 13,
+          "cotizados": 9
         }
       }
     },
@@ -529,6 +903,10 @@
       "no_aprobado_nac": 6,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 19,
+      "asistentes": 0,
+      "simulados": 14,
+      "cotizados": 10,
       "cpl": 11.49,
       "cpl_aprobado": 14.25,
       "canales": {
@@ -541,7 +919,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 4,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 4,
@@ -552,7 +933,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 1,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 14,
@@ -563,7 +947,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 13,
+          "cotizados": 10
         }
       }
     },
@@ -586,6 +987,10 @@
       "no_aprobado_nac": 9,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 15,
+      "asistentes": 0,
+      "simulados": 11,
+      "cotizados": 9,
       "cpl": 11.22,
       "cpl_aprobado": 15.43,
       "canales": {
@@ -598,7 +1003,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 7,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 3,
@@ -609,7 +1017,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 14,
@@ -620,7 +1031,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 11,
+          "cotizados": 9
         }
       }
     },
@@ -643,6 +1071,10 @@
       "no_aprobado_nac": 4,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 10,
+      "asistentes": 0,
+      "simulados": 11,
+      "cotizados": 8,
       "cpl": 24.18,
       "cpl_aprobado": 31.09,
       "canales": {
@@ -655,7 +1087,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 9,
@@ -666,7 +1101,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 3,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 11,
+          "cotizados": 8
         }
       }
     },
@@ -689,6 +1141,10 @@
       "no_aprobado_nac": 5,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 11,
+      "asistentes": 0,
+      "simulados": 0,
+      "cotizados": 0,
       "cpl": 31.16,
       "cpl_aprobado": 42.29,
       "canales": {
@@ -701,7 +1157,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Facebook": {
           "leads": 6,
@@ -712,7 +1171,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 2,
@@ -723,7 +1185,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 10,
@@ -734,7 +1199,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 3,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         }
       }
     },
@@ -757,6 +1225,10 @@
       "no_aprobado_nac": 11,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 14,
+      "asistentes": 17,
+      "simulados": 5,
+      "cotizados": 3,
       "cpl": 18.49,
       "cpl_aprobado": 29.19,
       "canales": {
@@ -769,7 +1241,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 3,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 3,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 1,
@@ -780,7 +1255,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 19,
@@ -791,7 +1269,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 7,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 1,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 13,
+          "simulados": 5,
+          "cotizados": 3
         }
       }
     },
@@ -814,6 +1309,10 @@
       "no_aprobado_nac": 7,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 5,
+      "asistentes": 0,
+      "simulados": 11,
+      "cotizados": 9,
       "cpl": 20.48,
       "cpl_aprobado": 32.42,
       "canales": {
@@ -826,7 +1325,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 2,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 11,
@@ -837,7 +1339,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 5,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 11,
+          "cotizados": 9
         }
       }
     },
@@ -860,6 +1379,10 @@
       "no_aprobado_nac": 3,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 4,
+      "asistentes": 7,
+      "simulados": 3,
+      "cotizados": 1,
       "cpl": 34.65,
       "cpl_aprobado": 46.2,
       "canales": {
@@ -872,7 +1395,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 1,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 3,
@@ -883,7 +1409,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 5,
@@ -894,7 +1423,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 2,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 1,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 5,
+          "simulados": 3,
+          "cotizados": 1
         }
       }
     },
@@ -917,6 +1463,10 @@
       "no_aprobado_nac": 12,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 12,
+      "asistentes": 0,
+      "simulados": 8,
+      "cotizados": 6,
       "cpl": 14.03,
       "cpl_aprobado": 22.9,
       "canales": {
@@ -929,7 +1479,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 2,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Facebook": {
           "leads": 14,
@@ -940,7 +1493,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 6,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 3,
@@ -951,7 +1507,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 9,
@@ -962,7 +1521,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 2,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "th": {
           "leads": 1,
@@ -973,7 +1535,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "web_popup": {
           "leads": 1,
@@ -984,7 +1549,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 8,
+          "cotizados": 6
         }
       }
     },
@@ -1007,6 +1589,10 @@
       "no_aprobado_nac": 10,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 18,
+      "asistentes": 0,
+      "simulados": 11,
+      "cotizados": 6,
       "cpl": 10.21,
       "cpl_aprobado": 13.86,
       "canales": {
@@ -1019,7 +1605,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 13,
@@ -1030,7 +1619,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 6,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 1,
+          "cotizados": 1
         },
         "Instagram": {
           "leads": 15,
@@ -1041,7 +1633,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 3,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "web_home": {
           "leads": 1,
@@ -1052,7 +1647,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 10,
+          "cotizados": 5
         }
       }
     },
@@ -1075,6 +1687,10 @@
       "no_aprobado_nac": 5,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 8,
+      "asistentes": 0,
+      "simulados": 1,
+      "cotizados": 0,
       "cpl": 18.43,
       "cpl_aprobado": 24.19,
       "canales": {
@@ -1087,7 +1703,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Facebook": {
           "leads": 7,
@@ -1098,7 +1717,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 3,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 1,
@@ -1109,7 +1731,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 12,
@@ -1120,7 +1745,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 1,
+          "cotizados": 0
         }
       }
     },
@@ -1143,6 +1785,10 @@
       "no_aprobado_nac": 3,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 5,
+      "asistentes": 0,
+      "simulados": 1,
+      "cotizados": 1,
       "cpl": 27.11,
       "cpl_aprobado": 33.88,
       "canales": {
@@ -1155,7 +1801,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 2,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 3,
@@ -1166,7 +1815,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 6,
@@ -1177,7 +1829,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "th": {
           "leads": 1,
@@ -1188,7 +1843,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 1,
+          "cotizados": 1
         }
       }
     },
@@ -1211,6 +1883,10 @@
       "no_aprobado_nac": 3,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 4,
+      "asistentes": 18,
+      "simulados": 1,
+      "cotizados": 0,
       "cpl": 41.66,
       "cpl_aprobado": 72.9,
       "canales": {
@@ -1223,7 +1899,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Facebook": {
           "leads": 1,
@@ -1234,7 +1913,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 3,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 3,
@@ -1245,7 +1927,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 2,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 2,
@@ -1256,7 +1941,38 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 3,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 11,
+          "simulados": 1,
+          "cotizados": 0
+        },
+        "web_home": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 1,
+          "simulados": 0,
+          "cotizados": 0
         }
       }
     },
@@ -1279,6 +1995,10 @@
       "no_aprobado_nac": 9,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 17,
+      "asistentes": 0,
+      "simulados": 11,
+      "cotizados": 9,
       "cpl": 15.38,
       "cpl_aprobado": 21.68,
       "canales": {
@@ -1291,7 +2011,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Facebook": {
           "leads": 7,
@@ -1302,7 +2025,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 8,
@@ -1313,7 +2039,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 3,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 13,
@@ -1324,7 +2053,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 4,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 11,
+          "cotizados": 9
         }
       }
     },
@@ -1347,6 +2093,10 @@
       "no_aprobado_nac": 3,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 22,
+      "asistentes": 82,
+      "simulados": 16,
+      "cotizados": 10,
       "cpl": 14.74,
       "cpl_aprobado": 16.32,
       "canales": {
@@ -1359,7 +2109,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Facebook": {
           "leads": 11,
@@ -1370,7 +2123,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 3,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 11,
@@ -1381,7 +2137,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 2,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 1,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 4,
@@ -1392,7 +2151,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 6,
+          "simulados": 0,
+          "cotizados": 0
         },
         "web_proyecto": {
           "leads": 1,
@@ -1403,7 +2165,52 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 70,
+          "simulados": 16,
+          "cotizados": 10
+        },
+        "web_home": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 1,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "web_popup": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 1,
+          "simulados": 0,
+          "cotizados": 0
         }
       }
     },
@@ -1426,6 +2233,10 @@
       "no_aprobado_nac": 11,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 25,
+      "asistentes": 54,
+      "simulados": 23,
+      "cotizados": 22,
       "cpl": 7.47,
       "cpl_aprobado": 9.76,
       "canales": {
@@ -1438,7 +2249,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 8,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Facebook": {
           "leads": 23,
@@ -1449,7 +2263,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 2,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 2,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 8,
@@ -1460,7 +2277,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 5,
@@ -1471,7 +2291,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 3,
+          "simulados": 1,
+          "cotizados": 1
         },
         "web_popup": {
           "leads": 1,
@@ -1482,7 +2305,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 1,
+          "simulados": 2,
+          "cotizados": 2
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 48,
+          "simulados": 20,
+          "cotizados": 19
         }
       }
     },
@@ -1505,6 +2345,10 @@
       "no_aprobado_nac": 4,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 15,
+      "asistentes": 0,
+      "simulados": 13,
+      "cotizados": 11,
       "cpl": 8.35,
       "cpl_aprobado": 9.94,
       "canales": {
@@ -1517,7 +2361,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Facebook": {
           "leads": 13,
@@ -1528,7 +2375,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 4,
@@ -1539,7 +2389,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 6,
@@ -1550,7 +2403,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 2,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 13,
+          "cotizados": 11
         }
       }
     },
@@ -1573,6 +2443,10 @@
       "no_aprobado_nac": 4,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 15,
+      "asistentes": 0,
+      "simulados": 1,
+      "cotizados": 0,
       "cpl": 11.14,
       "cpl_aprobado": 13.76,
       "canales": {
@@ -1585,7 +2459,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 2,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Facebook": {
           "leads": 8,
@@ -1596,7 +2473,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 6,
@@ -1607,7 +2487,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 2,
@@ -1618,7 +2501,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 1,
+          "cotizados": 0
         }
       }
     },
@@ -1641,6 +2541,10 @@
       "no_aprobado_nac": 6,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 9,
+      "asistentes": 0,
+      "simulados": 2,
+      "cotizados": 2,
       "cpl": 14.01,
       "cpl_aprobado": 20.48,
       "canales": {
@@ -1653,7 +2557,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Facebook": {
           "leads": 9,
@@ -1664,7 +2571,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 7,
@@ -1675,7 +2585,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 5,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 2,
@@ -1686,7 +2599,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 2,
+          "cotizados": 2
         }
       }
     },
@@ -1709,6 +2639,10 @@
       "no_aprobado_nac": 11,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 9,
+      "asistentes": 12,
+      "simulados": 11,
+      "cotizados": 9,
       "cpl": 9.6,
       "cpl_aprobado": 17.14,
       "canales": {
@@ -1721,7 +2655,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Facebook": {
           "leads": 12,
@@ -1732,7 +2669,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 3,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 2,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 6,
@@ -1743,7 +2683,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 4,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 4,
@@ -1754,7 +2697,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 3,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 1,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 9,
+          "simulados": 11,
+          "cotizados": 9
         }
       }
     },
@@ -1777,6 +2737,10 @@
       "no_aprobado_nac": 4,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 5,
+      "asistentes": 0,
+      "simulados": 3,
+      "cotizados": 3,
       "cpl": 14.1,
       "cpl_aprobado": 19.23,
       "canales": {
@@ -1789,7 +2753,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 6,
@@ -1800,7 +2767,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 3,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 6,
@@ -1811,7 +2781,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 3,
+          "cotizados": 3
         }
       }
     },
@@ -1834,6 +2821,10 @@
       "no_aprobado_nac": 4,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 8,
+      "asistentes": 10,
+      "simulados": 6,
+      "cotizados": 4,
       "cpl": 15.64,
       "cpl_aprobado": 20.85,
       "canales": {
@@ -1846,7 +2837,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 2,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 8,
@@ -1857,7 +2851,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 3,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 2,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 3,
@@ -1868,7 +2865,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 1,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 5,
+          "simulados": 6,
+          "cotizados": 4
         }
       }
     },
@@ -1891,6 +2905,10 @@
       "no_aprobado_nac": 5,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 7,
+      "asistentes": 0,
+      "simulados": 5,
+      "cotizados": 3,
       "cpl": 16.1,
       "cpl_aprobado": 25.04,
       "canales": {
@@ -1903,7 +2921,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 5,
@@ -1914,7 +2935,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 4,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 4,
@@ -1925,7 +2949,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "web_market": {
           "leads": 1,
@@ -1936,7 +2963,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 5,
+          "cotizados": 3
         }
       }
     },
@@ -1959,6 +3003,10 @@
       "no_aprobado_nac": 4,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 11,
+      "asistentes": 0,
+      "simulados": 1,
+      "cotizados": 1,
       "cpl": 12.26,
       "cpl_aprobado": 15.33,
       "canales": {
@@ -1971,7 +3019,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 6,
@@ -1982,7 +3033,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 2,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 10,
@@ -1993,7 +3047,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 2,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 1,
+          "cotizados": 1
         }
       }
     },
@@ -2016,6 +3087,10 @@
       "no_aprobado_nac": 7,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 9,
+      "asistentes": 0,
+      "simulados": 2,
+      "cotizados": 1,
       "cpl": 9.47,
       "cpl_aprobado": 14.2,
       "canales": {
@@ -2028,7 +3103,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Facebook": {
           "leads": 3,
@@ -2039,7 +3117,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 2,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 9,
@@ -2050,7 +3131,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 2,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 8,
@@ -2061,7 +3145,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 3,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 2,
+          "cotizados": 1
         }
       }
     },
@@ -2084,6 +3185,10 @@
       "no_aprobado_nac": 7,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 23,
+      "asistentes": 0,
+      "simulados": 0,
+      "cotizados": 0,
       "cpl": 7.57,
       "cpl_aprobado": 9.4,
       "canales": {
@@ -2096,7 +3201,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Facebook": {
           "leads": 13,
@@ -2107,7 +3215,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 3,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 11,
@@ -2118,7 +3229,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 11,
@@ -2129,7 +3243,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 3,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         }
       }
     },
@@ -2152,6 +3269,10 @@
       "no_aprobado_nac": 7,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 13,
+      "asistentes": 25,
+      "simulados": 10,
+      "cotizados": 7,
       "cpl": 9.72,
       "cpl_aprobado": 13.5,
       "canales": {
@@ -2164,7 +3285,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 4,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 2,
+          "simulados": 1,
+          "cotizados": 0
         },
         "Google": {
           "leads": 7,
@@ -2175,7 +3299,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 5,
+          "simulados": 1,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 8,
@@ -2186,7 +3313,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 2,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 2,
+          "simulados": 0,
+          "cotizados": 0
         },
         "web_proyecto": {
           "leads": 1,
@@ -2197,7 +3327,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 1,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 15,
+          "simulados": 8,
+          "cotizados": 7
         }
       }
     },
@@ -2220,6 +3367,10 @@
       "no_aprobado_nac": 4,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 16,
+      "asistentes": 0,
+      "simulados": 5,
+      "cotizados": 5,
       "cpl": 9.64,
       "cpl_aprobado": 11.56,
       "canales": {
@@ -2232,7 +3383,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Facebook": {
           "leads": 8,
@@ -2243,7 +3397,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 4,
@@ -2254,7 +3411,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 1,
+          "cotizados": 1
         },
         "Instagram": {
           "leads": 11,
@@ -2265,7 +3425,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 4,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 4,
+          "cotizados": 4
         }
       }
     },
@@ -2288,6 +3465,10 @@
       "no_aprobado_nac": 5,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 10,
+      "asistentes": 11,
+      "simulados": 16,
+      "cotizados": 10,
       "cpl": 11.82,
       "cpl_aprobado": 15.75,
       "canales": {
@@ -2300,7 +3481,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Facebook": {
           "leads": 6,
@@ -2311,7 +3495,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 3,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 1,
+          "cotizados": 1
         },
         "Google": {
           "leads": 5,
@@ -2322,7 +3509,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 1,
+          "simulados": 5,
+          "cotizados": 3
         },
         "Instagram": {
           "leads": 8,
@@ -2333,7 +3523,38 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 2,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 2,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 8,
+          "simulados": 9,
+          "cotizados": 5
+        },
+        "web_proyecto": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 1,
+          "cotizados": 1
         }
       }
     },
@@ -2356,6 +3577,10 @@
       "no_aprobado_nac": 5,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 14,
+      "asistentes": 0,
+      "simulados": 14,
+      "cotizados": 10,
       "cpl": 9.72,
       "cpl_aprobado": 12.58,
       "canales": {
@@ -2368,7 +3593,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 13,
@@ -2379,7 +3607,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 2,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 1,
+          "cotizados": 1
         },
         "Instagram": {
           "leads": 6,
@@ -2390,7 +3621,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 3,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 13,
+          "cotizados": 9
         }
       }
     },
@@ -2413,6 +3661,10 @@
       "no_aprobado_nac": 2,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 10,
+      "asistentes": 0,
+      "simulados": 7,
+      "cotizados": 6,
       "cpl": 13.64,
       "cpl_aprobado": 15.59,
       "canales": {
@@ -2425,7 +3677,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Facebook": {
           "leads": 7,
@@ -2436,7 +3691,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 4,
@@ -2447,7 +3705,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 4,
@@ -2458,7 +3719,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 7,
+          "cotizados": 6
         }
       }
     },
@@ -2481,6 +3759,10 @@
       "no_aprobado_nac": 7,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 11,
+      "asistentes": 0,
+      "simulados": 11,
+      "cotizados": 7,
       "cpl": 8.19,
       "cpl_aprobado": 10.92,
       "canales": {
@@ -2493,7 +3775,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 1,
+          "cotizados": 0
         },
         "Google": {
           "leads": 8,
@@ -2504,7 +3789,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 2,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 2,
+          "cotizados": 1
         },
         "Instagram": {
           "leads": 14,
@@ -2515,7 +3803,24 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 4,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 8,
+          "cotizados": 6
         }
       }
     },
@@ -2538,6 +3843,10 @@
       "no_aprobado_nac": 1,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 16,
+      "asistentes": 0,
+      "simulados": 6,
+      "cotizados": 4,
       "cpl": 11.51,
       "cpl_aprobado": 12.06,
       "canales": {
@@ -2550,7 +3859,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Google": {
           "leads": 7,
@@ -2561,7 +3873,10 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 1,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         },
         "Instagram": {
           "leads": 12,
@@ -2572,19 +3887,36 @@
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
-          "sin_clasificar": 0
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 6,
+          "cotizados": 4
         }
       }
     },
     {
       "fecha": "2026-05-11",
-      "meta_spend": 71.5,
-      "gads_spend": 12.72,
-      "total_spend": 84.22,
-      "meta_impressions": 2945,
-      "meta_clicks": 121,
-      "gads_impressions": 378,
-      "gads_clicks": 25,
+      "meta_spend": 73.39,
+      "gads_spend": 13.51,
+      "total_spend": 86.9,
+      "meta_impressions": 3091,
+      "meta_clicks": 127,
+      "gads_impressions": 409,
+      "gads_clicks": 27,
       "leads": 0,
       "aprobados": 0,
       "no_aprobados": 0,
@@ -2595,6 +3927,10 @@
       "no_aprobado_nac": 0,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
+      "altos_medios": 0,
+      "asistentes": 0,
+      "simulados": 0,
+      "cotizados": 0,
       "cpl": null,
       "cpl_aprobado": null,
       "canales": {}
@@ -4640,17 +5976,17 @@
       "campaign": "IN-LANDING-FROM-ABR-2026",
       "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
       "ad": "Video Inversiones - Landing Proper - Nataly",
-      "spend": 33.58,
-      "impressions": 1811,
-      "clicks": 52
+      "spend": 35.14,
+      "impressions": 1940,
+      "clicks": 56
     },
     {
       "fecha": "2026-05-11",
       "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
       "adset": "cj-muchosPeruanos-video",
       "ad": "depasSePaganSolos",
-      "spend": 11.84,
-      "impressions": 347,
+      "spend": 11.88,
+      "impressions": 353,
       "clicks": 23
     },
     {
@@ -4658,9 +5994,9 @@
       "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
       "adset": "cj-hayDepasQueSePaganSolo-video",
       "ad": "hayDepasQueSePaganSolo-video",
-      "spend": 16.52,
-      "impressions": 499,
-      "clicks": 24
+      "spend": 16.81,
+      "impressions": 510,
+      "clicks": 26
     },
     {
       "fecha": "2026-05-11",
@@ -4886,9 +6222,9 @@
     {
       "fecha": "2026-05-11",
       "campaign": "PMax - LANDING Proper Inversiones",
-      "spend": 12.72,
-      "impressions": 378,
-      "clicks": 25
+      "spend": 13.51,
+      "impressions": 409,
+      "clicks": 27
     }
   ],
   "gads_asset_groups": [
@@ -5136,9 +6472,9 @@
       "fecha": "2026-05-11",
       "campaign": "PMax - LANDING Proper Inversiones",
       "asset_group": "Inversión Inteligente Lima",
-      "spend": 12.72,
-      "impressions": 378,
-      "clicks": 25
+      "spend": 13.51,
+      "impressions": 409,
+      "clicks": 27
     }
   ],
   "postgres_campaigns": [

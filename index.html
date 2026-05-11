@@ -76,6 +76,46 @@
     </div>
   </div>
 
+  <!-- =============================================================== -->
+  <!-- EMBUDO DE CONVERSIÓN -->
+  <!-- =============================================================== -->
+  <div class="chart-card mb-6">
+    <div class="flex items-center justify-between mb-5 flex-wrap gap-3">
+      <h3 class="text-sm font-semibold text-gray-700">🎯 Embudo de conversión</h3>
+      <div class="flex gap-2 flex-wrap items-center">
+        <span class="text-xs text-gray-500">Canal:</span>
+        <select id="funnel-canal" class="text-xs border border-gray-200 rounded-md px-2 py-1 bg-white focus:outline-none focus:ring-2 focus:ring-blue-200">
+          <option value="">Todos los canales</option>
+        </select>
+        <span class="text-xs text-gray-500 ml-2">Día:</span>
+        <select id="funnel-dia" class="text-xs border border-gray-200 rounded-md px-2 py-1 bg-white focus:outline-none focus:ring-2 focus:ring-blue-200">
+          <option value="">Rango completo</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Funnel stages -->
+    <div id="funnel-stages" class="max-w-2xl mx-auto"></div>
+
+    <!-- Tabla resumen al pie -->
+    <div class="mt-6 overflow-x-auto">
+      <table class="data-table w-full text-sm">
+        <thead>
+          <tr class="border-b-2 border-gray-200" style="background:#1a4480; color:white">
+            <th style="color:white">Fecha</th>
+            <th style="color:white">Leads</th>
+            <th style="color:white">L. Aprobados</th>
+            <th style="color:white">L. Altos/Medios</th>
+            <th style="color:white">Asistentes</th>
+            <th style="color:white">Simulados</th>
+            <th style="color:white">Cotizados</th>
+          </tr>
+        </thead>
+        <tbody id="funnel-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
   <!-- CHARTS GRID -->
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
     <!-- Spend by day -->

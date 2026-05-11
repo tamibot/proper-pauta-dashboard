@@ -383,16 +383,133 @@ function renderTable(rows){
   `).join('');
 }
 
+// ============================================================
+// Embudo de conversión
+// ============================================================
+let FUNNEL_CANAL = '';
+let FUNNEL_DIA   = '';
+
+function renderFunnel(rangeRows){
+  // Filtrar por día específico si está seteado
+  let rows = FUNNEL_DIA ? rangeRows.filter(r => r.fecha === FUNNEL_DIA) : rangeRows;
+  if (rows.length === 0) rows = rangeRows;
+
+  // Agregar por canal o total
+  const totals = { leads:0, aprobados:0, altos_medios:0, asistentes:0, simulados:0, cotizados:0 };
+  if (FUNNEL_CANAL) {
+    rows.forEach(r => {
+      const c = (r.canales||{})[FUNNEL_CANAL] || {};
+      totals.leads        += c.leads || 0;
+      totals.aprobados    += (c.alto||0)+(c.medio||0)+(c.empuje||0)+(c.aprobado_int||0);
+      totals.altos_medios += (c.alto||0)+(c.medio||0);
+      totals.asistentes   += c.asistentes || 0;
+      totals.simulados    += c.simulados  || 0;
+      totals.cotizados    += c.cotizados  || 0;
+    });
+  } else {
+    rows.forEach(r => {
+      totals.leads        += r.leads || 0;
+      totals.aprobados    += r.aprobados || 0;
+      totals.altos_medios += r.altos_medios || 0;
+      totals.asistentes   += r.asistentes || 0;
+      totals.simulados    += r.simulados  || 0;
+      totals.cotizados    += r.cotizados  || 0;
+    });
+  }
+
+  const stages = [
+    { label: 'Leads',                value: totals.leads,        color:'#3b82f6', width: 100 },
+    { label: 'Leads Aprobados',      value: totals.aprobados,    color:'#10b981', width:  85 },
+    { label: 'Leads Altos / Medios', value: totals.altos_medios, color:'#0d9488', width:  70 },
+    { label: 'Asistentes al zoom',   value: totals.asistentes,   color:'#8b5cf6', width:  55 },
+  ];
+
+  const cont = document.getElementById('funnel-stages');
+  let html = '';
+  for (let i = 0; i < stages.length; i++) {
+    const s = stages[i];
+    html += `
+      <div class="flex justify-center my-2">
+        <div class="rounded-full border-2 border-gray-300 px-6 py-4 text-center shadow-sm transition-all" style="width:${s.width}%; background:${s.color}15; border-color:${s.color}50">
+          <div class="text-xs uppercase tracking-wide font-medium text-gray-500">${s.label}</div>
+          <div class="text-2xl font-bold mt-1" style="color:${s.color}">${fmt_n(s.value)}</div>
+        </div>
+      </div>`;
+    // Conversion % to next stage
+    if (i < stages.length - 1) {
+      const next = stages[i+1];
+      const pct = s.value > 0 ? (next.value / s.value) * 100 : 0;
+      const pctColor = pct >= 50 ? '#10b981' : pct >= 20 ? '#f59e0b' : '#ef4444';
+      html += `
+        <div class="flex justify-center items-center gap-2 text-xs my-1">
+          <span class="text-gray-400">↓</span>
+          <span style="color:${pctColor}" class="font-semibold">${pct.toFixed(1)}%</span>
+          <span class="text-gray-400">conversión</span>
+        </div>`;
+    }
+  }
+  cont.innerHTML = html;
+
+  // Tabla resumen — sin agregación, una fila por día del rango
+  const tbody = document.getElementById('funnel-tbody');
+  const tableRows = FUNNEL_DIA ? rangeRows.filter(r => r.fecha === FUNNEL_DIA) : rangeRows;
+  // Más recientes arriba
+  const sorted = [...tableRows].reverse();
+  tbody.innerHTML = sorted.map(r => {
+    let leads, aprobados, altos_medios, asist, simul, cotiz;
+    if (FUNNEL_CANAL) {
+      const c = (r.canales||{})[FUNNEL_CANAL] || {};
+      leads = c.leads || 0;
+      aprobados = (c.alto||0)+(c.medio||0)+(c.empuje||0)+(c.aprobado_int||0);
+      altos_medios = (c.alto||0)+(c.medio||0);
+      asist = c.asistentes || 0; simul = c.simulados || 0; cotiz = c.cotizados || 0;
+    } else {
+      leads = r.leads||0; aprobados = r.aprobados||0; altos_medios = r.altos_medios||0;
+      asist = r.asistentes||0; simul = r.simulados||0; cotiz = r.cotizados||0;
+    }
+    return `<tr>
+      <td class="text-gray-700">${fmt_d_full(r.fecha)}</td>
+      <td>${fmt_n(leads)}</td>
+      <td class="text-emerald-600 font-medium">${fmt_n(aprobados)}</td>
+      <td class="text-teal-600">${fmt_n(altos_medios)}</td>
+      <td>${fmt_n(asist)}</td>
+      <td>${fmt_n(simul)}</td>
+      <td>${fmt_n(cotiz)}</td>
+    </tr>`;
+  }).join('');
+}
+
+function populateFunnelSelectors(){
+  // Canales disponibles (juntar de todos los días)
+  const canales = new Set();
+  DATA.days.forEach(d => Object.keys(d.canales || {}).forEach(c => canales.add(c)));
+  const canalSel = document.getElementById('funnel-canal');
+  [...canales].sort().forEach(c => {
+    const o = document.createElement('option');
+    o.value = c; o.textContent = c;
+    canalSel.appendChild(o);
+  });
+  // Días en orden descendente
+  const diaSel = document.getElementById('funnel-dia');
+  [...DATA.days].reverse().forEach(d => {
+    const o = document.createElement('option');
+    o.value = d.fecha; o.textContent = fmt_d_full(d.fecha);
+    diaSel.appendChild(o);
+  });
+  canalSel.addEventListener('change', () => { FUNNEL_CANAL = canalSel.value; render(); });
+  diaSel.addEventListener('change',   () => { FUNNEL_DIA   = diaSel.value;   render(); });
+}
+
 function render(){
   const rows = pickRange(DATA.days, CURRENT_RANGE);
   renderKPIs(rows);
+  renderFunnel(rows);
   chartSpend(rows);
   chartLeads(rows);
   chartCPL(rows);
   chartCanales(rows);
   chartCategoria(rows);
   renderTable(rows);
-  // Rango de fechas para el detalle por canal
   if (rows.length > 0) {
     const rs = rows[0].fecha, re = rows[rows.length-1].fecha;
     renderMetaDetail(rs, re);
@@ -405,6 +522,9 @@ async function init(){
   DATA = await resp.json();
   document.getElementById('updated-at').textContent =
     new Date(DATA.generated_at).toLocaleString('es-PE', {dateStyle:'medium', timeStyle:'short'});
+
+  // Populate funnel filters
+  populateFunnelSelectors();
 
   // Range buttons
   document.querySelectorAll('.range-btn').forEach(btn => {
