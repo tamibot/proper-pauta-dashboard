@@ -736,31 +736,46 @@ async function init(){
 
   // ========================================================
   // Flatpickr range picker (estilo Meta — 2 meses, range mode)
+  // FIX TZ: NO pasar strings YYYY-MM-DD a Date() (se interpretan como UTC).
+  // Usar constructor local: new Date(y, m-1, d) → respeta TZ del browser.
   // ========================================================
-  const earliest = DATA.days[0].fecha;
-  const latest   = DATA.days[DATA.days.length-1].fecha;
+  const parseLocal = (s) => { const [y,m,d] = s.split('-').map(Number); return new Date(y, m-1, d); };
+  const fmtLocal   = (d) => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+
+  const earliestStr = DATA.days[0].fecha;
+  const latestStr   = DATA.days[DATA.days.length-1].fecha;
+  const earliestDt  = parseLocal(earliestStr);
+  const latestDt    = parseLocal(latestStr);
+
+  // Default month focus: que el calendario abra mostrando el último mes con datos
+  const defaultMonthDt = parseLocal(latestStr);
+
   window.__daterangePicker = flatpickr('#daterange', {
     mode: 'range',
     locale: 'es',
     dateFormat: 'Y-m-d',
-    altInput: true,           // mostrar formato bonito al usuario
+    altInput: true,
     altFormat: 'd M Y',
-    minDate: earliest,
-    maxDate: latest,
+    minDate: earliestDt,             // Date object local
+    maxDate: latestDt,                // Date object local
+    defaultDate: [parseLocal(DATA.days[Math.max(0, DATA.days.length-30)].fecha), latestDt],
     showMonths: window.innerWidth > 720 ? 2 : 1,
-    disableMobile: true,      // forzar UI custom en móvil también
-    onChange: (selectedDates, dateStr) => {
+    disableMobile: true,
+    // No mostrar el calendario en posición sobre el body — keep flat
+    onChange: (selectedDates) => {
       if (selectedDates.length === 2) {
-        const f = selectedDates[0].toISOString().slice(0,10);
-        const t = selectedDates[1].toISOString().slice(0,10);
-        CUSTOM_FROM = f; CUSTOM_TO = t; CURRENT_RANGE = 'custom';
-        // marcar como activo
+        CUSTOM_FROM = fmtLocal(selectedDates[0]);
+        CUSTOM_TO   = fmtLocal(selectedDates[1]);
+        CURRENT_RANGE = 'custom';
         document.querySelectorAll('.range-btn').forEach(b => { b.classList.remove('pill-active'); b.classList.add('pill-inactive'); });
         render();
       }
     },
     onReady: (selectedDates, dateStr, instance) => {
-      // Inyectar mini-presets dentro del calendario (a la Meta)
+      // Posicionar el calendario en el mes más reciente con data (no en "hoy" del browser)
+      instance.jumpToDate(defaultMonthDt, false);
+
+      // Mini-presets dentro del calendario — relativos al ÚLTIMO DÍA con data
       const presets = document.createElement('div');
       presets.className = 'daterange-presets';
       const opts = [
@@ -778,20 +793,20 @@ async function init(){
         btn.onclick = (e) => {
           e.preventDefault();
           let start, end;
-          const today = new Date();
+          // Referencia = último día con data (no "hoy" del browser para evitar saltos de calendario)
+          const ref = new Date(latestDt);
           if (a === 'mtd') {
-            start = new Date(today.getFullYear(), today.getMonth(), 1);
-            end   = today;
+            start = new Date(ref.getFullYear(), ref.getMonth(), 1);
+            end   = ref;
           } else if (a === 'prev') {
-            start = new Date(today.getFullYear(), today.getMonth()-1, 1);
-            end   = new Date(today.getFullYear(), today.getMonth(), 0);
+            start = new Date(ref.getFullYear(), ref.getMonth()-1, 1);
+            end   = new Date(ref.getFullYear(), ref.getMonth(), 0);  // último día mes anterior
           } else {
-            end   = new Date(today); end.setDate(today.getDate() - b);
-            start = new Date(today); start.setDate(today.getDate() - a);
+            end   = new Date(ref); end.setDate(ref.getDate() - b);
+            start = new Date(ref); start.setDate(ref.getDate() - a);
           }
-          // Clampear a data disponible
-          const e0 = new Date(earliest+'T00:00'), e1 = new Date(latest+'T00:00');
-          if (start < e0) start = e0; if (end > e1) end = e1;
+          if (start < earliestDt) start = new Date(earliestDt);
+          if (end   > latestDt)   end   = new Date(latestDt);
           instance.setDate([start, end], true);
         };
         presets.appendChild(btn);

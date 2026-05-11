@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-11T18:19:59.496745+00:00",
+  "generated_at": "2026-05-11T21:16:42.413337+00:00",
   "since": "2026-03-12",
   "until": "2026-05-11",
   "source": "bitrix.hs_deals (utm_campaign LIKE %landing%) + Meta Ads API + Google Ads API",
@@ -3910,13 +3910,13 @@
     },
     {
       "fecha": "2026-05-11",
-      "meta_spend": 82.91,
-      "gads_spend": 20.16,
-      "total_spend": 103.07,
-      "meta_impressions": 3747,
-      "meta_clicks": 143,
-      "gads_impressions": 493,
-      "gads_clicks": 37,
+      "meta_spend": 109.43,
+      "gads_spend": 27.75,
+      "total_spend": 137.18,
+      "meta_impressions": 5725,
+      "meta_clicks": 213,
+      "gads_impressions": 762,
+      "gads_clicks": 50,
       "leads": 0,
       "aprobados": 0,
       "no_aprobados": 0,
@@ -3929,12 +3929,12 @@
       "sin_clasificar": 0,
       "altos_medios": 0,
       "asistentes": 0,
-      "simulados": 1,
-      "cotizados": 0,
+      "simulados": 3,
+      "cotizados": 3,
       "cpl": null,
       "cpl_aprobado": null,
       "canales": {
-        "Sin origen": {
+        "Google": {
           "leads": 0,
           "aprobados": 0,
           "alto": 0,
@@ -3946,7 +3946,21 @@
           "sin_clasificar": 0,
           "asistentes": 0,
           "simulados": 1,
-          "cotizados": 0
+          "cotizados": 1
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 2,
+          "cotizados": 2
         }
       }
     }
@@ -5991,27 +6005,27 @@
       "campaign": "IN-LANDING-FROM-ABR-2026",
       "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
       "ad": "Video Inversiones - Landing Proper - Nataly",
-      "spend": 41.17,
-      "impressions": 2467,
-      "clicks": 65
+      "spend": 58.11,
+      "impressions": 4013,
+      "clicks": 106
     },
     {
       "fecha": "2026-05-11",
       "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
       "adset": "cj-muchosPeruanos-video",
       "ad": "depasSePaganSolos",
-      "spend": 13.09,
-      "impressions": 403,
-      "clicks": 25
+      "spend": 16.86,
+      "impressions": 568,
+      "clicks": 33
     },
     {
       "fecha": "2026-05-11",
       "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
       "adset": "cj-hayDepasQueSePaganSolo-video",
       "ad": "hayDepasQueSePaganSolo-video",
-      "spend": 19.09,
-      "impressions": 589,
-      "clicks": 31
+      "spend": 25.01,
+      "impressions": 862,
+      "clicks": 52
     },
     {
       "fecha": "2026-05-11",
@@ -6019,7 +6033,7 @@
       "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
       "ad": "Video Inversiones - Landing Proper - Nataly - Copy",
       "spend": 9.56,
-      "impressions": 288,
+      "impressions": 289,
       "clicks": 22
     }
   ],
@@ -6237,9 +6251,9 @@
     {
       "fecha": "2026-05-11",
       "campaign": "PMax - LANDING Proper Inversiones",
-      "spend": 20.16,
-      "impressions": 493,
-      "clicks": 37
+      "spend": 27.75,
+      "impressions": 762,
+      "clicks": 50
     }
   ],
   "gads_asset_groups": [
@@ -6487,9 +6501,9 @@
       "fecha": "2026-05-11",
       "campaign": "PMax - LANDING Proper Inversiones",
       "asset_group": "Inversión Inteligente Lima",
-      "spend": 20.16,
-      "impressions": 493,
-      "clicks": 37
+      "spend": 27.75,
+      "impressions": 762,
+      "clicks": 50
     }
   ],
   "postgres_campaigns": [
