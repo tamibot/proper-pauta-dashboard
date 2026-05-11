@@ -164,12 +164,12 @@ function chartCPL(rows){
 
 function chartCanales(rows){
   destroyChart('canales');
-  // Sumar leads por canal en el rango
+  // Sumar leads por canal en el rango (data.canales viene de hs_deals.utm_source)
   const totalsByCanal = {};
   rows.forEach(r => {
     Object.entries(r.canales || {}).forEach(([c, info]) => {
       if (!totalsByCanal[c]) totalsByCanal[c] = 0;
-      totalsByCanal[c] += info.leads;
+      totalsByCanal[c] += (info.leads || 0);
     });
   });
   const labels = Object.keys(totalsByCanal);
@@ -202,25 +202,33 @@ function chartCanales(rows){
 
 function chartCategoria(rows){
   destroyChart('categoria');
-  const alto       = rows.reduce((a,r)=>a+(r.alto||0), 0);
-  const medio      = rows.reduce((a,r)=>a+(r.medio||0), 0);
-  const empuje     = rows.reduce((a,r)=>a+(r.empuje||0), 0);
-  const noAprobado = rows.reduce((a,r)=>a+(r.no_aprobado||0), 0);
-  const sinIngreso = rows.reduce((a,r)=>a+(r.sin_ingreso||0), 0);
+  const alto    = rows.reduce((a,r)=>a+(r.alto||0), 0);
+  const medio   = rows.reduce((a,r)=>a+(r.medio||0), 0);
+  const empuje  = rows.reduce((a,r)=>a+(r.empuje||0), 0);
+  const aprInt  = rows.reduce((a,r)=>a+(r.aprobado_int||0), 0);
+  const noNac   = rows.reduce((a,r)=>a+(r.no_aprobado_nac||0), 0);
+  const noInt   = rows.reduce((a,r)=>a+(r.no_aprobado_int||0), 0);
+  const sinClas = rows.reduce((a,r)=>a+(r.sin_clasificar||0), 0);
+
+  const labels=[], values=[], colors=[];
+  if (alto)    { labels.push('Alto');                   values.push(alto);   colors.push('#10b981'); }
+  if (medio)   { labels.push('Medio');                  values.push(medio);  colors.push('#3b82f6'); }
+  if (empuje)  { labels.push('Empuje');                 values.push(empuje); colors.push('#f59e0b'); }
+  if (aprInt)  { labels.push('Aprobado Internacional'); values.push(aprInt); colors.push('#8b5cf6'); }
+  if (noNac)   { labels.push('No Aprobado Nacional');   values.push(noNac);  colors.push('#ef4444'); }
+  if (noInt)   { labels.push('No Aprobado Internac.');  values.push(noInt);  colors.push('#f87171'); }
+  if (sinClas) { labels.push('Sin clasificar');         values.push(sinClas);colors.push('#9ca3af'); }
+
   const ctx = document.getElementById('chart-categoria');
   CHARTS.categoria = new Chart(ctx, {
     type: 'bar',
-    data: {
-      labels: ['Alto', 'Medio', 'Empuje', 'No Aprobado', 'Sin ingreso'],
-      datasets: [{
-        data: [alto, medio, empuje, noAprobado, sinIngreso],
-        backgroundColor: ['#10b981', '#3b82f6', '#f59e0b', '#ef4444', '#9ca3af'],
-        borderRadius: 6
-      }]
-    },
+    data: { labels, datasets: [{ data: values, backgroundColor: colors, borderRadius: 6 }]},
     options: {
       ...commonChartOpts(),
       indexAxis: 'y',
+      plugins: { ...commonChartOpts().plugins, tooltip: { ...commonChartOpts().plugins.tooltip,
+        callbacks: { label: (c) => `${fmt_n(c.parsed.x)} leads` }
+      }},
       scales: { x:{...commonChartOpts().scales.x}, y:{...commonChartOpts().scales.y, grid:{display:false}}}
     }
   });
@@ -251,6 +259,18 @@ function aggregate(rows, keys){
   return Object.values(map);
 }
 
+function attribLeadsByCampaign(){
+  // Mapa: utm_campaign (Postgres) → {leads, aprobados}
+  const map = {};
+  (DATA.postgres_campaigns || []).forEach(p => {
+    const k = p.campaign;
+    if (!map[k]) map[k] = {leads:0, aprobados:0};
+    map[k].leads     += p.leads || 0;
+    map[k].aprobados += p.aprobados || 0;
+  });
+  return map;
+}
+
 function renderMetaDetail(rangeStart, rangeEnd){
   const rows = (DATA.meta_ads || []).filter(r => r.fecha >= rangeStart && r.fecha <= rangeEnd);
   const keys = META_LEVEL === 'campaign' ? ['campaign']
@@ -260,6 +280,16 @@ function renderMetaDetail(rangeStart, rangeEnd){
   document.getElementById('meta-detail-label').textContent = keys.map(k => labelMap[k]).join(' › ');
 
   const agg = aggregate(rows, keys);
+  const leadsByCamp = attribLeadsByCampaign();
+  // Atribuir leads/aprobados al nivel campaign (no podemos al adset/ad nivel desde hs_deals)
+  agg.forEach(r => {
+    const camp = r.campaign;
+    r.leads     = (leadsByCamp[camp] || {leads:0}).leads;
+    r.aprobados = (leadsByCamp[camp] || {aprobados:0}).aprobados;
+    r.cpl       = r.leads     > 0 ? r.spend / r.leads     : null;
+    r.cpl_ap    = r.aprobados > 0 ? r.spend / r.aprobados : null;
+  });
+
   agg.sort((a,b) => {
     const va = a[META_SORT.col], vb = b[META_SORT.col];
     if (typeof va === 'string') return va.localeCompare(vb) * META_SORT.dir;
@@ -267,18 +297,18 @@ function renderMetaDetail(rangeStart, rangeEnd){
   });
   const tbody = document.getElementById('meta-tbody');
   tbody.innerHTML = agg.map(r => {
-    const cpc = r.clicks > 0 ? r.spend / r.clicks : null;
-    const ctr = r.impressions > 0 ? r.clicks / r.impressions : null;
     const label = keys.map(k => `<span class="text-gray-${k===keys[keys.length-1]?'900':'500'}">${r[k]}</span>`).join('<span class="text-gray-300 mx-1">›</span>');
     return `<tr>
       <td>${label}</td>
       <td class="font-medium">${fmt_s(r.spend)}</td>
       <td>${fmt_n(r.impressions)}</td>
       <td>${fmt_n(r.clicks)}</td>
-      <td>${cpc ? fmt_s(cpc) : '<span class="text-gray-300">—</span>'}</td>
-      <td>${ctr ? (ctr*100).toFixed(2)+'%' : '<span class="text-gray-300">—</span>'}</td>
+      <td>${META_LEVEL==='campaign' ? fmt_n(r.leads) : '<span class="text-gray-300">—</span>'}</td>
+      <td>${META_LEVEL==='campaign' ? fmt_n(r.aprobados) : '<span class="text-gray-300">—</span>'}</td>
+      <td>${META_LEVEL==='campaign' && r.cpl    ? fmt_s(r.cpl)    : '<span class="text-gray-300">—</span>'}</td>
+      <td>${META_LEVEL==='campaign' && r.cpl_ap ? fmt_s(r.cpl_ap) : '<span class="text-gray-300">—</span>'}</td>
     </tr>`;
-  }).join('') || `<tr><td colspan="6" class="text-center text-gray-400 py-6">Sin datos en el rango</td></tr>`;
+  }).join('') || `<tr><td colspan="8" class="text-center text-gray-400 py-6">Sin datos en el rango</td></tr>`;
 }
 
 function renderGadsDetail(rangeStart, rangeEnd){
@@ -289,6 +319,25 @@ function renderGadsDetail(rangeStart, rangeEnd){
   document.getElementById('gads-detail-label').textContent = keys.map(k => labelMap[k]).join(' › ');
 
   const agg = aggregate(rows, keys);
+  // Atribuir leads de Google (canal Google) desde postgres_campaigns
+  const googleLeads = {leads:0, aprobados:0};
+  (DATA.postgres_campaigns || []).forEach(p => {
+    if (p.canal === 'Google') {
+      googleLeads.leads     += p.leads || 0;
+      googleLeads.aprobados += p.aprobados || 0;
+    }
+  });
+
+  agg.forEach(r => {
+    // Para Google PMax, atribuir todo a la campaña (1 sola campaña LANDING usualmente)
+    if (GADS_LEVEL === 'campaign') {
+      r.leads     = googleLeads.leads;
+      r.aprobados = googleLeads.aprobados;
+      r.cpl       = r.leads     > 0 ? r.spend / r.leads     : null;
+      r.cpl_ap    = r.aprobados > 0 ? r.spend / r.aprobados : null;
+    }
+  });
+
   agg.sort((a,b) => {
     const va = a[GADS_SORT.col], vb = b[GADS_SORT.col];
     if (typeof va === 'string') return va.localeCompare(vb) * GADS_SORT.dir;
@@ -296,18 +345,18 @@ function renderGadsDetail(rangeStart, rangeEnd){
   });
   const tbody = document.getElementById('gads-tbody');
   tbody.innerHTML = agg.map(r => {
-    const cpc = r.clicks > 0 ? r.spend / r.clicks : null;
-    const ctr = r.impressions > 0 ? r.clicks / r.impressions : null;
     const label = keys.map(k => `<span class="text-gray-${k===keys[keys.length-1]?'900':'500'}">${r[k]}</span>`).join('<span class="text-gray-300 mx-1">›</span>');
     return `<tr>
       <td>${label}</td>
       <td class="font-medium">${fmt_s(r.spend)}</td>
       <td>${fmt_n(r.impressions)}</td>
       <td>${fmt_n(r.clicks)}</td>
-      <td>${cpc ? fmt_s(cpc) : '<span class="text-gray-300">—</span>'}</td>
-      <td>${ctr ? (ctr*100).toFixed(2)+'%' : '<span class="text-gray-300">—</span>'}</td>
+      <td>${GADS_LEVEL==='campaign' ? fmt_n(r.leads) : '<span class="text-gray-300">—</span>'}</td>
+      <td>${GADS_LEVEL==='campaign' ? fmt_n(r.aprobados) : '<span class="text-gray-300">—</span>'}</td>
+      <td>${GADS_LEVEL==='campaign' && r.cpl    ? fmt_s(r.cpl)    : '<span class="text-gray-300">—</span>'}</td>
+      <td>${GADS_LEVEL==='campaign' && r.cpl_ap ? fmt_s(r.cpl_ap) : '<span class="text-gray-300">—</span>'}</td>
     </tr>`;
-  }).join('') || `<tr><td colspan="6" class="text-center text-gray-400 py-6">Sin datos en el rango</td></tr>`;
+  }).join('') || `<tr><td colspan="8" class="text-center text-gray-400 py-6">Sin datos en el rango</td></tr>`;
 }
 
 function renderTable(rows){
