@@ -120,10 +120,71 @@
       <div class="h-64"><canvas id="chart-canales"></canvas></div>
     </div>
 
-    <!-- Aprobados por categoría -->
+    <!-- Distribución por categoría de ingreso -->
     <div class="chart-card">
-      <h3 class="text-sm font-semibold text-gray-700 mb-4">Aprobados por categoría</h3>
+      <h3 class="text-sm font-semibold text-gray-700 mb-1">Leads por categoría de ingreso</h3>
+      <p class="text-xs text-gray-400 mb-4">Alto / Medio / Empuje son aprobables · No Aprobado = ingreso &lt; S/3,000</p>
       <div class="h-64"><canvas id="chart-categoria"></canvas></div>
+    </div>
+  </div>
+
+  <!-- =============================================================== -->
+  <!-- DETALLE POR CANAL — Meta / Google -->
+  <!-- =============================================================== -->
+  <div class="chart-card mb-6">
+    <div class="flex items-center justify-between mb-4">
+      <h3 class="text-sm font-semibold text-gray-700">Detalle por canal</h3>
+      <div class="flex gap-1 bg-gray-100 rounded-lg p-1">
+        <button data-tab="meta"   class="tab-btn px-3 py-1 text-xs font-medium rounded-md bg-white shadow text-blue-600">Meta Ads</button>
+        <button data-tab="google" class="tab-btn px-3 py-1 text-xs font-medium rounded-md text-gray-600">Google Ads</button>
+      </div>
+    </div>
+
+    <!-- Sub-pestañas Meta -->
+    <div id="tab-meta" class="tab-content">
+      <div class="flex gap-2 mb-3 text-xs">
+        <button data-meta-level="campaign" class="meta-level-btn pill pill-active">Campañas</button>
+        <button data-meta-level="adset"    class="meta-level-btn pill pill-inactive">Conjuntos de anuncios</button>
+        <button data-meta-level="ad"       class="meta-level-btn pill pill-inactive">Anuncios</button>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="data-table w-full text-sm">
+          <thead>
+            <tr class="border-b-2 border-gray-200">
+              <th id="meta-detail-label" class="cursor-pointer" style="text-align:left">Campaña</th>
+              <th class="cursor-pointer">Spend</th>
+              <th class="cursor-pointer">Impresiones</th>
+              <th class="cursor-pointer">Clicks</th>
+              <th class="cursor-pointer">CPC</th>
+              <th class="cursor-pointer">CTR</th>
+            </tr>
+          </thead>
+          <tbody id="meta-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Sub-pestañas Google -->
+    <div id="tab-google" class="tab-content hidden">
+      <div class="flex gap-2 mb-3 text-xs">
+        <button data-gads-level="campaign"   class="gads-level-btn pill pill-active">Campañas</button>
+        <button data-gads-level="asset_group" class="gads-level-btn pill pill-inactive">Asset Groups</button>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="data-table w-full text-sm">
+          <thead>
+            <tr class="border-b-2 border-gray-200">
+              <th id="gads-detail-label" class="cursor-pointer" style="text-align:left">Campaña</th>
+              <th class="cursor-pointer">Spend</th>
+              <th class="cursor-pointer">Impresiones</th>
+              <th class="cursor-pointer">Clicks</th>
+              <th class="cursor-pointer">CPC</th>
+              <th class="cursor-pointer">CTR</th>
+            </tr>
+          </thead>
+          <tbody id="gads-tbody"></tbody>
+        </table>
+      </div>
     </div>
   </div>
 

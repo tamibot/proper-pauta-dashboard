@@ -202,19 +202,19 @@ function chartCanales(rows){
 
 function chartCategoria(rows){
   destroyChart('categoria');
-  const alto = rows.reduce((a,r)=>a+(r.alto||0), 0);
-  const medio = rows.reduce((a,r)=>a+(r.medio||0), 0);
-  const empuje = rows.reduce((a,r)=>a+(r.empuje||0), 0);
-  const totalApr = rows.reduce((a,r)=>a+(r.aprobados||0), 0);
-  const sinCat = Math.max(0, totalApr - alto - medio - empuje);
+  const alto       = rows.reduce((a,r)=>a+(r.alto||0), 0);
+  const medio      = rows.reduce((a,r)=>a+(r.medio||0), 0);
+  const empuje     = rows.reduce((a,r)=>a+(r.empuje||0), 0);
+  const noAprobado = rows.reduce((a,r)=>a+(r.no_aprobado||0), 0);
+  const sinIngreso = rows.reduce((a,r)=>a+(r.sin_ingreso||0), 0);
   const ctx = document.getElementById('chart-categoria');
   CHARTS.categoria = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Alto', 'Medio', 'Empuje', 'Sin categoría'],
+      labels: ['Alto', 'Medio', 'Empuje', 'No Aprobado', 'Sin ingreso'],
       datasets: [{
-        data: [alto, medio, empuje, sinCat],
-        backgroundColor: ['#10b981', '#3b82f6', '#f59e0b', '#9ca3af'],
+        data: [alto, medio, empuje, noAprobado, sinIngreso],
+        backgroundColor: ['#10b981', '#3b82f6', '#f59e0b', '#ef4444', '#9ca3af'],
         borderRadius: 6
       }]
     },
@@ -224,6 +224,90 @@ function chartCategoria(rows){
       scales: { x:{...commonChartOpts().scales.x}, y:{...commonChartOpts().scales.y, grid:{display:false}}}
     }
   });
+}
+
+// =============================================================
+// Detalle por canal — Meta y Google
+// =============================================================
+let META_LEVEL = 'campaign';
+let GADS_LEVEL = 'campaign';
+let META_SORT = {col:'spend', dir:-1};
+let GADS_SORT = {col:'spend', dir:-1};
+
+function aggregate(rows, keys){
+  // rows: lista de objetos {fecha, campaign, adset, ad, spend, impressions, clicks}
+  // keys: e.g. ['campaign'] o ['campaign','adset'] o ['campaign','adset','ad']
+  const map = {};
+  rows.forEach(r => {
+    const k = keys.map(kk => r[kk] || '—').join(' / ');
+    if (!map[k]) {
+      map[k] = { key: k, ...Object.fromEntries(keys.map(kk => [kk, r[kk] || '—'])),
+                 spend: 0, impressions: 0, clicks: 0 };
+    }
+    map[k].spend       += Number(r.spend || 0);
+    map[k].impressions += Number(r.impressions || 0);
+    map[k].clicks      += Number(r.clicks || 0);
+  });
+  return Object.values(map);
+}
+
+function renderMetaDetail(rangeStart, rangeEnd){
+  const rows = (DATA.meta_ads || []).filter(r => r.fecha >= rangeStart && r.fecha <= rangeEnd);
+  const keys = META_LEVEL === 'campaign' ? ['campaign']
+             : META_LEVEL === 'adset'    ? ['campaign','adset']
+                                         : ['campaign','adset','ad'];
+  const labelMap = {campaign:'Campaña', adset:'Conjunto', ad:'Anuncio'};
+  document.getElementById('meta-detail-label').textContent = keys.map(k => labelMap[k]).join(' › ');
+
+  const agg = aggregate(rows, keys);
+  agg.sort((a,b) => {
+    const va = a[META_SORT.col], vb = b[META_SORT.col];
+    if (typeof va === 'string') return va.localeCompare(vb) * META_SORT.dir;
+    return ((va||0) - (vb||0)) * META_SORT.dir;
+  });
+  const tbody = document.getElementById('meta-tbody');
+  tbody.innerHTML = agg.map(r => {
+    const cpc = r.clicks > 0 ? r.spend / r.clicks : null;
+    const ctr = r.impressions > 0 ? r.clicks / r.impressions : null;
+    const label = keys.map(k => `<span class="text-gray-${k===keys[keys.length-1]?'900':'500'}">${r[k]}</span>`).join('<span class="text-gray-300 mx-1">›</span>');
+    return `<tr>
+      <td>${label}</td>
+      <td class="font-medium">${fmt_s(r.spend)}</td>
+      <td>${fmt_n(r.impressions)}</td>
+      <td>${fmt_n(r.clicks)}</td>
+      <td>${cpc ? fmt_s(cpc) : '<span class="text-gray-300">—</span>'}</td>
+      <td>${ctr ? (ctr*100).toFixed(2)+'%' : '<span class="text-gray-300">—</span>'}</td>
+    </tr>`;
+  }).join('') || `<tr><td colspan="6" class="text-center text-gray-400 py-6">Sin datos en el rango</td></tr>`;
+}
+
+function renderGadsDetail(rangeStart, rangeEnd){
+  const source = GADS_LEVEL === 'campaign' ? (DATA.gads_campaigns || []) : (DATA.gads_asset_groups || []);
+  const rows = source.filter(r => r.fecha >= rangeStart && r.fecha <= rangeEnd);
+  const keys = GADS_LEVEL === 'campaign' ? ['campaign'] : ['campaign','asset_group'];
+  const labelMap = {campaign:'Campaña', asset_group:'Asset Group'};
+  document.getElementById('gads-detail-label').textContent = keys.map(k => labelMap[k]).join(' › ');
+
+  const agg = aggregate(rows, keys);
+  agg.sort((a,b) => {
+    const va = a[GADS_SORT.col], vb = b[GADS_SORT.col];
+    if (typeof va === 'string') return va.localeCompare(vb) * GADS_SORT.dir;
+    return ((va||0) - (vb||0)) * GADS_SORT.dir;
+  });
+  const tbody = document.getElementById('gads-tbody');
+  tbody.innerHTML = agg.map(r => {
+    const cpc = r.clicks > 0 ? r.spend / r.clicks : null;
+    const ctr = r.impressions > 0 ? r.clicks / r.impressions : null;
+    const label = keys.map(k => `<span class="text-gray-${k===keys[keys.length-1]?'900':'500'}">${r[k]}</span>`).join('<span class="text-gray-300 mx-1">›</span>');
+    return `<tr>
+      <td>${label}</td>
+      <td class="font-medium">${fmt_s(r.spend)}</td>
+      <td>${fmt_n(r.impressions)}</td>
+      <td>${fmt_n(r.clicks)}</td>
+      <td>${cpc ? fmt_s(cpc) : '<span class="text-gray-300">—</span>'}</td>
+      <td>${ctr ? (ctr*100).toFixed(2)+'%' : '<span class="text-gray-300">—</span>'}</td>
+    </tr>`;
+  }).join('') || `<tr><td colspan="6" class="text-center text-gray-400 py-6">Sin datos en el rango</td></tr>`;
 }
 
 function renderTable(rows){
@@ -259,6 +343,12 @@ function render(){
   chartCanales(rows);
   chartCategoria(rows);
   renderTable(rows);
+  // Rango de fechas para el detalle por canal
+  if (rows.length > 0) {
+    const rs = rows[0].fecha, re = rows[rows.length-1].fecha;
+    renderMetaDetail(rs, re);
+    renderGadsDetail(rs, re);
+  }
 }
 
 async function init(){
@@ -275,6 +365,42 @@ async function init(){
       btn.classList.add('pill-active');
       CURRENT_RANGE = btn.dataset.range;
       render();
+    });
+  });
+
+  // Tabs Meta/Google
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.tab;
+      document.querySelectorAll('.tab-btn').forEach(b => {
+        b.classList.remove('bg-white','shadow','text-blue-600');
+        b.classList.add('text-gray-600');
+      });
+      btn.classList.add('bg-white','shadow','text-blue-600');
+      btn.classList.remove('text-gray-600');
+      document.getElementById('tab-meta').classList.toggle('hidden', target !== 'meta');
+      document.getElementById('tab-google').classList.toggle('hidden', target !== 'google');
+    });
+  });
+
+  // Sub-niveles Meta
+  document.querySelectorAll('.meta-level-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.meta-level-btn').forEach(b => { b.classList.remove('pill-active'); b.classList.add('pill-inactive'); });
+      btn.classList.remove('pill-inactive'); btn.classList.add('pill-active');
+      META_LEVEL = btn.dataset.metaLevel;
+      const rows = pickRange(DATA.days, CURRENT_RANGE);
+      if (rows.length) renderMetaDetail(rows[0].fecha, rows[rows.length-1].fecha);
+    });
+  });
+  // Sub-niveles Google
+  document.querySelectorAll('.gads-level-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.gads-level-btn').forEach(b => { b.classList.remove('pill-active'); b.classList.add('pill-inactive'); });
+      btn.classList.remove('pill-inactive'); btn.classList.add('pill-active');
+      GADS_LEVEL = btn.dataset.gadsLevel;
+      const rows = pickRange(DATA.days, CURRENT_RANGE);
+      if (rows.length) renderGadsDetail(rows[0].fecha, rows[rows.length-1].fecha);
     });
   });
 
