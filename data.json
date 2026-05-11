@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-11T17:39:23.828988+00:00",
+  "generated_at": "2026-05-11T17:43:09.887067+00:00",
   "since": "2026-03-12",
   "until": "2026-05-11",
   "source": "bitrix.hs_deals (utm_campaign LIKE %landing%) + Meta Ads API + Google Ads API",
@@ -3910,12 +3910,12 @@
     },
     {
       "fecha": "2026-05-11",
-      "meta_spend": 75.09,
-      "gads_spend": 14.96,
-      "total_spend": 90.05,
-      "meta_impressions": 3221,
+      "meta_spend": 75.66,
+      "gads_spend": 14.97,
+      "total_spend": 90.63,
+      "meta_impressions": 3254,
       "meta_clicks": 130,
-      "gads_impressions": 426,
+      "gads_impressions": 433,
       "gads_clicks": 28,
       "leads": 0,
       "aprobados": 0,
@@ -3929,11 +3929,26 @@
       "sin_clasificar": 0,
       "altos_medios": 0,
       "asistentes": 0,
-      "simulados": 0,
+      "simulados": 1,
       "cotizados": 0,
       "cpl": null,
       "cpl_aprobado": null,
-      "canales": {}
+      "canales": {
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 1,
+          "cotizados": 0
+        }
+      }
     }
   ],
   "meta_ads": [
@@ -5976,8 +5991,8 @@
       "campaign": "IN-LANDING-FROM-ABR-2026",
       "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
       "ad": "Video Inversiones - Landing Proper - Nataly",
-      "spend": 36.04,
-      "impressions": 2039,
+      "spend": 36.3,
+      "impressions": 2065,
       "clicks": 56
     },
     {
@@ -5985,8 +6000,8 @@
       "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
       "adset": "cj-muchosPeruanos-video",
       "ad": "depasSePaganSolos",
-      "spend": 11.95,
-      "impressions": 361,
+      "spend": 12.09,
+      "impressions": 364,
       "clicks": 25
     },
     {
@@ -5994,8 +6009,8 @@
       "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
       "adset": "cj-hayDepasQueSePaganSolo-video",
       "ad": "hayDepasQueSePaganSolo-video",
-      "spend": 17.54,
-      "impressions": 533,
+      "spend": 17.71,
+      "impressions": 537,
       "clicks": 27
     },
     {
@@ -6222,8 +6237,8 @@
     {
       "fecha": "2026-05-11",
       "campaign": "PMax - LANDING Proper Inversiones",
-      "spend": 14.96,
-      "impressions": 426,
+      "spend": 14.97,
+      "impressions": 433,
       "clicks": 28
     }
   ],
@@ -6472,8 +6487,8 @@
       "fecha": "2026-05-11",
       "campaign": "PMax - LANDING Proper Inversiones",
       "asset_group": "Inversión Inteligente Lima",
-      "spend": 14.96,
-      "impressions": 426,
+      "spend": 14.97,
+      "impressions": 433,
       "clicks": 28
     }
   ],

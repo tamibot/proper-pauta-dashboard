@@ -19,6 +19,7 @@ let DATA = null;
 let CURRENT_RANGE = 30;
 let CUSTOM_FROM = null;
 let CUSTOM_TO   = null;
+let VIEW_MODE   = 'daily';  // 'daily' | 'weekly'
 let SORT_COL = 'fecha';
 let SORT_DIR = -1;  // desc
 
@@ -27,6 +28,26 @@ const fmt_n   = v => (Number(v||0)).toLocaleString('es-PE');
 const fmt_pct = v => v == null ? '—' : (v*100).toFixed(1) + '%';
 const fmt_d   = d => { const [y,m,dd] = d.split('-'); return `${dd}/${m}`; };
 const fmt_d_full = d => new Date(d+'T00:00').toLocaleDateString('es-PE', {weekday:'short', day:'2-digit', month:'short'});
+
+// Label de eje X según el modo de vista
+function fmt_x_label(row){
+  if (VIEW_MODE === 'weekly') {
+    // row.fecha es lunes; mostrar "Sem DD/MM"
+    return 'Sem ' + fmt_d(row.fecha);
+  }
+  return fmt_d(row.fecha);
+}
+// Label completo para tooltips/tablas
+function fmt_d_view(fechaStr){
+  if (VIEW_MODE === 'weekly') {
+    // fechaStr es lunes; mostrar "Semana del DD/MM/YY – DD/MM/YY"
+    const d = new Date(fechaStr + 'T12:00:00');
+    const end = new Date(d); end.setDate(d.getDate()+6);
+    const ff = (x) => `${String(x.getDate()).padStart(2,'0')}/${String(x.getMonth()+1).padStart(2,'0')}`;
+    return `Semana del ${ff(d)} – ${ff(end)}`;
+  }
+  return fmt_d_full(fechaStr);
+}
 
 function pickRange(days, rangeKey){
   if (rangeKey === 'mtd') {
@@ -41,6 +62,60 @@ function pickRange(days, rangeKey){
   const n = parseInt(rangeKey, 10);
   // últimos N días con datos
   return days.slice(-n);
+}
+
+// =============================================================
+// Agregación por semana (Lun-Dom). Devuelve "días sintéticos"
+// donde fecha = lunes de cada semana, con todas las métricas sumadas.
+// =============================================================
+function aggregateByWeek(days){
+  const groups = {};
+  const SUM_FIELDS = [
+    'meta_spend','gads_spend','total_spend',
+    'meta_impressions','meta_clicks','gads_impressions','gads_clicks',
+    'leads','aprobados','no_aprobados',
+    'alto','medio','empuje','aprobado_int',
+    'no_aprobado_nac','no_aprobado_int','sin_clasificar',
+    'altos_medios','asistentes','simulados','cotizados',
+  ];
+  const SUM_CANAL_FIELDS = [
+    'leads','aprobados','alto','medio','empuje','aprobado_int',
+    'no_aprobado_nac','no_aprobado_int','sin_clasificar',
+    'asistentes','simulados','cotizados'
+  ];
+
+  days.forEach(d => {
+    const wk = weekKey(d.fecha);
+    if (!groups[wk]) {
+      groups[wk] = { fecha: wk, canales: {}, days_count: 0 };
+      SUM_FIELDS.forEach(f => groups[wk][f] = 0);
+    }
+    const g = groups[wk];
+    g.days_count++;
+    SUM_FIELDS.forEach(f => g[f] += (Number(d[f]) || 0));
+    Object.entries(d.canales || {}).forEach(([canal, info]) => {
+      if (!g.canales[canal]) {
+        g.canales[canal] = {};
+        SUM_CANAL_FIELDS.forEach(f => g.canales[canal][f] = 0);
+      }
+      SUM_CANAL_FIELDS.forEach(f => g.canales[canal][f] += (Number(info[f]) || 0));
+    });
+  });
+
+  // Recompute CPLs
+  Object.values(groups).forEach(g => {
+    g.cpl          = g.leads     > 0 ? Math.round((g.total_spend / g.leads)     * 100) / 100 : null;
+    g.cpl_aprobado = g.aprobados > 0 ? Math.round((g.total_spend / g.aprobados) * 100) / 100 : null;
+  });
+
+  return Object.values(groups).sort((a,b) => a.fecha < b.fecha ? -1 : 1);
+}
+
+// Obtener rows transformadas según VIEW_MODE
+function getViewRows(){
+  let rows = pickRange(DATA.days, CURRENT_RANGE);
+  if (VIEW_MODE === 'weekly') rows = aggregateByWeek(rows);
+  return rows;
 }
 
 const CHARTS = {};
@@ -96,7 +171,7 @@ function chartSpend(rows){
   CHARTS.spend = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: rows.map(r => fmt_d(r.fecha)),
+      labels: rows.map(r => fmt_x_label(r)),
       datasets: [
         { label:'Meta',   data: rows.map(r=>r.meta_spend), backgroundColor: COLORS.meta,   borderRadius:4 },
         { label:'Google', data: rows.map(r=>r.gads_spend), backgroundColor: COLORS.google, borderRadius:4 }
@@ -109,7 +184,7 @@ function chartSpend(rows){
         tooltip: {
           ...commonChartOpts().plugins.tooltip,
           callbacks: {
-            title: (items) => fmt_d_full(rows[items[0].dataIndex].fecha),
+            title: (items) => fmt_d_view(rows[items[0].dataIndex].fecha),
             label: (c) => `${c.dataset.label}: ${fmt_s(c.parsed.y)}`,
             footer: (items) => {
               const r = rows[items[0].dataIndex];
@@ -129,7 +204,7 @@ function chartLeads(rows){
   CHARTS.leads = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: rows.map(r => fmt_d(r.fecha)),
+      labels: rows.map(r => fmt_x_label(r)),
       datasets: [
         { label:'Aprobados',     data: rows.map(r=>r.aprobados),    backgroundColor: COLORS.apr,   borderRadius: 4, stack:'leads' },
         { label:'No Aprobados',  data: rows.map(r=>r.no_aprobados), backgroundColor: COLORS.noApr, borderRadius: 4, stack:'leads' }
@@ -142,7 +217,7 @@ function chartLeads(rows){
         tooltip: {
           ...commonChartOpts().plugins.tooltip,
           callbacks: {
-            title: (items) => fmt_d_full(rows[items[0].dataIndex].fecha),
+            title: (items) => fmt_d_view(rows[items[0].dataIndex].fecha),
             label: (c) => `${c.dataset.label}: ${fmt_n(c.parsed.y)}`,
             footer: (items) => {
               const r = rows[items[0].dataIndex];
@@ -166,7 +241,7 @@ function chartCPL(rows){
   CHARTS.cpl = new Chart(ctx, {
     type: 'line',
     data: {
-      labels: rows.map(r => fmt_d(r.fecha)),
+      labels: rows.map(r => fmt_x_label(r)),
       datasets: [
         { label:'CPL',          data: rows.map(r=>r.cpl),          borderColor: COLORS.cpl,   tension:.3, pointRadius:3, borderWidth:2, spanGaps:true },
         { label:'CPL Aprobado', data: rows.map(r=>r.cpl_aprobado), borderColor: COLORS.cplAp, tension:.3, pointRadius:3, borderWidth:2, spanGaps:true }
@@ -176,7 +251,7 @@ function chartCPL(rows){
       ...commonChartOpts(),
       plugins: { ...commonChartOpts().plugins, tooltip: { ...commonChartOpts().plugins.tooltip,
         callbacks: {
-          title: (items) => fmt_d_full(rows[items[0].dataIndex].fecha),
+          title: (items) => fmt_d_view(rows[items[0].dataIndex].fecha),
           label: (c) => `${c.dataset.label}: ${c.parsed.y == null ? '—' : fmt_s(c.parsed.y)}`
         }
       }}
@@ -382,7 +457,6 @@ function renderGadsDetail(rangeStart, rangeEnd){
 }
 
 function renderTable(rows){
-  // Sort
   const sorted = [...rows].sort((a,b) => {
     let va = a[SORT_COL], vb = b[SORT_COL];
     if (va == null) va = -Infinity;
@@ -393,7 +467,7 @@ function renderTable(rows){
   const tbody = document.getElementById('data-tbody');
   tbody.innerHTML = sorted.map(r => `
     <tr>
-      <td class="text-gray-700">${fmt_d_full(r.fecha)}</td>
+      <td class="text-gray-700">${fmt_d_view(r.fecha)}</td>
       <td class="font-medium">${fmt_s(r.total_spend)}</td>
       <td class="text-gray-600">${fmt_s(r.meta_spend)}</td>
       <td class="text-gray-600">${fmt_s(r.gads_spend)}</td>
@@ -520,30 +594,54 @@ function renderFunnel(rangeRows){
   }
   cont.innerHTML = html;
 
-  // Tabla resumen — una fila por día. Asistentes muestra el total ACUMULADO de la SEMANA (igual valor en cada día de esa semana).
+  // Tabla resumen — comportamiento depende del VIEW_MODE
   const tbody = document.getElementById('funnel-tbody');
-  const tableRows = FUNNEL_DIA ? rangeRows.filter(r => r.fecha === FUNNEL_DIA) : rangeRows;
   const weeklyAsist = weeklyAsistentes(rangeRows, FUNNEL_CANAL);
-  const sorted = [...tableRows].reverse();
+  let displayRows;
+  if (VIEW_MODE === 'weekly') {
+    displayRows = aggregateByWeek(FUNNEL_DIA ? rangeRows.filter(r => r.fecha === FUNNEL_DIA) : rangeRows);
+  } else {
+    displayRows = FUNNEL_DIA ? rangeRows.filter(r => r.fecha === FUNNEL_DIA) : rangeRows;
+  }
+  const sorted = [...displayRows].reverse();
+
   tbody.innerHTML = sorted.map(r => {
-    let leads, aprobados, altos_medios, simul, cotiz;
+    let leads, aprobados, altos_medios, asist_dia, simul, cotiz;
     if (FUNNEL_CANAL) {
       const c = (r.canales||{})[FUNNEL_CANAL] || {};
       leads = c.leads || 0;
       aprobados = (c.alto||0)+(c.medio||0)+(c.empuje||0)+(c.aprobado_int||0);
       altos_medios = (c.alto||0)+(c.medio||0);
+      asist_dia = c.asistentes || 0;
       simul = c.simulados || 0; cotiz = c.cotizados || 0;
     } else {
       leads = r.leads||0; aprobados = r.aprobados||0; altos_medios = r.altos_medios||0;
+      asist_dia = r.asistentes || 0;
       simul = r.simulados||0; cotiz = r.cotizados||0;
     }
+
+    if (VIEW_MODE === 'weekly') {
+      // En semanal: solo una columna asistentes (el total de la semana)
+      return `<tr>
+        <td class="text-gray-700">${fmt_d_view(r.fecha)}</td>
+        <td>${fmt_n(leads)}</td>
+        <td class="text-emerald-600 font-medium">${fmt_n(aprobados)}</td>
+        <td class="text-teal-600">${fmt_n(altos_medios)}</td>
+        <td style="display:none"></td>
+        <td class="text-violet-600">${fmt_n(asist_dia)}</td>
+        <td>${fmt_n(simul)}</td>
+        <td>${fmt_n(cotiz)}</td>
+      </tr>`;
+    }
+    // Daily: 2 columnas asistentes (día + acumulado semana)
     const asistSemanaTotal = weeklyAsist[weekKey(r.fecha)] || 0;
     return `<tr>
       <td class="text-gray-700">${fmt_d_full(r.fecha)}</td>
       <td>${fmt_n(leads)}</td>
       <td class="text-emerald-600 font-medium">${fmt_n(aprobados)}</td>
       <td class="text-teal-600">${fmt_n(altos_medios)}</td>
-      <td title="Acumulado de la semana ${weekLabel(weekKey(r.fecha))}" class="text-violet-600">${fmt_n(asistSemanaTotal)}</td>
+      <td class="${asist_dia>0?'text-violet-600 font-medium':'text-gray-300'}">${fmt_n(asist_dia)}</td>
+      <td title="Acumulado ${weekLabel(weekKey(r.fecha))}" class="text-violet-400">${fmt_n(asistSemanaTotal)}</td>
       <td>${fmt_n(simul)}</td>
       <td>${fmt_n(cotiz)}</td>
     </tr>`;
@@ -572,19 +670,35 @@ function populateFunnelSelectors(){
 }
 
 function render(){
-  const rows = pickRange(DATA.days, CURRENT_RANGE);
+  const rangeDailyRows = pickRange(DATA.days, CURRENT_RANGE);
+  const rows = VIEW_MODE === 'weekly' ? aggregateByWeek(rangeDailyRows) : rangeDailyRows;
+
+  // Para la columna "Asist. sem" siempre necesitamos los daily rows (para weekKey lookup)
   renderKPIs(rows);
-  renderFunnel(rows);
+  renderFunnel(rangeDailyRows);  // funnel siempre usa daily para tener bien el weeklyAsistentes
   chartSpend(rows);
   chartLeads(rows);
   chartCPL(rows);
   chartCanales(rows);
   chartCategoria(rows);
   renderTable(rows);
-  if (rows.length > 0) {
-    const rs = rows[0].fecha, re = rows[rows.length-1].fecha;
+  if (rangeDailyRows.length > 0) {
+    const rs = rangeDailyRows[0].fecha, re = rangeDailyRows[rangeDailyRows.length-1].fecha;
     renderMetaDetail(rs, re);
     renderGadsDetail(rs, re);
+  }
+
+  // Toggle columnas Asist. día / Asist. sem según vista
+  const thDia = document.getElementById('th-asist-dia');
+  const thSem = document.getElementById('th-asist-sem');
+  if (VIEW_MODE === 'weekly') {
+    thDia.style.display = 'none';
+    thSem.textContent = 'Asistentes';
+    thSem.removeAttribute('title');
+  } else {
+    thDia.style.display = '';
+    thSem.textContent = 'Asist. sem';
+    thSem.setAttribute('title', 'Acumulado de la semana (Lun-Dom)');
   }
 }
 
@@ -596,6 +710,16 @@ async function init(){
 
   // Populate funnel filters
   populateFunnelSelectors();
+
+  // View mode toggle (daily / weekly)
+  document.querySelectorAll('.view-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.view-btn').forEach(b => { b.classList.remove('pill-active'); b.classList.add('pill-inactive'); });
+      btn.classList.remove('pill-inactive'); btn.classList.add('pill-active');
+      VIEW_MODE = btn.dataset.view;
+      render();
+    });
+  });
 
   // Range buttons
   document.querySelectorAll('.range-btn').forEach(btn => {

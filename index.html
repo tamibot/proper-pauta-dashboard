@@ -38,19 +38,26 @@
   </div>
 
   <!-- FILTROS -->
-  <div class="flex flex-wrap gap-2 mb-6 items-center">
-    <span class="text-xs text-gray-500 self-center mr-2">Rango:</span>
-    <button data-range="7"  class="range-btn pill pill-inactive">7 días</button>
-    <button data-range="14" class="range-btn pill pill-inactive">14 días</button>
-    <button data-range="30" class="range-btn pill pill-active">30 días</button>
-    <button data-range="60" class="range-btn pill pill-inactive">60 días</button>
-    <button data-range="mtd" class="range-btn pill pill-inactive">Mes en curso</button>
-    <button data-range="custom" class="range-btn pill pill-inactive">Personalizado</button>
-    <div id="custom-range-inputs" class="hidden flex items-center gap-2 ml-2">
-      <input type="date" id="custom-from" class="text-xs border border-gray-200 rounded-md px-2 py-1 bg-white focus:outline-none focus:ring-2 focus:ring-blue-200">
-      <span class="text-xs text-gray-500">→</span>
-      <input type="date" id="custom-to" class="text-xs border border-gray-200 rounded-md px-2 py-1 bg-white focus:outline-none focus:ring-2 focus:ring-blue-200">
-      <button id="custom-apply" class="text-xs bg-blue-600 hover:bg-blue-700 text-white rounded-md px-3 py-1">Aplicar</button>
+  <div class="flex flex-col gap-3 mb-6">
+    <div class="flex flex-wrap gap-2 items-center">
+      <span class="text-xs text-gray-500 self-center mr-2">Vista:</span>
+      <button data-view="daily"  class="view-btn pill pill-active">Por día</button>
+      <button data-view="weekly" class="view-btn pill pill-inactive">Por semana (Lun–Dom)</button>
+    </div>
+    <div class="flex flex-wrap gap-2 items-center">
+      <span class="text-xs text-gray-500 self-center mr-2">Rango:</span>
+      <button data-range="7"  class="range-btn pill pill-inactive">7 días</button>
+      <button data-range="14" class="range-btn pill pill-inactive">14 días</button>
+      <button data-range="30" class="range-btn pill pill-active">30 días</button>
+      <button data-range="60" class="range-btn pill pill-inactive">60 días</button>
+      <button data-range="mtd" class="range-btn pill pill-inactive">Mes en curso</button>
+      <button data-range="custom" class="range-btn pill pill-inactive">Personalizado</button>
+      <div id="custom-range-inputs" class="hidden flex items-center gap-2 ml-2">
+        <input type="date" id="custom-from" class="text-xs border border-gray-200 rounded-md px-2 py-1 bg-white focus:outline-none focus:ring-2 focus:ring-blue-200">
+        <span class="text-xs text-gray-500">→</span>
+        <input type="date" id="custom-to" class="text-xs border border-gray-200 rounded-md px-2 py-1 bg-white focus:outline-none focus:ring-2 focus:ring-blue-200">
+        <button id="custom-apply" class="text-xs bg-blue-600 hover:bg-blue-700 text-white rounded-md px-3 py-1">Aplicar</button>
+      </div>
     </div>
   </div>
 
@@ -113,7 +120,8 @@
             <th style="color:white">Leads</th>
             <th style="color:white">L. Aprobados</th>
             <th style="color:white">L. Altos/Medios</th>
-            <th style="color:white" title="Acumulado de la semana (lun-dom) — porque las reuniones son L y M">Asistentes (sem)</th>
+            <th style="color:white" id="th-asist-dia">Asist. día</th>
+            <th style="color:white" id="th-asist-sem" title="Acumulado de la semana (Lun-Dom)">Asist. sem</th>
             <th style="color:white">Simulados</th>
             <th style="color:white">Cotizados</th>
           </tr>
@@ -270,7 +278,7 @@
   </footer>
 </div>
 
-<!-- v5 — rango custom + stacked bars + CPL colors -->
-<script src="./app.js?v=5"></script>
+<!-- v6 — view modes daily/weekly + asist día y semana -->
+<script src="./app.js?v=6"></script>
 </body>
 </html>
