@@ -38,13 +38,20 @@
   </div>
 
   <!-- FILTROS -->
-  <div class="flex flex-wrap gap-2 mb-6">
+  <div class="flex flex-wrap gap-2 mb-6 items-center">
     <span class="text-xs text-gray-500 self-center mr-2">Rango:</span>
     <button data-range="7"  class="range-btn pill pill-inactive">7 días</button>
     <button data-range="14" class="range-btn pill pill-inactive">14 días</button>
     <button data-range="30" class="range-btn pill pill-active">30 días</button>
     <button data-range="60" class="range-btn pill pill-inactive">60 días</button>
     <button data-range="mtd" class="range-btn pill pill-inactive">Mes en curso</button>
+    <button data-range="custom" class="range-btn pill pill-inactive">Personalizado</button>
+    <div id="custom-range-inputs" class="hidden flex items-center gap-2 ml-2">
+      <input type="date" id="custom-from" class="text-xs border border-gray-200 rounded-md px-2 py-1 bg-white focus:outline-none focus:ring-2 focus:ring-blue-200">
+      <span class="text-xs text-gray-500">→</span>
+      <input type="date" id="custom-to" class="text-xs border border-gray-200 rounded-md px-2 py-1 bg-white focus:outline-none focus:ring-2 focus:ring-blue-200">
+      <button id="custom-apply" class="text-xs bg-blue-600 hover:bg-blue-700 text-white rounded-md px-3 py-1">Aplicar</button>
+    </div>
   </div>
 
   <!-- KPI CARDS -->
@@ -123,8 +130,8 @@
       <div class="flex items-center justify-between mb-4">
         <h3 class="text-sm font-semibold text-gray-700">Leads y Aprobados</h3>
         <div class="flex gap-3 text-xs text-gray-500">
-          <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full" style="background:#3b82f6"></span> Leads</span>
-          <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full" style="background:#10b981"></span> Aprobados</span>
+          <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-sm" style="background:#10b981"></span> Aprobados</span>
+          <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-sm" style="background:#ef4444"></span> No Aprobados</span>
         </div>
       </div>
       <div class="h-72"><canvas id="chart-leads"></canvas></div>
@@ -147,8 +154,8 @@
       <div class="flex items-center justify-between mb-4">
         <h3 class="text-sm font-semibold text-gray-700">CPL diario</h3>
         <div class="flex gap-3 text-xs text-gray-500">
-          <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full" style="background:#6366f1"></span> CPL</span>
-          <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full" style="background:#a78bfa"></span> CPL Aprobado</span>
+          <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full" style="background:#2563eb"></span> CPL</span>
+          <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full" style="background:#f97316"></span> CPL Aprobado</span>
         </div>
       </div>
       <div class="h-64"><canvas id="chart-cpl"></canvas></div>
@@ -263,7 +270,7 @@
   </footer>
 </div>
 
-<!-- v4 — layout + funnel + asistentes semanal -->
-<script src="./app.js?v=4"></script>
+<!-- v5 — rango custom + stacked bars + CPL colors -->
+<script src="./app.js?v=5"></script>
 </body>
 </html>

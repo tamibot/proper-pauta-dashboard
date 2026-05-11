@@ -4,10 +4,10 @@
 const COLORS = {
   meta:    '#1877f2',
   google:  '#fbbc04',
-  leads:   '#3b82f6',
-  apr:     '#10b981',
-  cpl:     '#6366f1',
-  cplAp:   '#a78bfa',
+  apr:     '#10b981',  // aprobados — verde
+  noApr:   '#ef4444',  // no aprobados — rojo
+  cpl:     '#2563eb',  // azul intenso
+  cplAp:   '#f97316',  // naranja — contrasta bien con azul
   facebook: '#1877f2',
   instagram:'#e1306c',
   google_c: '#fbbc04',
@@ -17,6 +17,8 @@ const COLORS = {
 
 let DATA = null;
 let CURRENT_RANGE = 30;
+let CUSTOM_FROM = null;
+let CUSTOM_TO   = null;
 let SORT_COL = 'fecha';
 let SORT_DIR = -1;  // desc
 
@@ -31,6 +33,10 @@ function pickRange(days, rangeKey){
     const today = new Date();
     const first = today.getFullYear() + '-' + String(today.getMonth()+1).padStart(2,'0') + '-01';
     return days.filter(d => d.fecha >= first);
+  }
+  if (rangeKey === 'custom') {
+    if (!CUSTOM_FROM || !CUSTOM_TO) return days.slice(-30);
+    return days.filter(d => d.fecha >= CUSTOM_FROM && d.fecha <= CUSTOM_TO);
   }
   const n = parseInt(rangeKey, 10);
   // últimos N días con datos
@@ -121,19 +127,35 @@ function chartLeads(rows){
   destroyChart('leads');
   const ctx = document.getElementById('chart-leads');
   CHARTS.leads = new Chart(ctx, {
-    type: 'line',
+    type: 'bar',
     data: {
       labels: rows.map(r => fmt_d(r.fecha)),
       datasets: [
-        { label:'Leads',     data: rows.map(r=>r.leads),     borderColor: COLORS.leads, backgroundColor:'rgba(59,130,246,0.08)', tension:.3, fill:true, pointRadius:3, pointHoverRadius:5, borderWidth:2 },
-        { label:'Aprobados', data: rows.map(r=>r.aprobados), borderColor: COLORS.apr,   backgroundColor:'rgba(16,185,129,0.06)', tension:.3, fill:true, pointRadius:3, pointHoverRadius:5, borderWidth:2 }
+        { label:'Aprobados',     data: rows.map(r=>r.aprobados),    backgroundColor: COLORS.apr,   borderRadius: 4, stack:'leads' },
+        { label:'No Aprobados',  data: rows.map(r=>r.no_aprobados), backgroundColor: COLORS.noApr, borderRadius: 4, stack:'leads' }
       ]
     },
     options: {
       ...commonChartOpts(),
-      plugins: { ...commonChartOpts().plugins, tooltip: { ...commonChartOpts().plugins.tooltip,
-        callbacks: { title: (items) => fmt_d_full(rows[items[0].dataIndex].fecha) }
-      }}
+      plugins: {
+        ...commonChartOpts().plugins,
+        tooltip: {
+          ...commonChartOpts().plugins.tooltip,
+          callbacks: {
+            title: (items) => fmt_d_full(rows[items[0].dataIndex].fecha),
+            label: (c) => `${c.dataset.label}: ${fmt_n(c.parsed.y)}`,
+            footer: (items) => {
+              const r = rows[items[0].dataIndex];
+              return `Total Leads: ${fmt_n(r.leads)}`;
+            }
+          }
+        }
+      },
+      scales: {
+        ...commonChartOpts().scales,
+        x:{...commonChartOpts().scales.x, stacked:true},
+        y:{...commonChartOpts().scales.y, stacked:true}
+      }
     }
   });
 }
@@ -582,7 +604,53 @@ async function init(){
       btn.classList.remove('pill-inactive');
       btn.classList.add('pill-active');
       CURRENT_RANGE = btn.dataset.range;
+      // mostrar/ocultar inputs custom
+      const cont = document.getElementById('custom-range-inputs');
+      if (CURRENT_RANGE === 'custom') {
+        cont.classList.remove('hidden');
+        cont.classList.add('flex');
+        // si no hay fechas seteadas, prellenar con últimos 30 días
+        if (!CUSTOM_FROM || !CUSTOM_TO) {
+          const lastDate = DATA.days[DATA.days.length-1].fecha;
+          const firstDate = DATA.days[Math.max(0, DATA.days.length-30)].fecha;
+          CUSTOM_FROM = firstDate;
+          CUSTOM_TO   = lastDate;
+          document.getElementById('custom-from').value = firstDate;
+          document.getElementById('custom-to').value   = lastDate;
+          // setear min/max según data disponible
+          const earliest = DATA.days[0].fecha;
+          document.getElementById('custom-from').min = earliest;
+          document.getElementById('custom-from').max = lastDate;
+          document.getElementById('custom-to').min   = earliest;
+          document.getElementById('custom-to').max   = lastDate;
+        }
+      } else {
+        cont.classList.add('hidden');
+        cont.classList.remove('flex');
+      }
       render();
+    });
+  });
+
+  // Custom range apply
+  document.getElementById('custom-apply').addEventListener('click', () => {
+    const f = document.getElementById('custom-from').value;
+    const t = document.getElementById('custom-to').value;
+    if (!f || !t) return;
+    if (f > t) { alert('La fecha inicial debe ser anterior a la final.'); return; }
+    CUSTOM_FROM = f;
+    CUSTOM_TO   = t;
+    CURRENT_RANGE = 'custom';
+    render();
+  });
+  // Auto-aplicar al cambiar inputs
+  ['custom-from','custom-to'].forEach(id => {
+    document.getElementById(id).addEventListener('change', () => {
+      const f = document.getElementById('custom-from').value;
+      const t = document.getElementById('custom-to').value;
+      if (f && t && f <= t) {
+        CUSTOM_FROM = f; CUSTOM_TO = t; CURRENT_RANGE = 'custom'; render();
+      }
     });
   });
 

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-11T17:34:07.694422+00:00",
+  "generated_at": "2026-05-11T17:39:23.828988+00:00",
   "since": "2026-03-12",
   "until": "2026-05-11",
   "source": "bitrix.hs_deals (utm_campaign LIKE %landing%) + Meta Ads API + Google Ads API",
@@ -3910,13 +3910,13 @@
     },
     {
       "fecha": "2026-05-11",
-      "meta_spend": 74.48,
-      "gads_spend": 13.52,
-      "total_spend": 88.0,
-      "meta_impressions": 3169,
-      "meta_clicks": 128,
-      "gads_impressions": 415,
-      "gads_clicks": 27,
+      "meta_spend": 75.09,
+      "gads_spend": 14.96,
+      "total_spend": 90.05,
+      "meta_impressions": 3221,
+      "meta_clicks": 130,
+      "gads_impressions": 426,
+      "gads_clicks": 28,
       "leads": 0,
       "aprobados": 0,
       "no_aprobados": 0,
@@ -5976,8 +5976,8 @@
       "campaign": "IN-LANDING-FROM-ABR-2026",
       "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
       "ad": "Video Inversiones - Landing Proper - Nataly",
-      "spend": 35.64,
-      "impressions": 2002,
+      "spend": 36.04,
+      "impressions": 2039,
       "clicks": 56
     },
     {
@@ -5985,18 +5985,18 @@
       "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
       "adset": "cj-muchosPeruanos-video",
       "ad": "depasSePaganSolos",
-      "spend": 11.92,
-      "impressions": 357,
-      "clicks": 24
+      "spend": 11.95,
+      "impressions": 361,
+      "clicks": 25
     },
     {
       "fecha": "2026-05-11",
       "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
       "adset": "cj-hayDepasQueSePaganSolo-video",
       "ad": "hayDepasQueSePaganSolo-video",
-      "spend": 17.36,
-      "impressions": 522,
-      "clicks": 26
+      "spend": 17.54,
+      "impressions": 533,
+      "clicks": 27
     },
     {
       "fecha": "2026-05-11",
@@ -6222,9 +6222,9 @@
     {
       "fecha": "2026-05-11",
       "campaign": "PMax - LANDING Proper Inversiones",
-      "spend": 13.52,
-      "impressions": 415,
-      "clicks": 27
+      "spend": 14.96,
+      "impressions": 426,
+      "clicks": 28
     }
   ],
   "gads_asset_groups": [
@@ -6472,9 +6472,9 @@
       "fecha": "2026-05-11",
       "campaign": "PMax - LANDING Proper Inversiones",
       "asset_group": "Inversión Inteligente Lima",
-      "spend": 13.52,
-      "impressions": 415,
-      "clicks": 27
+      "spend": 14.96,
+      "impressions": 426,
+      "clicks": 28
     }
   ],
   "postgres_campaigns": [
