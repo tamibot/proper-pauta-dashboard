@@ -106,7 +106,7 @@
             <th style="color:white">Leads</th>
             <th style="color:white">L. Aprobados</th>
             <th style="color:white">L. Altos/Medios</th>
-            <th style="color:white">Asistentes</th>
+            <th style="color:white" title="Acumulado de la semana (lun-dom) — porque las reuniones son L y M">Asistentes (sem)</th>
             <th style="color:white">Simulados</th>
             <th style="color:white">Cotizados</th>
           </tr>
@@ -118,20 +118,8 @@
 
   <!-- CHARTS GRID -->
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-    <!-- Spend by day -->
+    <!-- Leads + Aprobados — chart principal (full width arriba) -->
     <div class="chart-card lg:col-span-2">
-      <div class="flex items-center justify-between mb-4">
-        <h3 class="text-sm font-semibold text-gray-700">Inversión diaria</h3>
-        <div class="flex gap-3 text-xs text-gray-500">
-          <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-sm" style="background:#1877f2"></span> Meta</span>
-          <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-sm" style="background:#fbbc04"></span> Google</span>
-        </div>
-      </div>
-      <div class="h-72"><canvas id="chart-spend"></canvas></div>
-    </div>
-
-    <!-- Leads + Aprobados -->
-    <div class="chart-card">
       <div class="flex items-center justify-between mb-4">
         <h3 class="text-sm font-semibold text-gray-700">Leads y Aprobados</h3>
         <div class="flex gap-3 text-xs text-gray-500">
@@ -139,7 +127,19 @@
           <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full" style="background:#10b981"></span> Aprobados</span>
         </div>
       </div>
-      <div class="h-64"><canvas id="chart-leads"></canvas></div>
+      <div class="h-72"><canvas id="chart-leads"></canvas></div>
+    </div>
+
+    <!-- Spend (movido a secundario, media columna) -->
+    <div class="chart-card">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-sm font-semibold text-gray-700">Inversión diaria</h3>
+        <div class="flex gap-3 text-xs text-gray-500">
+          <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-sm" style="background:#1877f2"></span> Meta</span>
+          <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-sm" style="background:#fbbc04"></span> Google</span>
+        </div>
+      </div>
+      <div class="h-64"><canvas id="chart-spend"></canvas></div>
     </div>
 
     <!-- CPL -->
@@ -263,6 +263,7 @@
   </footer>
 </div>
 
-<script src="./app.js"></script>
+<!-- v4 — layout + funnel + asistentes semanal -->
+<script src="./app.js?v=4"></script>
 </body>
 </html>

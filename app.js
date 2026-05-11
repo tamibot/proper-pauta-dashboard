@@ -389,50 +389,98 @@ function renderTable(rows){
 let FUNNEL_CANAL = '';
 let FUNNEL_DIA   = '';
 
+// Las reuniones (zoom) son lunes y miércoles — agregamos asistentes por SEMANA ISO
+function weekKey(fechaStr){
+  // ISO week start = lunes. Devuelve YYYY-Www
+  const d = new Date(fechaStr + 'T12:00:00');
+  const day = d.getDay() || 7;  // domingo=0 → 7
+  d.setDate(d.getDate() - day + 1);  // mover a lunes
+  return d.toISOString().slice(0,10);  // monday date as key
+}
+
+function weekLabel(mondayDateStr){
+  const d = new Date(mondayDateStr + 'T12:00:00');
+  const end = new Date(d); end.setDate(d.getDate() + 6);
+  const fmt = (x) => `${String(x.getDate()).padStart(2,'0')}/${String(x.getMonth()+1).padStart(2,'0')}`;
+  return `Sem ${fmt(d)}–${fmt(end)}`;
+}
+
+// Calcula asistentes acumulado SEMANAL para un set de filas, opcionalmente filtrado por canal
+function weeklyAsistentes(rows, canal){
+  const byWeek = {};  // {mondayKey: total}
+  rows.forEach(r => {
+    const wk = weekKey(r.fecha);
+    let v;
+    if (canal) {
+      v = ((r.canales || {})[canal] || {}).asistentes || 0;
+    } else {
+      v = r.asistentes || 0;
+    }
+    byWeek[wk] = (byWeek[wk] || 0) + v;
+  });
+  return byWeek;
+}
+
 function renderFunnel(rangeRows){
   // Filtrar por día específico si está seteado
-  let rows = FUNNEL_DIA ? rangeRows.filter(r => r.fecha === FUNNEL_DIA) : rangeRows;
+  let rows;
+  let asistentesScope; // rango de filas usado para calcular asistentes (siempre semana completa)
+  let asistentesLabel = '';
+  if (FUNNEL_DIA) {
+    // Día específico → asistentes acumulado de la SEMANA que contiene ese día
+    rows = rangeRows.filter(r => r.fecha === FUNNEL_DIA);
+    const targetWeek = weekKey(FUNNEL_DIA);
+    asistentesScope = rangeRows.filter(r => weekKey(r.fecha) === targetWeek);
+    asistentesLabel = ` (${weekLabel(targetWeek)})`;
+  } else {
+    rows = rangeRows;
+    asistentesScope = rangeRows;
+  }
   if (rows.length === 0) rows = rangeRows;
 
-  // Agregar por canal o total
+  // Agregar por canal o total (todo menos asistentes — para este usamos asistentesScope)
   const totals = { leads:0, aprobados:0, altos_medios:0, asistentes:0, simulados:0, cotizados:0 };
-  if (FUNNEL_CANAL) {
-    rows.forEach(r => {
-      const c = (r.canales||{})[FUNNEL_CANAL] || {};
-      totals.leads        += c.leads || 0;
-      totals.aprobados    += (c.alto||0)+(c.medio||0)+(c.empuje||0)+(c.aprobado_int||0);
-      totals.altos_medios += (c.alto||0)+(c.medio||0);
-      totals.asistentes   += c.asistentes || 0;
-      totals.simulados    += c.simulados  || 0;
-      totals.cotizados    += c.cotizados  || 0;
-    });
-  } else {
-    rows.forEach(r => {
-      totals.leads        += r.leads || 0;
-      totals.aprobados    += r.aprobados || 0;
-      totals.altos_medios += r.altos_medios || 0;
-      totals.asistentes   += r.asistentes || 0;
-      totals.simulados    += r.simulados  || 0;
-      totals.cotizados    += r.cotizados  || 0;
-    });
-  }
+  const pick = (r) => FUNNEL_CANAL ? ((r.canales||{})[FUNNEL_CANAL] || {}) : r;
+  const apr  = (r) => FUNNEL_CANAL
+    ? ((r.canales||{})[FUNNEL_CANAL]||{}).alto + ((r.canales||{})[FUNNEL_CANAL]||{}).medio + ((r.canales||{})[FUNNEL_CANAL]||{}).empuje + ((r.canales||{})[FUNNEL_CANAL]||{}).aprobado_int
+    : r.aprobados;
+  const am   = (r) => FUNNEL_CANAL
+    ? (((r.canales||{})[FUNNEL_CANAL]||{}).alto||0) + (((r.canales||{})[FUNNEL_CANAL]||{}).medio||0)
+    : (r.altos_medios||0);
+
+  rows.forEach(r => {
+    const x = pick(r);
+    totals.leads        += x.leads || 0;
+    totals.aprobados    += apr(r) || 0;
+    totals.altos_medios += am(r);
+    totals.simulados    += x.simulados || 0;
+    totals.cotizados    += x.cotizados || 0;
+  });
+
+  // Asistentes: usar la SEMANA completa que contiene los días filtrados
+  asistentesScope.forEach(r => {
+    const x = pick(r);
+    totals.asistentes += x.asistentes || 0;
+  });
 
   const stages = [
-    { label: 'Leads',                value: totals.leads,        color:'#3b82f6', width: 100 },
-    { label: 'Leads Aprobados',      value: totals.aprobados,    color:'#10b981', width:  85 },
-    { label: 'Leads Altos / Medios', value: totals.altos_medios, color:'#0d9488', width:  70 },
-    { label: 'Asistentes al zoom',   value: totals.asistentes,   color:'#8b5cf6', width:  55 },
+    { label: 'Leads',                              value: totals.leads,        color:'#3b82f6', width: 100 },
+    { label: 'Leads Aprobados',                    value: totals.aprobados,    color:'#10b981', width:  85 },
+    { label: 'Leads Altos / Medios',               value: totals.altos_medios, color:'#0d9488', width:  70 },
+    { label: 'Asistentes al zoom' + asistentesLabel, value: totals.asistentes, color:'#8b5cf6', width:  55, footer: FUNNEL_DIA ? 'acumulado de la semana' : 'sumado en el rango' },
   ];
 
   const cont = document.getElementById('funnel-stages');
   let html = '';
   for (let i = 0; i < stages.length; i++) {
     const s = stages[i];
+    const footerHtml = s.footer ? `<div class="text-[10px] text-gray-400 mt-1">${s.footer}</div>` : '';
     html += `
       <div class="flex justify-center my-2">
-        <div class="rounded-full border-2 border-gray-300 px-6 py-4 text-center shadow-sm transition-all" style="width:${s.width}%; background:${s.color}15; border-color:${s.color}50">
+        <div class="rounded-full border-2 px-6 py-4 text-center shadow-sm transition-all" style="width:${s.width}%; background:${s.color}15; border-color:${s.color}50">
           <div class="text-xs uppercase tracking-wide font-medium text-gray-500">${s.label}</div>
           <div class="text-2xl font-bold mt-1" style="color:${s.color}">${fmt_n(s.value)}</div>
+          ${footerHtml}
         </div>
       </div>`;
     // Conversion % to next stage
@@ -450,29 +498,30 @@ function renderFunnel(rangeRows){
   }
   cont.innerHTML = html;
 
-  // Tabla resumen — sin agregación, una fila por día del rango
+  // Tabla resumen — una fila por día. Asistentes muestra el total ACUMULADO de la SEMANA (igual valor en cada día de esa semana).
   const tbody = document.getElementById('funnel-tbody');
   const tableRows = FUNNEL_DIA ? rangeRows.filter(r => r.fecha === FUNNEL_DIA) : rangeRows;
-  // Más recientes arriba
+  const weeklyAsist = weeklyAsistentes(rangeRows, FUNNEL_CANAL);
   const sorted = [...tableRows].reverse();
   tbody.innerHTML = sorted.map(r => {
-    let leads, aprobados, altos_medios, asist, simul, cotiz;
+    let leads, aprobados, altos_medios, simul, cotiz;
     if (FUNNEL_CANAL) {
       const c = (r.canales||{})[FUNNEL_CANAL] || {};
       leads = c.leads || 0;
       aprobados = (c.alto||0)+(c.medio||0)+(c.empuje||0)+(c.aprobado_int||0);
       altos_medios = (c.alto||0)+(c.medio||0);
-      asist = c.asistentes || 0; simul = c.simulados || 0; cotiz = c.cotizados || 0;
+      simul = c.simulados || 0; cotiz = c.cotizados || 0;
     } else {
       leads = r.leads||0; aprobados = r.aprobados||0; altos_medios = r.altos_medios||0;
-      asist = r.asistentes||0; simul = r.simulados||0; cotiz = r.cotizados||0;
+      simul = r.simulados||0; cotiz = r.cotizados||0;
     }
+    const asistSemanaTotal = weeklyAsist[weekKey(r.fecha)] || 0;
     return `<tr>
       <td class="text-gray-700">${fmt_d_full(r.fecha)}</td>
       <td>${fmt_n(leads)}</td>
       <td class="text-emerald-600 font-medium">${fmt_n(aprobados)}</td>
       <td class="text-teal-600">${fmt_n(altos_medios)}</td>
-      <td>${fmt_n(asist)}</td>
+      <td title="Acumulado de la semana ${weekLabel(weekKey(r.fecha))}" class="text-violet-600">${fmt_n(asistSemanaTotal)}</td>
       <td>${fmt_n(simul)}</td>
       <td>${fmt_n(cotiz)}</td>
     </tr>`;
