@@ -1,0 +1,1703 @@
+{
+  "generated_at": "2026-05-11T16:37:41.911927+00:00",
+  "since": "2026-03-12",
+  "until": "2026-05-11",
+  "days": [
+    {
+      "fecha": "2026-03-24",
+      "meta_spend": 5.89,
+      "gads_spend": 0,
+      "total_spend": 5.89,
+      "meta_impressions": 804,
+      "meta_clicks": 57,
+      "gads_impressions": 0,
+      "gads_clicks": 0,
+      "leads": 0,
+      "aprobados": 0,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": null,
+      "cpl_aprobado": null,
+      "canales": {}
+    },
+    {
+      "fecha": "2026-03-25",
+      "meta_spend": 87.18,
+      "gads_spend": 0,
+      "total_spend": 87.18,
+      "meta_impressions": 2204,
+      "meta_clicks": 463,
+      "gads_impressions": 0,
+      "gads_clicks": 0,
+      "leads": 0,
+      "aprobados": 0,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": null,
+      "cpl_aprobado": null,
+      "canales": {}
+    },
+    {
+      "fecha": "2026-03-26",
+      "meta_spend": 68.04,
+      "gads_spend": 0,
+      "total_spend": 68.04,
+      "meta_impressions": 3150,
+      "meta_clicks": 999,
+      "gads_impressions": 0,
+      "gads_clicks": 0,
+      "leads": 0,
+      "aprobados": 0,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": null,
+      "cpl_aprobado": null,
+      "canales": {}
+    },
+    {
+      "fecha": "2026-03-27",
+      "meta_spend": 17.56,
+      "gads_spend": 0,
+      "total_spend": 17.56,
+      "meta_impressions": 550,
+      "meta_clicks": 243,
+      "gads_impressions": 0,
+      "gads_clicks": 0,
+      "leads": 0,
+      "aprobados": 0,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": null,
+      "cpl_aprobado": null,
+      "canales": {}
+    },
+    {
+      "fecha": "2026-03-28",
+      "meta_spend": 93.77,
+      "gads_spend": 0,
+      "total_spend": 93.77,
+      "meta_impressions": 4959,
+      "meta_clicks": 1597,
+      "gads_impressions": 0,
+      "gads_clicks": 0,
+      "leads": 0,
+      "aprobados": 0,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": null,
+      "cpl_aprobado": null,
+      "canales": {}
+    },
+    {
+      "fecha": "2026-03-29",
+      "meta_spend": 186.02,
+      "gads_spend": 0,
+      "total_spend": 186.02,
+      "meta_impressions": 14362,
+      "meta_clicks": 4475,
+      "gads_impressions": 0,
+      "gads_clicks": 0,
+      "leads": 0,
+      "aprobados": 0,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": null,
+      "cpl_aprobado": null,
+      "canales": {}
+    },
+    {
+      "fecha": "2026-03-30",
+      "meta_spend": 208.54,
+      "gads_spend": 0,
+      "total_spend": 208.54,
+      "meta_impressions": 21659,
+      "meta_clicks": 8882,
+      "gads_impressions": 0,
+      "gads_clicks": 0,
+      "leads": 0,
+      "aprobados": 0,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": null,
+      "cpl_aprobado": null,
+      "canales": {}
+    },
+    {
+      "fecha": "2026-03-31",
+      "meta_spend": 181.89,
+      "gads_spend": 0,
+      "total_spend": 181.89,
+      "meta_impressions": 24259,
+      "meta_clicks": 10309,
+      "gads_impressions": 0,
+      "gads_clicks": 0,
+      "leads": 0,
+      "aprobados": 0,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": null,
+      "cpl_aprobado": null,
+      "canales": {}
+    },
+    {
+      "fecha": "2026-04-01",
+      "meta_spend": 233.51,
+      "gads_spend": 0,
+      "total_spend": 233.51,
+      "meta_impressions": 28177,
+      "meta_clicks": 11906,
+      "gads_impressions": 0,
+      "gads_clicks": 0,
+      "leads": 0,
+      "aprobados": 0,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": null,
+      "cpl_aprobado": null,
+      "canales": {}
+    },
+    {
+      "fecha": "2026-04-02",
+      "meta_spend": 193.45,
+      "gads_spend": 0,
+      "total_spend": 193.45,
+      "meta_impressions": 28262,
+      "meta_clicks": 12307,
+      "gads_impressions": 0,
+      "gads_clicks": 0,
+      "leads": 0,
+      "aprobados": 0,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": null,
+      "cpl_aprobado": null,
+      "canales": {}
+    },
+    {
+      "fecha": "2026-04-03",
+      "meta_spend": 174.27,
+      "gads_spend": 0,
+      "total_spend": 174.27,
+      "meta_impressions": 27805,
+      "meta_clicks": 12064,
+      "gads_impressions": 0,
+      "gads_clicks": 0,
+      "leads": 0,
+      "aprobados": 0,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": null,
+      "cpl_aprobado": null,
+      "canales": {}
+    },
+    {
+      "fecha": "2026-04-04",
+      "meta_spend": 143.92,
+      "gads_spend": 0,
+      "total_spend": 143.92,
+      "meta_impressions": 13416,
+      "meta_clicks": 4425,
+      "gads_impressions": 0,
+      "gads_clicks": 0,
+      "leads": 0,
+      "aprobados": 0,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": null,
+      "cpl_aprobado": null,
+      "canales": {}
+    },
+    {
+      "fecha": "2026-04-05",
+      "meta_spend": 328.64,
+      "gads_spend": 0,
+      "total_spend": 328.64,
+      "meta_impressions": 24773,
+      "meta_clicks": 6655,
+      "gads_impressions": 0,
+      "gads_clicks": 0,
+      "leads": 0,
+      "aprobados": 0,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": null,
+      "cpl_aprobado": null,
+      "canales": {}
+    },
+    {
+      "fecha": "2026-04-06",
+      "meta_spend": 175.01,
+      "gads_spend": 0,
+      "total_spend": 175.01,
+      "meta_impressions": 9037,
+      "meta_clicks": 940,
+      "gads_impressions": 0,
+      "gads_clicks": 0,
+      "leads": 0,
+      "aprobados": 0,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": null,
+      "cpl_aprobado": null,
+      "canales": {}
+    },
+    {
+      "fecha": "2026-04-07",
+      "meta_spend": 473.88,
+      "gads_spend": 0,
+      "total_spend": 473.88,
+      "meta_impressions": 20846,
+      "meta_clicks": 1714,
+      "gads_impressions": 0,
+      "gads_clicks": 0,
+      "leads": 0,
+      "aprobados": 0,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": null,
+      "cpl_aprobado": null,
+      "canales": {}
+    },
+    {
+      "fecha": "2026-04-08",
+      "meta_spend": 352.89,
+      "gads_spend": 0,
+      "total_spend": 352.89,
+      "meta_impressions": 14901,
+      "meta_clicks": 1194,
+      "gads_impressions": 0,
+      "gads_clicks": 0,
+      "leads": 0,
+      "aprobados": 0,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": null,
+      "cpl_aprobado": null,
+      "canales": {}
+    },
+    {
+      "fecha": "2026-04-09",
+      "meta_spend": 356.18,
+      "gads_spend": 0,
+      "total_spend": 356.18,
+      "meta_impressions": 12858,
+      "meta_clicks": 919,
+      "gads_impressions": 0,
+      "gads_clicks": 0,
+      "leads": 0,
+      "aprobados": 0,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": null,
+      "cpl_aprobado": null,
+      "canales": {}
+    },
+    {
+      "fecha": "2026-04-10",
+      "meta_spend": 370.23,
+      "gads_spend": 0,
+      "total_spend": 370.23,
+      "meta_impressions": 13739,
+      "meta_clicks": 649,
+      "gads_impressions": 0,
+      "gads_clicks": 0,
+      "leads": 0,
+      "aprobados": 0,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": null,
+      "cpl_aprobado": null,
+      "canales": {}
+    },
+    {
+      "fecha": "2026-04-11",
+      "meta_spend": 387.14,
+      "gads_spend": 48.05,
+      "total_spend": 435.19,
+      "meta_impressions": 14747,
+      "meta_clicks": 537,
+      "gads_impressions": 8103,
+      "gads_clicks": 454,
+      "leads": 0,
+      "aprobados": 0,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": null,
+      "cpl_aprobado": null,
+      "canales": {}
+    },
+    {
+      "fecha": "2026-04-12",
+      "meta_spend": 560.1,
+      "gads_spend": 32.01,
+      "total_spend": 592.11,
+      "meta_impressions": 22888,
+      "meta_clicks": 799,
+      "gads_impressions": 3786,
+      "gads_clicks": 480,
+      "leads": 110,
+      "aprobados": 86,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 5.38,
+      "cpl_aprobado": 6.88,
+      "canales": {
+        "Audience Network": {
+          "leads": 2,
+          "aprobados": 2,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Facebook": {
+          "leads": 53,
+          "aprobados": 38,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Google": {
+          "leads": 6,
+          "aprobados": 6,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 44,
+          "aprobados": 38,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "landing-meta": {
+          "leads": 4,
+          "aprobados": 2,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "th": {
+          "leads": 1,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-04-13",
+      "meta_spend": 524.03,
+      "gads_spend": 30.67,
+      "total_spend": 554.7,
+      "meta_impressions": 22101,
+      "meta_clicks": 802,
+      "gads_impressions": 4770,
+      "gads_clicks": 560,
+      "leads": 44,
+      "aprobados": 32,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 12.61,
+      "cpl_aprobado": 17.33,
+      "canales": {
+        "Facebook": {
+          "leads": 19,
+          "aprobados": 15,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 24,
+          "aprobados": 17,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "landing-meta": {
+          "leads": 1,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-04-14",
+      "meta_spend": 382.24,
+      "gads_spend": 6.84,
+      "total_spend": 389.08,
+      "meta_impressions": 12814,
+      "meta_clicks": 486,
+      "gads_impressions": 141,
+      "gads_clicks": 34,
+      "leads": 32,
+      "aprobados": 23,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 12.16,
+      "cpl_aprobado": 16.92,
+      "canales": {
+        "Facebook": {
+          "leads": 15,
+          "aprobados": 12,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 17,
+          "aprobados": 11,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-04-15",
+      "meta_spend": 404.99,
+      "gads_spend": 10.77,
+      "total_spend": 415.76,
+      "meta_impressions": 13375,
+      "meta_clicks": 450,
+      "gads_impressions": 323,
+      "gads_clicks": 37,
+      "leads": 15,
+      "aprobados": 10,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 27.72,
+      "cpl_aprobado": 41.58,
+      "canales": {
+        "Audience Network": {
+          "leads": 1,
+          "aprobados": 1,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Facebook": {
+          "leads": 8,
+          "aprobados": 7,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 4,
+          "aprobados": 2,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "landing-meta": {
+          "leads": 2,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-04-16",
+      "meta_spend": 408.05,
+      "gads_spend": 26.98,
+      "total_spend": 435.03,
+      "meta_impressions": 12602,
+      "meta_clicks": 602,
+      "gads_impressions": 499,
+      "gads_clicks": 39,
+      "leads": 43,
+      "aprobados": 28,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 10.12,
+      "cpl_aprobado": 15.54,
+      "canales": {
+        "Audience Network": {
+          "leads": 3,
+          "aprobados": 1,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Facebook": {
+          "leads": 15,
+          "aprobados": 8,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 19,
+          "aprobados": 15,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "landing-meta": {
+          "leads": 5,
+          "aprobados": 4,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "th": {
+          "leads": 1,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-04-17",
+      "meta_spend": 349.77,
+      "gads_spend": 38.4,
+      "total_spend": 388.17,
+      "meta_impressions": 12072,
+      "meta_clicks": 440,
+      "gads_impressions": 327,
+      "gads_clicks": 42,
+      "leads": 53,
+      "aprobados": 38,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 7.32,
+      "cpl_aprobado": 10.21,
+      "canales": {
+        "Audience Network": {
+          "leads": 1,
+          "aprobados": 1,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Facebook": {
+          "leads": 14,
+          "aprobados": 11,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 19,
+          "aprobados": 15,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "landing-meta": {
+          "leads": 19,
+          "aprobados": 11,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-04-18",
+      "meta_spend": 365.95,
+      "gads_spend": 21.06,
+      "total_spend": 387.01,
+      "meta_impressions": 12042,
+      "meta_clicks": 584,
+      "gads_impressions": 106,
+      "gads_clicks": 24,
+      "leads": 31,
+      "aprobados": 24,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 12.48,
+      "cpl_aprobado": 16.13,
+      "canales": {
+        "Audience Network": {
+          "leads": 3,
+          "aprobados": 3,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Facebook": {
+          "leads": 11,
+          "aprobados": 7,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 14,
+          "aprobados": 13,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "landing-meta": {
+          "leads": 3,
+          "aprobados": 1,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-04-19",
+      "meta_spend": 387.18,
+      "gads_spend": 19.4,
+      "total_spend": 406.58,
+      "meta_impressions": 10573,
+      "meta_clicks": 618,
+      "gads_impressions": 294,
+      "gads_clicks": 34,
+      "leads": 20,
+      "aprobados": 15,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 20.33,
+      "cpl_aprobado": 27.11,
+      "canales": {
+        "Facebook": {
+          "leads": 7,
+          "aprobados": 4,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 9,
+          "aprobados": 7,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "landing-meta": {
+          "leads": 3,
+          "aprobados": 3,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "th": {
+          "leads": 1,
+          "aprobados": 1,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-04-20",
+      "meta_spend": 267.51,
+      "gads_spend": 24.08,
+      "total_spend": 291.59,
+      "meta_impressions": 7628,
+      "meta_clicks": 393,
+      "gads_impressions": 354,
+      "gads_clicks": 60,
+      "leads": 15,
+      "aprobados": 11,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 19.44,
+      "cpl_aprobado": 26.51,
+      "canales": {
+        "Facebook": {
+          "leads": 5,
+          "aprobados": 4,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 7,
+          "aprobados": 6,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "landing-meta": {
+          "leads": 3,
+          "aprobados": 1,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-04-21",
+      "meta_spend": 448.96,
+      "gads_spend": 27.91,
+      "total_spend": 476.87,
+      "meta_impressions": 12983,
+      "meta_clicks": 848,
+      "gads_impressions": 483,
+      "gads_clicks": 75,
+      "leads": 43,
+      "aprobados": 34,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 11.09,
+      "cpl_aprobado": 14.03,
+      "canales": {
+        "Audience Network": {
+          "leads": 4,
+          "aprobados": 3,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Facebook": {
+          "leads": 10,
+          "aprobados": 9,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Google": {
+          "leads": 8,
+          "aprobados": 5,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 21,
+          "aprobados": 17,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-04-22",
+      "meta_spend": 402.92,
+      "gads_spend": 53.96,
+      "total_spend": 456.88,
+      "meta_impressions": 12071,
+      "meta_clicks": 1030,
+      "gads_impressions": 590,
+      "gads_clicks": 84,
+      "leads": 40,
+      "aprobados": 36,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 11.42,
+      "cpl_aprobado": 12.69,
+      "canales": {
+        "Audience Network": {
+          "leads": 5,
+          "aprobados": 5,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Facebook": {
+          "leads": 16,
+          "aprobados": 15,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Google": {
+          "leads": 12,
+          "aprobados": 10,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 7,
+          "aprobados": 6,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-04-23",
+      "meta_spend": 329.53,
+      "gads_spend": 21.68,
+      "total_spend": 351.21,
+      "meta_impressions": 10226,
+      "meta_clicks": 865,
+      "gads_impressions": 389,
+      "gads_clicks": 44,
+      "leads": 64,
+      "aprobados": 48,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 5.49,
+      "cpl_aprobado": 7.32,
+      "canales": {
+        "Audience Network": {
+          "leads": 10,
+          "aprobados": 2,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Facebook": {
+          "leads": 33,
+          "aprobados": 27,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Google": {
+          "leads": 9,
+          "aprobados": 8,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 12,
+          "aprobados": 11,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-04-24",
+      "meta_spend": 187.23,
+      "gads_spend": 21.49,
+      "total_spend": 208.72,
+      "meta_impressions": 6943,
+      "meta_clicks": 525,
+      "gads_impressions": 604,
+      "gads_clicks": 87,
+      "leads": 33,
+      "aprobados": 28,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 6.32,
+      "cpl_aprobado": 7.45,
+      "canales": {
+        "Audience Network": {
+          "leads": 2,
+          "aprobados": 1,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Facebook": {
+          "leads": 21,
+          "aprobados": 19,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Google": {
+          "leads": 3,
+          "aprobados": 3,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 7,
+          "aprobados": 5,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-04-25",
+      "meta_spend": 164.98,
+      "gads_spend": 68.91,
+      "total_spend": 233.89,
+      "meta_impressions": 5641,
+      "meta_clicks": 393,
+      "gads_impressions": 832,
+      "gads_clicks": 115,
+      "leads": 30,
+      "aprobados": 24,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 7.8,
+      "cpl_aprobado": 9.75,
+      "canales": {
+        "Audience Network": {
+          "leads": 4,
+          "aprobados": 2,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Facebook": {
+          "leads": 16,
+          "aprobados": 14,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Google": {
+          "leads": 7,
+          "aprobados": 5,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 3,
+          "aprobados": 3,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-04-26",
+      "meta_spend": 227.55,
+      "gads_spend": 38.65,
+      "total_spend": 266.2,
+      "meta_impressions": 7549,
+      "meta_clicks": 491,
+      "gads_impressions": 439,
+      "gads_clicks": 130,
+      "leads": 20,
+      "aprobados": 16,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 13.31,
+      "cpl_aprobado": 16.64,
+      "canales": {
+        "Audience Network": {
+          "leads": 1,
+          "aprobados": 1,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Facebook": {
+          "leads": 12,
+          "aprobados": 11,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Google": {
+          "leads": 5,
+          "aprobados": 2,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 2,
+          "aprobados": 2,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-04-27",
+      "meta_spend": 206.3,
+      "gads_spend": 33.7,
+      "total_spend": 240.0,
+      "meta_impressions": 7889,
+      "meta_clicks": 468,
+      "gads_impressions": 538,
+      "gads_clicks": 102,
+      "leads": 38,
+      "aprobados": 23,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 6.32,
+      "cpl_aprobado": 10.43,
+      "canales": {
+        "Audience Network": {
+          "leads": 4,
+          "aprobados": 3,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Facebook": {
+          "leads": 20,
+          "aprobados": 16,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Google": {
+          "leads": 8,
+          "aprobados": 2,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 6,
+          "aprobados": 2,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-04-28",
+      "meta_spend": 196.08,
+      "gads_spend": 15.46,
+      "total_spend": 211.54,
+      "meta_impressions": 7804,
+      "meta_clicks": 430,
+      "gads_impressions": 657,
+      "gads_clicks": 68,
+      "leads": 26,
+      "aprobados": 17,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 8.14,
+      "cpl_aprobado": 12.44,
+      "canales": {
+        "Audience Network": {
+          "leads": 1,
+          "aprobados": 1,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Facebook": {
+          "leads": 11,
+          "aprobados": 7,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Google": {
+          "leads": 8,
+          "aprobados": 4,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 6,
+          "aprobados": 5,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-04-29",
+      "meta_spend": 191.41,
+      "gads_spend": 58.76,
+      "total_spend": 250.17,
+      "meta_impressions": 6644,
+      "meta_clicks": 295,
+      "gads_impressions": 1140,
+      "gads_clicks": 130,
+      "leads": 24,
+      "aprobados": 16,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 10.42,
+      "cpl_aprobado": 15.64,
+      "canales": {
+        "Facebook": {
+          "leads": 14,
+          "aprobados": 11,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Google": {
+          "leads": 7,
+          "aprobados": 3,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 3,
+          "aprobados": 2,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-04-30",
+      "meta_spend": 193.36,
+      "gads_spend": 32.04,
+      "total_spend": 225.4,
+      "meta_impressions": 5654,
+      "meta_clicks": 270,
+      "gads_impressions": 665,
+      "gads_clicks": 106,
+      "leads": 19,
+      "aprobados": 13,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 11.86,
+      "cpl_aprobado": 17.34,
+      "canales": {
+        "Facebook": {
+          "leads": 7,
+          "aprobados": 6,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Google": {
+          "leads": 6,
+          "aprobados": 2,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 5,
+          "aprobados": 4,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "undefined": {
+          "leads": 1,
+          "aprobados": 1,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-05-01",
+      "meta_spend": 214.86,
+      "gads_spend": 30.43,
+      "total_spend": 245.29,
+      "meta_impressions": 7426,
+      "meta_clicks": 375,
+      "gads_impressions": 777,
+      "gads_clicks": 129,
+      "leads": 24,
+      "aprobados": 19,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 10.22,
+      "cpl_aprobado": 12.91,
+      "canales": {
+        "Facebook": {
+          "leads": 10,
+          "aprobados": 9,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Google": {
+          "leads": 5,
+          "aprobados": 3,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 9,
+          "aprobados": 7,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-05-02",
+      "meta_spend": 163.42,
+      "gads_spend": 35.38,
+      "total_spend": 198.8,
+      "meta_impressions": 5782,
+      "meta_clicks": 309,
+      "gads_impressions": 440,
+      "gads_clicks": 84,
+      "leads": 26,
+      "aprobados": 20,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 7.65,
+      "cpl_aprobado": 9.94,
+      "canales": {
+        "Audience Network": {
+          "leads": 1,
+          "aprobados": 1,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Facebook": {
+          "leads": 6,
+          "aprobados": 3,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Google": {
+          "leads": 7,
+          "aprobados": 7,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 12,
+          "aprobados": 9,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-05-03",
+      "meta_spend": 233.75,
+      "gads_spend": 38.78,
+      "total_spend": 272.53,
+      "meta_impressions": 9329,
+      "meta_clicks": 542,
+      "gads_impressions": 738,
+      "gads_clicks": 103,
+      "leads": 54,
+      "aprobados": 37,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 5.05,
+      "cpl_aprobado": 7.37,
+      "canales": {
+        "Audience Network": {
+          "leads": 1,
+          "aprobados": 1,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Facebook": {
+          "leads": 25,
+          "aprobados": 17,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Google": {
+          "leads": 12,
+          "aprobados": 9,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 16,
+          "aprobados": 10,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-05-04",
+      "meta_spend": 212.32,
+      "gads_spend": 30.61,
+      "total_spend": 242.93,
+      "meta_impressions": 9383,
+      "meta_clicks": 447,
+      "gads_impressions": 911,
+      "gads_clicks": 85,
+      "leads": 37,
+      "aprobados": 26,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 6.57,
+      "cpl_aprobado": 9.34,
+      "canales": {
+        "Facebook": {
+          "leads": 16,
+          "aprobados": 10,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Google": {
+          "leads": 10,
+          "aprobados": 9,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 11,
+          "aprobados": 7,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-05-05",
+      "meta_spend": 190.42,
+      "gads_spend": 40.84,
+      "total_spend": 231.26,
+      "meta_impressions": 7556,
+      "meta_clicks": 412,
+      "gads_impressions": 618,
+      "gads_clicks": 75,
+      "leads": 44,
+      "aprobados": 34,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 5.26,
+      "cpl_aprobado": 6.8,
+      "canales": {
+        "Audience Network": {
+          "leads": 1,
+          "aprobados": 1,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Facebook": {
+          "leads": 19,
+          "aprobados": 14,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Google": {
+          "leads": 8,
+          "aprobados": 8,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 16,
+          "aprobados": 11,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-05-06",
+      "meta_spend": 200.93,
+      "gads_spend": 35.39,
+      "total_spend": 236.32,
+      "meta_impressions": 8037,
+      "meta_clicks": 429,
+      "gads_impressions": 708,
+      "gads_clicks": 71,
+      "leads": 31,
+      "aprobados": 26,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 7.62,
+      "cpl_aprobado": 9.09,
+      "canales": {
+        "Audience Network": {
+          "leads": 1,
+          "aprobados": 1,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Facebook": {
+          "leads": 12,
+          "aprobados": 9,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Google": {
+          "leads": 8,
+          "aprobados": 8,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 10,
+          "aprobados": 8,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-05-07",
+      "meta_spend": 183.76,
+      "gads_spend": 30.12,
+      "total_spend": 213.88,
+      "meta_impressions": 7034,
+      "meta_clicks": 349,
+      "gads_impressions": 291,
+      "gads_clicks": 63,
+      "leads": 29,
+      "aprobados": 21,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 7.38,
+      "cpl_aprobado": 10.18,
+      "canales": {
+        "Facebook": {
+          "leads": 9,
+          "aprobados": 8,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Google": {
+          "leads": 13,
+          "aprobados": 11,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 7,
+          "aprobados": 2,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-05-08",
+      "meta_spend": 189.99,
+      "gads_spend": 28.21,
+      "total_spend": 218.2,
+      "meta_impressions": 8116,
+      "meta_clicks": 365,
+      "gads_impressions": 536,
+      "gads_clicks": 54,
+      "leads": 24,
+      "aprobados": 20,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 9.09,
+      "cpl_aprobado": 10.91,
+      "canales": {
+        "Audience Network": {
+          "leads": 1,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Facebook": {
+          "leads": 12,
+          "aprobados": 9,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Google": {
+          "leads": 4,
+          "aprobados": 4,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 7,
+          "aprobados": 7,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-05-09",
+      "meta_spend": 174.83,
+      "gads_spend": 54.58,
+      "total_spend": 229.41,
+      "meta_impressions": 7358,
+      "meta_clicks": 322,
+      "gads_impressions": 1255,
+      "gads_clicks": 77,
+      "leads": 43,
+      "aprobados": 33,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 5.34,
+      "cpl_aprobado": 6.95,
+      "canales": {
+        "Facebook": {
+          "leads": 13,
+          "aprobados": 9,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Google": {
+          "leads": 11,
+          "aprobados": 9,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 19,
+          "aprobados": 15,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-05-10",
+      "meta_spend": 214.59,
+      "gads_spend": 38.71,
+      "total_spend": 253.3,
+      "meta_impressions": 7770,
+      "meta_clicks": 376,
+      "gads_impressions": 982,
+      "gads_clicks": 67,
+      "leads": 28,
+      "aprobados": 25,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 9.05,
+      "cpl_aprobado": 10.13,
+      "canales": {
+        "Facebook": {
+          "leads": 8,
+          "aprobados": 6,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Google": {
+          "leads": 5,
+          "aprobados": 4,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 15,
+          "aprobados": 15,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-05-11",
+      "meta_spend": 68.71,
+      "gads_spend": 8.58,
+      "total_spend": 77.29,
+      "meta_impressions": 2719,
+      "meta_clicks": 115,
+      "gads_impressions": 324,
+      "gads_clicks": 20,
+      "leads": 27,
+      "aprobados": 23,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 0,
+      "cpl": 2.86,
+      "cpl_aprobado": 3.36,
+      "canales": {
+        "Facebook": {
+          "leads": 8,
+          "aprobados": 8,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Google": {
+          "leads": 12,
+          "aprobados": 9,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        },
+        "Instagram": {
+          "leads": 7,
+          "aprobados": 6,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0
+        }
+      }
+    }
+  ]
+}

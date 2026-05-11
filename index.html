@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inversión en Pauta — Proper</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    .kpi-card { transition: all .15s ease; }
+    .kpi-card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -10px rgba(0,0,0,.1); }
+    .chart-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.25rem; }
+    .pill { display: inline-flex; align-items: center; padding: .25rem .75rem; border-radius: 9999px; font-size: .75rem; font-weight: 500; }
+    .pill-active { background: #3b82f6; color: white; }
+    .pill-inactive { background: #f3f4f6; color: #4b5563; }
+    .pill-inactive:hover { background: #e5e7eb; }
+    table.data-table th { font-weight: 600; color: #6b7280; text-transform: uppercase; font-size: .7rem; letter-spacing: .05em; }
+    table.data-table td, table.data-table th { padding: .5rem .75rem; border-bottom: 1px solid #f3f4f6; text-align: right; }
+    table.data-table td:first-child, table.data-table th:first-child { text-align: left; }
+    table.data-table tbody tr:hover { background: #fafafa; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+  <!-- HEADER -->
+  <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-8">
+    <div>
+      <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">💰 Inversión en Pauta</h1>
+      <p class="text-sm text-gray-500 mt-1">Proper · Landing Inversiones · Meta Ads + Google Ads</p>
+    </div>
+    <div class="text-xs text-gray-400 mt-2 sm:mt-0">
+      Actualizado: <span id="updated-at">—</span>
+    </div>
+  </div>
+
+  <!-- FILTROS -->
+  <div class="flex flex-wrap gap-2 mb-6">
+    <span class="text-xs text-gray-500 self-center mr-2">Rango:</span>
+    <button data-range="7"  class="range-btn pill pill-inactive">7 días</button>
+    <button data-range="14" class="range-btn pill pill-inactive">14 días</button>
+    <button data-range="30" class="range-btn pill pill-active">30 días</button>
+    <button data-range="60" class="range-btn pill pill-inactive">60 días</button>
+    <button data-range="mtd" class="range-btn pill pill-inactive">Mes en curso</button>
+  </div>
+
+  <!-- KPI CARDS -->
+  <div class="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
+    <div class="kpi-card bg-white border border-gray-200 rounded-xl p-5">
+      <div class="text-xs text-gray-500 font-medium uppercase tracking-wide">Inversión total</div>
+      <div class="mt-2 text-2xl font-bold text-gray-900" id="kpi-spend">—</div>
+      <div class="mt-1 text-xs text-gray-400" id="kpi-spend-split">—</div>
+    </div>
+    <div class="kpi-card bg-white border border-gray-200 rounded-xl p-5">
+      <div class="text-xs text-gray-500 font-medium uppercase tracking-wide">Leads</div>
+      <div class="mt-2 text-2xl font-bold text-gray-900" id="kpi-leads">—</div>
+      <div class="mt-1 text-xs text-gray-400" id="kpi-leads-avg">—</div>
+    </div>
+    <div class="kpi-card bg-white border border-gray-200 rounded-xl p-5">
+      <div class="text-xs text-gray-500 font-medium uppercase tracking-wide">Aprobados</div>
+      <div class="mt-2 text-2xl font-bold text-emerald-600" id="kpi-aprobados">—</div>
+      <div class="mt-1 text-xs text-gray-400" id="kpi-tasa-apr">—</div>
+    </div>
+    <div class="kpi-card bg-white border border-gray-200 rounded-xl p-5">
+      <div class="text-xs text-gray-500 font-medium uppercase tracking-wide">CPL</div>
+      <div class="mt-2 text-2xl font-bold text-blue-600" id="kpi-cpl">—</div>
+      <div class="mt-1 text-xs text-gray-400">general</div>
+    </div>
+    <div class="kpi-card bg-white border border-gray-200 rounded-xl p-5">
+      <div class="text-xs text-gray-500 font-medium uppercase tracking-wide">CPL Aprobado</div>
+      <div class="mt-2 text-2xl font-bold text-blue-700" id="kpi-cpl-ap">—</div>
+      <div class="mt-1 text-xs text-gray-400">por lead aprobado</div>
+    </div>
+  </div>
+
+  <!-- CHARTS GRID -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+    <!-- Spend by day -->
+    <div class="chart-card lg:col-span-2">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-sm font-semibold text-gray-700">Inversión diaria</h3>
+        <div class="flex gap-3 text-xs text-gray-500">
+          <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-sm" style="background:#1877f2"></span> Meta</span>
+          <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-sm" style="background:#fbbc04"></span> Google</span>
+        </div>
+      </div>
+      <div class="h-72"><canvas id="chart-spend"></canvas></div>
+    </div>
+
+    <!-- Leads + Aprobados -->
+    <div class="chart-card">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-sm font-semibold text-gray-700">Leads y Aprobados</h3>
+        <div class="flex gap-3 text-xs text-gray-500">
+          <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full" style="background:#3b82f6"></span> Leads</span>
+          <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full" style="background:#10b981"></span> Aprobados</span>
+        </div>
+      </div>
+      <div class="h-64"><canvas id="chart-leads"></canvas></div>
+    </div>
+
+    <!-- CPL -->
+    <div class="chart-card">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-sm font-semibold text-gray-700">CPL diario</h3>
+        <div class="flex gap-3 text-xs text-gray-500">
+          <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full" style="background:#6366f1"></span> CPL</span>
+          <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full" style="background:#a78bfa"></span> CPL Aprobado</span>
+        </div>
+      </div>
+      <div class="h-64"><canvas id="chart-cpl"></canvas></div>
+    </div>
+
+    <!-- Channel breakdown -->
+    <div class="chart-card">
+      <h3 class="text-sm font-semibold text-gray-700 mb-4">Leads por canal (acumulado del rango)</h3>
+      <div class="h-64"><canvas id="chart-canales"></canvas></div>
+    </div>
+
+    <!-- Aprobados por categoría -->
+    <div class="chart-card">
+      <h3 class="text-sm font-semibold text-gray-700 mb-4">Aprobados por categoría</h3>
+      <div class="h-64"><canvas id="chart-categoria"></canvas></div>
+    </div>
+  </div>
+
+  <!-- DATA TABLE -->
+  <div class="chart-card">
+    <div class="flex items-center justify-between mb-4">
+      <h3 class="text-sm font-semibold text-gray-700">Detalle diario</h3>
+      <span class="text-xs text-gray-400">Click en cabecera para ordenar</span>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="data-table w-full text-sm">
+        <thead>
+          <tr class="border-b-2 border-gray-200">
+            <th class="cursor-pointer" data-sort="fecha">Fecha</th>
+            <th class="cursor-pointer" data-sort="total_spend">Inversión</th>
+            <th class="cursor-pointer" data-sort="meta_spend">Meta</th>
+            <th class="cursor-pointer" data-sort="gads_spend">Google</th>
+            <th class="cursor-pointer" data-sort="leads">Leads</th>
+            <th class="cursor-pointer" data-sort="aprobados">Aprobados</th>
+            <th class="cursor-pointer" data-sort="cpl">CPL</th>
+            <th class="cursor-pointer" data-sort="cpl_aprobado">CPL Apr</th>
+          </tr>
+        </thead>
+        <tbody id="data-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer class="mt-12 pt-6 border-t border-gray-200 text-center text-xs text-gray-400">
+    Generado desde Meta Ads Insights API, Google Ads API y <code>leads_landing_meta_proper</code>.
+    Solo campañas con "LANDING" en el nombre.
+  </footer>
+</div>
+
+<script src="./app.js"></script>
+</body>
+</html>
