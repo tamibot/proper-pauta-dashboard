@@ -721,61 +721,83 @@ async function init(){
     });
   });
 
-  // Range buttons
+  // Range preset buttons
   document.querySelectorAll('.range-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.range-btn').forEach(b => { b.classList.remove('pill-active'); b.classList.add('pill-inactive'); });
-      btn.classList.remove('pill-inactive');
-      btn.classList.add('pill-active');
+      btn.classList.remove('pill-inactive'); btn.classList.add('pill-active');
       CURRENT_RANGE = btn.dataset.range;
-      // mostrar/ocultar inputs custom
-      const cont = document.getElementById('custom-range-inputs');
-      if (CURRENT_RANGE === 'custom') {
-        cont.classList.remove('hidden');
-        cont.classList.add('flex');
-        // si no hay fechas seteadas, prellenar con últimos 30 días
-        if (!CUSTOM_FROM || !CUSTOM_TO) {
-          const lastDate = DATA.days[DATA.days.length-1].fecha;
-          const firstDate = DATA.days[Math.max(0, DATA.days.length-30)].fecha;
-          CUSTOM_FROM = firstDate;
-          CUSTOM_TO   = lastDate;
-          document.getElementById('custom-from').value = firstDate;
-          document.getElementById('custom-to').value   = lastDate;
-          // setear min/max según data disponible
-          const earliest = DATA.days[0].fecha;
-          document.getElementById('custom-from').min = earliest;
-          document.getElementById('custom-from').max = lastDate;
-          document.getElementById('custom-to').min   = earliest;
-          document.getElementById('custom-to').max   = lastDate;
-        }
-      } else {
-        cont.classList.add('hidden');
-        cont.classList.remove('flex');
-      }
+      // limpiar daterange visual
+      const dr = window.__daterangePicker;
+      if (dr) dr.clear();
       render();
     });
   });
 
-  // Custom range apply
-  document.getElementById('custom-apply').addEventListener('click', () => {
-    const f = document.getElementById('custom-from').value;
-    const t = document.getElementById('custom-to').value;
-    if (!f || !t) return;
-    if (f > t) { alert('La fecha inicial debe ser anterior a la final.'); return; }
-    CUSTOM_FROM = f;
-    CUSTOM_TO   = t;
-    CURRENT_RANGE = 'custom';
-    render();
-  });
-  // Auto-aplicar al cambiar inputs
-  ['custom-from','custom-to'].forEach(id => {
-    document.getElementById(id).addEventListener('change', () => {
-      const f = document.getElementById('custom-from').value;
-      const t = document.getElementById('custom-to').value;
-      if (f && t && f <= t) {
-        CUSTOM_FROM = f; CUSTOM_TO = t; CURRENT_RANGE = 'custom'; render();
+  // ========================================================
+  // Flatpickr range picker (estilo Meta — 2 meses, range mode)
+  // ========================================================
+  const earliest = DATA.days[0].fecha;
+  const latest   = DATA.days[DATA.days.length-1].fecha;
+  window.__daterangePicker = flatpickr('#daterange', {
+    mode: 'range',
+    locale: 'es',
+    dateFormat: 'Y-m-d',
+    altInput: true,           // mostrar formato bonito al usuario
+    altFormat: 'd M Y',
+    minDate: earliest,
+    maxDate: latest,
+    showMonths: window.innerWidth > 720 ? 2 : 1,
+    disableMobile: true,      // forzar UI custom en móvil también
+    onChange: (selectedDates, dateStr) => {
+      if (selectedDates.length === 2) {
+        const f = selectedDates[0].toISOString().slice(0,10);
+        const t = selectedDates[1].toISOString().slice(0,10);
+        CUSTOM_FROM = f; CUSTOM_TO = t; CURRENT_RANGE = 'custom';
+        // marcar como activo
+        document.querySelectorAll('.range-btn').forEach(b => { b.classList.remove('pill-active'); b.classList.add('pill-inactive'); });
+        render();
       }
-    });
+    },
+    onReady: (selectedDates, dateStr, instance) => {
+      // Inyectar mini-presets dentro del calendario (a la Meta)
+      const presets = document.createElement('div');
+      presets.className = 'daterange-presets';
+      const opts = [
+        ['Hoy',       0,  0],
+        ['Ayer',      1,  1],
+        ['7 días',    6,  0],
+        ['14 días',  13,  0],
+        ['30 días',  29,  0],
+        ['Mes actual','mtd', null],
+        ['Mes pasado','prev', null],
+      ];
+      opts.forEach(([label, a, b]) => {
+        const btn = document.createElement('button');
+        btn.textContent = label; btn.type = 'button';
+        btn.onclick = (e) => {
+          e.preventDefault();
+          let start, end;
+          const today = new Date();
+          if (a === 'mtd') {
+            start = new Date(today.getFullYear(), today.getMonth(), 1);
+            end   = today;
+          } else if (a === 'prev') {
+            start = new Date(today.getFullYear(), today.getMonth()-1, 1);
+            end   = new Date(today.getFullYear(), today.getMonth(), 0);
+          } else {
+            end   = new Date(today); end.setDate(today.getDate() - b);
+            start = new Date(today); start.setDate(today.getDate() - a);
+          }
+          // Clampear a data disponible
+          const e0 = new Date(earliest+'T00:00'), e1 = new Date(latest+'T00:00');
+          if (start < e0) start = e0; if (end > e1) end = e1;
+          instance.setDate([start, end], true);
+        };
+        presets.appendChild(btn);
+      });
+      instance.calendarContainer.appendChild(presets);
+    }
   });
 
   // Tabs Meta/Google
