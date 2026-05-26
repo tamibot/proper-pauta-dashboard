@@ -396,6 +396,57 @@
       </div>
     </div>
 
+    <!-- =============================================================== -->
+    <!-- HISTÓRICO: últimos 6 meses                                       -->
+    <!-- =============================================================== -->
+    <div class="chart-card mt-6" id="historico-card">
+      <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+        <div>
+          <h3 class="text-sm font-bold text-gray-900">📅 Histórico — últimos 6 meses</h3>
+          <p class="text-xs text-gray-500 mt-1">Gasto real por canal. <span class="font-medium">El mes en curso está parcial</span> (hasta hoy).</p>
+        </div>
+        <div class="sub-tabs">
+          <button class="sub-tab active" data-hist-view="tabla">📋 Tabla</button>
+          <button class="sub-tab"        data-hist-view="chart">📈 Evolución</button>
+        </div>
+      </div>
+
+      <!-- Tabla histórico -->
+      <div id="hist-tabla">
+        <div class="overflow-x-auto">
+          <table class="budget-table">
+            <thead>
+              <tr>
+                <th>Mes</th>
+                <th>Total</th>
+                <th>% Tope</th>
+                <th>🏠 Inv</th>
+                <th>Inv FB</th>
+                <th>Inv GAds</th>
+                <th>🏘️ Ren</th>
+                <th>Ren FB</th>
+                <th>Ren GAds</th>
+              </tr>
+            </thead>
+            <tbody id="hist-tbody"></tbody>
+          </table>
+        </div>
+        <div class="text-[11px] text-gray-500 mt-2">
+          % Tope se calcula contra el budget actual de S/9,300 (referencial — los budgets mensuales pueden variar).
+        </div>
+      </div>
+
+      <!-- Chart evolución -->
+      <div id="hist-chart" style="display:none">
+        <div class="h-72"><canvas id="chart-historico"></canvas></div>
+        <div class="flex gap-4 mt-3 justify-center text-xs text-gray-600 flex-wrap">
+          <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-sm" style="background:#4f46e5"></span> Inversiones</span>
+          <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-sm" style="background:#10b981"></span> Rentas</span>
+          <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full border-2 border-dashed" style="border-color:#94a3b8"></span> Tope mensual (S/9,300)</span>
+        </div>
+      </div>
+    </div>
+
   </div><!-- /vista-presupuesto -->
 
   <!-- =================================================================== -->
@@ -643,7 +694,7 @@
   </footer>
 </div>
 
-<!-- v10 — Vista Presupuesto separada (Actual + Simulador editable con persistencia) -->
-<script src="./app.js?v=10"></script>
+<!-- v11 — Histórico 6 meses (tabla + chart de evolución) -->
+<script src="./app.js?v=11"></script>
 </body>
 </html>

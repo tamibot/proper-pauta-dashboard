@@ -1251,13 +1251,163 @@ function wireTabs() {
   document.querySelectorAll('.view-tab').forEach(btn => {
     btn.addEventListener('click', () => switchMainView(btn.dataset.view));
   });
-  document.querySelectorAll('.sub-tab').forEach(btn => {
+  // Sub-tabs del simulador (data-mode)
+  document.querySelectorAll('.sub-tab[data-mode]').forEach(btn => {
     btn.addEventListener('click', () => switchBudgetMode(btn.dataset.mode));
+  });
+  // Sub-tabs del histórico (data-hist-view)
+  document.querySelectorAll('.sub-tab[data-hist-view]').forEach(btn => {
+    btn.addEventListener('click', () => switchHistView(btn.dataset.histView));
   });
   // Restaurar de URL hash
   const hash = (location.hash || '').replace('#','');
   if (hash === 'dashboard') switchMainView('dashboard');
   else switchMainView('presupuesto');
+}
+
+// ============================================================
+// Histórico: tabla + chart de evolución (últimos 6 meses)
+// ============================================================
+let CHART_HISTORICO = null;
+
+function renderHistoricoTabla() {
+  const months = DATA.historical_months || [];
+  const card = document.getElementById('historico-card');
+  if (!months.length) {
+    if (card) card.style.display = 'none';
+    return;
+  }
+  card.style.display = '';
+  const tbody = document.getElementById('hist-tbody');
+  const tope = DATA.budget_by_product?.total?.budget || 9300;
+
+  tbody.innerHTML = months.map(m => {
+    const cur = m.is_current;
+    const rowCls = cur ? 'style="background:#fef3c7"' : '';
+    const pctVal = m.pct_vs_budget || 0;
+    let pctCls = 'delta-zero';
+    if (pctVal > 100) pctCls = 'delta-pos';      // sobre tope
+    else if (pctVal > 80) pctCls = '';            // amarillo neutral
+    else pctCls = 'delta-neg';                    // bajo
+
+    const partialTag = cur ? `<span class="text-[9px] uppercase font-bold text-amber-700 ml-1">parcial</span>` : '';
+
+    return `<tr ${rowCls}>
+      <td>${m.label}${partialTag}</td>
+      <td><strong>${fmt_s(m.total_spend)}</strong></td>
+      <td class="${pctCls}">${pctVal.toFixed(1)}%</td>
+      <td>${fmt_s(m.inversiones.total)}</td>
+      <td class="text-gray-500">${fmt_s(m.inversiones.facebook)}</td>
+      <td class="text-gray-500">${fmt_s(m.inversiones.google)}</td>
+      <td>${fmt_s(m.rentas.total)}</td>
+      <td class="text-gray-500">${fmt_s(m.rentas.facebook)}</td>
+      <td class="text-gray-500">${fmt_s(m.rentas.google)}</td>
+    </tr>`;
+  }).join('');
+}
+
+function renderHistoricoChart() {
+  const months = DATA.historical_months || [];
+  if (!months.length) return;
+  const ctx = document.getElementById('chart-historico');
+  if (!ctx) return;
+  if (CHART_HISTORICO) { CHART_HISTORICO.destroy(); CHART_HISTORICO = null; }
+
+  const labels = months.map(m => m.label.replace(/ \(d\d+\)/, ''));
+  const invData = months.map(m => m.inversiones.total);
+  const renData = months.map(m => m.rentas.total);
+  const tope = DATA.budget_by_product?.total?.budget || 9300;
+  const topeData = months.map(() => tope);
+  const isPartialIdx = months.findIndex(m => m.is_current);
+
+  CHART_HISTORICO = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'Inversiones',
+          data: invData,
+          backgroundColor: '#4f46e5',
+          borderRadius: 6,
+          stack: 'spend'
+        },
+        {
+          label: 'Rentas',
+          data: renData,
+          backgroundColor: '#10b981',
+          borderRadius: 6,
+          stack: 'spend'
+        },
+        {
+          label: 'Tope mensual',
+          data: topeData,
+          type: 'line',
+          borderColor: '#94a3b8',
+          borderWidth: 2,
+          borderDash: [6, 4],
+          pointRadius: 0,
+          fill: false,
+          tension: 0,
+          stack: 'tope'
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: 'rgba(17,24,39,0.95)',
+          padding: 10,
+          cornerRadius: 8,
+          callbacks: {
+            title: (items) => {
+              const m = months[items[0].dataIndex];
+              return m.label + (m.is_current ? ' — PARCIAL' : '');
+            },
+            label: (c) => {
+              if (c.dataset.label === 'Tope mensual') return `Tope: ${fmt_s(c.parsed.y)}`;
+              return `${c.dataset.label}: ${fmt_s(c.parsed.y)}`;
+            },
+            footer: (items) => {
+              const m = months[items[0].dataIndex];
+              const tot = m.total_spend;
+              const pct = m.pct_vs_budget;
+              return `Total: ${fmt_s(tot)} (${pct.toFixed(1)}% del tope)`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          stacked: true,
+          grid: { display: false },
+          ticks: { color: '#6b7280', font: { size: 11 } }
+        },
+        y: {
+          stacked: true,
+          grid: { color: '#f3f4f6' },
+          ticks: {
+            color: '#6b7280',
+            font: { size: 11 },
+            callback: (v) => 'S/ ' + v.toLocaleString('es-PE')
+          }
+        }
+      }
+    }
+  });
+}
+
+function switchHistView(view) {
+  document.querySelectorAll('.sub-tab[data-hist-view]').forEach(b => {
+    b.classList.toggle('active', b.dataset.histView === view);
+  });
+  document.getElementById('hist-tabla').style.display = view === 'tabla' ? '' : 'none';
+  document.getElementById('hist-chart').style.display = view === 'chart' ? '' : 'none';
+  if (view === 'chart') renderHistoricoChart();
 }
 
 async function init(){
@@ -1269,9 +1419,10 @@ async function init(){
   // Wire tabs + sub-tabs y restaurar vista activa según URL hash
   wireTabs();
 
-  // Render vista Presupuesto (header + KPIs + modo Actual default)
+  // Render vista Presupuesto (header + KPIs + modo Actual default + histórico)
   renderPresupuestoHeader();
   renderModoActual();
+  renderHistoricoTabla();
 
   // Populate funnel filters (vista Dashboard)
   populateFunnelSelectors();
