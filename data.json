@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-26T20:15:21.604781+00:00",
+  "generated_at": "2026-05-26T21:26:36.824638+00:00",
   "since": "2026-03-27",
   "until": "2026-05-26",
   "source": "bitrix.hs_deals (utm_campaign LIKE %landing%) + Meta Ads API + Google Ads API",
@@ -10,27 +10,27 @@
     "days_in_month": 31,
     "days_elapsed": 26,
     "total_budget": 12000.0,
-    "total_mtd": 10727.1,
-    "total_pct_used": 89.4,
+    "total_mtd": 10742.83,
+    "total_pct_used": 89.5,
     "proper": {
       "budget_total": 10200.0,
-      "mtd_total": 8919.07,
-      "pct_used": 87.4,
+      "mtd_total": 8934.82,
+      "pct_used": 87.6,
       "channels": {
         "meta": {
           "name": "Meta Ads",
           "budget": 6000.0,
-          "mtd": 6841.84,
-          "pct_used": 114.0,
-          "run_rate_daily": 263.15,
-          "projected_eom": 8157.65,
+          "mtd": 6854.44,
+          "pct_used": 114.2,
+          "run_rate_daily": 263.63,
+          "projected_eom": 8172.53,
           "accounts": [
             {
               "id": "act_424971935894203",
               "name": "Cuenta en soles Propinvest",
               "currency": "PEN",
-              "spend": 6841.84,
-              "spend_pen": 6841.84
+              "spend": 6854.44,
+              "spend_pen": 6854.44
             }
           ]
         },
@@ -66,26 +66,26 @@
         "whatsapp": {
           "name": "WhatsApp API",
           "budget": 1800.0,
-          "mtd": 983.69,
-          "pct_used": 54.6,
-          "run_rate_daily": 37.83,
-          "projected_eom": 1172.73,
+          "mtd": 986.84,
+          "pct_used": 54.8,
+          "run_rate_daily": 37.96,
+          "projected_eom": 1176.76,
           "accounts": [
             {
               "id": "345723035288365",
               "name": "Corretaje Alquileres Proper Rentas",
               "currency": "USD",
-              "cost": 137.07,
-              "cost_pen": 514.01,
-              "volume": 7906
+              "cost": 137.49,
+              "cost_pen": 515.59,
+              "volume": 7920
             },
             {
               "id": "434221413117441",
               "name": "Marcos Uribe - Proper",
               "currency": "USD",
-              "cost": 43.56,
-              "cost_pen": 163.35,
-              "volume": 654
+              "cost": 43.63,
+              "cost_pen": 163.61,
+              "volume": 655
             },
             {
               "id": "434503913074428",
@@ -99,25 +99,25 @@
               "id": "426174313907610",
               "name": "Proper",
               "currency": "USD",
-              "cost": 18.21,
-              "cost_pen": 68.29,
-              "volume": 534
+              "cost": 18.35,
+              "cost_pen": 68.81,
+              "volume": 537
             },
             {
               "id": "532485923285061",
               "name": "Diego Sánchez",
               "currency": "USD",
-              "cost": 15.04,
-              "cost_pen": 56.4,
-              "volume": 326
+              "cost": 15.11,
+              "cost_pen": 56.66,
+              "volume": 327
             },
             {
               "id": "2646323179040853",
               "name": "Germain Pasapera",
               "currency": "USD",
-              "cost": 13.36,
-              "cost_pen": 50.1,
-              "volume": 230
+              "cost": 13.5,
+              "cost_pen": 50.62,
+              "volume": 232
             },
             {
               "id": "1988920322022990",
@@ -149,7 +149,7 @@
               "currency": "USD",
               "cost": 0,
               "cost_pen": 0.0,
-              "volume": 142
+              "volume": 143
             },
             {
               "id": "1499778585132795",
@@ -227,17 +227,17 @@
       "meta": {
         "name": "Meta Ads",
         "budget": 6000.0,
-        "mtd": 8642.63,
-        "pct_used": 144.0,
-        "run_rate_daily": 332.41,
-        "projected_eom": 10304.71,
+        "mtd": 8655.23,
+        "pct_used": 144.3,
+        "run_rate_daily": 332.89,
+        "projected_eom": 10319.59,
         "accounts": [
           {
             "id": "act_424971935894203",
             "name": "Cuenta en soles Propinvest",
             "currency": "PEN",
-            "spend": 6841.84,
-            "spend_pen": 6841.84
+            "spend": 6854.44,
+            "spend_pen": 6854.44
           },
           {
             "id": "act_945594697882747",
@@ -282,16 +282,16 @@
       "whatsapp": {
         "name": "WhatsApp API",
         "budget": 1800.0,
-        "mtd": 990.94,
-        "pct_used": 55.1,
-        "run_rate_daily": 38.11,
-        "projected_eom": 1181.41,
+        "mtd": 994.07,
+        "pct_used": 55.2,
+        "run_rate_daily": 38.23,
+        "projected_eom": 1185.13,
         "accounts": [
           {
             "id": "1071732319142937",
             "name": "Proper Rentas - Atención al cliente",
             "currency": "USD",
-            "volume": 142,
+            "volume": 143,
             "cost": 0
           },
           {
@@ -305,8 +305,8 @@
             "id": "2646323179040853",
             "name": "Germain Pasapera",
             "currency": "USD",
-            "volume": 230,
-            "cost": 13.36
+            "volume": 232,
+            "cost": 13.5
           },
           {
             "id": "26401509649540173",
@@ -347,29 +347,29 @@
             "id": "345723035288365",
             "name": "Corretaje Alquileres Proper Rentas",
             "currency": "USD",
-            "volume": 7906,
-            "cost": 137.07
+            "volume": 7920,
+            "cost": 137.49
           },
           {
             "id": "426174313907610",
             "name": "Proper",
             "currency": "USD",
-            "volume": 534,
-            "cost": 18.21
+            "volume": 537,
+            "cost": 18.35
           },
           {
             "id": "532485923285061",
             "name": "Diego Sánchez",
             "currency": "USD",
-            "volume": 326,
-            "cost": 15.04
+            "volume": 327,
+            "cost": 15.11
           },
           {
             "id": "434221413117441",
             "name": "Marcos Uribe - Proper",
             "currency": "USD",
-            "volume": 654,
-            "cost": 43.56
+            "volume": 655,
+            "cost": 43.63
           },
           {
             "id": "652971464407065",
@@ -382,26 +382,26 @@
       }
     },
     "landing_only": {
-      "meta_mtd": 4829.82,
+      "meta_mtd": 4838.96,
       "gads_mtd": 726.46,
-      "total_mtd": 5556.28
+      "total_mtd": 5565.42
     },
-    "whatsapp_volume_mtd": 10884,
+    "whatsapp_volume_mtd": 10906,
     "by_unit": {
       "proper": {
-        "meta": 6841.84,
+        "meta": 6854.44,
         "google": 1093.54,
         "tiktok": 0.0,
-        "whatsapp": 983.69,
-        "total": 8919.07,
+        "whatsapp": 986.84,
+        "total": 8934.82,
         "detail": {
           "meta": [
             {
               "id": "act_424971935894203",
               "name": "Cuenta en soles Propinvest",
               "currency": "PEN",
-              "spend": 6841.84,
-              "spend_pen": 6841.84
+              "spend": 6854.44,
+              "spend_pen": 6854.44
             }
           ],
           "google": [
@@ -422,17 +422,17 @@
               "id": "345723035288365",
               "name": "Corretaje Alquileres Proper Rentas",
               "currency": "USD",
-              "cost": 137.07,
-              "cost_pen": 514.01,
-              "volume": 7906
+              "cost": 137.49,
+              "cost_pen": 515.59,
+              "volume": 7920
             },
             {
               "id": "434221413117441",
               "name": "Marcos Uribe - Proper",
               "currency": "USD",
-              "cost": 43.56,
-              "cost_pen": 163.35,
-              "volume": 654
+              "cost": 43.63,
+              "cost_pen": 163.61,
+              "volume": 655
             },
             {
               "id": "434503913074428",
@@ -446,25 +446,25 @@
               "id": "426174313907610",
               "name": "Proper",
               "currency": "USD",
-              "cost": 18.21,
-              "cost_pen": 68.29,
-              "volume": 534
+              "cost": 18.35,
+              "cost_pen": 68.81,
+              "volume": 537
             },
             {
               "id": "532485923285061",
               "name": "Diego Sánchez",
               "currency": "USD",
-              "cost": 15.04,
-              "cost_pen": 56.4,
-              "volume": 326
+              "cost": 15.11,
+              "cost_pen": 56.66,
+              "volume": 327
             },
             {
               "id": "2646323179040853",
               "name": "Germain Pasapera",
               "currency": "USD",
-              "cost": 13.36,
-              "cost_pen": 50.1,
-              "volume": 230
+              "cost": 13.5,
+              "cost_pen": 50.62,
+              "volume": 232
             },
             {
               "id": "1988920322022990",
@@ -496,7 +496,7 @@
               "currency": "USD",
               "cost": 0,
               "cost_pen": 0.0,
-              "volume": 142
+              "volume": 143
             },
             {
               "id": "1499778585132795",
@@ -599,36 +599,36 @@
     "pct_month_elapsed": 83.9,
     "total": {
       "budget": 9300.0,
-      "mtd": 6693.99,
-      "pct_used": 72.0,
-      "run_rate_daily": 257.46,
-      "projected_eom": 7981.26,
-      "remaining_budget": 2606.01
+      "mtd": 6703.61,
+      "pct_used": 72.1,
+      "run_rate_daily": 257.83,
+      "projected_eom": 7992.73,
+      "remaining_budget": 2596.39
     },
     "products": {
       "inversiones": {
         "label": "Proper Inversiones",
         "budget": 7900.0,
-        "mtd": 5556.28,
-        "pct_used": 70.3,
-        "run_rate_daily": 213.7,
-        "projected_eom": 6624.7,
+        "mtd": 5565.42,
+        "pct_used": 70.4,
+        "run_rate_daily": 214.05,
+        "projected_eom": 6635.55,
         "channels": {
           "facebook": {
             "budget": 6000.0,
-            "mtd": 4829.82,
-            "pct_used": 80.5,
-            "run_rate_daily": 185.76,
-            "projected_eom": 5758.56,
+            "mtd": 4838.96,
+            "pct_used": 80.6,
+            "run_rate_daily": 186.11,
+            "projected_eom": 5769.41,
             "note": "Campañas con \"LANDING\" en act_424971935894203",
             "campaigns": [
               {
                 "name": "IN-LANDING-FROM-ABR-2026",
-                "spend": 2999.17
+                "spend": 3004.44
               },
               {
                 "name": "IN-LANDING-FROM-ABR-2026 -  ABO",
-                "spend": 1830.65
+                "spend": 1834.52
               }
             ]
           },
@@ -651,26 +651,26 @@
       "rentas": {
         "label": "Proper Rentas",
         "budget": 1400.0,
-        "mtd": 1137.71,
+        "mtd": 1138.19,
         "pct_used": 81.3,
-        "run_rate_daily": 43.76,
-        "projected_eom": 1356.56,
+        "run_rate_daily": 43.78,
+        "projected_eom": 1357.18,
         "channels": {
           "facebook": {
             "budget": 900.0,
-            "mtd": 770.62,
-            "pct_used": 85.6,
-            "run_rate_daily": 29.64,
-            "projected_eom": 918.84,
+            "mtd": 771.1,
+            "pct_used": 85.7,
+            "run_rate_daily": 29.66,
+            "projected_eom": 919.46,
             "note": "Campañas con \"RENTA\" en act_424971935894203",
             "campaigns": [
               {
                 "name": "Campaña_RENTAS_PROP_ABRIL2026_2",
-                "spend": 364.97
+                "spend": 365.33
               },
               {
                 "name": "Campaña_RENTAS_PROP_ABRIL2026_2 - Copy",
-                "spend": 405.65
+                "spend": 405.77
               }
             ]
           },
@@ -701,18 +701,23 @@
       "is_current": false,
       "is_partial": false,
       "inversiones": {
-        "facebook": 0.0,
+        "facebook": 6153.99,
         "google": 0.0,
-        "total": 0.0
+        "total": 6153.99
       },
       "rentas": {
         "facebook": 0.0,
         "google": 0.0,
         "total": 0.0
       },
-      "total_spend": 0.0,
+      "total_spend": 6153.99,
+      "excluded": {
+        "modo": 1520.2,
+        "otro": 28.33,
+        "total": 1548.53
+      },
       "budget_referencial": 9300.0,
-      "pct_vs_budget": 0.0
+      "pct_vs_budget": 66.2
     },
     {
       "month": "2026-01",
@@ -722,18 +727,23 @@
       "is_current": false,
       "is_partial": false,
       "inversiones": {
-        "facebook": 0.0,
+        "facebook": 6904.28,
         "google": 0.0,
-        "total": 0.0
+        "total": 6904.28
       },
       "rentas": {
         "facebook": 0.0,
         "google": 0.0,
         "total": 0.0
       },
-      "total_spend": 0.0,
+      "total_spend": 6904.28,
+      "excluded": {
+        "modo": 1553.66,
+        "otro": 937.73,
+        "total": 2491.39
+      },
       "budget_referencial": 9300.0,
-      "pct_vs_budget": 0.0
+      "pct_vs_budget": 74.2
     },
     {
       "month": "2026-02",
@@ -743,18 +753,23 @@
       "is_current": false,
       "is_partial": false,
       "inversiones": {
-        "facebook": 0.0,
+        "facebook": 4922.92,
         "google": 0.0,
-        "total": 0.0
+        "total": 4922.92
       },
       "rentas": {
         "facebook": 741.68,
         "google": 0.0,
         "total": 741.68
       },
-      "total_spend": 741.68,
+      "total_spend": 5664.6,
+      "excluded": {
+        "modo": 1489.26,
+        "otro": 0.0,
+        "total": 1489.26
+      },
       "budget_referencial": 9300.0,
-      "pct_vs_budget": 8.0
+      "pct_vs_budget": 60.9
     },
     {
       "month": "2026-03",
@@ -764,18 +779,23 @@
       "is_current": false,
       "is_partial": false,
       "inversiones": {
-        "facebook": 848.89,
+        "facebook": 7710.49,
         "google": 0.0,
-        "total": 848.89
+        "total": 7710.49
       },
       "rentas": {
         "facebook": 882.19,
         "google": 0.0,
         "total": 882.19
       },
-      "total_spend": 1731.08,
+      "total_spend": 8592.68,
+      "excluded": {
+        "modo": 1517.59,
+        "otro": 0.0,
+        "total": 1517.59
+      },
       "budget_referencial": 9300.0,
-      "pct_vs_budget": 18.6
+      "pct_vs_budget": 92.4
     },
     {
       "month": "2026-04",
@@ -795,6 +815,11 @@
         "total": 905.16
       },
       "total_spend": 10923.25,
+      "excluded": {
+        "modo": 1197.48,
+        "otro": 0.0,
+        "total": 1197.48
+      },
       "budget_referencial": 9300.0,
       "pct_vs_budget": 117.5
     },
@@ -806,18 +831,23 @@
       "is_current": true,
       "is_partial": true,
       "inversiones": {
-        "facebook": 4829.82,
+        "facebook": 4838.96,
         "google": 726.45,
-        "total": 5556.27
+        "total": 5565.41
       },
       "rentas": {
-        "facebook": 770.62,
+        "facebook": 771.1,
         "google": 367.09,
-        "total": 1137.71
+        "total": 1138.19
       },
-      "total_spend": 6693.98,
+      "total_spend": 6703.6,
+      "excluded": {
+        "modo": 1244.38,
+        "otro": 0.0,
+        "total": 1244.38
+      },
       "budget_referencial": 9300.0,
-      "pct_vs_budget": 72.0
+      "pct_vs_budget": 72.1
     }
   ],
   "days": [
@@ -6029,11 +6059,11 @@
     },
     {
       "fecha": "2026-05-26",
-      "meta_spend": 107.1,
+      "meta_spend": 116.24,
       "gads_spend": 0,
-      "total_spend": 107.1,
-      "meta_impressions": 7395,
-      "meta_clicks": 264,
+      "total_spend": 116.24,
+      "meta_impressions": 8127,
+      "meta_clicks": 301,
       "gads_impressions": 0,
       "gads_clicks": 0,
       "leads": 0,
@@ -6048,8 +6078,8 @@
       "sin_clasificar": 0,
       "altos_medios": 0,
       "asistentes": 0,
-      "simulados": 7,
-      "cotizados": 6,
+      "simulados": 10,
+      "cotizados": 8,
       "cpl": null,
       "cpl_aprobado": null,
       "canales": {
@@ -6064,8 +6094,8 @@
           "no_aprobado_int": 0,
           "sin_clasificar": 0,
           "asistentes": 0,
-          "simulados": 1,
-          "cotizados": 1
+          "simulados": 2,
+          "cotizados": 2
         },
         "Instagram": {
           "leads": 0,
@@ -6092,8 +6122,8 @@
           "no_aprobado_int": 0,
           "sin_clasificar": 0,
           "asistentes": 0,
-          "simulados": 4,
-          "cotizados": 3
+          "simulados": 6,
+          "cotizados": 4
         }
       }
     }
@@ -8768,18 +8798,18 @@
       "campaign": "IN-LANDING-FROM-ABR-2026",
       "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
       "ad": "Video Inversiones - Landing Proper - Nataly",
-      "spend": 66.38,
-      "impressions": 5471,
-      "clicks": 169
+      "spend": 71.6,
+      "impressions": 5991,
+      "clicks": 187
     },
     {
       "fecha": "2026-05-26",
       "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
       "adset": "cj-muchosPeruanos-video",
       "ad": "depasSePaganSolos",
-      "spend": 15.97,
-      "impressions": 705,
-      "clicks": 28
+      "spend": 17.49,
+      "impressions": 784,
+      "clicks": 38
     },
     {
       "fecha": "2026-05-26",
@@ -8795,8 +8825,8 @@
       "campaign": "IN-LANDING-FROM-ABR-2026",
       "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
       "ad": "Video Inversiones - Landing Proper - Nataly - Copy",
-      "spend": 0.02,
-      "impressions": 1,
+      "spend": 0.07,
+      "impressions": 6,
       "clicks": 0
     },
     {
@@ -8804,9 +8834,9 @@
       "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
       "adset": "cj-hayDepasQueSePaganSolo-video",
       "ad": "hayDepasQueSePaganSolo-videoMarco",
-      "spend": 24.54,
-      "impressions": 1210,
-      "clicks": 66
+      "spend": 26.89,
+      "impressions": 1338,
+      "clicks": 75
     }
   ],
   "gads_campaigns": [
