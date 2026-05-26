@@ -702,11 +702,165 @@ function render(){
   }
 }
 
+// ============================================================
+// Budget Mes en Curso — split Inversiones vs Rentas (Meta + Google)
+// Lee DATA.budget_by_product (generado por build-data.py)
+// ============================================================
+function renderBudgetByProduct(){
+  const bp = DATA.budget_by_product;
+  const section = document.getElementById('budget-section');
+  if (!bp || !bp.products) {
+    if (section) section.style.display = 'none';
+    return;
+  }
+  section.style.display = '';
+
+  const MONTH_NAMES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  const [yr, mo] = (bp.month_start || '').split('-');
+  const monthLabel = mo ? `· ${MONTH_NAMES[parseInt(mo,10)-1]} ${yr}` : '';
+  document.getElementById('budget-month-label').textContent = monthLabel;
+  document.getElementById('budget-day-current').textContent = bp.days_elapsed;
+  document.getElementById('budget-day-total').textContent   = bp.days_in_month;
+  document.getElementById('budget-day-pct').textContent     = bp.pct_month_elapsed;
+  document.getElementById('month-progress-fill').style.width = (bp.pct_month_elapsed || 0) + '%';
+
+  // Hero total
+  const t = bp.total || {};
+  document.getElementById('bh-mtd').textContent    = fmt_s(t.mtd || 0);
+  document.getElementById('bh-budget').textContent = fmt_s(t.budget || 0);
+  document.getElementById('bh-pct').textContent    = t.pct_used != null ? t.pct_used : '—';
+  document.getElementById('bh-proj').textContent   = fmt_s(t.projected_eom || 0);
+  document.getElementById('bh-rrd').textContent    = fmt_s(t.run_rate_daily || 0);
+
+  const totalRemaining = t.remaining_budget || 0;
+  const projOverBudget = (t.projected_eom || 0) - (t.budget || 0);
+  document.getElementById('bh-rem').textContent = (projOverBudget > 0)
+    ? `–${fmt_s(projOverBudget)} (sobre budget)`
+    : `+${fmt_s(Math.abs(projOverBudget))} (bajo budget)`;
+
+  // Hero status pill (compara proyección con budget)
+  const heroStatus = document.getElementById('bh-status');
+  if (projOverBudget > t.budget * 0.05) {
+    heroStatus.className = 'pill-status pill-over';
+    heroStatus.textContent = '⚠️ Riesgo overspend';
+  } else if (projOverBudget > 0) {
+    heroStatus.className = 'pill-status pill-warn';
+    heroStatus.textContent = 'Pegado al límite';
+  } else if ((t.pct_used || 0) < (bp.pct_month_elapsed || 0) - 15) {
+    heroStatus.className = 'pill-status pill-low';
+    heroStatus.textContent = 'Sub-utilizado';
+  } else {
+    heroStatus.className = 'pill-status pill-ok';
+    heroStatus.textContent = '🟢 En budget';
+  }
+
+  // Hero bar (mtd vs budget, target = pct mes transcurrido)
+  const heroBarPct = Math.min(100, ((t.mtd || 0) / (t.budget || 1)) * 100);
+  document.getElementById('bh-bar').style.width = heroBarPct + '%';
+  document.getElementById('bh-target').style.left = Math.min(100, bp.pct_month_elapsed || 0) + '%';
+
+  // Color del hero bar según comparación con pct mes
+  const heroBar = document.getElementById('bh-bar');
+  if ((t.pct_used || 0) > (bp.pct_month_elapsed || 0) + 10) heroBar.style.background = '#ef4444';
+  else if ((t.pct_used || 0) > (bp.pct_month_elapsed || 0) + 3) heroBar.style.background = '#f59e0b';
+  else heroBar.style.background = '#3b82f6';
+
+  // Helper para pintar un canal
+  const monthPct = bp.pct_month_elapsed || 0;
+  function paintChannel(prefix, channel){
+    const idMtd  = `${prefix}-mtd`;
+    const idBud  = `${prefix}-budget`;
+    const idPct  = `${prefix}-pct`;
+    const idBar  = `${prefix}-bar`;
+    const idTgt  = `${prefix}-target`;
+    const idProj = `${prefix}-proj`;
+    const idStat = `${prefix}-status`;
+
+    document.getElementById(idMtd).textContent  = fmt_s(channel.mtd || 0);
+    document.getElementById(idBud).textContent  = fmt_s(channel.budget || 0);
+    document.getElementById(idPct).textContent  = (channel.pct_used != null ? channel.pct_used : 0);
+    document.getElementById(idProj).textContent = fmt_s(channel.projected_eom || 0);
+
+    const fillPct = Math.min(100, ((channel.mtd || 0) / (channel.budget || 1)) * 100);
+    const bar = document.getElementById(idBar);
+    bar.style.width = fillPct + '%';
+    document.getElementById(idTgt).style.left = Math.min(100, monthPct) + '%';
+
+    // Status pill
+    const pillEl = document.getElementById(idStat);
+    const projOver = (channel.projected_eom || 0) - (channel.budget || 0);
+    const pctUsed = channel.pct_used || 0;
+    if (projOver > channel.budget * 0.05) {
+      pillEl.className = 'pill-status pill-over ml-1';
+      pillEl.textContent = 'overspend';
+    } else if (pctUsed > monthPct + 5) {
+      pillEl.className = 'pill-status pill-warn ml-1';
+      pillEl.textContent = 'acelerado';
+    } else if (pctUsed < monthPct - 20) {
+      pillEl.className = 'pill-status pill-low ml-1';
+      pillEl.textContent = 'sub-utilizado';
+    } else {
+      pillEl.className = 'pill-status pill-ok ml-1';
+      pillEl.textContent = 'en ritmo';
+    }
+  }
+
+  // Productos
+  const inv = bp.products.inversiones || {};
+  const rnt = bp.products.rentas || {};
+
+  document.getElementById('inv-mtd').textContent    = fmt_s(inv.mtd || 0);
+  document.getElementById('inv-budget').textContent = fmt_s(inv.budget || 0);
+  document.getElementById('inv-pct').textContent    = inv.pct_used != null ? inv.pct_used : '—';
+  document.getElementById('inv-proj').textContent   = fmt_s(inv.projected_eom || 0);
+
+  document.getElementById('rnt-mtd').textContent    = fmt_s(rnt.mtd || 0);
+  document.getElementById('rnt-budget').textContent = fmt_s(rnt.budget || 0);
+  document.getElementById('rnt-pct').textContent    = rnt.pct_used != null ? rnt.pct_used : '—';
+  document.getElementById('rnt-proj').textContent   = fmt_s(rnt.projected_eom || 0);
+
+  paintChannel('inv-fb', inv.channels?.facebook || {});
+  paintChannel('inv-gg', inv.channels?.google   || {});
+  paintChannel('rnt-fb', rnt.channels?.facebook || {});
+  paintChannel('rnt-gg', rnt.channels?.google   || {});
+
+  // Alertas auto-generadas
+  const alerts = [];
+  const checkChannel = (label, ch) => {
+    const pct  = ch.pct_used || 0;
+    const proj = ch.projected_eom || 0;
+    const bud  = ch.budget || 0;
+    if (proj > bud * 1.05) {
+      alerts.push(`🔴 <strong>${label}</strong>: proyección ${fmt_s(proj)} excede budget en ${fmt_s(proj - bud)} → ajustar ritmo.`);
+    } else if (pct > monthPct + 5 && pct < 95) {
+      alerts.push(`🟡 <strong>${label}</strong>: gasta más rápido que el calendario (${pct}% vs ${monthPct}% día) → vigilar.`);
+    } else if (pct < monthPct - 25 && bud > 0) {
+      alerts.push(`🔵 <strong>${label}</strong>: sub-utilizado (${pct}% vs ${monthPct}% día) → margen de S/ ${(bud - (ch.mtd||0)).toFixed(0)} sin usar.`);
+    }
+  };
+  checkChannel('Facebook Inversiones', inv.channels?.facebook || {});
+  checkChannel('Google Ads Inversiones', inv.channels?.google || {});
+  checkChannel('Facebook Rentas',     rnt.channels?.facebook || {});
+  checkChannel('Google Ads Rentas',   rnt.channels?.google || {});
+
+  const alertsBox = document.getElementById('budget-alerts');
+  const alertsList = document.getElementById('budget-alerts-list');
+  if (alerts.length) {
+    alertsBox.style.display = '';
+    alertsList.innerHTML = alerts.map(a => `<li>${a}</li>`).join('');
+  } else {
+    alertsBox.style.display = 'none';
+  }
+}
+
 async function init(){
   const resp = await fetch('./data.json');
   DATA = await resp.json();
   document.getElementById('updated-at').textContent =
     new Date(DATA.generated_at).toLocaleString('es-PE', {dateStyle:'medium', timeStyle:'short'});
+
+  // Render budget section primero (si data lo tiene)
+  renderBudgetByProduct();
 
   // Populate funnel filters
   populateFunnelSelectors();

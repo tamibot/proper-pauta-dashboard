@@ -64,6 +64,47 @@
       border: none; cursor: pointer;
     }
     .daterange-presets button:hover { background: #dbeafe; color: #1e40af; }
+
+    /* === Budget by Product === */
+    .budget-section { background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border: 1px solid #e2e8f0; border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem; }
+    .budget-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem; }
+    @media (max-width: 720px) { .budget-hero { grid-template-columns: 1fr; } }
+    .budget-hero-card { background: white; border-radius: 12px; padding: 1rem 1.25rem; border: 1px solid #e5e7eb; }
+    .budget-hero-card .label { font-size: .7rem; text-transform: uppercase; letter-spacing: .05em; color: #6b7280; font-weight: 600; }
+    .budget-hero-card .value { font-size: 1.75rem; font-weight: 700; color: #111827; margin-top: .25rem; }
+    .budget-hero-card .sub   { font-size: .75rem; color: #6b7280; margin-top: .15rem; }
+    .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 900px) { .product-grid { grid-template-columns: 1fr; } }
+    .product-card { background: white; border-radius: 12px; padding: 1.25rem; border: 1px solid #e5e7eb; }
+    .product-card-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem; padding-bottom: .75rem; border-bottom: 1px solid #f3f4f6; }
+    .product-card-header .title { font-size: 1rem; font-weight: 700; color: #111827; }
+    .product-card-header .total { font-size: .8rem; color: #6b7280; font-weight: 500; }
+    .channel-row { padding: .75rem 0; }
+    .channel-row + .channel-row { border-top: 1px solid #f9fafb; }
+    .channel-meta { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: .35rem; }
+    .channel-meta .name { font-size: .8rem; color: #374151; font-weight: 600; }
+    .channel-meta .name-icon { display: inline-block; width: 14px; height: 14px; border-radius: 3px; vertical-align: -2px; margin-right: 6px; }
+    .channel-meta .amount { font-size: .8rem; color: #6b7280; font-variant-numeric: tabular-nums; }
+    .channel-meta .amount strong { color: #111827; font-weight: 700; }
+    .channel-bar { position: relative; height: 10px; background: #f3f4f6; border-radius: 999px; overflow: hidden; }
+    .channel-bar-fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 999px; transition: width .4s ease; }
+    .channel-bar-target { position: absolute; top: -3px; bottom: -3px; width: 2px; background: #94a3b8; border-radius: 1px; opacity: .65; }
+    .channel-bar-target::after { content: ''; position: absolute; top: -3px; left: -3px; width: 8px; height: 8px; background: #94a3b8; border-radius: 50%; }
+    .channel-foot { display: flex; justify-content: space-between; margin-top: .35rem; font-size: .7rem; color: #6b7280; }
+    .channel-foot .proj { font-variant-numeric: tabular-nums; }
+    .pill-status { display: inline-flex; align-items: center; gap: .25rem; padding: .12rem .55rem; border-radius: 999px; font-size: .65rem; font-weight: 600; text-transform: uppercase; letter-spacing: .03em; }
+    .pill-ok    { background: #d1fae5; color: #065f46; }
+    .pill-warn  { background: #fef3c7; color: #92400e; }
+    .pill-over  { background: #fee2e2; color: #991b1b; }
+    .pill-low   { background: #dbeafe; color: #1e40af; }
+    .alerts { margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed #e5e7eb; }
+    .alerts ul { font-size: .75rem; color: #475569; list-style: none; padding: 0; margin: 0; }
+    .alerts li { padding: .15rem 0; }
+    .alerts li::before { content: '• '; color: #94a3b8; }
+
+    /* Month progress */
+    .month-progress { position: relative; height: 6px; background: #e5e7eb; border-radius: 999px; margin-top: .5rem; overflow: hidden; }
+    .month-progress-fill { position: absolute; left: 0; top: 0; bottom: 0; background: linear-gradient(90deg, #60a5fa, #3b82f6); border-radius: 999px; }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -78,6 +119,149 @@
     </div>
     <div class="text-xs text-gray-400 mt-2 sm:mt-0">
       Actualizado: <span id="updated-at">—</span>
+    </div>
+  </div>
+
+  <!-- =============================================================== -->
+  <!-- BUDGET MES EN CURSO — split Inversiones vs Rentas (Meta + Google)  -->
+  <!-- =============================================================== -->
+  <div id="budget-section" class="budget-section" style="display:none">
+    <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+      <div>
+        <h2 class="text-base font-bold text-gray-900 flex items-center gap-2">
+          💰 Budget Mes en Curso
+          <span id="budget-month-label" class="text-xs font-medium text-gray-500"></span>
+        </h2>
+        <div class="text-xs text-gray-500 mt-1">
+          Día <span id="budget-day-current">—</span> de <span id="budget-day-total">—</span>
+          (<span id="budget-day-pct">—</span>% del mes transcurrido)
+        </div>
+        <div class="month-progress" style="width: 220px">
+          <div id="month-progress-fill" class="month-progress-fill" style="width:0%"></div>
+        </div>
+      </div>
+      <div class="text-right">
+        <div class="text-[10px] uppercase tracking-wide text-gray-500 font-semibold">Currency</div>
+        <div class="text-sm font-semibold text-gray-700">PEN · S/</div>
+      </div>
+    </div>
+
+    <!-- Hero KPIs -->
+    <div class="budget-hero">
+      <div class="budget-hero-card">
+        <div class="label">Total Ejecutado</div>
+        <div class="value"><span id="bh-mtd">—</span> <span class="text-base text-gray-400">/</span> <span id="bh-budget" class="text-lg text-gray-500 font-semibold">—</span></div>
+        <div class="channel-bar mt-2">
+          <div id="bh-bar" class="channel-bar-fill" style="background:#3b82f6; width:0%"></div>
+          <div id="bh-target" class="channel-bar-target" style="left:0%"></div>
+        </div>
+        <div class="sub flex justify-between mt-1">
+          <span><span id="bh-pct">—</span>% usado</span>
+          <span>Marca = ritmo ideal hoy</span>
+        </div>
+      </div>
+      <div class="budget-hero-card">
+        <div class="label">Proyección Fin de Mes</div>
+        <div class="value"><span id="bh-proj">—</span></div>
+        <div class="sub mt-1">
+          <span id="bh-status" class="pill-status pill-ok">—</span>
+          <span class="ml-1 text-gray-500">
+            Holgura: <span id="bh-rem" class="font-semibold text-gray-700">—</span>
+          </span>
+        </div>
+        <div class="sub mt-2 text-[11px]">Run rate: <span id="bh-rrd">—</span>/día</div>
+      </div>
+    </div>
+
+    <!-- Product cards -->
+    <div class="product-grid">
+      <!-- INVERSIONES -->
+      <div class="product-card">
+        <div class="product-card-header">
+          <div>
+            <div class="title">🏠 Proper Inversiones</div>
+            <div class="text-[11px] text-gray-500 mt-0.5"><span id="inv-pct">—</span>% del budget · proy <span id="inv-proj">—</span></div>
+          </div>
+          <div class="total">
+            <strong id="inv-mtd" class="text-base text-gray-900">—</strong> / <span id="inv-budget">—</span>
+          </div>
+        </div>
+        <div class="channel-row">
+          <div class="channel-meta">
+            <span class="name"><span class="name-icon" style="background:#1877f2"></span>Facebook</span>
+            <span class="amount"><strong id="inv-fb-mtd">—</strong> / <span id="inv-fb-budget">—</span></span>
+          </div>
+          <div class="channel-bar">
+            <div id="inv-fb-bar" class="channel-bar-fill" style="background:#1877f2; width:0%"></div>
+            <div id="inv-fb-target" class="channel-bar-target" style="left:0%"></div>
+          </div>
+          <div class="channel-foot">
+            <span><span id="inv-fb-pct">—</span>%  <span id="inv-fb-status" class="pill-status pill-ok ml-1">—</span></span>
+            <span class="proj">Proy: <span id="inv-fb-proj">—</span></span>
+          </div>
+        </div>
+        <div class="channel-row">
+          <div class="channel-meta">
+            <span class="name"><span class="name-icon" style="background:#fbbc04"></span>Google Ads</span>
+            <span class="amount"><strong id="inv-gg-mtd">—</strong> / <span id="inv-gg-budget">—</span></span>
+          </div>
+          <div class="channel-bar">
+            <div id="inv-gg-bar" class="channel-bar-fill" style="background:#fbbc04; width:0%"></div>
+            <div id="inv-gg-target" class="channel-bar-target" style="left:0%"></div>
+          </div>
+          <div class="channel-foot">
+            <span><span id="inv-gg-pct">—</span>%  <span id="inv-gg-status" class="pill-status pill-ok ml-1">—</span></span>
+            <span class="proj">Proy: <span id="inv-gg-proj">—</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RENTAS -->
+      <div class="product-card">
+        <div class="product-card-header">
+          <div>
+            <div class="title">🏘️ Proper Rentas</div>
+            <div class="text-[11px] text-gray-500 mt-0.5"><span id="rnt-pct">—</span>% del budget · proy <span id="rnt-proj">—</span></div>
+          </div>
+          <div class="total">
+            <strong id="rnt-mtd" class="text-base text-gray-900">—</strong> / <span id="rnt-budget">—</span>
+          </div>
+        </div>
+        <div class="channel-row">
+          <div class="channel-meta">
+            <span class="name"><span class="name-icon" style="background:#1877f2"></span>Facebook</span>
+            <span class="amount"><strong id="rnt-fb-mtd">—</strong> / <span id="rnt-fb-budget">—</span></span>
+          </div>
+          <div class="channel-bar">
+            <div id="rnt-fb-bar" class="channel-bar-fill" style="background:#1877f2; width:0%"></div>
+            <div id="rnt-fb-target" class="channel-bar-target" style="left:0%"></div>
+          </div>
+          <div class="channel-foot">
+            <span><span id="rnt-fb-pct">—</span>%  <span id="rnt-fb-status" class="pill-status pill-ok ml-1">—</span></span>
+            <span class="proj">Proy: <span id="rnt-fb-proj">—</span></span>
+          </div>
+        </div>
+        <div class="channel-row">
+          <div class="channel-meta">
+            <span class="name"><span class="name-icon" style="background:#fbbc04"></span>Google Ads <span class="text-[10px] text-gray-400 ml-1" title="Experimento — reasignado de Inversiones">(exp)</span></span>
+            <span class="amount"><strong id="rnt-gg-mtd">—</strong> / <span id="rnt-gg-budget">—</span></span>
+          </div>
+          <div class="channel-bar">
+            <div id="rnt-gg-bar" class="channel-bar-fill" style="background:#fbbc04; width:0%"></div>
+            <div id="rnt-gg-target" class="channel-bar-target" style="left:0%"></div>
+          </div>
+          <div class="channel-foot">
+            <span><span id="rnt-gg-pct">—</span>%  <span id="rnt-gg-status" class="pill-status pill-ok ml-1">—</span></span>
+            <span class="proj">Proy: <span id="rnt-gg-proj">—</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alertas auto-generadas -->
+    <div id="budget-alerts" class="alerts" style="display:none">
+      <div class="text-[11px] font-semibold text-gray-700 uppercase tracking-wide mb-1">📌 Alertas</div>
+      <ul id="budget-alerts-list"></ul>
     </div>
   </div>
 
@@ -319,7 +503,7 @@
   </footer>
 </div>
 
-<!-- v8 — fix TZ bug en range picker (Date objects locales) -->
-<script src="./app.js?v=8"></script>
+<!-- v9 — Sección Budget Mes en Curso (Inversiones + Rentas, Meta + Google) -->
+<script src="./app.js?v=9"></script>
 </body>
 </html>

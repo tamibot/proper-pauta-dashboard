@@ -1,191 +1,698 @@
 {
-  "generated_at": "2026-05-11T21:16:42.413337+00:00",
-  "since": "2026-03-12",
-  "until": "2026-05-11",
+  "generated_at": "2026-05-26T18:35:03.806051+00:00",
+  "since": "2026-03-27",
+  "until": "2026-05-26",
   "source": "bitrix.hs_deals (utm_campaign LIKE %landing%) + Meta Ads API + Google Ads API",
+  "budget_monthly": {
+    "currency": "PEN",
+    "usd_pen_rate": 3.75,
+    "month_start": "2026-05-01",
+    "days_in_month": 31,
+    "days_elapsed": 26,
+    "total_budget": 12000.0,
+    "total_mtd": 10701.85,
+    "total_pct_used": 89.2,
+    "proper": {
+      "budget_total": 10200.0,
+      "mtd_total": 8893.81,
+      "pct_used": 87.2,
+      "channels": {
+        "meta": {
+          "name": "Meta Ads",
+          "budget": 6000.0,
+          "mtd": 6821.39,
+          "pct_used": 113.7,
+          "run_rate_daily": 262.36,
+          "projected_eom": 8133.16,
+          "accounts": [
+            {
+              "id": "act_424971935894203",
+              "name": "Cuenta en soles Propinvest",
+              "currency": "PEN",
+              "spend": 6821.39,
+              "spend_pen": 6821.39
+            }
+          ]
+        },
+        "google": {
+          "name": "Google Ads",
+          "budget": 1900.0,
+          "mtd": 1093.46,
+          "pct_used": 57.6,
+          "run_rate_daily": 42.06,
+          "projected_eom": 1303.86,
+          "accounts": [
+            {
+              "name": "PMax - LANDING Proper Inversiones",
+              "spend": 726.45,
+              "spend_pen": 726.45
+            },
+            {
+              "name": "PM Max Rentas 06.05",
+              "spend": 367.01,
+              "spend_pen": 367.01
+            }
+          ]
+        },
+        "tiktok": {
+          "name": "TikTok Ads",
+          "budget": 500.0,
+          "mtd": 0.0,
+          "pct_used": 0.0,
+          "run_rate_daily": 0.0,
+          "projected_eom": 0.0,
+          "accounts": []
+        },
+        "whatsapp": {
+          "name": "WhatsApp API",
+          "budget": 1800.0,
+          "mtd": 978.96,
+          "pct_used": 54.4,
+          "run_rate_daily": 37.65,
+          "projected_eom": 1167.15,
+          "accounts": [
+            {
+              "id": "345723035288365",
+              "name": "Corretaje Alquileres Proper Rentas",
+              "currency": "USD",
+              "cost": 136.44,
+              "cost_pen": 511.65,
+              "volume": 7866
+            },
+            {
+              "id": "434221413117441",
+              "name": "Marcos Uribe - Proper",
+              "currency": "USD",
+              "cost": 43.21,
+              "cost_pen": 162.04,
+              "volume": 649
+            },
+            {
+              "id": "434503913074428",
+              "name": "Sharon Cáceres Bandin",
+              "currency": "USD",
+              "cost": 33.0,
+              "cost_pen": 123.75,
+              "volume": 522
+            },
+            {
+              "id": "426174313907610",
+              "name": "Proper",
+              "currency": "USD",
+              "cost": 18.21,
+              "cost_pen": 68.29,
+              "volume": 534
+            },
+            {
+              "id": "532485923285061",
+              "name": "Diego Sánchez",
+              "currency": "USD",
+              "cost": 15.04,
+              "cost_pen": 56.4,
+              "volume": 326
+            },
+            {
+              "id": "2646323179040853",
+              "name": "Germain Pasapera",
+              "currency": "USD",
+              "cost": 13.22,
+              "cost_pen": 49.58,
+              "volume": 228
+            },
+            {
+              "id": "1988920322022990",
+              "name": "Proper Inversiones",
+              "currency": "USD",
+              "cost": 1.69,
+              "cost_pen": 6.34,
+              "volume": 150
+            },
+            {
+              "id": "26401509649540173",
+              "name": "Ada Martinez",
+              "currency": "PEN",
+              "cost": 0.7,
+              "cost_pen": 0.7,
+              "volume": 3
+            },
+            {
+              "id": "1813120572568884",
+              "name": "Ada Martinez",
+              "currency": "USD",
+              "cost": 0.06,
+              "cost_pen": 0.22,
+              "volume": 1
+            },
+            {
+              "id": "1071732319142937",
+              "name": "Proper Rentas - Atención al cliente",
+              "currency": "USD",
+              "cost": 0,
+              "cost_pen": 0.0,
+              "volume": 142
+            },
+            {
+              "id": "1499778585132795",
+              "name": "Atención al Cliente Rentas",
+              "currency": "USD",
+              "cost": 0,
+              "cost_pen": 0.0,
+              "volume": 10
+            },
+            {
+              "id": "652971464407065",
+              "name": "Proper",
+              "currency": "USD",
+              "cost": 0,
+              "cost_pen": 0.0,
+              "volume": 11
+            }
+          ]
+        }
+      },
+      "counts": {
+        "meta_total": 2,
+        "meta_with_spend": 1,
+        "google_total": 2,
+        "tiktok_total": 0,
+        "whatsapp_total": 21,
+        "whatsapp_with_activity": 12
+      }
+    },
+    "novo3": {
+      "budget_total": 1800.0,
+      "mtd_total": 1808.04,
+      "pct_used": 100.4,
+      "run_rate_daily": 69.54,
+      "projected_eom": 2155.74,
+      "channels": {
+        "meta": 1800.79,
+        "google": 0.0,
+        "tiktok": 0.0,
+        "whatsapp": 7.25
+      },
+      "detail": {
+        "meta": [
+          {
+            "id": "act_945594697882747",
+            "name": "Novo 3 - 2026",
+            "currency": "USD",
+            "spend": 480.21,
+            "spend_pen": 1800.79
+          }
+        ],
+        "google": [],
+        "tiktok": [],
+        "whatsapp": [
+          {
+            "id": "1316170527231710",
+            "name": "MyHome - Novo 3",
+            "currency": "PEN",
+            "cost": 7.25,
+            "cost_pen": 7.25,
+            "volume": 393
+          }
+        ]
+      },
+      "counts": {
+        "meta_total": 2,
+        "meta_with_spend": 1,
+        "google_total": 0,
+        "tiktok_total": 0,
+        "whatsapp_total": 1,
+        "whatsapp_with_activity": 1
+      }
+    },
+    "channels": {
+      "meta": {
+        "name": "Meta Ads",
+        "budget": 6000.0,
+        "mtd": 8622.18,
+        "pct_used": 143.7,
+        "run_rate_daily": 331.62,
+        "projected_eom": 10280.22,
+        "accounts": [
+          {
+            "id": "act_424971935894203",
+            "name": "Cuenta en soles Propinvest",
+            "currency": "PEN",
+            "spend": 6821.39,
+            "spend_pen": 6821.39
+          },
+          {
+            "id": "act_945594697882747",
+            "name": "Novo 3 - 2026",
+            "currency": "USD",
+            "spend": 480.21,
+            "spend_pen": 1800.79
+          }
+        ]
+      },
+      "google": {
+        "name": "Google Ads",
+        "budget": 1900.0,
+        "mtd": 1093.45,
+        "pct_used": 57.6,
+        "run_rate_daily": 42.06,
+        "projected_eom": 1303.86,
+        "accounts": [
+          {
+            "name": "PMax - LANDING Proper Inversiones",
+            "spend": 726.45,
+            "account": "Proper Inversiones - Landing",
+            "account_id": "5145735707"
+          },
+          {
+            "name": "PM Max Rentas 06.05",
+            "spend": 367.01,
+            "account": "Proper Rentas",
+            "account_id": "3949022627"
+          }
+        ]
+      },
+      "tiktok": {
+        "name": "TikTok Ads",
+        "budget": 500.0,
+        "mtd": 0.0,
+        "pct_used": 0.0,
+        "run_rate_daily": 0.0,
+        "projected_eom": 0.0,
+        "accounts": []
+      },
+      "whatsapp": {
+        "name": "WhatsApp API",
+        "budget": 1800.0,
+        "mtd": 986.22,
+        "pct_used": 54.8,
+        "run_rate_daily": 37.93,
+        "projected_eom": 1175.83,
+        "accounts": [
+          {
+            "id": "1071732319142937",
+            "name": "Proper Rentas - Atención al cliente",
+            "currency": "USD",
+            "volume": 142,
+            "cost": 0
+          },
+          {
+            "id": "1499778585132795",
+            "name": "Atención al Cliente Rentas",
+            "currency": "USD",
+            "volume": 10,
+            "cost": 0
+          },
+          {
+            "id": "2646323179040853",
+            "name": "Germain Pasapera",
+            "currency": "USD",
+            "volume": 228,
+            "cost": 13.22
+          },
+          {
+            "id": "26401509649540173",
+            "name": "Ada Martinez",
+            "currency": "PEN",
+            "volume": 3,
+            "cost": 0.7
+          },
+          {
+            "id": "1316170527231710",
+            "name": "MyHome - Novo 3",
+            "currency": "PEN",
+            "volume": 393,
+            "cost": 7.25
+          },
+          {
+            "id": "1813120572568884",
+            "name": "Ada Martinez",
+            "currency": "USD",
+            "volume": 1,
+            "cost": 0.06
+          },
+          {
+            "id": "1988920322022990",
+            "name": "Proper Inversiones",
+            "currency": "USD",
+            "volume": 150,
+            "cost": 1.69
+          },
+          {
+            "id": "434503913074428",
+            "name": "Sharon Cáceres Bandin",
+            "currency": "USD",
+            "volume": 522,
+            "cost": 33.0
+          },
+          {
+            "id": "345723035288365",
+            "name": "Corretaje Alquileres Proper Rentas",
+            "currency": "USD",
+            "volume": 7866,
+            "cost": 136.44
+          },
+          {
+            "id": "426174313907610",
+            "name": "Proper",
+            "currency": "USD",
+            "volume": 534,
+            "cost": 18.21
+          },
+          {
+            "id": "532485923285061",
+            "name": "Diego Sánchez",
+            "currency": "USD",
+            "volume": 326,
+            "cost": 15.04
+          },
+          {
+            "id": "434221413117441",
+            "name": "Marcos Uribe - Proper",
+            "currency": "USD",
+            "volume": 649,
+            "cost": 43.21
+          },
+          {
+            "id": "652971464407065",
+            "name": "Proper",
+            "currency": "USD",
+            "volume": 11,
+            "cost": 0
+          }
+        ]
+      }
+    },
+    "landing_only": {
+      "meta_mtd": 4815.44,
+      "gads_mtd": 726.46,
+      "total_mtd": 5541.9
+    },
+    "whatsapp_volume_mtd": 10835,
+    "by_unit": {
+      "proper": {
+        "meta": 6821.39,
+        "google": 1093.46,
+        "tiktok": 0.0,
+        "whatsapp": 978.96,
+        "total": 8893.81,
+        "detail": {
+          "meta": [
+            {
+              "id": "act_424971935894203",
+              "name": "Cuenta en soles Propinvest",
+              "currency": "PEN",
+              "spend": 6821.39,
+              "spend_pen": 6821.39
+            }
+          ],
+          "google": [
+            {
+              "name": "PMax - LANDING Proper Inversiones",
+              "spend": 726.45,
+              "spend_pen": 726.45
+            },
+            {
+              "name": "PM Max Rentas 06.05",
+              "spend": 367.01,
+              "spend_pen": 367.01
+            }
+          ],
+          "tiktok": [],
+          "whatsapp": [
+            {
+              "id": "345723035288365",
+              "name": "Corretaje Alquileres Proper Rentas",
+              "currency": "USD",
+              "cost": 136.44,
+              "cost_pen": 511.65,
+              "volume": 7866
+            },
+            {
+              "id": "434221413117441",
+              "name": "Marcos Uribe - Proper",
+              "currency": "USD",
+              "cost": 43.21,
+              "cost_pen": 162.04,
+              "volume": 649
+            },
+            {
+              "id": "434503913074428",
+              "name": "Sharon Cáceres Bandin",
+              "currency": "USD",
+              "cost": 33.0,
+              "cost_pen": 123.75,
+              "volume": 522
+            },
+            {
+              "id": "426174313907610",
+              "name": "Proper",
+              "currency": "USD",
+              "cost": 18.21,
+              "cost_pen": 68.29,
+              "volume": 534
+            },
+            {
+              "id": "532485923285061",
+              "name": "Diego Sánchez",
+              "currency": "USD",
+              "cost": 15.04,
+              "cost_pen": 56.4,
+              "volume": 326
+            },
+            {
+              "id": "2646323179040853",
+              "name": "Germain Pasapera",
+              "currency": "USD",
+              "cost": 13.22,
+              "cost_pen": 49.58,
+              "volume": 228
+            },
+            {
+              "id": "1988920322022990",
+              "name": "Proper Inversiones",
+              "currency": "USD",
+              "cost": 1.69,
+              "cost_pen": 6.34,
+              "volume": 150
+            },
+            {
+              "id": "26401509649540173",
+              "name": "Ada Martinez",
+              "currency": "PEN",
+              "cost": 0.7,
+              "cost_pen": 0.7,
+              "volume": 3
+            },
+            {
+              "id": "1813120572568884",
+              "name": "Ada Martinez",
+              "currency": "USD",
+              "cost": 0.06,
+              "cost_pen": 0.22,
+              "volume": 1
+            },
+            {
+              "id": "1071732319142937",
+              "name": "Proper Rentas - Atención al cliente",
+              "currency": "USD",
+              "cost": 0,
+              "cost_pen": 0.0,
+              "volume": 142
+            },
+            {
+              "id": "1499778585132795",
+              "name": "Atención al Cliente Rentas",
+              "currency": "USD",
+              "cost": 0,
+              "cost_pen": 0.0,
+              "volume": 10
+            },
+            {
+              "id": "652971464407065",
+              "name": "Proper",
+              "currency": "USD",
+              "cost": 0,
+              "cost_pen": 0.0,
+              "volume": 11
+            }
+          ]
+        },
+        "counts": {
+          "meta_total": 2,
+          "meta_with_spend": 1,
+          "google_total": 2,
+          "tiktok_total": 0,
+          "whatsapp_total": 21,
+          "whatsapp_with_activity": 12
+        }
+      },
+      "novo3": {
+        "meta": 1800.79,
+        "google": 0.0,
+        "tiktok": 0.0,
+        "whatsapp": 7.25,
+        "total": 1808.04,
+        "detail": {
+          "meta": [
+            {
+              "id": "act_945594697882747",
+              "name": "Novo 3 - 2026",
+              "currency": "USD",
+              "spend": 480.21,
+              "spend_pen": 1800.79
+            }
+          ],
+          "google": [],
+          "tiktok": [],
+          "whatsapp": [
+            {
+              "id": "1316170527231710",
+              "name": "MyHome - Novo 3",
+              "currency": "PEN",
+              "cost": 7.25,
+              "cost_pen": 7.25,
+              "volume": 393
+            }
+          ]
+        },
+        "counts": {
+          "meta_total": 2,
+          "meta_with_spend": 1,
+          "google_total": 0,
+          "tiktok_total": 0,
+          "whatsapp_total": 1,
+          "whatsapp_with_activity": 1
+        }
+      },
+      "sin_clasificar": {
+        "meta": 0.0,
+        "google": 0.0,
+        "tiktok": 0.0,
+        "whatsapp": 0.0,
+        "total": 0.0,
+        "detail": {
+          "meta": [],
+          "google": [],
+          "tiktok": [],
+          "whatsapp": []
+        },
+        "counts": {
+          "meta_total": 1,
+          "meta_with_spend": 0,
+          "google_total": 0,
+          "tiktok_total": 0,
+          "whatsapp_total": 0,
+          "whatsapp_with_activity": 0
+        }
+      }
+    },
+    "unit_labels": {
+      "proper": "Proper",
+      "novo3": "Novo 3",
+      "sin_clasificar": "Sin clasificar"
+    }
+  },
+  "budget_by_product": {
+    "month_start": "2026-05-01",
+    "currency": "PEN",
+    "days_in_month": 31,
+    "days_elapsed": 26,
+    "pct_month_elapsed": 83.9,
+    "total": {
+      "budget": 9300.0,
+      "mtd": 6677.93,
+      "pct_used": 71.8,
+      "run_rate_daily": 256.84,
+      "projected_eom": 7962.04,
+      "remaining_budget": 2622.07
+    },
+    "products": {
+      "inversiones": {
+        "label": "Proper Inversiones",
+        "budget": 7900.0,
+        "mtd": 5541.9,
+        "pct_used": 70.2,
+        "run_rate_daily": 213.15,
+        "projected_eom": 6607.65,
+        "channels": {
+          "facebook": {
+            "budget": 6000.0,
+            "mtd": 4815.44,
+            "pct_used": 80.3,
+            "run_rate_daily": 185.21,
+            "projected_eom": 5741.51,
+            "note": "Campañas con \"LANDING\" en act_424971935894203",
+            "campaigns": [
+              {
+                "name": "IN-LANDING-FROM-ABR-2026",
+                "spend": 2989.99
+              },
+              {
+                "name": "IN-LANDING-FROM-ABR-2026 -  ABO",
+                "spend": 1825.45
+              }
+            ]
+          },
+          "google": {
+            "budget": 1900.0,
+            "mtd": 726.46,
+            "pct_used": 38.2,
+            "run_rate_daily": 27.94,
+            "projected_eom": 866.14,
+            "note": "Customer 5145735707",
+            "campaigns": [
+              {
+                "name": "PMax - LANDING Proper Inversiones",
+                "spend": 726.46
+              }
+            ]
+          }
+        }
+      },
+      "rentas": {
+        "label": "Proper Rentas",
+        "budget": 1400.0,
+        "mtd": 1136.03,
+        "pct_used": 81.1,
+        "run_rate_daily": 43.69,
+        "projected_eom": 1354.39,
+        "channels": {
+          "facebook": {
+            "budget": 900.0,
+            "mtd": 769.02,
+            "pct_used": 85.4,
+            "run_rate_daily": 29.58,
+            "projected_eom": 916.98,
+            "note": "Campañas con \"RENTA\" en act_424971935894203",
+            "campaigns": [
+              {
+                "name": "Campaña_RENTAS_PROP_ABRIL2026_2",
+                "spend": 363.83
+              },
+              {
+                "name": "Campaña_RENTAS_PROP_ABRIL2026_2 - Copy",
+                "spend": 405.19
+              }
+            ]
+          },
+          "google": {
+            "budget": 500.0,
+            "mtd": 367.01,
+            "pct_used": 73.4,
+            "run_rate_daily": 14.12,
+            "projected_eom": 437.72,
+            "note": "Customer 3949022627 — Experimento (reasignado de Inversiones)",
+            "campaigns": [
+              {
+                "name": "PM Max Rentas 06.05",
+                "spend": 367.01
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
   "days": [
-    {
-      "fecha": "2026-03-24",
-      "meta_spend": 5.89,
-      "gads_spend": 0,
-      "total_spend": 5.89,
-      "meta_impressions": 804,
-      "meta_clicks": 57,
-      "gads_impressions": 0,
-      "gads_clicks": 0,
-      "leads": 0,
-      "aprobados": 0,
-      "no_aprobados": 0,
-      "alto": 0,
-      "medio": 0,
-      "empuje": 0,
-      "aprobado_int": 0,
-      "no_aprobado_nac": 0,
-      "no_aprobado_int": 0,
-      "sin_clasificar": 0,
-      "altos_medios": 0,
-      "asistentes": 0,
-      "simulados": 5,
-      "cotizados": 4,
-      "cpl": null,
-      "cpl_aprobado": null,
-      "canales": {
-        "Sin origen": {
-          "leads": 0,
-          "aprobados": 0,
-          "alto": 0,
-          "medio": 0,
-          "empuje": 0,
-          "aprobado_int": 0,
-          "no_aprobado_nac": 0,
-          "no_aprobado_int": 0,
-          "sin_clasificar": 0,
-          "asistentes": 0,
-          "simulados": 5,
-          "cotizados": 4
-        }
-      }
-    },
-    {
-      "fecha": "2026-03-25",
-      "meta_spend": 87.18,
-      "gads_spend": 0,
-      "total_spend": 87.18,
-      "meta_impressions": 2204,
-      "meta_clicks": 463,
-      "gads_impressions": 0,
-      "gads_clicks": 0,
-      "leads": 0,
-      "aprobados": 0,
-      "no_aprobados": 0,
-      "alto": 0,
-      "medio": 0,
-      "empuje": 0,
-      "aprobado_int": 0,
-      "no_aprobado_nac": 0,
-      "no_aprobado_int": 0,
-      "sin_clasificar": 0,
-      "altos_medios": 0,
-      "asistentes": 157,
-      "simulados": 2,
-      "cotizados": 0,
-      "cpl": null,
-      "cpl_aprobado": null,
-      "canales": {
-        "Google": {
-          "leads": 0,
-          "aprobados": 0,
-          "alto": 0,
-          "medio": 0,
-          "empuje": 0,
-          "aprobado_int": 0,
-          "no_aprobado_nac": 0,
-          "no_aprobado_int": 0,
-          "sin_clasificar": 0,
-          "asistentes": 1,
-          "simulados": 0,
-          "cotizados": 0
-        },
-        "Instagram": {
-          "leads": 0,
-          "aprobados": 0,
-          "alto": 0,
-          "medio": 0,
-          "empuje": 0,
-          "aprobado_int": 0,
-          "no_aprobado_nac": 0,
-          "no_aprobado_int": 0,
-          "sin_clasificar": 0,
-          "asistentes": 1,
-          "simulados": 0,
-          "cotizados": 0
-        },
-        "Sin origen": {
-          "leads": 0,
-          "aprobados": 0,
-          "alto": 0,
-          "medio": 0,
-          "empuje": 0,
-          "aprobado_int": 0,
-          "no_aprobado_nac": 0,
-          "no_aprobado_int": 0,
-          "sin_clasificar": 0,
-          "asistentes": 155,
-          "simulados": 2,
-          "cotizados": 0
-        }
-      }
-    },
-    {
-      "fecha": "2026-03-26",
-      "meta_spend": 68.04,
-      "gads_spend": 0,
-      "total_spend": 68.04,
-      "meta_impressions": 3150,
-      "meta_clicks": 999,
-      "gads_impressions": 0,
-      "gads_clicks": 0,
-      "leads": 0,
-      "aprobados": 0,
-      "no_aprobados": 0,
-      "alto": 0,
-      "medio": 0,
-      "empuje": 0,
-      "aprobado_int": 0,
-      "no_aprobado_nac": 0,
-      "no_aprobado_int": 0,
-      "sin_clasificar": 0,
-      "altos_medios": 0,
-      "asistentes": 123,
-      "simulados": 17,
-      "cotizados": 17,
-      "cpl": null,
-      "cpl_aprobado": null,
-      "canales": {
-        "Google": {
-          "leads": 0,
-          "aprobados": 0,
-          "alto": 0,
-          "medio": 0,
-          "empuje": 0,
-          "aprobado_int": 0,
-          "no_aprobado_nac": 0,
-          "no_aprobado_int": 0,
-          "sin_clasificar": 0,
-          "asistentes": 2,
-          "simulados": 0,
-          "cotizados": 0
-        },
-        "Instagram": {
-          "leads": 0,
-          "aprobados": 0,
-          "alto": 0,
-          "medio": 0,
-          "empuje": 0,
-          "aprobado_int": 0,
-          "no_aprobado_nac": 0,
-          "no_aprobado_int": 0,
-          "sin_clasificar": 0,
-          "asistentes": 2,
-          "simulados": 0,
-          "cotizados": 0
-        },
-        "Sin origen": {
-          "leads": 0,
-          "aprobados": 0,
-          "alto": 0,
-          "medio": 0,
-          "empuje": 0,
-          "aprobado_int": 0,
-          "no_aprobado_nac": 0,
-          "no_aprobado_int": 0,
-          "sin_clasificar": 0,
-          "asistentes": 119,
-          "simulados": 17,
-          "cotizados": 17
-        }
-      }
-    },
     {
       "fecha": "2026-03-27",
       "meta_spend": 17.56,
@@ -666,7 +1173,7 @@
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
       "altos_medios": 9,
-      "asistentes": 11,
+      "asistentes": 12,
       "simulados": 13,
       "cotizados": 11,
       "cpl": 10.94,
@@ -682,7 +1189,7 @@
           "no_aprobado_nac": 2,
           "no_aprobado_int": 0,
           "sin_clasificar": 0,
-          "asistentes": 0,
+          "asistentes": 1,
           "simulados": 0,
           "cotizados": 0
         },
@@ -1311,7 +1818,7 @@
       "sin_clasificar": 0,
       "altos_medios": 5,
       "asistentes": 0,
-      "simulados": 11,
+      "simulados": 12,
       "cotizados": 9,
       "cpl": 20.48,
       "cpl_aprobado": 32.42,
@@ -1327,7 +1834,7 @@
           "no_aprobado_int": 0,
           "sin_clasificar": 0,
           "asistentes": 0,
-          "simulados": 0,
+          "simulados": 1,
           "cotizados": 0
         },
         "Instagram": {
@@ -2907,7 +3414,7 @@
       "sin_clasificar": 0,
       "altos_medios": 7,
       "asistentes": 0,
-      "simulados": 5,
+      "simulados": 6,
       "cotizados": 3,
       "cpl": 16.1,
       "cpl_aprobado": 25.04,
@@ -2937,7 +3444,7 @@
           "no_aprobado_int": 0,
           "sin_clasificar": 0,
           "asistentes": 0,
-          "simulados": 0,
+          "simulados": 1,
           "cotizados": 0
         },
         "Instagram": {
@@ -3207,11 +3714,11 @@
           "cotizados": 0
         },
         "Facebook": {
-          "leads": 13,
-          "aprobados": 10,
+          "leads": 12,
+          "aprobados": 9,
           "alto": 1,
           "medio": 5,
-          "empuje": 4,
+          "empuje": 3,
           "aprobado_int": 0,
           "no_aprobado_nac": 3,
           "no_aprobado_int": 0,
@@ -3247,6 +3754,20 @@
           "asistentes": 0,
           "simulados": 0,
           "cotizados": 0
+        },
+        "web_home": {
+          "leads": 1,
+          "aprobados": 1,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 1,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
         }
       }
     },
@@ -3270,7 +3791,7 @@
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
       "altos_medios": 13,
-      "asistentes": 25,
+      "asistentes": 27,
       "simulados": 10,
       "cotizados": 7,
       "cpl": 9.72,
@@ -3286,7 +3807,7 @@
           "no_aprobado_nac": 4,
           "no_aprobado_int": 0,
           "sin_clasificar": 0,
-          "asistentes": 2,
+          "asistentes": 3,
           "simulados": 1,
           "cotizados": 0
         },
@@ -3305,16 +3826,30 @@
           "cotizados": 0
         },
         "Instagram": {
-          "leads": 8,
-          "aprobados": 6,
+          "leads": 7,
+          "aprobados": 5,
           "alto": 1,
-          "medio": 5,
+          "medio": 4,
           "empuje": 0,
           "aprobado_int": 0,
           "no_aprobado_nac": 2,
           "no_aprobado_int": 0,
           "sin_clasificar": 0,
           "asistentes": 2,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "web_home": {
+          "leads": 1,
+          "aprobados": 1,
+          "alto": 0,
+          "medio": 1,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 1,
           "simulados": 0,
           "cotizados": 0
         },
@@ -3357,22 +3892,22 @@
       "meta_clicks": 412,
       "gads_impressions": 618,
       "gads_clicks": 75,
-      "leads": 24,
-      "aprobados": 20,
+      "leads": 26,
+      "aprobados": 22,
       "no_aprobados": 4,
       "alto": 3,
-      "medio": 13,
-      "empuje": 4,
+      "medio": 14,
+      "empuje": 5,
       "aprobado_int": 0,
       "no_aprobado_nac": 4,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
-      "altos_medios": 16,
+      "altos_medios": 17,
       "asistentes": 0,
       "simulados": 5,
       "cotizados": 5,
-      "cpl": 9.64,
-      "cpl_aprobado": 11.56,
+      "cpl": 8.89,
+      "cpl_aprobado": 10.51,
       "canales": {
         "Audience Network": {
           "leads": 1,
@@ -3403,11 +3938,11 @@
           "cotizados": 0
         },
         "Google": {
-          "leads": 4,
-          "aprobados": 4,
+          "leads": 6,
+          "aprobados": 6,
           "alto": 0,
-          "medio": 3,
-          "empuje": 1,
+          "medio": 4,
+          "empuje": 2,
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
@@ -3455,22 +3990,22 @@
       "meta_clicks": 429,
       "gads_impressions": 708,
       "gads_clicks": 71,
-      "leads": 20,
-      "aprobados": 15,
+      "leads": 24,
+      "aprobados": 19,
       "no_aprobados": 5,
-      "alto": 3,
-      "medio": 7,
-      "empuje": 5,
+      "alto": 5,
+      "medio": 8,
+      "empuje": 6,
       "aprobado_int": 0,
       "no_aprobado_nac": 5,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
-      "altos_medios": 10,
+      "altos_medios": 13,
       "asistentes": 11,
       "simulados": 16,
       "cotizados": 10,
-      "cpl": 11.82,
-      "cpl_aprobado": 15.75,
+      "cpl": 9.85,
+      "cpl_aprobado": 12.44,
       "canales": {
         "Audience Network": {
           "leads": 1,
@@ -3487,9 +4022,9 @@
           "cotizados": 0
         },
         "Facebook": {
-          "leads": 6,
-          "aprobados": 3,
-          "alto": 1,
+          "leads": 7,
+          "aprobados": 4,
+          "alto": 2,
           "medio": 2,
           "empuje": 0,
           "aprobado_int": 0,
@@ -3501,11 +4036,11 @@
           "cotizados": 1
         },
         "Google": {
-          "leads": 5,
-          "aprobados": 5,
+          "leads": 7,
+          "aprobados": 7,
           "alto": 0,
-          "medio": 2,
-          "empuje": 3,
+          "medio": 3,
+          "empuje": 4,
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
@@ -3517,14 +4052,28 @@
         "Instagram": {
           "leads": 8,
           "aprobados": 6,
-          "alto": 1,
-          "medio": 3,
+          "alto": 2,
+          "medio": 2,
           "empuje": 2,
           "aprobado_int": 0,
           "no_aprobado_nac": 2,
           "no_aprobado_int": 0,
           "sin_clasificar": 0,
           "asistentes": 2,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "web_popup": {
+          "leads": 1,
+          "aprobados": 1,
+          "alto": 0,
+          "medio": 1,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
           "simulados": 0,
           "cotizados": 0
         },
@@ -3567,29 +4116,29 @@
       "meta_clicks": 349,
       "gads_impressions": 291,
       "gads_clicks": 63,
-      "leads": 22,
-      "aprobados": 17,
+      "leads": 25,
+      "aprobados": 20,
       "no_aprobados": 5,
       "alto": 4,
-      "medio": 10,
-      "empuje": 3,
+      "medio": 12,
+      "empuje": 4,
       "aprobado_int": 0,
       "no_aprobado_nac": 5,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
-      "altos_medios": 14,
+      "altos_medios": 16,
       "asistentes": 0,
       "simulados": 14,
       "cotizados": 10,
-      "cpl": 9.72,
-      "cpl_aprobado": 12.58,
+      "cpl": 8.56,
+      "cpl_aprobado": 10.69,
       "canales": {
         "Facebook": {
-          "leads": 3,
-          "aprobados": 3,
+          "leads": 6,
+          "aprobados": 6,
           "alto": 1,
-          "medio": 2,
-          "empuje": 0,
+          "medio": 4,
+          "empuje": 1,
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
           "no_aprobado_int": 0,
@@ -3697,10 +4246,10 @@
           "cotizados": 0
         },
         "Google": {
-          "leads": 4,
-          "aprobados": 4,
+          "leads": 3,
+          "aprobados": 3,
           "alto": 2,
-          "medio": 1,
+          "medio": 0,
           "empuje": 1,
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
@@ -3715,6 +4264,20 @@
           "aprobados": 4,
           "alto": 0,
           "medio": 4,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "web_proyecto": {
+          "leads": 1,
+          "aprobados": 1,
+          "alto": 0,
+          "medio": 1,
           "empuje": 0,
           "aprobado_int": 0,
           "no_aprobado_nac": 0,
@@ -3742,29 +4305,29 @@
     },
     {
       "fecha": "2026-05-09",
-      "meta_spend": 174.83,
+      "meta_spend": 174.84,
       "gads_spend": 54.58,
-      "total_spend": 229.41,
-      "meta_impressions": 7358,
+      "total_spend": 229.42,
+      "meta_impressions": 7360,
       "meta_clicks": 322,
       "gads_impressions": 1255,
       "gads_clicks": 77,
-      "leads": 28,
-      "aprobados": 21,
+      "leads": 30,
+      "aprobados": 23,
       "no_aprobados": 7,
-      "alto": 2,
-      "medio": 9,
+      "alto": 3,
+      "medio": 10,
       "empuje": 10,
       "aprobado_int": 0,
       "no_aprobado_nac": 7,
       "no_aprobado_int": 0,
       "sin_clasificar": 0,
-      "altos_medios": 11,
+      "altos_medios": 13,
       "asistentes": 0,
       "simulados": 11,
       "cotizados": 7,
-      "cpl": 8.19,
-      "cpl_aprobado": 10.92,
+      "cpl": 7.65,
+      "cpl_aprobado": 9.97,
       "canales": {
         "Facebook": {
           "leads": 6,
@@ -3781,10 +4344,10 @@
           "cotizados": 0
         },
         "Google": {
-          "leads": 8,
-          "aprobados": 6,
-          "alto": 0,
-          "medio": 4,
+          "leads": 10,
+          "aprobados": 8,
+          "alto": 1,
+          "medio": 5,
           "empuje": 2,
           "aprobado_int": 0,
           "no_aprobado_nac": 2,
@@ -3826,10 +4389,10 @@
     },
     {
       "fecha": "2026-05-10",
-      "meta_spend": 214.59,
+      "meta_spend": 214.95,
       "gads_spend": 38.71,
-      "total_spend": 253.3,
-      "meta_impressions": 7770,
+      "total_spend": 253.66,
+      "meta_impressions": 7772,
       "meta_clicks": 376,
       "gads_impressions": 982,
       "gads_clicks": 67,
@@ -3847,8 +4410,8 @@
       "asistentes": 0,
       "simulados": 6,
       "cotizados": 4,
-      "cpl": 11.51,
-      "cpl_aprobado": 12.06,
+      "cpl": 11.53,
+      "cpl_aprobado": 12.08,
       "canales": {
         "Facebook": {
           "leads": 3,
@@ -3910,13 +4473,1441 @@
     },
     {
       "fecha": "2026-05-11",
-      "meta_spend": 109.43,
-      "gads_spend": 27.75,
-      "total_spend": 137.18,
-      "meta_impressions": 5725,
-      "meta_clicks": 213,
-      "gads_impressions": 762,
+      "meta_spend": 206.22,
+      "gads_spend": 35.83,
+      "total_spend": 242.05,
+      "meta_impressions": 11563,
+      "meta_clicks": 446,
+      "gads_impressions": 1085,
+      "gads_clicks": 76,
+      "leads": 23,
+      "aprobados": 19,
+      "no_aprobados": 4,
+      "alto": 1,
+      "medio": 17,
+      "empuje": 1,
+      "aprobado_int": 0,
+      "no_aprobado_nac": 4,
+      "no_aprobado_int": 0,
+      "sin_clasificar": 0,
+      "altos_medios": 18,
+      "asistentes": 18,
+      "simulados": 7,
+      "cotizados": 7,
+      "cpl": 10.52,
+      "cpl_aprobado": 12.74,
+      "canales": {
+        "Facebook": {
+          "leads": 6,
+          "aprobados": 5,
+          "alto": 1,
+          "medio": 4,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 1,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 4,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Google": {
+          "leads": 8,
+          "aprobados": 6,
+          "alto": 0,
+          "medio": 6,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 2,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 4,
+          "simulados": 2,
+          "cotizados": 2
+        },
+        "Instagram": {
+          "leads": 8,
+          "aprobados": 8,
+          "alto": 0,
+          "medio": 7,
+          "empuje": 1,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 2,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "web_popup": {
+          "leads": 1,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 1,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 8,
+          "simulados": 5,
+          "cotizados": 5
+        }
+      }
+    },
+    {
+      "fecha": "2026-05-12",
+      "meta_spend": 203.04,
+      "gads_spend": 33.47,
+      "total_spend": 236.51,
+      "meta_impressions": 10109,
+      "meta_clicks": 386,
+      "gads_impressions": 1079,
+      "gads_clicks": 64,
+      "leads": 23,
+      "aprobados": 15,
+      "no_aprobados": 8,
+      "alto": 7,
+      "medio": 7,
+      "empuje": 1,
+      "aprobado_int": 0,
+      "no_aprobado_nac": 8,
+      "no_aprobado_int": 0,
+      "sin_clasificar": 0,
+      "altos_medios": 14,
+      "asistentes": 0,
+      "simulados": 19,
+      "cotizados": 12,
+      "cpl": 10.28,
+      "cpl_aprobado": 15.77,
+      "canales": {
+        "Facebook": {
+          "leads": 9,
+          "aprobados": 5,
+          "alto": 4,
+          "medio": 1,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 4,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 2,
+          "cotizados": 2
+        },
+        "Google": {
+          "leads": 8,
+          "aprobados": 7,
+          "alto": 2,
+          "medio": 4,
+          "empuje": 1,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 1,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 5,
+          "cotizados": 4
+        },
+        "Instagram": {
+          "leads": 5,
+          "aprobados": 3,
+          "alto": 1,
+          "medio": 2,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 2,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "th": {
+          "leads": 1,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 1,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Audience Network": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 1,
+          "cotizados": 1
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 11,
+          "cotizados": 5
+        }
+      }
+    },
+    {
+      "fecha": "2026-05-13",
+      "meta_spend": 15.24,
+      "gads_spend": 25.15,
+      "total_spend": 40.39,
+      "meta_impressions": 685,
+      "meta_clicks": 37,
+      "gads_impressions": 1406,
       "gads_clicks": 50,
+      "leads": 17,
+      "aprobados": 11,
+      "no_aprobados": 6,
+      "alto": 3,
+      "medio": 7,
+      "empuje": 1,
+      "aprobado_int": 0,
+      "no_aprobado_nac": 6,
+      "no_aprobado_int": 0,
+      "sin_clasificar": 0,
+      "altos_medios": 10,
+      "asistentes": 13,
+      "simulados": 7,
+      "cotizados": 6,
+      "cpl": 2.38,
+      "cpl_aprobado": 3.67,
+      "canales": {
+        "Facebook": {
+          "leads": 5,
+          "aprobados": 2,
+          "alto": 0,
+          "medio": 2,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 3,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 1,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Google": {
+          "leads": 9,
+          "aprobados": 6,
+          "alto": 1,
+          "medio": 4,
+          "empuje": 1,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 3,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 3,
+          "simulados": 2,
+          "cotizados": 2
+        },
+        "Instagram": {
+          "leads": 3,
+          "aprobados": 3,
+          "alto": 2,
+          "medio": 1,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 9,
+          "simulados": 5,
+          "cotizados": 4
+        }
+      }
+    },
+    {
+      "fecha": "2026-05-14",
+      "meta_spend": 0,
+      "gads_spend": 51.88,
+      "total_spend": 51.88,
+      "meta_impressions": 0,
+      "meta_clicks": 0,
+      "gads_impressions": 2463,
+      "gads_clicks": 66,
+      "leads": 8,
+      "aprobados": 6,
+      "no_aprobados": 2,
+      "alto": 0,
+      "medio": 5,
+      "empuje": 1,
+      "aprobado_int": 0,
+      "no_aprobado_nac": 2,
+      "no_aprobado_int": 0,
+      "sin_clasificar": 0,
+      "altos_medios": 5,
+      "asistentes": 0,
+      "simulados": 17,
+      "cotizados": 18,
+      "cpl": 6.49,
+      "cpl_aprobado": 8.65,
+      "canales": {
+        "Google": {
+          "leads": 8,
+          "aprobados": 6,
+          "alto": 0,
+          "medio": 5,
+          "empuje": 1,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 2,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 4,
+          "cotizados": 4
+        },
+        "Facebook": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 1,
+          "cotizados": 1
+        },
+        "Instagram": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 1,
+          "cotizados": 1
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 11,
+          "cotizados": 12
+        }
+      }
+    },
+    {
+      "fecha": "2026-05-15",
+      "meta_spend": 258.09,
+      "gads_spend": 30.71,
+      "total_spend": 288.8,
+      "meta_impressions": 8189,
+      "meta_clicks": 463,
+      "gads_impressions": 1025,
+      "gads_clicks": 44,
+      "leads": 11,
+      "aprobados": 8,
+      "no_aprobados": 3,
+      "alto": 0,
+      "medio": 8,
+      "empuje": 0,
+      "aprobado_int": 0,
+      "no_aprobado_nac": 3,
+      "no_aprobado_int": 0,
+      "sin_clasificar": 0,
+      "altos_medios": 8,
+      "asistentes": 0,
+      "simulados": 11,
+      "cotizados": 10,
+      "cpl": 26.25,
+      "cpl_aprobado": 36.1,
+      "canales": {
+        "Facebook": {
+          "leads": 6,
+          "aprobados": 3,
+          "alto": 0,
+          "medio": 3,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 3,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Google": {
+          "leads": 5,
+          "aprobados": 5,
+          "alto": 0,
+          "medio": 5,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 7,
+          "cotizados": 6
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 4,
+          "cotizados": 4
+        }
+      }
+    },
+    {
+      "fecha": "2026-05-16",
+      "meta_spend": 325.47,
+      "gads_spend": 42.13,
+      "total_spend": 367.6,
+      "meta_impressions": 9985,
+      "meta_clicks": 676,
+      "gads_impressions": 714,
+      "gads_clicks": 62,
+      "leads": 56,
+      "aprobados": 39,
+      "no_aprobados": 17,
+      "alto": 8,
+      "medio": 19,
+      "empuje": 12,
+      "aprobado_int": 0,
+      "no_aprobado_nac": 17,
+      "no_aprobado_int": 0,
+      "sin_clasificar": 0,
+      "altos_medios": 27,
+      "asistentes": 0,
+      "simulados": 6,
+      "cotizados": 5,
+      "cpl": 6.56,
+      "cpl_aprobado": 9.43,
+      "canales": {
+        "Audience Network": {
+          "leads": 6,
+          "aprobados": 3,
+          "alto": 0,
+          "medio": 1,
+          "empuje": 2,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 3,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Facebook": {
+          "leads": 27,
+          "aprobados": 16,
+          "alto": 3,
+          "medio": 8,
+          "empuje": 5,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 11,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Google": {
+          "leads": 11,
+          "aprobados": 9,
+          "alto": 5,
+          "medio": 4,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 2,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 1,
+          "cotizados": 1
+        },
+        "Instagram": {
+          "leads": 12,
+          "aprobados": 11,
+          "alto": 0,
+          "medio": 6,
+          "empuje": 5,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 1,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 1,
+          "cotizados": 1
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 4,
+          "cotizados": 3
+        }
+      }
+    },
+    {
+      "fecha": "2026-05-17",
+      "meta_spend": 238.82,
+      "gads_spend": 39.14,
+      "total_spend": 277.96,
+      "meta_impressions": 7944,
+      "meta_clicks": 437,
+      "gads_impressions": 633,
+      "gads_clicks": 46,
+      "leads": 29,
+      "aprobados": 23,
+      "no_aprobados": 6,
+      "alto": 2,
+      "medio": 15,
+      "empuje": 6,
+      "aprobado_int": 0,
+      "no_aprobado_nac": 6,
+      "no_aprobado_int": 0,
+      "sin_clasificar": 0,
+      "altos_medios": 17,
+      "asistentes": 0,
+      "simulados": 0,
+      "cotizados": 0,
+      "cpl": 9.58,
+      "cpl_aprobado": 12.09,
+      "canales": {
+        "Audience Network": {
+          "leads": 1,
+          "aprobados": 1,
+          "alto": 0,
+          "medio": 1,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Facebook": {
+          "leads": 15,
+          "aprobados": 11,
+          "alto": 0,
+          "medio": 6,
+          "empuje": 5,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 4,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Google": {
+          "leads": 12,
+          "aprobados": 11,
+          "alto": 2,
+          "medio": 8,
+          "empuje": 1,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 1,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Instagram": {
+          "leads": 1,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 1,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-05-18",
+      "meta_spend": 195.81,
+      "gads_spend": 34.79,
+      "total_spend": 230.6,
+      "meta_impressions": 9704,
+      "meta_clicks": 393,
+      "gads_impressions": 324,
+      "gads_clicks": 74,
+      "leads": 42,
+      "aprobados": 29,
+      "no_aprobados": 13,
+      "alto": 5,
+      "medio": 19,
+      "empuje": 5,
+      "aprobado_int": 0,
+      "no_aprobado_nac": 13,
+      "no_aprobado_int": 0,
+      "sin_clasificar": 0,
+      "altos_medios": 24,
+      "asistentes": 16,
+      "simulados": 5,
+      "cotizados": 4,
+      "cpl": 5.49,
+      "cpl_aprobado": 7.95,
+      "canales": {
+        "Audience Network": {
+          "leads": 1,
+          "aprobados": 1,
+          "alto": 0,
+          "medio": 1,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Facebook": {
+          "leads": 13,
+          "aprobados": 9,
+          "alto": 3,
+          "medio": 4,
+          "empuje": 2,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 4,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 1,
+          "cotizados": 0
+        },
+        "Google": {
+          "leads": 17,
+          "aprobados": 13,
+          "alto": 1,
+          "medio": 10,
+          "empuje": 2,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 4,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 6,
+          "simulados": 2,
+          "cotizados": 2
+        },
+        "Instagram": {
+          "leads": 10,
+          "aprobados": 5,
+          "alto": 0,
+          "medio": 4,
+          "empuje": 1,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 5,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 2,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "web_popup": {
+          "leads": 1,
+          "aprobados": 1,
+          "alto": 1,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 8,
+          "simulados": 2,
+          "cotizados": 2
+        }
+      }
+    },
+    {
+      "fecha": "2026-05-19",
+      "meta_spend": 146.6,
+      "gads_spend": 24.53,
+      "total_spend": 171.13,
+      "meta_impressions": 8445,
+      "meta_clicks": 307,
+      "gads_impressions": 195,
+      "gads_clicks": 52,
+      "leads": 53,
+      "aprobados": 42,
+      "no_aprobados": 11,
+      "alto": 9,
+      "medio": 19,
+      "empuje": 14,
+      "aprobado_int": 0,
+      "no_aprobado_nac": 11,
+      "no_aprobado_int": 0,
+      "sin_clasificar": 0,
+      "altos_medios": 28,
+      "asistentes": 0,
+      "simulados": 10,
+      "cotizados": 7,
+      "cpl": 3.23,
+      "cpl_aprobado": 4.07,
+      "canales": {
+        "Audience Network": {
+          "leads": 2,
+          "aprobados": 1,
+          "alto": 1,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 1,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Facebook": {
+          "leads": 16,
+          "aprobados": 11,
+          "alto": 0,
+          "medio": 6,
+          "empuje": 5,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 5,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 1,
+          "cotizados": 1
+        },
+        "Google": {
+          "leads": 19,
+          "aprobados": 17,
+          "alto": 6,
+          "medio": 7,
+          "empuje": 4,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 2,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 3,
+          "cotizados": 2
+        },
+        "Instagram": {
+          "leads": 16,
+          "aprobados": 13,
+          "alto": 2,
+          "medio": 6,
+          "empuje": 5,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 3,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 6,
+          "cotizados": 4
+        }
+      }
+    },
+    {
+      "fecha": "2026-05-20",
+      "meta_spend": 175.39,
+      "gads_spend": 42.97,
+      "total_spend": 218.36,
+      "meta_impressions": 11762,
+      "meta_clicks": 452,
+      "gads_impressions": 390,
+      "gads_clicks": 64,
+      "leads": 29,
+      "aprobados": 24,
+      "no_aprobados": 5,
+      "alto": 4,
+      "medio": 12,
+      "empuje": 8,
+      "aprobado_int": 0,
+      "no_aprobado_nac": 5,
+      "no_aprobado_int": 0,
+      "sin_clasificar": 0,
+      "altos_medios": 16,
+      "asistentes": 23,
+      "simulados": 7,
+      "cotizados": 5,
+      "cpl": 7.53,
+      "cpl_aprobado": 9.1,
+      "canales": {
+        "Audience Network": {
+          "leads": 1,
+          "aprobados": 1,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 1,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Facebook": {
+          "leads": 10,
+          "aprobados": 6,
+          "alto": 1,
+          "medio": 3,
+          "empuje": 2,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 4,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 3,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Google": {
+          "leads": 10,
+          "aprobados": 10,
+          "alto": 2,
+          "medio": 5,
+          "empuje": 3,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 9,
+          "simulados": 2,
+          "cotizados": 2
+        },
+        "Instagram": {
+          "leads": 8,
+          "aprobados": 7,
+          "alto": 1,
+          "medio": 4,
+          "empuje": 2,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 1,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 1,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 10,
+          "simulados": 5,
+          "cotizados": 3
+        }
+      }
+    },
+    {
+      "fecha": "2026-05-21",
+      "meta_spend": 195.85,
+      "gads_spend": 2.81,
+      "total_spend": 198.66,
+      "meta_impressions": 12603,
+      "meta_clicks": 498,
+      "gads_impressions": 9,
+      "gads_clicks": 5,
+      "leads": 47,
+      "aprobados": 36,
+      "no_aprobados": 11,
+      "alto": 5,
+      "medio": 18,
+      "empuje": 13,
+      "aprobado_int": 0,
+      "no_aprobado_nac": 11,
+      "no_aprobado_int": 0,
+      "sin_clasificar": 0,
+      "altos_medios": 23,
+      "asistentes": 0,
+      "simulados": 14,
+      "cotizados": 9,
+      "cpl": 4.23,
+      "cpl_aprobado": 5.52,
+      "canales": {
+        "Audience Network": {
+          "leads": 1,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 1,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 1,
+          "cotizados": 0
+        },
+        "Facebook": {
+          "leads": 18,
+          "aprobados": 14,
+          "alto": 2,
+          "medio": 5,
+          "empuje": 7,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 4,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 2,
+          "cotizados": 1
+        },
+        "Google": {
+          "leads": 19,
+          "aprobados": 16,
+          "alto": 3,
+          "medio": 9,
+          "empuje": 4,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 3,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 3,
+          "cotizados": 3
+        },
+        "Instagram": {
+          "leads": 9,
+          "aprobados": 6,
+          "alto": 0,
+          "medio": 4,
+          "empuje": 2,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 3,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 8,
+          "cotizados": 5
+        }
+      }
+    },
+    {
+      "fecha": "2026-05-22",
+      "meta_spend": 187.53,
+      "gads_spend": 0,
+      "total_spend": 187.53,
+      "meta_impressions": 12247,
+      "meta_clicks": 461,
+      "gads_impressions": 0,
+      "gads_clicks": 0,
+      "leads": 41,
+      "aprobados": 34,
+      "no_aprobados": 7,
+      "alto": 8,
+      "medio": 14,
+      "empuje": 12,
+      "aprobado_int": 0,
+      "no_aprobado_nac": 7,
+      "no_aprobado_int": 0,
+      "sin_clasificar": 0,
+      "altos_medios": 22,
+      "asistentes": 0,
+      "simulados": 8,
+      "cotizados": 6,
+      "cpl": 4.57,
+      "cpl_aprobado": 5.52,
+      "canales": {
+        "Audience Network": {
+          "leads": 1,
+          "aprobados": 1,
+          "alto": 1,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Facebook": {
+          "leads": 10,
+          "aprobados": 9,
+          "alto": 0,
+          "medio": 5,
+          "empuje": 4,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 1,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Google": {
+          "leads": 15,
+          "aprobados": 13,
+          "alto": 4,
+          "medio": 4,
+          "empuje": 5,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 2,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 2,
+          "cotizados": 2
+        },
+        "Instagram": {
+          "leads": 15,
+          "aprobados": 11,
+          "alto": 3,
+          "medio": 5,
+          "empuje": 3,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 4,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 1,
+          "cotizados": 1
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 5,
+          "cotizados": 3
+        }
+      }
+    },
+    {
+      "fecha": "2026-05-23",
+      "meta_spend": 182.34,
+      "gads_spend": 0,
+      "total_spend": 182.34,
+      "meta_impressions": 10681,
+      "meta_clicks": 464,
+      "gads_impressions": 0,
+      "gads_clicks": 0,
+      "leads": 39,
+      "aprobados": 31,
+      "no_aprobados": 8,
+      "alto": 3,
+      "medio": 15,
+      "empuje": 13,
+      "aprobado_int": 0,
+      "no_aprobado_nac": 8,
+      "no_aprobado_int": 0,
+      "sin_clasificar": 0,
+      "altos_medios": 18,
+      "asistentes": 0,
+      "simulados": 13,
+      "cotizados": 8,
+      "cpl": 4.68,
+      "cpl_aprobado": 5.88,
+      "canales": {
+        "Audience Network": {
+          "leads": 3,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 3,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Facebook": {
+          "leads": 13,
+          "aprobados": 10,
+          "alto": 0,
+          "medio": 5,
+          "empuje": 5,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 3,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Google": {
+          "leads": 15,
+          "aprobados": 14,
+          "alto": 3,
+          "medio": 8,
+          "empuje": 3,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 1,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 3,
+          "cotizados": 1
+        },
+        "Instagram": {
+          "leads": 8,
+          "aprobados": 7,
+          "alto": 0,
+          "medio": 2,
+          "empuje": 5,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 1,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 10,
+          "cotizados": 7
+        }
+      }
+    },
+    {
+      "fecha": "2026-05-24",
+      "meta_spend": 219.04,
+      "gads_spend": 0,
+      "total_spend": 219.04,
+      "meta_impressions": 13142,
+      "meta_clicks": 579,
+      "gads_impressions": 0,
+      "gads_clicks": 0,
+      "leads": 39,
+      "aprobados": 32,
+      "no_aprobados": 7,
+      "alto": 5,
+      "medio": 20,
+      "empuje": 7,
+      "aprobado_int": 0,
+      "no_aprobado_nac": 7,
+      "no_aprobado_int": 0,
+      "sin_clasificar": 0,
+      "altos_medios": 25,
+      "asistentes": 0,
+      "simulados": 0,
+      "cotizados": 0,
+      "cpl": 5.62,
+      "cpl_aprobado": 6.84,
+      "canales": {
+        "Audience Network": {
+          "leads": 1,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 1,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Facebook": {
+          "leads": 16,
+          "aprobados": 13,
+          "alto": 1,
+          "medio": 9,
+          "empuje": 3,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 3,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Google": {
+          "leads": 13,
+          "aprobados": 11,
+          "alto": 3,
+          "medio": 5,
+          "empuje": 3,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 2,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Instagram": {
+          "leads": 9,
+          "aprobados": 8,
+          "alto": 1,
+          "medio": 6,
+          "empuje": 1,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 1,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        }
+      }
+    },
+    {
+      "fecha": "2026-05-25",
+      "meta_spend": 194.04,
+      "gads_spend": 0,
+      "total_spend": 194.04,
+      "meta_impressions": 12337,
+      "meta_clicks": 484,
+      "gads_impressions": 0,
+      "gads_clicks": 0,
+      "leads": 32,
+      "aprobados": 28,
+      "no_aprobados": 4,
+      "alto": 4,
+      "medio": 14,
+      "empuje": 10,
+      "aprobado_int": 0,
+      "no_aprobado_nac": 4,
+      "no_aprobado_int": 0,
+      "sin_clasificar": 0,
+      "altos_medios": 18,
+      "asistentes": 19,
+      "simulados": 11,
+      "cotizados": 10,
+      "cpl": 6.06,
+      "cpl_aprobado": 6.93,
+      "canales": {
+        "Facebook": {
+          "leads": 8,
+          "aprobados": 8,
+          "alto": 0,
+          "medio": 5,
+          "empuje": 3,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 2,
+          "simulados": 1,
+          "cotizados": 1
+        },
+        "Google": {
+          "leads": 15,
+          "aprobados": 13,
+          "alto": 2,
+          "medio": 7,
+          "empuje": 4,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 2,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 6,
+          "simulados": 3,
+          "cotizados": 2
+        },
+        "Instagram": {
+          "leads": 7,
+          "aprobados": 5,
+          "alto": 1,
+          "medio": 1,
+          "empuje": 3,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 2,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 1,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "web_popup": {
+          "leads": 2,
+          "aprobados": 2,
+          "alto": 1,
+          "medio": 1,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 0,
+          "simulados": 0,
+          "cotizados": 0
+        },
+        "Sin origen": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 9,
+          "simulados": 6,
+          "cotizados": 6
+        },
+        "web_home": {
+          "leads": 0,
+          "aprobados": 0,
+          "alto": 0,
+          "medio": 0,
+          "empuje": 0,
+          "aprobado_int": 0,
+          "no_aprobado_nac": 0,
+          "no_aprobado_int": 0,
+          "sin_clasificar": 0,
+          "asistentes": 1,
+          "simulados": 1,
+          "cotizados": 1
+        }
+      }
+    },
+    {
+      "fecha": "2026-05-26",
+      "meta_spend": 92.72,
+      "gads_spend": 0,
+      "total_spend": 92.72,
+      "meta_impressions": 6409,
+      "meta_clicks": 221,
+      "gads_impressions": 0,
+      "gads_clicks": 0,
       "leads": 0,
       "aprobados": 0,
       "no_aprobados": 0,
@@ -3930,11 +5921,11 @@
       "altos_medios": 0,
       "asistentes": 0,
       "simulados": 3,
-      "cotizados": 3,
+      "cotizados": 2,
       "cpl": null,
       "cpl_aprobado": null,
       "canales": {
-        "Google": {
+        "Instagram": {
           "leads": 0,
           "aprobados": 0,
           "alto": 0,
@@ -3960,75 +5951,12 @@
           "sin_clasificar": 0,
           "asistentes": 0,
           "simulados": 2,
-          "cotizados": 2
+          "cotizados": 1
         }
       }
     }
   ],
   "meta_ads": [
-    {
-      "fecha": "2026-03-24",
-      "campaign": "Sales - Landing Proper 24.03",
-      "adset": "Sales - Landing Proper 24.03",
-      "ad": "New Sales Ad",
-      "spend": 3.37,
-      "impressions": 594,
-      "clicks": 38
-    },
-    {
-      "fecha": "2026-03-24",
-      "campaign": "Leads - Landing Proper Inversiones MAR26",
-      "adset": "Inversores Lima 25-55 - Website Leads",
-      "ad": "Video Inversiones - Landing Proper",
-      "spend": 2.52,
-      "impressions": 210,
-      "clicks": 19
-    },
-    {
-      "fecha": "2026-03-25",
-      "campaign": "Sales - Landing Proper 24.03",
-      "adset": "Sales - Landing Proper 24.03",
-      "ad": "New Sales Ad",
-      "spend": 0.3,
-      "impressions": 47,
-      "clicks": 6
-    },
-    {
-      "fecha": "2026-03-25",
-      "campaign": "Leads - Landing Proper Inversiones MAR26",
-      "adset": "Inversores Lima 25-55 - Website Leads",
-      "ad": "Video Inversiones - Landing Proper",
-      "spend": 48.38,
-      "impressions": 1118,
-      "clicks": 92
-    },
-    {
-      "fecha": "2026-03-25",
-      "campaign": "Leads - Landing Proper Inversiones MAR26",
-      "adset": "Inversores Lima 25-55 - Website Leads",
-      "ad": "Video Inversiones - Landing Proper - Copy",
-      "spend": 38.5,
-      "impressions": 1039,
-      "clicks": 365
-    },
-    {
-      "fecha": "2026-03-26",
-      "campaign": "Leads - Landing Proper Inversiones MAR26",
-      "adset": "Inversores Lima 25-55 - Website Leads",
-      "ad": "Video Inversiones - Landing Proper",
-      "spend": 16.3,
-      "impressions": 1390,
-      "clicks": 440
-    },
-    {
-      "fecha": "2026-03-26",
-      "campaign": "Leads - Landing Proper Inversiones MAR26",
-      "adset": "Inversores Lima 25-55 - Website Leads",
-      "ad": "Video Inversiones - Landing Proper - Copy",
-      "spend": 51.74,
-      "impressions": 1760,
-      "clicks": 559
-    },
     {
       "fecha": "2026-03-27",
       "campaign": "Leads - Landing Proper Inversiones MAR26",
@@ -5934,7 +7862,7 @@
       "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
       "ad": "Video Inversiones - Landing Proper - Nataly",
       "spend": 105.49,
-      "impressions": 4782,
+      "impressions": 4783,
       "clicks": 154
     },
     {
@@ -5951,8 +7879,8 @@
       "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
       "adset": "cj-hayDepasQueSePaganSolo-video",
       "ad": "hayDepasQueSePaganSolo-video",
-      "spend": 39.18,
-      "impressions": 1805,
+      "spend": 39.19,
+      "impressions": 1806,
       "clicks": 97
     },
     {
@@ -5969,8 +7897,8 @@
       "campaign": "IN-LANDING-FROM-ABR-2026",
       "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
       "ad": "Video Inversiones - Landing Proper - Nataly",
-      "spend": 112.64,
-      "impressions": 4660,
+      "spend": 113.0,
+      "impressions": 4662,
       "clicks": 188
     },
     {
@@ -6005,36 +7933,729 @@
       "campaign": "IN-LANDING-FROM-ABR-2026",
       "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
       "ad": "Video Inversiones - Landing Proper - Nataly",
-      "spend": 58.11,
-      "impressions": 4013,
-      "clicks": 106
+      "spend": 101.33,
+      "impressions": 7575,
+      "clicks": 205
     },
     {
       "fecha": "2026-05-11",
       "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
       "adset": "cj-muchosPeruanos-video",
       "ad": "depasSePaganSolos",
-      "spend": 16.86,
-      "impressions": 568,
-      "clicks": 33
+      "spend": 29.16,
+      "impressions": 1093,
+      "clicks": 59
     },
     {
       "fecha": "2026-05-11",
       "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
       "adset": "cj-hayDepasQueSePaganSolo-video",
       "ad": "hayDepasQueSePaganSolo-video",
-      "spend": 25.01,
-      "impressions": 862,
-      "clicks": 52
+      "spend": 45.63,
+      "impressions": 1831,
+      "clicks": 114
     },
     {
       "fecha": "2026-05-11",
       "campaign": "IN-LANDING-FROM-ABR-2026",
       "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
       "ad": "Video Inversiones - Landing Proper - Nataly - Copy",
-      "spend": 9.56,
-      "impressions": 289,
-      "clicks": 22
+      "spend": 30.1,
+      "impressions": 1064,
+      "clicks": 68
+    },
+    {
+      "fecha": "2026-05-12",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly",
+      "spend": 64.89,
+      "impressions": 4925,
+      "clicks": 143
+    },
+    {
+      "fecha": "2026-05-12",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-muchosPeruanos-video",
+      "ad": "depasSePaganSolos",
+      "spend": 32.11,
+      "impressions": 1654,
+      "clicks": 69
+    },
+    {
+      "fecha": "2026-05-12",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-hayDepasQueSePaganSolo-video",
+      "ad": "hayDepasQueSePaganSolo-video",
+      "spend": 18.67,
+      "impressions": 534,
+      "clicks": 32
+    },
+    {
+      "fecha": "2026-05-12",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly - Copy",
+      "spend": 24.04,
+      "impressions": 741,
+      "clicks": 44
+    },
+    {
+      "fecha": "2026-05-12",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly - Copy 2",
+      "spend": 2.06,
+      "impressions": 54,
+      "clicks": 4
+    },
+    {
+      "fecha": "2026-05-12",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly - Copy 3",
+      "spend": 36.12,
+      "impressions": 1122,
+      "clicks": 42
+    },
+    {
+      "fecha": "2026-05-12",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-hayDepasQueSePaganSolo-video",
+      "ad": "hayDepasQueSePaganSolo-videoMarco",
+      "spend": 25.15,
+      "impressions": 1079,
+      "clicks": 52
+    },
+    {
+      "fecha": "2026-05-13",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly",
+      "spend": 6.53,
+      "impressions": 389,
+      "clicks": 16
+    },
+    {
+      "fecha": "2026-05-13",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-muchosPeruanos-video",
+      "ad": "depasSePaganSolos",
+      "spend": 1.28,
+      "impressions": 49,
+      "clicks": 6
+    },
+    {
+      "fecha": "2026-05-13",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-hayDepasQueSePaganSolo-video",
+      "ad": "hayDepasQueSePaganSolo-video",
+      "spend": 2.08,
+      "impressions": 70,
+      "clicks": 5
+    },
+    {
+      "fecha": "2026-05-13",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly - Copy",
+      "spend": 2.95,
+      "impressions": 102,
+      "clicks": 7
+    },
+    {
+      "fecha": "2026-05-13",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly - Copy 3",
+      "spend": 0.56,
+      "impressions": 21,
+      "clicks": 0
+    },
+    {
+      "fecha": "2026-05-13",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-hayDepasQueSePaganSolo-video",
+      "ad": "hayDepasQueSePaganSolo-videoMarco",
+      "spend": 1.84,
+      "impressions": 54,
+      "clicks": 3
+    },
+    {
+      "fecha": "2026-05-15",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-muchosPeruanos-video",
+      "ad": "depasSePaganSolos",
+      "spend": 17.71,
+      "impressions": 601,
+      "clicks": 42
+    },
+    {
+      "fecha": "2026-05-15",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly - Copy",
+      "spend": 138.7,
+      "impressions": 4064,
+      "clicks": 214
+    },
+    {
+      "fecha": "2026-05-15",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly - Copy 3",
+      "spend": 25.64,
+      "impressions": 745,
+      "clicks": 33
+    },
+    {
+      "fecha": "2026-05-15",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-hayDepasQueSePaganSolo-video",
+      "ad": "hayDepasQueSePaganSolo-videoMarco",
+      "spend": 76.04,
+      "impressions": 2779,
+      "clicks": 174
+    },
+    {
+      "fecha": "2026-05-16",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly",
+      "spend": 17.29,
+      "impressions": 845,
+      "clicks": 24
+    },
+    {
+      "fecha": "2026-05-16",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-muchosPeruanos-video",
+      "ad": "depasSePaganSolos",
+      "spend": 51.14,
+      "impressions": 1515,
+      "clicks": 114
+    },
+    {
+      "fecha": "2026-05-16",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-hayDepasQueSePaganSolo-video",
+      "ad": "hayDepasQueSePaganSolo-video",
+      "spend": 7.03,
+      "impressions": 239,
+      "clicks": 14
+    },
+    {
+      "fecha": "2026-05-16",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly - Copy",
+      "spend": 179.7,
+      "impressions": 4892,
+      "clicks": 356
+    },
+    {
+      "fecha": "2026-05-16",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly - Copy 3",
+      "spend": 0.88,
+      "impressions": 15,
+      "clicks": 4
+    },
+    {
+      "fecha": "2026-05-16",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-hayDepasQueSePaganSolo-video",
+      "ad": "hayDepasQueSePaganSolo-videoMarco",
+      "spend": 69.43,
+      "impressions": 2479,
+      "clicks": 164
+    },
+    {
+      "fecha": "2026-05-17",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly",
+      "spend": 44.29,
+      "impressions": 2109,
+      "clicks": 94
+    },
+    {
+      "fecha": "2026-05-17",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-muchosPeruanos-video",
+      "ad": "depasSePaganSolos",
+      "spend": 39.24,
+      "impressions": 1083,
+      "clicks": 57
+    },
+    {
+      "fecha": "2026-05-17",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-hayDepasQueSePaganSolo-video",
+      "ad": "hayDepasQueSePaganSolo-video",
+      "spend": 1.42,
+      "impressions": 40,
+      "clicks": 4
+    },
+    {
+      "fecha": "2026-05-17",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly - Copy",
+      "spend": 106.46,
+      "impressions": 2963,
+      "clicks": 177
+    },
+    {
+      "fecha": "2026-05-17",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly - Copy 3",
+      "spend": 0.38,
+      "impressions": 18,
+      "clicks": 2
+    },
+    {
+      "fecha": "2026-05-17",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-hayDepasQueSePaganSolo-video",
+      "ad": "hayDepasQueSePaganSolo-videoMarco",
+      "spend": 47.03,
+      "impressions": 1731,
+      "clicks": 103
+    },
+    {
+      "fecha": "2026-05-18",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly",
+      "spend": 59.38,
+      "impressions": 4665,
+      "clicks": 123
+    },
+    {
+      "fecha": "2026-05-18",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-muchosPeruanos-video",
+      "ad": "depasSePaganSolos",
+      "spend": 31.61,
+      "impressions": 1302,
+      "clicks": 53
+    },
+    {
+      "fecha": "2026-05-18",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-hayDepasQueSePaganSolo-video",
+      "ad": "hayDepasQueSePaganSolo-video",
+      "spend": 6.72,
+      "impressions": 205,
+      "clicks": 19
+    },
+    {
+      "fecha": "2026-05-18",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly - Copy",
+      "spend": 57.91,
+      "impressions": 1784,
+      "clicks": 87
+    },
+    {
+      "fecha": "2026-05-18",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly - Copy 3",
+      "spend": 0.38,
+      "impressions": 22,
+      "clicks": 0
+    },
+    {
+      "fecha": "2026-05-18",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-hayDepasQueSePaganSolo-video",
+      "ad": "hayDepasQueSePaganSolo-videoMarco",
+      "spend": 39.81,
+      "impressions": 1726,
+      "clicks": 111
+    },
+    {
+      "fecha": "2026-05-19",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly",
+      "spend": 83.77,
+      "impressions": 6135,
+      "clicks": 147
+    },
+    {
+      "fecha": "2026-05-19",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-muchosPeruanos-video",
+      "ad": "depasSePaganSolos",
+      "spend": 22.68,
+      "impressions": 887,
+      "clicks": 51
+    },
+    {
+      "fecha": "2026-05-19",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-hayDepasQueSePaganSolo-video",
+      "ad": "hayDepasQueSePaganSolo-video",
+      "spend": 5.0,
+      "impressions": 124,
+      "clicks": 10
+    },
+    {
+      "fecha": "2026-05-19",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly - Copy",
+      "spend": 7.43,
+      "impressions": 263,
+      "clicks": 24
+    },
+    {
+      "fecha": "2026-05-19",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly - Copy 3",
+      "spend": 0.01,
+      "impressions": 1,
+      "clicks": 0
+    },
+    {
+      "fecha": "2026-05-19",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-hayDepasQueSePaganSolo-video",
+      "ad": "hayDepasQueSePaganSolo-videoMarco",
+      "spend": 27.71,
+      "impressions": 1035,
+      "clicks": 75
+    },
+    {
+      "fecha": "2026-05-20",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly",
+      "spend": 101.92,
+      "impressions": 8125,
+      "clicks": 253
+    },
+    {
+      "fecha": "2026-05-20",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-muchosPeruanos-video",
+      "ad": "depasSePaganSolos",
+      "spend": 22.99,
+      "impressions": 1188,
+      "clicks": 53
+    },
+    {
+      "fecha": "2026-05-20",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-hayDepasQueSePaganSolo-video",
+      "ad": "hayDepasQueSePaganSolo-video",
+      "spend": 0.29,
+      "impressions": 13,
+      "clicks": 0
+    },
+    {
+      "fecha": "2026-05-20",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly - Copy",
+      "spend": 3.91,
+      "impressions": 112,
+      "clicks": 2
+    },
+    {
+      "fecha": "2026-05-20",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly - Copy 3",
+      "spend": 0.11,
+      "impressions": 8,
+      "clicks": 1
+    },
+    {
+      "fecha": "2026-05-20",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-hayDepasQueSePaganSolo-video",
+      "ad": "hayDepasQueSePaganSolo-videoMarco",
+      "spend": 46.17,
+      "impressions": 2316,
+      "clicks": 143
+    },
+    {
+      "fecha": "2026-05-21",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly",
+      "spend": 116.35,
+      "impressions": 8941,
+      "clicks": 295
+    },
+    {
+      "fecha": "2026-05-21",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-muchosPeruanos-video",
+      "ad": "depasSePaganSolos",
+      "spend": 31.37,
+      "impressions": 1714,
+      "clicks": 70
+    },
+    {
+      "fecha": "2026-05-21",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-hayDepasQueSePaganSolo-video",
+      "ad": "hayDepasQueSePaganSolo-video",
+      "spend": 2.69,
+      "impressions": 71,
+      "clicks": 8
+    },
+    {
+      "fecha": "2026-05-21",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly - Copy",
+      "spend": 2.11,
+      "impressions": 54,
+      "clicks": 5
+    },
+    {
+      "fecha": "2026-05-21",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-hayDepasQueSePaganSolo-video",
+      "ad": "hayDepasQueSePaganSolo-videoMarco",
+      "spend": 43.33,
+      "impressions": 1823,
+      "clicks": 120
+    },
+    {
+      "fecha": "2026-05-22",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly",
+      "spend": 108.61,
+      "impressions": 8011,
+      "clicks": 283
+    },
+    {
+      "fecha": "2026-05-22",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-muchosPeruanos-video",
+      "ad": "depasSePaganSolos",
+      "spend": 31.25,
+      "impressions": 1997,
+      "clicks": 61
+    },
+    {
+      "fecha": "2026-05-22",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly - Copy",
+      "spend": 1.96,
+      "impressions": 64,
+      "clicks": 2
+    },
+    {
+      "fecha": "2026-05-22",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly - Copy 3",
+      "spend": 0.01,
+      "impressions": 1,
+      "clicks": 0
+    },
+    {
+      "fecha": "2026-05-22",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-hayDepasQueSePaganSolo-video",
+      "ad": "hayDepasQueSePaganSolo-videoMarco",
+      "spend": 45.7,
+      "impressions": 2174,
+      "clicks": 115
+    },
+    {
+      "fecha": "2026-05-23",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly",
+      "spend": 108.21,
+      "impressions": 7046,
+      "clicks": 264
+    },
+    {
+      "fecha": "2026-05-23",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-muchosPeruanos-video",
+      "ad": "depasSePaganSolos",
+      "spend": 30.5,
+      "impressions": 1609,
+      "clicks": 57
+    },
+    {
+      "fecha": "2026-05-23",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-hayDepasQueSePaganSolo-video",
+      "ad": "hayDepasQueSePaganSolo-video",
+      "spend": 4.17,
+      "impressions": 154,
+      "clicks": 8
+    },
+    {
+      "fecha": "2026-05-23",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly - Copy",
+      "spend": 1.72,
+      "impressions": 95,
+      "clicks": 8
+    },
+    {
+      "fecha": "2026-05-23",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-hayDepasQueSePaganSolo-video",
+      "ad": "hayDepasQueSePaganSolo-videoMarco",
+      "spend": 37.74,
+      "impressions": 1777,
+      "clicks": 127
+    },
+    {
+      "fecha": "2026-05-24",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly",
+      "spend": 136.46,
+      "impressions": 8867,
+      "clicks": 382
+    },
+    {
+      "fecha": "2026-05-24",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-muchosPeruanos-video",
+      "ad": "depasSePaganSolos",
+      "spend": 34.19,
+      "impressions": 1849,
+      "clicks": 57
+    },
+    {
+      "fecha": "2026-05-24",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-hayDepasQueSePaganSolo-video",
+      "ad": "hayDepasQueSePaganSolo-video",
+      "spend": 0.34,
+      "impressions": 21,
+      "clicks": 0
+    },
+    {
+      "fecha": "2026-05-24",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly - Copy",
+      "spend": 0.7,
+      "impressions": 28,
+      "clicks": 0
+    },
+    {
+      "fecha": "2026-05-24",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-hayDepasQueSePaganSolo-video",
+      "ad": "hayDepasQueSePaganSolo-videoMarco",
+      "spend": 47.35,
+      "impressions": 2377,
+      "clicks": 140
+    },
+    {
+      "fecha": "2026-05-25",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly",
+      "spend": 114.66,
+      "impressions": 8457,
+      "clicks": 277
+    },
+    {
+      "fecha": "2026-05-25",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-muchosPeruanos-video",
+      "ad": "depasSePaganSolos",
+      "spend": 31.76,
+      "impressions": 1592,
+      "clicks": 54
+    },
+    {
+      "fecha": "2026-05-25",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-hayDepasQueSePaganSolo-video",
+      "ad": "hayDepasQueSePaganSolo-video",
+      "spend": 0.82,
+      "impressions": 39,
+      "clicks": 2
+    },
+    {
+      "fecha": "2026-05-25",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly - Copy",
+      "spend": 3.09,
+      "impressions": 122,
+      "clicks": 4
+    },
+    {
+      "fecha": "2026-05-25",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly - Copy 3",
+      "spend": 0.02,
+      "impressions": 1,
+      "clicks": 1
+    },
+    {
+      "fecha": "2026-05-25",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-hayDepasQueSePaganSolo-video",
+      "ad": "hayDepasQueSePaganSolo-videoMarco",
+      "spend": 43.69,
+      "impressions": 2126,
+      "clicks": 146
+    },
+    {
+      "fecha": "2026-05-26",
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
+      "ad": "Video Inversiones - Landing Proper - Nataly",
+      "spend": 57.2,
+      "impressions": 4745,
+      "clicks": 138
+    },
+    {
+      "fecha": "2026-05-26",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-muchosPeruanos-video",
+      "ad": "depasSePaganSolos",
+      "spend": 14.14,
+      "impressions": 621,
+      "clicks": 23
+    },
+    {
+      "fecha": "2026-05-26",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-hayDepasQueSePaganSolo-video",
+      "ad": "hayDepasQueSePaganSolo-video",
+      "spend": 0.19,
+      "impressions": 8,
+      "clicks": 1
+    },
+    {
+      "fecha": "2026-05-26",
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "cj-hayDepasQueSePaganSolo-video",
+      "ad": "hayDepasQueSePaganSolo-videoMarco",
+      "spend": 21.17,
+      "impressions": 1034,
+      "clicks": 59
     }
   ],
   "gads_campaigns": [
@@ -6251,9 +8872,79 @@
     {
       "fecha": "2026-05-11",
       "campaign": "PMax - LANDING Proper Inversiones",
-      "spend": 27.75,
-      "impressions": 762,
+      "spend": 35.83,
+      "impressions": 1085,
+      "clicks": 76
+    },
+    {
+      "fecha": "2026-05-12",
+      "campaign": "PMax - LANDING Proper Inversiones",
+      "spend": 33.47,
+      "impressions": 1079,
+      "clicks": 64
+    },
+    {
+      "fecha": "2026-05-13",
+      "campaign": "PMax - LANDING Proper Inversiones",
+      "spend": 25.15,
+      "impressions": 1406,
       "clicks": 50
+    },
+    {
+      "fecha": "2026-05-14",
+      "campaign": "PMax - LANDING Proper Inversiones",
+      "spend": 51.88,
+      "impressions": 2463,
+      "clicks": 66
+    },
+    {
+      "fecha": "2026-05-15",
+      "campaign": "PMax - LANDING Proper Inversiones",
+      "spend": 30.71,
+      "impressions": 1025,
+      "clicks": 44
+    },
+    {
+      "fecha": "2026-05-16",
+      "campaign": "PMax - LANDING Proper Inversiones",
+      "spend": 42.13,
+      "impressions": 714,
+      "clicks": 62
+    },
+    {
+      "fecha": "2026-05-17",
+      "campaign": "PMax - LANDING Proper Inversiones",
+      "spend": 39.14,
+      "impressions": 633,
+      "clicks": 46
+    },
+    {
+      "fecha": "2026-05-18",
+      "campaign": "PMax - LANDING Proper Inversiones",
+      "spend": 34.79,
+      "impressions": 324,
+      "clicks": 74
+    },
+    {
+      "fecha": "2026-05-19",
+      "campaign": "PMax - LANDING Proper Inversiones",
+      "spend": 24.53,
+      "impressions": 195,
+      "clicks": 52
+    },
+    {
+      "fecha": "2026-05-20",
+      "campaign": "PMax - LANDING Proper Inversiones",
+      "spend": 42.97,
+      "impressions": 390,
+      "clicks": 64
+    },
+    {
+      "fecha": "2026-05-21",
+      "campaign": "PMax - LANDING Proper Inversiones",
+      "spend": 2.81,
+      "impressions": 9,
+      "clicks": 5
     }
   ],
   "gads_asset_groups": [
@@ -6501,9 +9192,89 @@
       "fecha": "2026-05-11",
       "campaign": "PMax - LANDING Proper Inversiones",
       "asset_group": "Inversión Inteligente Lima",
-      "spend": 27.75,
-      "impressions": 762,
+      "spend": 35.83,
+      "impressions": 1085,
+      "clicks": 76
+    },
+    {
+      "fecha": "2026-05-12",
+      "campaign": "PMax - LANDING Proper Inversiones",
+      "asset_group": "Inversión Inteligente Lima",
+      "spend": 33.47,
+      "impressions": 1079,
+      "clicks": 64
+    },
+    {
+      "fecha": "2026-05-13",
+      "campaign": "PMax - LANDING Proper Inversiones",
+      "asset_group": "Inversión Inteligente Lima",
+      "spend": 25.15,
+      "impressions": 1406,
       "clicks": 50
+    },
+    {
+      "fecha": "2026-05-14",
+      "campaign": "PMax - LANDING Proper Inversiones",
+      "asset_group": "Inversión Inteligente Lima",
+      "spend": 51.88,
+      "impressions": 2463,
+      "clicks": 66
+    },
+    {
+      "fecha": "2026-05-15",
+      "campaign": "PMax - LANDING Proper Inversiones",
+      "asset_group": "Inversión Inteligente Lima",
+      "spend": 30.71,
+      "impressions": 1025,
+      "clicks": 44
+    },
+    {
+      "fecha": "2026-05-16",
+      "campaign": "PMax - LANDING Proper Inversiones",
+      "asset_group": "Inversión Inteligente Lima",
+      "spend": 42.13,
+      "impressions": 714,
+      "clicks": 62
+    },
+    {
+      "fecha": "2026-05-17",
+      "campaign": "PMax - LANDING Proper Inversiones",
+      "asset_group": "Inversión Inteligente Lima",
+      "spend": 39.14,
+      "impressions": 633,
+      "clicks": 46
+    },
+    {
+      "fecha": "2026-05-18",
+      "campaign": "PMax - LANDING Proper Inversiones",
+      "asset_group": "Inversión Inteligente Lima",
+      "spend": 34.79,
+      "impressions": 324,
+      "clicks": 74
+    },
+    {
+      "fecha": "2026-05-19",
+      "campaign": "PMax - LANDING Proper Inversiones",
+      "asset_group": "Inversión Inteligente Lima",
+      "spend": 24.53,
+      "impressions": 195,
+      "clicks": 52
+    },
+    {
+      "fecha": "2026-05-20",
+      "campaign": "PMax - LANDING Proper Inversiones",
+      "asset_group": "Inversión Inteligente Lima",
+      "spend": 42.97,
+      "impressions": 390,
+      "clicks": 64
+    },
+    {
+      "fecha": "2026-05-21",
+      "campaign": "PMax - LANDING Proper Inversiones",
+      "asset_group": "Inversión Inteligente Lima",
+      "spend": 2.81,
+      "impressions": 9,
+      "clicks": 5
     }
   ],
   "postgres_campaigns": [
@@ -6541,41 +9312,51 @@
       "campaign": "IN-LANDING-FROM-ABR-2026",
       "adset": "120242729618090351",
       "canal": "Audience Network",
-      "leads": 22,
-      "aprobados": 11,
-      "alto": 1,
-      "medio": 6,
-      "empuje": 4
+      "leads": 26,
+      "aprobados": 14,
+      "alto": 2,
+      "medio": 7,
+      "empuje": 5
     },
     {
       "campaign": "IN-LANDING-FROM-ABR-2026",
       "adset": "120242729618090351",
       "canal": "Facebook",
-      "leads": 102,
-      "aprobados": 87,
-      "alto": 12,
-      "medio": 47,
-      "empuje": 28
+      "leads": 139,
+      "aprobados": 115,
+      "alto": 20,
+      "medio": 62,
+      "empuje": 33
     },
     {
       "campaign": "IN-LANDING-FROM-ABR-2026",
       "adset": "120242729618090351",
       "canal": "Instagram",
-      "leads": 34,
-      "aprobados": 25,
+      "leads": 47,
+      "aprobados": 35,
       "alto": 7,
-      "medio": 12,
-      "empuje": 6
+      "medio": 18,
+      "empuje": 10
     },
     {
       "campaign": "IN-LANDING-FROM-ABR-2026",
       "adset": "120242729618090351",
       "canal": "th",
-      "leads": 1,
+      "leads": 2,
       "aprobados": 0,
       "alto": 0,
       "medio": 0,
       "empuje": 0
+    },
+    {
+      "campaign": "IN-LANDING-FROM-ABR-2026",
+      "adset": "organico",
+      "canal": "web_home",
+      "leads": 1,
+      "aprobados": 1,
+      "alto": 0,
+      "medio": 0,
+      "empuje": 1
     },
     {
       "campaign": "IN-LANDING-FROM-ABR-2026",
@@ -6601,31 +9382,41 @@
       "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
       "adset": "120244074583750351",
       "canal": "Audience Network",
-      "leads": 16,
-      "aprobados": 11,
-      "alto": 2,
-      "medio": 4,
-      "empuje": 5
+      "leads": 29,
+      "aprobados": 16,
+      "alto": 3,
+      "medio": 6,
+      "empuje": 7
     },
     {
       "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
       "adset": "120244074583750351",
       "canal": "Facebook",
-      "leads": 23,
-      "aprobados": 20,
-      "alto": 2,
-      "medio": 14,
-      "empuje": 4
+      "leads": 121,
+      "aprobados": 84,
+      "alto": 7,
+      "medio": 49,
+      "empuje": 28
     },
     {
       "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
       "adset": "120244074583750351",
       "canal": "Instagram",
-      "leads": 21,
-      "aprobados": 16,
+      "leads": 39,
+      "aprobados": 31,
+      "alto": 2,
+      "medio": 19,
+      "empuje": 10
+    },
+    {
+      "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
+      "adset": "organico",
+      "canal": "web_popup",
+      "leads": 1,
+      "aprobados": 1,
       "alto": 0,
-      "medio": 10,
-      "empuje": 6
+      "medio": 1,
+      "empuje": 0
     },
     {
       "campaign": "Leads-Landing-Proper-Inversiones-MAR26",
@@ -6651,19 +9442,19 @@
       "campaign": "pmax-landing-inversiones",
       "adset": "cpc",
       "canal": "Google",
-      "leads": 116,
-      "aprobados": 80,
-      "alto": 10,
-      "medio": 49,
-      "empuje": 21
+      "leads": 169,
+      "aprobados": 119,
+      "alto": 18,
+      "medio": 68,
+      "empuje": 33
     },
     {
       "campaign": "pmax-landing-inversiones",
       "adset": "organico",
       "canal": "web_popup",
-      "leads": 1,
-      "aprobados": 1,
-      "alto": 0,
+      "leads": 2,
+      "aprobados": 2,
+      "alto": 1,
       "medio": 1,
       "empuje": 0
     },
@@ -6671,10 +9462,10 @@
       "campaign": "pmax-landing-inversiones",
       "adset": "organico",
       "canal": "web_proyecto",
-      "leads": 1,
-      "aprobados": 1,
+      "leads": 2,
+      "aprobados": 2,
       "alto": 1,
-      "medio": 0,
+      "medio": 1,
       "empuje": 0
     },
     {
@@ -6701,11 +9492,11 @@
       "campaign": "PMax-LANDING-Proper-Inversiones",
       "adset": "organic",
       "canal": "Google",
-      "leads": 43,
-      "aprobados": 33,
-      "alto": 11,
-      "medio": 17,
-      "empuje": 5
+      "leads": 177,
+      "aprobados": 154,
+      "alto": 37,
+      "medio": 90,
+      "empuje": 27
     },
     {
       "campaign": "PMax-LANDING-Proper-Inversiones",
@@ -6725,6 +9516,16 @@
       "aprobados": 1,
       "alto": 0,
       "medio": 1,
+      "empuje": 0
+    },
+    {
+      "campaign": "PMax-LANDING-Proper-Inversiones",
+      "adset": "organico",
+      "canal": "web_popup",
+      "leads": 1,
+      "aprobados": 0,
+      "alto": 0,
+      "medio": 0,
       "empuje": 0
     },
     {
@@ -6761,21 +9562,21 @@
       "campaign": "video_influencer_nataly_landingProper",
       "adset": "cpc",
       "canal": "Facebook",
-      "leads": 165,
-      "aprobados": 120,
-      "alto": 15,
-      "medio": 63,
-      "empuje": 42
+      "leads": 205,
+      "aprobados": 153,
+      "alto": 18,
+      "medio": 81,
+      "empuje": 54
     },
     {
       "campaign": "video_influencer_nataly_landingProper",
       "adset": "cpc",
       "canal": "Instagram",
-      "leads": 251,
-      "aprobados": 191,
-      "alto": 27,
-      "medio": 99,
-      "empuje": 65
+      "leads": 330,
+      "aprobados": 252,
+      "alto": 37,
+      "medio": 130,
+      "empuje": 85
     },
     {
       "campaign": "video_influencer_nataly_landingProper",
@@ -6791,20 +9592,30 @@
       "campaign": "video_influencer_nataly_landingProper",
       "adset": "organic",
       "canal": "Google",
-      "leads": 2,
-      "aprobados": 2,
-      "alto": 2,
-      "medio": 0,
+      "leads": 4,
+      "aprobados": 4,
+      "alto": 3,
+      "medio": 1,
+      "empuje": 0
+    },
+    {
+      "campaign": "video_influencer_nataly_landingProper",
+      "adset": "organico",
+      "canal": "web_home",
+      "leads": 1,
+      "aprobados": 1,
+      "alto": 0,
+      "medio": 1,
       "empuje": 0
     },
     {
       "campaign": "video_influencer_nataly_landingProper",
       "adset": "organico",
       "canal": "web_popup",
-      "leads": 1,
-      "aprobados": 1,
-      "alto": 1,
-      "medio": 0,
+      "leads": 3,
+      "aprobados": 3,
+      "alto": 2,
+      "medio": 1,
       "empuje": 0
     },
     {
