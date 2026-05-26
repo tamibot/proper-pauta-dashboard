@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-26T21:26:36.824638+00:00",
+  "generated_at": "2026-05-26T21:36:38.377185+00:00",
   "since": "2026-03-27",
   "until": "2026-05-26",
   "source": "bitrix.hs_deals (utm_campaign LIKE %landing%) + Meta Ads API + Google Ads API",
@@ -10,27 +10,27 @@
     "days_in_month": 31,
     "days_elapsed": 26,
     "total_budget": 12000.0,
-    "total_mtd": 10742.83,
+    "total_mtd": 10744.5,
     "total_pct_used": 89.5,
     "proper": {
       "budget_total": 10200.0,
-      "mtd_total": 8934.82,
+      "mtd_total": 8936.49,
       "pct_used": 87.6,
       "channels": {
         "meta": {
           "name": "Meta Ads",
           "budget": 6000.0,
-          "mtd": 6854.44,
-          "pct_used": 114.2,
-          "run_rate_daily": 263.63,
-          "projected_eom": 8172.53,
+          "mtd": 6856.11,
+          "pct_used": 114.3,
+          "run_rate_daily": 263.7,
+          "projected_eom": 8174.7,
           "accounts": [
             {
               "id": "act_424971935894203",
               "name": "Cuenta en soles Propinvest",
               "currency": "PEN",
-              "spend": 6854.44,
-              "spend_pen": 6854.44
+              "spend": 6856.11,
+              "spend_pen": 6856.11
             }
           ]
         },
@@ -77,7 +77,7 @@
               "currency": "USD",
               "cost": 137.49,
               "cost_pen": 515.59,
-              "volume": 7920
+              "volume": 7924
             },
             {
               "id": "434221413117441",
@@ -227,17 +227,17 @@
       "meta": {
         "name": "Meta Ads",
         "budget": 6000.0,
-        "mtd": 8655.23,
+        "mtd": 8656.9,
         "pct_used": 144.3,
-        "run_rate_daily": 332.89,
-        "projected_eom": 10319.59,
+        "run_rate_daily": 332.96,
+        "projected_eom": 10321.76,
         "accounts": [
           {
             "id": "act_424971935894203",
             "name": "Cuenta en soles Propinvest",
             "currency": "PEN",
-            "spend": 6854.44,
-            "spend_pen": 6854.44
+            "spend": 6856.11,
+            "spend_pen": 6856.11
           },
           {
             "id": "act_945594697882747",
@@ -347,7 +347,7 @@
             "id": "345723035288365",
             "name": "Corretaje Alquileres Proper Rentas",
             "currency": "USD",
-            "volume": 7920,
+            "volume": 7924,
             "cost": 137.49
           },
           {
@@ -382,26 +382,26 @@
       }
     },
     "landing_only": {
-      "meta_mtd": 4838.96,
+      "meta_mtd": 4839.99,
       "gads_mtd": 726.46,
-      "total_mtd": 5565.42
+      "total_mtd": 5566.45
     },
-    "whatsapp_volume_mtd": 10906,
+    "whatsapp_volume_mtd": 10910,
     "by_unit": {
       "proper": {
-        "meta": 6854.44,
+        "meta": 6856.11,
         "google": 1093.54,
         "tiktok": 0.0,
         "whatsapp": 986.84,
-        "total": 8934.82,
+        "total": 8936.49,
         "detail": {
           "meta": [
             {
               "id": "act_424971935894203",
               "name": "Cuenta en soles Propinvest",
               "currency": "PEN",
-              "spend": 6854.44,
-              "spend_pen": 6854.44
+              "spend": 6856.11,
+              "spend_pen": 6856.11
             }
           ],
           "google": [
@@ -424,7 +424,7 @@
               "currency": "USD",
               "cost": 137.49,
               "cost_pen": 515.59,
-              "volume": 7920
+              "volume": 7924
             },
             {
               "id": "434221413117441",
@@ -599,36 +599,36 @@
     "pct_month_elapsed": 83.9,
     "total": {
       "budget": 9300.0,
-      "mtd": 6703.61,
+      "mtd": 6705.09,
       "pct_used": 72.1,
-      "run_rate_daily": 257.83,
-      "projected_eom": 7992.73,
-      "remaining_budget": 2596.39
+      "run_rate_daily": 257.89,
+      "projected_eom": 7994.59,
+      "remaining_budget": 2594.91
     },
     "products": {
       "inversiones": {
         "label": "Proper Inversiones",
         "budget": 7900.0,
-        "mtd": 5565.42,
-        "pct_used": 70.4,
-        "run_rate_daily": 214.05,
-        "projected_eom": 6635.55,
+        "mtd": 5566.8,
+        "pct_used": 70.5,
+        "run_rate_daily": 214.11,
+        "projected_eom": 6637.41,
         "channels": {
           "facebook": {
             "budget": 6000.0,
-            "mtd": 4838.96,
-            "pct_used": 80.6,
-            "run_rate_daily": 186.11,
-            "projected_eom": 5769.41,
+            "mtd": 4840.34,
+            "pct_used": 80.7,
+            "run_rate_daily": 186.17,
+            "projected_eom": 5771.27,
             "note": "Campañas con \"LANDING\" en act_424971935894203",
             "campaigns": [
               {
                 "name": "IN-LANDING-FROM-ABR-2026",
-                "spend": 3004.44
+                "spend": 3005.64
               },
               {
                 "name": "IN-LANDING-FROM-ABR-2026 -  ABO",
-                "spend": 1834.52
+                "spend": 1834.7
               }
             ]
           },
@@ -651,14 +651,14 @@
       "rentas": {
         "label": "Proper Rentas",
         "budget": 1400.0,
-        "mtd": 1138.19,
+        "mtd": 1138.29,
         "pct_used": 81.3,
         "run_rate_daily": 43.78,
         "projected_eom": 1357.18,
         "channels": {
           "facebook": {
             "budget": 900.0,
-            "mtd": 771.1,
+            "mtd": 771.2,
             "pct_used": 85.7,
             "run_rate_daily": 29.66,
             "projected_eom": 919.46,
@@ -666,11 +666,11 @@
             "campaigns": [
               {
                 "name": "Campaña_RENTAS_PROP_ABRIL2026_2",
-                "spend": 365.33
+                "spend": 365.41
               },
               {
                 "name": "Campaña_RENTAS_PROP_ABRIL2026_2 - Copy",
-                "spend": 405.77
+                "spend": 405.79
               }
             ]
           },
@@ -831,20 +831,20 @@
       "is_current": true,
       "is_partial": true,
       "inversiones": {
-        "facebook": 4838.96,
+        "facebook": 4840.4,
         "google": 726.45,
-        "total": 5565.41
+        "total": 5566.85
       },
       "rentas": {
-        "facebook": 771.1,
+        "facebook": 771.2,
         "google": 367.09,
-        "total": 1138.19
+        "total": 1138.29
       },
-      "total_spend": 6703.6,
+      "total_spend": 6705.14,
       "excluded": {
-        "modo": 1244.38,
+        "modo": 1245.07,
         "otro": 0.0,
-        "total": 1244.38
+        "total": 1245.07
       },
       "budget_referencial": 9300.0,
       "pct_vs_budget": 72.1
@@ -6059,11 +6059,11 @@
     },
     {
       "fecha": "2026-05-26",
-      "meta_spend": 116.24,
+      "meta_spend": 117.27,
       "gads_spend": 0,
-      "total_spend": 116.24,
-      "meta_impressions": 8127,
-      "meta_clicks": 301,
+      "total_spend": 117.27,
+      "meta_impressions": 8237,
+      "meta_clicks": 303,
       "gads_impressions": 0,
       "gads_clicks": 0,
       "leads": 0,
@@ -8798,17 +8798,17 @@
       "campaign": "IN-LANDING-FROM-ABR-2026",
       "adset": "IN-LANDING-FORM-ABR-2026-CONJ1",
       "ad": "Video Inversiones - Landing Proper - Nataly",
-      "spend": 71.6,
-      "impressions": 5991,
-      "clicks": 187
+      "spend": 72.45,
+      "impressions": 6083,
+      "clicks": 189
     },
     {
       "fecha": "2026-05-26",
       "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
       "adset": "cj-muchosPeruanos-video",
       "ad": "depasSePaganSolos",
-      "spend": 17.49,
-      "impressions": 784,
+      "spend": 17.52,
+      "impressions": 793,
       "clicks": 38
     },
     {
@@ -8834,8 +8834,8 @@
       "campaign": "IN-LANDING-FROM-ABR-2026 -  ABO",
       "adset": "cj-hayDepasQueSePaganSolo-video",
       "ad": "hayDepasQueSePaganSolo-videoMarco",
-      "spend": 26.89,
-      "impressions": 1338,
+      "spend": 27.04,
+      "impressions": 1347,
       "clicks": 75
     }
   ],
