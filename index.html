@@ -105,6 +105,96 @@
     /* Month progress */
     .month-progress { position: relative; height: 6px; background: #e5e7eb; border-radius: 999px; margin-top: .5rem; overflow: hidden; }
     .month-progress-fill { position: absolute; left: 0; top: 0; bottom: 0; background: linear-gradient(90deg, #60a5fa, #3b82f6); border-radius: 999px; }
+
+    /* === Tabs principales (Presupuesto / Dashboard) === */
+    .view-tabs { display: inline-flex; background: #f1f5f9; padding: .25rem; border-radius: 12px; gap: .25rem; }
+    .view-tab { padding: .5rem 1.25rem; font-size: .85rem; font-weight: 600; color: #475569; background: transparent; border: none; border-radius: 9px; cursor: pointer; transition: all .15s ease; }
+    .view-tab:hover { background: rgba(255,255,255,.5); }
+    .view-tab.active { background: white; color: #0f172a; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+    .vista { display: none; }
+    .vista.active { display: block; }
+
+    /* === Asignación actual === */
+    .asignacion-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.25rem; }
+    .asignacion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+    @media (max-width: 720px) { .asignacion-grid { grid-template-columns: 1fr; } }
+    .asignacion-prod { display: flex; align-items: center; justify-content: space-between; padding: .85rem 1rem; border-radius: 10px; }
+    .asignacion-prod.inv  { background: linear-gradient(135deg, #eef2ff, #e0e7ff); border: 1px solid #c7d2fe; }
+    .asignacion-prod.ren  { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 1px solid #a7f3d0; }
+    .asignacion-prod .label { font-size: .75rem; font-weight: 600; color: #374151; }
+    .asignacion-prod .monto { font-size: 1.1rem; font-weight: 700; color: #111827; }
+    .asignacion-prod .pct   { font-size: .75rem; color: #6b7280; }
+    .dist-bar { position: relative; height: 14px; background: #f3f4f6; border-radius: 999px; overflow: hidden; display: flex; }
+    .dist-bar-segment { height: 100%; display: flex; align-items: center; justify-content: center; font-size: .65rem; font-weight: 700; color: white; }
+
+    /* === Tabla detallada Modo Actual === */
+    .budget-table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+    .budget-table th { background: #f8fafc; color: #475569; font-weight: 600; text-transform: uppercase; font-size: .65rem; letter-spacing: .05em; padding: .65rem .75rem; text-align: right; border-bottom: 2px solid #e2e8f0; }
+    .budget-table th:first-child { text-align: left; }
+    .budget-table td { padding: .65rem .75rem; text-align: right; border-bottom: 1px solid #f1f5f9; font-variant-numeric: tabular-nums; }
+    .budget-table td:first-child { text-align: left; font-weight: 500; }
+    .budget-table tr.group-row td { background: #fafbfc; font-size: .75rem; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: .03em; padding: .5rem .75rem; }
+    .budget-table tr.subtotal-row td { background: #f8fafc; font-weight: 600; color: #1e293b; }
+    .budget-table tr.total-row td { background: #1e293b; color: white; font-weight: 700; font-size: .9rem; padding: .75rem; }
+    .budget-table .delta-pos { color: #dc2626; }
+    .budget-table .delta-neg { color: #059669; }
+    .budget-table .delta-zero { color: #6b7280; }
+
+    /* === Sub-tabs Actual / Simulador === */
+    .sub-tabs { display: inline-flex; background: #f8fafc; padding: .2rem; border-radius: 10px; gap: .2rem; border: 1px solid #e5e7eb; }
+    .sub-tab { padding: .4rem 1rem; font-size: .8rem; font-weight: 600; color: #6b7280; background: transparent; border: none; border-radius: 7px; cursor: pointer; }
+    .sub-tab.active { background: white; color: #1e293b; box-shadow: 0 1px 2px rgba(0,0,0,.05); }
+
+    /* === Simulador inputs === */
+    .sim-row { display: grid; grid-template-columns: 180px 90px 1fr 80px 110px 130px; gap: .75rem; align-items: center; padding: .65rem .25rem; border-bottom: 1px solid #f1f5f9; font-size: .82rem; }
+    @media (max-width: 900px) { .sim-row { grid-template-columns: 1fr 1fr; gap: .5rem; } .sim-row > * { font-size: .8rem; } }
+    .sim-channel-name { font-weight: 600; color: #1f2937; }
+    .sim-channel-name .icon { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+    .sim-orig { font-variant-numeric: tabular-nums; color: #6b7280; }
+    .sim-input-group { display: flex; align-items: center; gap: .35rem; }
+    .sim-input { width: 80px; padding: .3rem .5rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: .85rem; text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; color: #1f2937; }
+    .sim-input:focus { outline: none; border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59,130,246,.15); }
+    .sim-slider { flex: 1; min-width: 80px; height: 4px; }
+    .sim-btn { padding: .25rem .5rem; font-size: .7rem; border: 1px solid #e5e7eb; background: white; border-radius: 5px; cursor: pointer; color: #475569; font-weight: 600; }
+    .sim-btn:hover { background: #f1f5f9; border-color: #cbd5e1; }
+    .sim-btn:active { background: #e2e8f0; }
+    .sim-delta { font-variant-numeric: tabular-nums; font-weight: 700; text-align: right; }
+    .sim-fit { font-size: .7rem; color: #475569; }
+    .sim-group-label { font-size: .7rem; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: .04em; padding: .75rem .25rem .35rem; }
+    .sim-subtotal { font-size: .75rem; color: #475569; padding: .35rem .25rem .65rem; border-bottom: 2px solid #e2e8f0; margin-bottom: .35rem; }
+
+    /* Validación tope */
+    .tope-bar { position: relative; height: 24px; background: #f1f5f9; border-radius: 999px; overflow: hidden; margin-top: .5rem; }
+    .tope-bar-fill { position: absolute; left: 0; top: 0; bottom: 0; transition: width .25s ease, background-color .15s ease; border-radius: 999px; }
+    .tope-bar-text { position: absolute; left: 0; right: 0; top: 0; bottom: 0; display: flex; align-items: center; justify-content: center; font-size: .75rem; font-weight: 700; color: white; text-shadow: 0 1px 2px rgba(0,0,0,.2); z-index: 2; }
+    .tope-status { display: inline-flex; align-items: center; gap: .35rem; padding: .3rem .8rem; border-radius: 999px; font-size: .75rem; font-weight: 600; }
+    .tope-status.ok    { background: #d1fae5; color: #065f46; }
+    .tope-status.over  { background: #fee2e2; color: #991b1b; }
+    .tope-status.under { background: #fef3c7; color: #92400e; }
+
+    /* Análisis automático */
+    .analysis-box { background: #fffbeb; border: 1px solid #fcd34d; border-radius: 10px; padding: .85rem 1rem; margin-top: 1rem; font-size: .8rem; color: #78350f; }
+    .analysis-box .ana-item { padding: .25rem 0; }
+    .analysis-box .ana-ok   { color: #065f46; }
+    .analysis-box .ana-warn { color: #92400e; }
+    .analysis-box .ana-bad  { color: #991b1b; }
+
+    /* Acciones simulador */
+    .sim-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; align-items: center; }
+    .sim-action-btn { padding: .55rem 1rem; font-size: .8rem; font-weight: 600; border: 1px solid #cbd5e1; background: white; color: #1e293b; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: .35rem; }
+    .sim-action-btn:hover { background: #f8fafc; border-color: #94a3b8; }
+    .sim-action-btn.primary { background: #1e293b; color: white; border-color: #1e293b; }
+    .sim-action-btn.primary:hover { background: #0f172a; }
+    .sim-action-btn:disabled { opacity: .4; cursor: not-allowed; }
+    .sim-action-btn.danger { color: #dc2626; }
+    .sim-action-btn.danger:hover { background: #fef2f2; border-color: #fca5a5; }
+    .saved-pill { display: inline-flex; align-items: center; gap: .35rem; padding: .35rem .75rem; background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; border-radius: 999px; font-size: .75rem; font-weight: 600; }
+    .saved-pill .x { cursor: pointer; color: #6b7280; margin-left: .25rem; }
+    .saved-pill .x:hover { color: #dc2626; }
+
+    /* Tabla comparación visual */
+    .comparison-bar { height: 24px; border-radius: 6px; overflow: hidden; display: flex; margin: .25rem 0; }
+    .comparison-label { display: flex; justify-content: space-between; font-size: .7rem; color: #6b7280; margin-bottom: .15rem; }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -112,158 +202,206 @@
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
   <!-- HEADER -->
-  <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-8">
+  <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-6">
     <div>
       <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">💰 Inversión en Pauta</h1>
-      <p class="text-sm text-gray-500 mt-1">Proper · Landing Inversiones · Meta Ads + Google Ads</p>
+      <p class="text-sm text-gray-500 mt-1">Proper · Inversiones + Rentas · Meta Ads + Google Ads</p>
     </div>
     <div class="text-xs text-gray-400 mt-2 sm:mt-0">
       Actualizado: <span id="updated-at">—</span>
     </div>
   </div>
 
-  <!-- =============================================================== -->
-  <!-- BUDGET MES EN CURSO — split Inversiones vs Rentas (Meta + Google)  -->
-  <!-- =============================================================== -->
-  <div id="budget-section" class="budget-section" style="display:none">
-    <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
-      <div>
-        <h2 class="text-base font-bold text-gray-900 flex items-center gap-2">
-          💰 Budget Mes en Curso
-          <span id="budget-month-label" class="text-xs font-medium text-gray-500"></span>
-        </h2>
-        <div class="text-xs text-gray-500 mt-1">
-          Día <span id="budget-day-current">—</span> de <span id="budget-day-total">—</span>
-          (<span id="budget-day-pct">—</span>% del mes transcurrido)
-        </div>
-        <div class="month-progress" style="width: 220px">
-          <div id="month-progress-fill" class="month-progress-fill" style="width:0%"></div>
-        </div>
-      </div>
-      <div class="text-right">
-        <div class="text-[10px] uppercase tracking-wide text-gray-500 font-semibold">Currency</div>
-        <div class="text-sm font-semibold text-gray-700">PEN · S/</div>
-      </div>
-    </div>
-
-    <!-- Hero KPIs -->
-    <div class="budget-hero">
-      <div class="budget-hero-card">
-        <div class="label">Total Ejecutado</div>
-        <div class="value"><span id="bh-mtd">—</span> <span class="text-base text-gray-400">/</span> <span id="bh-budget" class="text-lg text-gray-500 font-semibold">—</span></div>
-        <div class="channel-bar mt-2">
-          <div id="bh-bar" class="channel-bar-fill" style="background:#3b82f6; width:0%"></div>
-          <div id="bh-target" class="channel-bar-target" style="left:0%"></div>
-        </div>
-        <div class="sub flex justify-between mt-1">
-          <span><span id="bh-pct">—</span>% usado</span>
-          <span>Marca = ritmo ideal hoy</span>
-        </div>
-      </div>
-      <div class="budget-hero-card">
-        <div class="label">Proyección Fin de Mes</div>
-        <div class="value"><span id="bh-proj">—</span></div>
-        <div class="sub mt-1">
-          <span id="bh-status" class="pill-status pill-ok">—</span>
-          <span class="ml-1 text-gray-500">
-            Holgura: <span id="bh-rem" class="font-semibold text-gray-700">—</span>
-          </span>
-        </div>
-        <div class="sub mt-2 text-[11px]">Run rate: <span id="bh-rrd">—</span>/día</div>
-      </div>
-    </div>
-
-    <!-- Product cards -->
-    <div class="product-grid">
-      <!-- INVERSIONES -->
-      <div class="product-card">
-        <div class="product-card-header">
-          <div>
-            <div class="title">🏠 Proper Inversiones</div>
-            <div class="text-[11px] text-gray-500 mt-0.5"><span id="inv-pct">—</span>% del budget · proy <span id="inv-proj">—</span></div>
-          </div>
-          <div class="total">
-            <strong id="inv-mtd" class="text-base text-gray-900">—</strong> / <span id="inv-budget">—</span>
-          </div>
-        </div>
-        <div class="channel-row">
-          <div class="channel-meta">
-            <span class="name"><span class="name-icon" style="background:#1877f2"></span>Facebook</span>
-            <span class="amount"><strong id="inv-fb-mtd">—</strong> / <span id="inv-fb-budget">—</span></span>
-          </div>
-          <div class="channel-bar">
-            <div id="inv-fb-bar" class="channel-bar-fill" style="background:#1877f2; width:0%"></div>
-            <div id="inv-fb-target" class="channel-bar-target" style="left:0%"></div>
-          </div>
-          <div class="channel-foot">
-            <span><span id="inv-fb-pct">—</span>%  <span id="inv-fb-status" class="pill-status pill-ok ml-1">—</span></span>
-            <span class="proj">Proy: <span id="inv-fb-proj">—</span></span>
-          </div>
-        </div>
-        <div class="channel-row">
-          <div class="channel-meta">
-            <span class="name"><span class="name-icon" style="background:#fbbc04"></span>Google Ads</span>
-            <span class="amount"><strong id="inv-gg-mtd">—</strong> / <span id="inv-gg-budget">—</span></span>
-          </div>
-          <div class="channel-bar">
-            <div id="inv-gg-bar" class="channel-bar-fill" style="background:#fbbc04; width:0%"></div>
-            <div id="inv-gg-target" class="channel-bar-target" style="left:0%"></div>
-          </div>
-          <div class="channel-foot">
-            <span><span id="inv-gg-pct">—</span>%  <span id="inv-gg-status" class="pill-status pill-ok ml-1">—</span></span>
-            <span class="proj">Proy: <span id="inv-gg-proj">—</span></span>
-          </div>
-        </div>
-      </div>
-
-      <!-- RENTAS -->
-      <div class="product-card">
-        <div class="product-card-header">
-          <div>
-            <div class="title">🏘️ Proper Rentas</div>
-            <div class="text-[11px] text-gray-500 mt-0.5"><span id="rnt-pct">—</span>% del budget · proy <span id="rnt-proj">—</span></div>
-          </div>
-          <div class="total">
-            <strong id="rnt-mtd" class="text-base text-gray-900">—</strong> / <span id="rnt-budget">—</span>
-          </div>
-        </div>
-        <div class="channel-row">
-          <div class="channel-meta">
-            <span class="name"><span class="name-icon" style="background:#1877f2"></span>Facebook</span>
-            <span class="amount"><strong id="rnt-fb-mtd">—</strong> / <span id="rnt-fb-budget">—</span></span>
-          </div>
-          <div class="channel-bar">
-            <div id="rnt-fb-bar" class="channel-bar-fill" style="background:#1877f2; width:0%"></div>
-            <div id="rnt-fb-target" class="channel-bar-target" style="left:0%"></div>
-          </div>
-          <div class="channel-foot">
-            <span><span id="rnt-fb-pct">—</span>%  <span id="rnt-fb-status" class="pill-status pill-ok ml-1">—</span></span>
-            <span class="proj">Proy: <span id="rnt-fb-proj">—</span></span>
-          </div>
-        </div>
-        <div class="channel-row">
-          <div class="channel-meta">
-            <span class="name"><span class="name-icon" style="background:#fbbc04"></span>Google Ads <span class="text-[10px] text-gray-400 ml-1" title="Experimento — reasignado de Inversiones">(exp)</span></span>
-            <span class="amount"><strong id="rnt-gg-mtd">—</strong> / <span id="rnt-gg-budget">—</span></span>
-          </div>
-          <div class="channel-bar">
-            <div id="rnt-gg-bar" class="channel-bar-fill" style="background:#fbbc04; width:0%"></div>
-            <div id="rnt-gg-target" class="channel-bar-target" style="left:0%"></div>
-          </div>
-          <div class="channel-foot">
-            <span><span id="rnt-gg-pct">—</span>%  <span id="rnt-gg-status" class="pill-status pill-ok ml-1">—</span></span>
-            <span class="proj">Proy: <span id="rnt-gg-proj">—</span></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Alertas auto-generadas -->
-    <div id="budget-alerts" class="alerts" style="display:none">
-      <div class="text-[11px] font-semibold text-gray-700 uppercase tracking-wide mb-1">📌 Alertas</div>
-      <ul id="budget-alerts-list"></ul>
+  <!-- TABS PRINCIPALES -->
+  <div class="mb-6">
+    <div class="view-tabs">
+      <button class="view-tab active" data-view="presupuesto">💰 Presupuesto</button>
+      <button class="view-tab"        data-view="dashboard">📊 Dashboard</button>
     </div>
   </div>
+
+  <!-- =================================================================== -->
+  <!-- VISTA: PRESUPUESTO                                                  -->
+  <!-- =================================================================== -->
+  <div id="vista-presupuesto" class="vista active">
+
+    <!-- Header mes -->
+    <div class="budget-section">
+      <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+        <div>
+          <h2 class="text-base font-bold text-gray-900 flex items-center gap-2">
+            💰 Presupuesto
+            <span id="budget-month-label" class="text-xs font-medium text-gray-500"></span>
+          </h2>
+          <div class="text-xs text-gray-500 mt-1">
+            Día <span id="budget-day-current">—</span> de <span id="budget-day-total">—</span>
+            (<span id="budget-day-pct">—</span>% del mes transcurrido)
+          </div>
+          <div class="month-progress" style="width: 220px">
+            <div id="month-progress-fill" class="month-progress-fill" style="width:0%"></div>
+          </div>
+        </div>
+        <div class="text-right">
+          <div class="text-[10px] uppercase tracking-wide text-gray-500 font-semibold">Moneda</div>
+          <div class="text-sm font-semibold text-gray-700">PEN · S/</div>
+        </div>
+      </div>
+
+      <!-- 3 KPIs HERO -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
+        <div class="budget-hero-card">
+          <div class="label">Tope mensual</div>
+          <div class="value"><span id="kpi-tope">—</span></div>
+          <div class="sub">Límite acordado</div>
+        </div>
+        <div class="budget-hero-card">
+          <div class="label">Gastado MTD</div>
+          <div class="value"><span id="kpi-mtd">—</span></div>
+          <div class="channel-bar mt-2" style="height:8px">
+            <div id="kpi-mtd-bar" class="channel-bar-fill" style="background:#3b82f6;width:0%"></div>
+            <div id="kpi-mtd-target" class="channel-bar-target" style="left:0%"></div>
+          </div>
+          <div class="sub flex justify-between mt-1">
+            <span><span id="kpi-mtd-pct">—</span>% del tope</span>
+            <span>Marca = ritmo día</span>
+          </div>
+        </div>
+        <div class="budget-hero-card">
+          <div class="label">Proyección EOM</div>
+          <div class="value"><span id="kpi-proj">—</span></div>
+          <div class="sub mt-1">
+            <span id="kpi-proj-status" class="pill-status pill-ok">—</span>
+            <span class="ml-1 text-gray-500">
+              Holgura: <span id="kpi-proj-holgura" class="font-semibold text-gray-700">—</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Asignación actual: Inversiones vs Rentas -->
+      <div class="asignacion-card">
+        <div class="text-xs font-semibold text-gray-700 uppercase tracking-wide mb-3">Asignación actual</div>
+        <div class="asignacion-grid">
+          <div class="asignacion-prod inv">
+            <div>
+              <div class="label">🏠 Proper Inversiones</div>
+              <div class="pct"><span id="asig-inv-pct">—</span>% del total</div>
+            </div>
+            <div class="monto"><span id="asig-inv-budget">—</span></div>
+          </div>
+          <div class="asignacion-prod ren">
+            <div>
+              <div class="label">🏘️ Proper Rentas</div>
+              <div class="pct"><span id="asig-ren-pct">—</span>% del total</div>
+            </div>
+            <div class="monto"><span id="asig-ren-budget">—</span></div>
+          </div>
+        </div>
+        <div class="comparison-label">
+          <span>Distribución</span>
+          <span>Tope: <span id="asig-total">—</span></span>
+        </div>
+        <div class="comparison-bar" id="asig-bar"></div>
+      </div>
+    </div>
+
+    <!-- Sub-tabs Actual / Simulador -->
+    <div class="chart-card">
+      <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+        <h3 class="text-sm font-bold text-gray-900">Desglose por canal</h3>
+        <div class="sub-tabs" role="tablist">
+          <button class="sub-tab active" data-mode="actual">📋 Actual</button>
+          <button class="sub-tab"        data-mode="simulador">🎛️ Simulador</button>
+        </div>
+      </div>
+
+      <!-- MODO ACTUAL: tabla detallada -->
+      <div id="modo-actual">
+        <div class="overflow-x-auto">
+          <table class="budget-table">
+            <thead>
+              <tr>
+                <th>Canal</th>
+                <th>Budget</th>
+                <th>Gastado MTD</th>
+                <th>Proy EOM</th>
+                <th>Δ vs Budget</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody id="actual-tbody"></tbody>
+          </table>
+        </div>
+        <div class="alerts" id="actual-alerts" style="display:none">
+          <div class="text-[11px] font-semibold text-gray-700 uppercase tracking-wide mb-1">📌 Alertas</div>
+          <ul id="actual-alerts-list"></ul>
+        </div>
+      </div>
+
+      <!-- MODO SIMULADOR: editor -->
+      <div id="modo-simulador" style="display:none">
+
+        <!-- Validación tope estricto -->
+        <div class="mb-4">
+          <div class="flex justify-between items-baseline flex-wrap gap-2 mb-1">
+            <div class="text-xs text-gray-600">
+              Tope mensual: <strong id="sim-tope">S/ 9,300</strong>
+              · Asignado: <strong id="sim-asignado">S/ 9,300</strong>
+              · Diferencia: <strong id="sim-diff">S/ 0</strong>
+            </div>
+            <span id="sim-status" class="tope-status ok">✓ Válido</span>
+          </div>
+          <div class="tope-bar">
+            <div id="sim-tope-bar" class="tope-bar-fill" style="background:#10b981;width:100%"></div>
+            <div class="tope-bar-text" id="sim-tope-text">100%</div>
+          </div>
+        </div>
+
+        <!-- Filas editables -->
+        <div id="sim-rows"></div>
+
+        <!-- Comparación visual original vs simulado -->
+        <div class="mt-4 p-3 bg-gray-50 rounded-lg">
+          <div class="text-[11px] font-semibold text-gray-700 uppercase tracking-wide mb-2">Comparación visual</div>
+          <div class="comparison-label">
+            <span>Original</span>
+            <span><span id="comp-orig-inv-pct">—</span>% Inv · <span id="comp-orig-ren-pct">—</span>% Ren</span>
+          </div>
+          <div class="comparison-bar" id="comp-orig-bar"></div>
+          <div class="comparison-label mt-2">
+            <span>Simulado</span>
+            <span><span id="comp-new-inv-pct">—</span>% Inv · <span id="comp-new-ren-pct">—</span>% Ren</span>
+          </div>
+          <div class="comparison-bar" id="comp-new-bar"></div>
+        </div>
+
+        <!-- Análisis automático -->
+        <div class="analysis-box" id="sim-analysis" style="display:none">
+          <div class="text-[11px] font-semibold uppercase tracking-wide mb-2">💡 Análisis automático</div>
+          <div id="sim-analysis-items"></div>
+        </div>
+
+        <!-- Acciones -->
+        <div class="sim-actions">
+          <button class="sim-action-btn primary" id="sim-save"     title="Guarda la simulación con un nombre">💾 Guardar como...</button>
+          <button class="sim-action-btn"         id="sim-reset"    title="Vuelve a los valores originales">↩️ Resetear</button>
+          <button class="sim-action-btn"         id="sim-copy"     title="Copia un resumen para mandar por chat">📋 Copiar texto</button>
+          <div class="flex-1"></div>
+          <div class="text-xs text-gray-500 mr-2">Cargar:</div>
+          <select id="sim-load" class="text-xs border border-gray-200 rounded-md px-2 py-1 bg-white" style="min-width: 180px">
+            <option value="">— Simulaciones guardadas —</option>
+          </select>
+          <button class="sim-action-btn danger" id="sim-delete" title="Eliminar la simulación seleccionada">🗑️</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /vista-presupuesto -->
+
+  <!-- =================================================================== -->
+  <!-- VISTA: DASHBOARD                                                    -->
+  <!-- =================================================================== -->
+  <div id="vista-dashboard" class="vista">
 
   <!-- FILTROS -->
   <div class="flex flex-col gap-3 mb-6">
@@ -497,13 +635,15 @@
     </div>
   </div>
 
+  </div><!-- /vista-dashboard -->
+
   <footer class="mt-12 pt-6 border-t border-gray-200 text-center text-xs text-gray-400">
     Leads + clasificación: <code>bitrix.hs_deals</code> filtrado a <code>utm_campaign LIKE '%landing%'</code> · usando <code>categoriacliente</code> (= UF_CRM_1711043847).<br>
     Spend: Meta Ads Insights API + Google Ads API (campañas con "LANDING" en el nombre).
   </footer>
 </div>
 
-<!-- v9 — Sección Budget Mes en Curso (Inversiones + Rentas, Meta + Google) -->
-<script src="./app.js?v=9"></script>
+<!-- v10 — Vista Presupuesto separada (Actual + Simulador editable con persistencia) -->
+<script src="./app.js?v=10"></script>
 </body>
 </html>

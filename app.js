@@ -703,128 +703,161 @@ function render(){
 }
 
 // ============================================================
-// Budget Mes en Curso — split Inversiones vs Rentas (Meta + Google)
+// Vista PRESUPUESTO — Modo Actual + Modo Simulador
 // Lee DATA.budget_by_product (generado por build-data.py)
 // ============================================================
-function renderBudgetByProduct(){
+
+// Definición de canales (mantener orden estable para todo el código)
+const CHANNELS = [
+  { key: 'inv.fb', prod: 'inversiones', ch: 'facebook', label: 'Facebook',   icon: '#1877f2', prodIcon: '🏠', prodLabel: 'Proper Inversiones' },
+  { key: 'inv.gg', prod: 'inversiones', ch: 'google',   label: 'Google Ads', icon: '#fbbc04', prodIcon: '🏠', prodLabel: 'Proper Inversiones' },
+  { key: 'rnt.fb', prod: 'rentas',      ch: 'facebook', label: 'Facebook',   icon: '#1877f2', prodIcon: '🏘️', prodLabel: 'Proper Rentas' },
+  { key: 'rnt.gg', prod: 'rentas',      ch: 'google',   label: 'Google Ads (exp)', icon: '#fbbc04', prodIcon: '🏘️', prodLabel: 'Proper Rentas' },
+];
+
+// Estado del simulador (los budgets propuestos)
+let SIM_BUDGETS = {};   // { 'inv.fb': 6000, ... }
+let ORIG_BUDGETS = {};  // valores originales (immutable después de init)
+let MTD_VALUES = {};    // { 'inv.fb': 4815.44, ... }
+let MONTH_CTX = {};     // { days_elapsed, days_in_month, pct_month_elapsed }
+const SIM_STORAGE_KEY = 'proper_budget_sims';
+const SIM_MAX = 5;
+
+function getChannelData(bp, prod, ch) {
+  return ((bp.products || {})[prod] || {}).channels?.[ch] || {};
+}
+
+function statusForActual(ch, monthPct) {
+  const proj = ch.projected_eom || 0;
+  const bud  = ch.budget || 0;
+  const pct  = ch.pct_used || 0;
+  if (proj > bud * 1.05) return { cls: 'pill-over',  text: '⚠️ Overspend' };
+  if (pct  > monthPct + 5) return { cls: 'pill-warn',  text: '🟡 Acelerado' };
+  if (pct  < monthPct - 25 && bud > 0) return { cls: 'pill-low',   text: '🔵 Sub-uso' };
+  return { cls: 'pill-ok', text: '🟢 En ritmo' };
+}
+
+// ============================================================
+// Renderizar HEADER + KPIs Hero + Asignación Actual
+// ============================================================
+function renderPresupuestoHeader() {
   const bp = DATA.budget_by_product;
-  const section = document.getElementById('budget-section');
-  if (!bp || !bp.products) {
-    if (section) section.style.display = 'none';
-    return;
-  }
-  section.style.display = '';
+  if (!bp) return;
 
   const MONTH_NAMES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
   const [yr, mo] = (bp.month_start || '').split('-');
-  const monthLabel = mo ? `· ${MONTH_NAMES[parseInt(mo,10)-1]} ${yr}` : '';
-  document.getElementById('budget-month-label').textContent = monthLabel;
+  document.getElementById('budget-month-label').textContent = mo ? `· ${MONTH_NAMES[parseInt(mo,10)-1]} ${yr}` : '';
   document.getElementById('budget-day-current').textContent = bp.days_elapsed;
   document.getElementById('budget-day-total').textContent   = bp.days_in_month;
   document.getElementById('budget-day-pct').textContent     = bp.pct_month_elapsed;
   document.getElementById('month-progress-fill').style.width = (bp.pct_month_elapsed || 0) + '%';
 
-  // Hero total
+  // 3 KPIs hero
   const t = bp.total || {};
-  document.getElementById('bh-mtd').textContent    = fmt_s(t.mtd || 0);
-  document.getElementById('bh-budget').textContent = fmt_s(t.budget || 0);
-  document.getElementById('bh-pct').textContent    = t.pct_used != null ? t.pct_used : '—';
-  document.getElementById('bh-proj').textContent   = fmt_s(t.projected_eom || 0);
-  document.getElementById('bh-rrd').textContent    = fmt_s(t.run_rate_daily || 0);
+  document.getElementById('kpi-tope').textContent = fmt_s(t.budget || 0);
+  document.getElementById('kpi-mtd').textContent  = fmt_s(t.mtd || 0);
+  document.getElementById('kpi-mtd-pct').textContent = t.pct_used != null ? t.pct_used : '—';
+  document.getElementById('kpi-proj').textContent = fmt_s(t.projected_eom || 0);
 
-  const totalRemaining = t.remaining_budget || 0;
-  const projOverBudget = (t.projected_eom || 0) - (t.budget || 0);
-  document.getElementById('bh-rem').textContent = (projOverBudget > 0)
-    ? `–${fmt_s(projOverBudget)} (sobre budget)`
-    : `+${fmt_s(Math.abs(projOverBudget))} (bajo budget)`;
+  const proj = t.projected_eom || 0;
+  const bud  = t.budget || 0;
+  const projOver = proj - bud;
+  const holgura = document.getElementById('kpi-proj-holgura');
+  holgura.textContent = (projOver > 0) ? `–${fmt_s(projOver)} sobre` : `+${fmt_s(Math.abs(projOver))} bajo`;
+  const stEl = document.getElementById('kpi-proj-status');
+  if (projOver > bud * 0.05) { stEl.className = 'pill-status pill-over'; stEl.textContent = '⚠️ Overspend'; }
+  else if (projOver > 0)     { stEl.className = 'pill-status pill-warn'; stEl.textContent = 'Pegado al límite'; }
+  else                       { stEl.className = 'pill-status pill-ok';   stEl.textContent = '🟢 En budget'; }
 
-  // Hero status pill (compara proyección con budget)
-  const heroStatus = document.getElementById('bh-status');
-  if (projOverBudget > t.budget * 0.05) {
-    heroStatus.className = 'pill-status pill-over';
-    heroStatus.textContent = '⚠️ Riesgo overspend';
-  } else if (projOverBudget > 0) {
-    heroStatus.className = 'pill-status pill-warn';
-    heroStatus.textContent = 'Pegado al límite';
-  } else if ((t.pct_used || 0) < (bp.pct_month_elapsed || 0) - 15) {
-    heroStatus.className = 'pill-status pill-low';
-    heroStatus.textContent = 'Sub-utilizado';
-  } else {
-    heroStatus.className = 'pill-status pill-ok';
-    heroStatus.textContent = '🟢 En budget';
-  }
+  // Hero bar MTD
+  const mtdPct = Math.min(100, ((t.mtd || 0) / (t.budget || 1)) * 100);
+  document.getElementById('kpi-mtd-bar').style.width = mtdPct + '%';
+  document.getElementById('kpi-mtd-target').style.left = Math.min(100, bp.pct_month_elapsed || 0) + '%';
+  const mtdBar = document.getElementById('kpi-mtd-bar');
+  if ((t.pct_used || 0) > (bp.pct_month_elapsed || 0) + 10) mtdBar.style.background = '#ef4444';
+  else if ((t.pct_used || 0) > (bp.pct_month_elapsed || 0) + 3) mtdBar.style.background = '#f59e0b';
+  else mtdBar.style.background = '#3b82f6';
 
-  // Hero bar (mtd vs budget, target = pct mes transcurrido)
-  const heroBarPct = Math.min(100, ((t.mtd || 0) / (t.budget || 1)) * 100);
-  document.getElementById('bh-bar').style.width = heroBarPct + '%';
-  document.getElementById('bh-target').style.left = Math.min(100, bp.pct_month_elapsed || 0) + '%';
+  // Asignación actual
+  const inv = bp.products?.inversiones || {};
+  const rnt = bp.products?.rentas || {};
+  const invBud = inv.budget || 0;
+  const rntBud = rnt.budget || 0;
+  const totalBud = invBud + rntBud;
+  const invPct = totalBud ? (invBud / totalBud * 100) : 0;
+  const rntPct = totalBud ? (rntBud / totalBud * 100) : 0;
 
-  // Color del hero bar según comparación con pct mes
-  const heroBar = document.getElementById('bh-bar');
-  if ((t.pct_used || 0) > (bp.pct_month_elapsed || 0) + 10) heroBar.style.background = '#ef4444';
-  else if ((t.pct_used || 0) > (bp.pct_month_elapsed || 0) + 3) heroBar.style.background = '#f59e0b';
-  else heroBar.style.background = '#3b82f6';
+  document.getElementById('asig-inv-budget').textContent = fmt_s(invBud);
+  document.getElementById('asig-ren-budget').textContent = fmt_s(rntBud);
+  document.getElementById('asig-inv-pct').textContent = invPct.toFixed(1);
+  document.getElementById('asig-ren-pct').textContent = rntPct.toFixed(1);
+  document.getElementById('asig-total').textContent = fmt_s(totalBud);
 
-  // Helper para pintar un canal
+  const asigBar = document.getElementById('asig-bar');
+  asigBar.innerHTML = `
+    <div class="dist-bar-segment" style="width:${invPct}%; background:#4f46e5">Inv ${invPct.toFixed(0)}%</div>
+    <div class="dist-bar-segment" style="width:${rntPct}%; background:#10b981">Ren ${rntPct.toFixed(0)}%</div>
+  `;
+}
+
+// ============================================================
+// MODO ACTUAL: tabla detallada read-only
+// ============================================================
+function renderModoActual() {
+  const bp = DATA.budget_by_product;
+  if (!bp || !bp.products) return;
   const monthPct = bp.pct_month_elapsed || 0;
-  function paintChannel(prefix, channel){
-    const idMtd  = `${prefix}-mtd`;
-    const idBud  = `${prefix}-budget`;
-    const idPct  = `${prefix}-pct`;
-    const idBar  = `${prefix}-bar`;
-    const idTgt  = `${prefix}-target`;
-    const idProj = `${prefix}-proj`;
-    const idStat = `${prefix}-status`;
+  const tbody = document.getElementById('actual-tbody');
 
-    document.getElementById(idMtd).textContent  = fmt_s(channel.mtd || 0);
-    document.getElementById(idBud).textContent  = fmt_s(channel.budget || 0);
-    document.getElementById(idPct).textContent  = (channel.pct_used != null ? channel.pct_used : 0);
-    document.getElementById(idProj).textContent = fmt_s(channel.projected_eom || 0);
+  let html = '';
+  let totBud = 0, totMtd = 0, totProj = 0;
 
-    const fillPct = Math.min(100, ((channel.mtd || 0) / (channel.budget || 1)) * 100);
-    const bar = document.getElementById(idBar);
-    bar.style.width = fillPct + '%';
-    document.getElementById(idTgt).style.left = Math.min(100, monthPct) + '%';
-
-    // Status pill
-    const pillEl = document.getElementById(idStat);
-    const projOver = (channel.projected_eom || 0) - (channel.budget || 0);
-    const pctUsed = channel.pct_used || 0;
-    if (projOver > channel.budget * 0.05) {
-      pillEl.className = 'pill-status pill-over ml-1';
-      pillEl.textContent = 'overspend';
-    } else if (pctUsed > monthPct + 5) {
-      pillEl.className = 'pill-status pill-warn ml-1';
-      pillEl.textContent = 'acelerado';
-    } else if (pctUsed < monthPct - 20) {
-      pillEl.className = 'pill-status pill-low ml-1';
-      pillEl.textContent = 'sub-utilizado';
-    } else {
-      pillEl.className = 'pill-status pill-ok ml-1';
-      pillEl.textContent = 'en ritmo';
+  for (const prod of ['inversiones', 'rentas']) {
+    const p = bp.products[prod] || {};
+    const prodLabel = prod === 'inversiones' ? '🏠 Proper Inversiones' : '🏘️ Proper Rentas';
+    html += `<tr class="group-row"><td colspan="6">${prodLabel}</td></tr>`;
+    for (const chKey of ['facebook', 'google']) {
+      const ch = p.channels?.[chKey] || {};
+      const chLabel = chKey === 'facebook' ? 'Facebook' : (prod === 'rentas' ? 'Google Ads (exp)' : 'Google Ads');
+      const chColor = chKey === 'facebook' ? '#1877f2' : '#fbbc04';
+      const delta = (ch.projected_eom || 0) - (ch.budget || 0);
+      const deltaCls = delta > 0 ? 'delta-pos' : (delta < 0 ? 'delta-neg' : 'delta-zero');
+      const deltaSign = delta > 0 ? '+' : '';
+      const st = statusForActual(ch, monthPct);
+      html += `<tr>
+        <td><span style="display:inline-block;width:10px;height:10px;background:${chColor};border-radius:2px;margin-right:6px;vertical-align:-1px"></span>${chLabel}</td>
+        <td>${fmt_s(ch.budget || 0)}</td>
+        <td>${fmt_s(ch.mtd || 0)} <span class="text-xs text-gray-400">(${ch.pct_used || 0}%)</span></td>
+        <td>${fmt_s(ch.projected_eom || 0)}</td>
+        <td class="${deltaCls}">${deltaSign}${fmt_s(delta)}</td>
+        <td><span class="pill-status ${st.cls}">${st.text}</span></td>
+      </tr>`;
     }
+    // Subtotal
+    const sb = p.budget || 0; const sm = p.mtd || 0; const sp = p.projected_eom || 0;
+    const sd = sp - sb;
+    html += `<tr class="subtotal-row">
+      <td>Subtotal ${prod === 'inversiones' ? 'Inversiones' : 'Rentas'}</td>
+      <td>${fmt_s(sb)}</td>
+      <td>${fmt_s(sm)} <span class="text-xs text-gray-400">(${p.pct_used || 0}%)</span></td>
+      <td>${fmt_s(sp)}</td>
+      <td class="${sd > 0 ? 'delta-pos' : (sd < 0 ? 'delta-neg' : 'delta-zero')}">${sd > 0 ? '+' : ''}${fmt_s(sd)}</td>
+      <td></td>
+    </tr>`;
+    totBud += sb; totMtd += sm; totProj += sp;
   }
+  const totD = totProj - totBud;
+  html += `<tr class="total-row">
+    <td>TOTAL</td>
+    <td>${fmt_s(totBud)}</td>
+    <td>${fmt_s(totMtd)} (${totBud ? ((totMtd/totBud)*100).toFixed(1) : 0}%)</td>
+    <td>${fmt_s(totProj)}</td>
+    <td>${totD > 0 ? '+' : ''}${fmt_s(totD)}</td>
+    <td></td>
+  </tr>`;
+  tbody.innerHTML = html;
 
-  // Productos
-  const inv = bp.products.inversiones || {};
-  const rnt = bp.products.rentas || {};
-
-  document.getElementById('inv-mtd').textContent    = fmt_s(inv.mtd || 0);
-  document.getElementById('inv-budget').textContent = fmt_s(inv.budget || 0);
-  document.getElementById('inv-pct').textContent    = inv.pct_used != null ? inv.pct_used : '—';
-  document.getElementById('inv-proj').textContent   = fmt_s(inv.projected_eom || 0);
-
-  document.getElementById('rnt-mtd').textContent    = fmt_s(rnt.mtd || 0);
-  document.getElementById('rnt-budget').textContent = fmt_s(rnt.budget || 0);
-  document.getElementById('rnt-pct').textContent    = rnt.pct_used != null ? rnt.pct_used : '—';
-  document.getElementById('rnt-proj').textContent   = fmt_s(rnt.projected_eom || 0);
-
-  paintChannel('inv-fb', inv.channels?.facebook || {});
-  paintChannel('inv-gg', inv.channels?.google   || {});
-  paintChannel('rnt-fb', rnt.channels?.facebook || {});
-  paintChannel('rnt-gg', rnt.channels?.google   || {});
-
-  // Alertas auto-generadas
+  // Alertas
   const alerts = [];
   const checkChannel = (label, ch) => {
     const pct  = ch.pct_used || 0;
@@ -838,13 +871,15 @@ function renderBudgetByProduct(){
       alerts.push(`🔵 <strong>${label}</strong>: sub-utilizado (${pct}% vs ${monthPct}% día) → margen de S/ ${(bud - (ch.mtd||0)).toFixed(0)} sin usar.`);
     }
   };
-  checkChannel('Facebook Inversiones', inv.channels?.facebook || {});
+  const inv = bp.products?.inversiones || {};
+  const rnt = bp.products?.rentas || {};
+  checkChannel('Facebook Inversiones',   inv.channels?.facebook || {});
   checkChannel('Google Ads Inversiones', inv.channels?.google || {});
-  checkChannel('Facebook Rentas',     rnt.channels?.facebook || {});
-  checkChannel('Google Ads Rentas',   rnt.channels?.google || {});
+  checkChannel('Facebook Rentas',        rnt.channels?.facebook || {});
+  checkChannel('Google Ads Rentas',      rnt.channels?.google || {});
 
-  const alertsBox = document.getElementById('budget-alerts');
-  const alertsList = document.getElementById('budget-alerts-list');
+  const alertsBox = document.getElementById('actual-alerts');
+  const alertsList = document.getElementById('actual-alerts-list');
   if (alerts.length) {
     alertsBox.style.display = '';
     alertsList.innerHTML = alerts.map(a => `<li>${a}</li>`).join('');
@@ -853,16 +888,392 @@ function renderBudgetByProduct(){
   }
 }
 
+// ============================================================
+// MODO SIMULADOR: filas editables + análisis
+// ============================================================
+function initSimuladorState() {
+  const bp = DATA.budget_by_product;
+  if (!bp) return;
+
+  ORIG_BUDGETS = {};
+  SIM_BUDGETS = {};
+  MTD_VALUES = {};
+  for (const c of CHANNELS) {
+    const data = getChannelData(bp, c.prod, c.ch);
+    ORIG_BUDGETS[c.key] = data.budget || 0;
+    SIM_BUDGETS[c.key]  = data.budget || 0;
+    MTD_VALUES[c.key]   = data.mtd || 0;
+  }
+  MONTH_CTX = {
+    days_elapsed: bp.days_elapsed || 0,
+    days_in_month: bp.days_in_month || 30,
+    pct_month_elapsed: bp.pct_month_elapsed || 0,
+    tope: bp.total?.budget || 9300,
+  };
+}
+
+function renderSimuladorRows() {
+  const container = document.getElementById('sim-rows');
+  let html = '';
+  let lastProd = null;
+  for (const c of CHANNELS) {
+    if (c.prod !== lastProd) {
+      html += `<div class="sim-group-label">${c.prodIcon} ${c.prodLabel}</div>`;
+      lastProd = c.prod;
+    }
+    const orig = ORIG_BUDGETS[c.key] || 0;
+    const cur  = SIM_BUDGETS[c.key] || 0;
+    html += `
+      <div class="sim-row" data-key="${c.key}">
+        <div class="sim-channel-name"><span class="icon" style="background:${c.icon}"></span>${c.label}</div>
+        <div class="sim-orig">${fmt_s(orig)}</div>
+        <div class="sim-input-group">
+          <input type="number" class="sim-input" data-key="${c.key}" value="${cur}" min="0" max="20000" step="50">
+          <input type="range"  class="sim-slider" data-key="${c.key}" value="${cur}" min="0" max="${Math.max(orig * 3, 5000)}" step="50">
+        </div>
+        <div class="sim-input-group">
+          <button class="sim-btn" data-key="${c.key}" data-step="-100">−100</button>
+          <button class="sim-btn" data-key="${c.key}" data-step="100">+100</button>
+        </div>
+        <div class="sim-delta" data-delta="${c.key}">—</div>
+        <div class="sim-fit" data-fit="${c.key}">—</div>
+      </div>
+    `;
+  }
+  // Subtotales por producto (display debajo de cada grupo se actualiza dinámicamente)
+  container.innerHTML = html;
+
+  // Listeners
+  container.querySelectorAll('input.sim-input').forEach(el => {
+    el.addEventListener('input', (e) => {
+      const k = e.target.dataset.key;
+      const v = Math.max(0, parseFloat(e.target.value) || 0);
+      SIM_BUDGETS[k] = v;
+      // sync slider
+      const sl = container.querySelector(`input.sim-slider[data-key="${k}"]`);
+      if (sl) sl.value = v;
+      updateSimulador();
+    });
+  });
+  container.querySelectorAll('input.sim-slider').forEach(el => {
+    el.addEventListener('input', (e) => {
+      const k = e.target.dataset.key;
+      const v = parseFloat(e.target.value) || 0;
+      SIM_BUDGETS[k] = v;
+      const inp = container.querySelector(`input.sim-input[data-key="${k}"]`);
+      if (inp) inp.value = v;
+      updateSimulador();
+    });
+  });
+  container.querySelectorAll('button.sim-btn').forEach(el => {
+    el.addEventListener('click', (e) => {
+      const k = e.target.dataset.key;
+      const step = parseFloat(e.target.dataset.step) || 0;
+      SIM_BUDGETS[k] = Math.max(0, (SIM_BUDGETS[k] || 0) + step);
+      const inp = container.querySelector(`input.sim-input[data-key="${k}"]`);
+      const sl  = container.querySelector(`input.sim-slider[data-key="${k}"]`);
+      if (inp) inp.value = SIM_BUDGETS[k];
+      if (sl)  sl.value  = SIM_BUDGETS[k];
+      updateSimulador();
+    });
+  });
+}
+
+function updateSimulador() {
+  const tope = MONTH_CTX.tope || 9300;
+  let asignado = 0;
+  for (const c of CHANNELS) asignado += (SIM_BUDGETS[c.key] || 0);
+  const diff = asignado - tope;
+
+  document.getElementById('sim-tope').textContent = fmt_s(tope);
+  document.getElementById('sim-asignado').textContent = fmt_s(asignado);
+  const diffEl = document.getElementById('sim-diff');
+  diffEl.textContent = (diff === 0) ? `S/ 0` : `${diff > 0 ? '+' : ''}${fmt_s(diff)}`;
+  diffEl.style.color = diff === 0 ? '#059669' : (diff > 0 ? '#dc2626' : '#d97706');
+
+  // Status pill + barra
+  const statusEl = document.getElementById('sim-status');
+  const barFill  = document.getElementById('sim-tope-bar');
+  const barText  = document.getElementById('sim-tope-text');
+  const pct = tope ? (asignado / tope * 100) : 0;
+  barFill.style.width = Math.min(100, pct) + '%';
+  barText.textContent = `${pct.toFixed(0)}% del tope`;
+
+  if (diff === 0) {
+    statusEl.className = 'tope-status ok'; statusEl.textContent = '✓ Válido';
+    barFill.style.background = '#10b981';
+  } else if (diff > 0) {
+    statusEl.className = 'tope-status over'; statusEl.textContent = `⛔ Excede S/ ${diff.toFixed(0)}`;
+    barFill.style.background = '#ef4444';
+  } else {
+    statusEl.className = 'tope-status under'; statusEl.textContent = `⚠️ Falta S/ ${Math.abs(diff).toFixed(0)}`;
+    barFill.style.background = '#f59e0b';
+  }
+
+  // Por canal: delta + fit
+  for (const c of CHANNELS) {
+    const orig = ORIG_BUDGETS[c.key] || 0;
+    const nuevo = SIM_BUDGETS[c.key] || 0;
+    const d = nuevo - orig;
+    const deltaEl = document.querySelector(`[data-delta="${c.key}"]`);
+    const fitEl   = document.querySelector(`[data-fit="${c.key}"]`);
+
+    if (deltaEl) {
+      deltaEl.textContent = (d === 0 ? '—' : `${d > 0 ? '+' : ''}${fmt_s(d)}`);
+      deltaEl.style.color = d === 0 ? '#9ca3af' : (d > 0 ? '#dc2626' : '#059669');
+    }
+
+    // Proyección al run rate ACTUAL (constante, basado en mtd y días)
+    const mtd = MTD_VALUES[c.key] || 0;
+    const projAtCurrentRate = MONTH_CTX.days_elapsed > 0 ? (mtd / MONTH_CTX.days_elapsed) * MONTH_CTX.days_in_month : 0;
+
+    if (fitEl) {
+      if (nuevo === 0 && projAtCurrentRate === 0) {
+        fitEl.innerHTML = `<span style="color:#9ca3af">—</span>`;
+      } else if (projAtCurrentRate <= nuevo) {
+        const margen = nuevo - projAtCurrentRate;
+        fitEl.innerHTML = `<span style="color:#059669">✅ cabe</span> <span style="color:#9ca3af">+${fmt_s(margen)}</span>`;
+      } else {
+        const overflow = projAtCurrentRate - nuevo;
+        fitEl.innerHTML = `<span style="color:#dc2626">⚠️ excede</span> <span style="color:#9ca3af">+${fmt_s(overflow)}</span>`;
+      }
+    }
+  }
+
+  // Comparación visual original vs nuevo
+  const origInv = (ORIG_BUDGETS['inv.fb'] || 0) + (ORIG_BUDGETS['inv.gg'] || 0);
+  const origRen = (ORIG_BUDGETS['rnt.fb'] || 0) + (ORIG_BUDGETS['rnt.gg'] || 0);
+  const newInv  = (SIM_BUDGETS['inv.fb'] || 0) + (SIM_BUDGETS['inv.gg'] || 0);
+  const newRen  = (SIM_BUDGETS['rnt.fb'] || 0) + (SIM_BUDGETS['rnt.gg'] || 0);
+  const origTot = origInv + origRen;
+  const newTot  = newInv + newRen;
+
+  const origInvPct = origTot ? (origInv/origTot*100) : 0;
+  const origRenPct = origTot ? (origRen/origTot*100) : 0;
+  const newInvPct  = newTot  ? (newInv/newTot*100) : 0;
+  const newRenPct  = newTot  ? (newRen/newTot*100) : 0;
+
+  document.getElementById('comp-orig-inv-pct').textContent = origInvPct.toFixed(0);
+  document.getElementById('comp-orig-ren-pct').textContent = origRenPct.toFixed(0);
+  document.getElementById('comp-new-inv-pct').textContent  = newInvPct.toFixed(0);
+  document.getElementById('comp-new-ren-pct').textContent  = newRenPct.toFixed(0);
+
+  document.getElementById('comp-orig-bar').innerHTML = `
+    <div class="dist-bar-segment" style="width:${origInvPct}%; background:#4f46e5">Inv ${fmt_s(origInv)}</div>
+    <div class="dist-bar-segment" style="width:${origRenPct}%; background:#10b981">Ren ${fmt_s(origRen)}</div>
+  `;
+  document.getElementById('comp-new-bar').innerHTML = `
+    <div class="dist-bar-segment" style="width:${newInvPct}%; background:#4f46e5">Inv ${fmt_s(newInv)}</div>
+    <div class="dist-bar-segment" style="width:${newRenPct}%; background:#10b981">Ren ${fmt_s(newRen)}</div>
+  `;
+
+  // Análisis automático
+  const analysisItems = [];
+  for (const c of CHANNELS) {
+    const orig = ORIG_BUDGETS[c.key] || 0;
+    const nuevo = SIM_BUDGETS[c.key] || 0;
+    const d = nuevo - orig;
+    if (d === 0) continue;
+    const mtd = MTD_VALUES[c.key] || 0;
+    const projAtRate = MONTH_CTX.days_elapsed > 0 ? (mtd / MONTH_CTX.days_elapsed) * MONTH_CTX.days_in_month : 0;
+    const label = `${c.prodLabel} · ${c.label}`;
+
+    if (d < 0) {
+      if (projAtRate <= nuevo) {
+        analysisItems.push({cls:'ana-ok', html: `✅ <strong>${label}</strong>: bajar ${fmt_s(Math.abs(d))} no afecta el ritmo (proy ${fmt_s(projAtRate)} cabe en ${fmt_s(nuevo)}).`});
+      } else {
+        const overflow = projAtRate - nuevo;
+        analysisItems.push({cls:'ana-bad', html: `⛔ <strong>${label}</strong>: bajar ${fmt_s(Math.abs(d))} requiere CORTAR ${fmt_s(overflow)} del ritmo actual (proy ${fmt_s(projAtRate)} > nuevo ${fmt_s(nuevo)}).`});
+      }
+    } else {
+      if (projAtRate >= nuevo * 0.95) {
+        analysisItems.push({cls:'ana-ok', html: `✅ <strong>${label}</strong>: subir ${fmt_s(d)} es consistente con el ritmo actual (proy ${fmt_s(projAtRate)} ≈ nuevo ${fmt_s(nuevo)}).`});
+      } else {
+        const rrdActual = mtd / Math.max(1, MONTH_CTX.days_elapsed);
+        const rrdRequerido = nuevo / Math.max(1, MONTH_CTX.days_in_month);
+        const mult = rrdActual > 0 ? (rrdRequerido / rrdActual) : 0;
+        analysisItems.push({cls:'ana-warn', html: `⚠️ <strong>${label}</strong>: subir ${fmt_s(d)} requiere acelerar el ritmo${mult > 0 ? ` ${mult.toFixed(1)}x` : ''} (actual S/${rrdActual.toFixed(1)}/día → requerido S/${rrdRequerido.toFixed(1)}/día). Subir bids, ampliar audiencia o agregar adsets.`});
+      }
+    }
+  }
+
+  const aBox = document.getElementById('sim-analysis');
+  const aList = document.getElementById('sim-analysis-items');
+  if (analysisItems.length) {
+    aBox.style.display = '';
+    aList.innerHTML = analysisItems.map(a => `<div class="ana-item ${a.cls}">${a.html}</div>`).join('');
+  } else {
+    aBox.style.display = 'none';
+  }
+
+  // Disable Guardar si diff != 0 (tope estricto)
+  const saveBtn = document.getElementById('sim-save');
+  if (saveBtn) saveBtn.disabled = (diff !== 0);
+}
+
+// ============================================================
+// Persistencia localStorage
+// ============================================================
+function loadSavedSims() {
+  try { return JSON.parse(localStorage.getItem(SIM_STORAGE_KEY) || '{}'); }
+  catch(e) { return {}; }
+}
+function saveSavedSims(obj) {
+  localStorage.setItem(SIM_STORAGE_KEY, JSON.stringify(obj));
+}
+function refreshSavedSimsDropdown() {
+  const sel = document.getElementById('sim-load');
+  if (!sel) return;
+  const sims = loadSavedSims();
+  const names = Object.keys(sims).sort();
+  sel.innerHTML = `<option value="">— Simulaciones guardadas (${names.length}/${SIM_MAX}) —</option>` +
+    names.map(n => `<option value="${n}">${n}</option>`).join('');
+}
+
+function simSaveAs() {
+  const sims = loadSavedSims();
+  const count = Object.keys(sims).length;
+  if (count >= SIM_MAX) {
+    alert(`Límite alcanzado (${SIM_MAX} simulaciones). Borra una antes de guardar otra.`);
+    return;
+  }
+  const name = prompt(`Nombre para esta simulación:\n(ej: "Plan B - más Rentas", "Plan C - corte 10%")`);
+  if (!name || !name.trim()) return;
+  sims[name.trim()] = {
+    createdAt: new Date().toISOString(),
+    budgets: { ...SIM_BUDGETS }
+  };
+  saveSavedSims(sims);
+  refreshSavedSimsDropdown();
+  document.getElementById('sim-load').value = name.trim();
+  alert(`✅ Guardada: "${name.trim()}"`);
+}
+function simLoad(name) {
+  if (!name) return;
+  const sims = loadSavedSims();
+  const sim = sims[name];
+  if (!sim) return;
+  for (const k of Object.keys(SIM_BUDGETS)) {
+    if (sim.budgets[k] != null) SIM_BUDGETS[k] = sim.budgets[k];
+  }
+  // refrescar inputs
+  for (const c of CHANNELS) {
+    const inp = document.querySelector(`input.sim-input[data-key="${c.key}"]`);
+    const sl  = document.querySelector(`input.sim-slider[data-key="${c.key}"]`);
+    if (inp) inp.value = SIM_BUDGETS[c.key];
+    if (sl)  sl.value  = SIM_BUDGETS[c.key];
+  }
+  updateSimulador();
+}
+function simDelete(name) {
+  if (!name) { alert('Selecciona una simulación del dropdown primero.'); return; }
+  if (!confirm(`¿Borrar la simulación "${name}"?`)) return;
+  const sims = loadSavedSims();
+  delete sims[name];
+  saveSavedSims(sims);
+  refreshSavedSimsDropdown();
+}
+function simReset() {
+  for (const k of Object.keys(SIM_BUDGETS)) SIM_BUDGETS[k] = ORIG_BUDGETS[k] || 0;
+  for (const c of CHANNELS) {
+    const inp = document.querySelector(`input.sim-input[data-key="${c.key}"]`);
+    const sl  = document.querySelector(`input.sim-slider[data-key="${c.key}"]`);
+    if (inp) inp.value = SIM_BUDGETS[c.key];
+    if (sl)  sl.value  = SIM_BUDGETS[c.key];
+  }
+  updateSimulador();
+}
+function simCopy() {
+  let asignado = 0;
+  for (const c of CHANNELS) asignado += (SIM_BUDGETS[c.key] || 0);
+  const lines = ['📊 SIMULACIÓN BUDGET ' + (DATA.budget_by_product?.month_start || '').slice(0,7).toUpperCase(),
+                 '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'];
+  for (const c of CHANNELS) {
+    const orig = ORIG_BUDGETS[c.key] || 0;
+    const nuevo = SIM_BUDGETS[c.key] || 0;
+    const d = nuevo - orig;
+    const dStr = d === 0 ? '   0' : `${d > 0 ? '+' : ''}${d}`;
+    const labelFull = `${c.prodLabel.replace('Proper ','')} ${c.label.replace(' (exp)','')}`.padEnd(22);
+    lines.push(`${labelFull} ${String(orig).padStart(5)} → ${String(nuevo).padStart(5)}  (${dStr})`);
+  }
+  lines.push('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+  lines.push(`Total: S/ ${asignado.toLocaleString('es-PE')} ${asignado === MONTH_CTX.tope ? '✓' : '⚠️ ≠ ' + MONTH_CTX.tope}`);
+  const text = lines.join('\n');
+  navigator.clipboard.writeText(text).then(() => {
+    alert('📋 Copiado al portapapeles:\n\n' + text);
+  }).catch(() => {
+    prompt('Copia manualmente:', text);
+  });
+}
+
+function renderModoSimulador() {
+  initSimuladorState();
+  renderSimuladorRows();
+  updateSimulador();
+  refreshSavedSimsDropdown();
+
+  // Conectar botones (una sola vez)
+  if (!window.__simBtnsWired) {
+    window.__simBtnsWired = true;
+    document.getElementById('sim-save').addEventListener('click', simSaveAs);
+    document.getElementById('sim-reset').addEventListener('click', simReset);
+    document.getElementById('sim-copy').addEventListener('click', simCopy);
+    document.getElementById('sim-load').addEventListener('change', (e) => simLoad(e.target.value));
+    document.getElementById('sim-delete').addEventListener('click', () => {
+      const sel = document.getElementById('sim-load');
+      simDelete(sel.value);
+    });
+  }
+}
+
+// ============================================================
+// Tabs principales (Presupuesto / Dashboard)
+// ============================================================
+function switchMainView(viewName) {
+  document.querySelectorAll('.view-tab').forEach(b => {
+    b.classList.toggle('active', b.dataset.view === viewName);
+  });
+  document.querySelectorAll('.vista').forEach(v => {
+    v.classList.toggle('active', v.id === `vista-${viewName}`);
+  });
+  if (history.replaceState) history.replaceState(null, '', '#' + viewName);
+}
+function switchBudgetMode(mode) {
+  document.querySelectorAll('.sub-tab').forEach(b => {
+    b.classList.toggle('active', b.dataset.mode === mode);
+  });
+  document.getElementById('modo-actual').style.display    = mode === 'actual' ? '' : 'none';
+  document.getElementById('modo-simulador').style.display = mode === 'simulador' ? '' : 'none';
+  if (mode === 'simulador') renderModoSimulador();
+}
+
+function wireTabs() {
+  document.querySelectorAll('.view-tab').forEach(btn => {
+    btn.addEventListener('click', () => switchMainView(btn.dataset.view));
+  });
+  document.querySelectorAll('.sub-tab').forEach(btn => {
+    btn.addEventListener('click', () => switchBudgetMode(btn.dataset.mode));
+  });
+  // Restaurar de URL hash
+  const hash = (location.hash || '').replace('#','');
+  if (hash === 'dashboard') switchMainView('dashboard');
+  else switchMainView('presupuesto');
+}
+
 async function init(){
   const resp = await fetch('./data.json');
   DATA = await resp.json();
   document.getElementById('updated-at').textContent =
     new Date(DATA.generated_at).toLocaleString('es-PE', {dateStyle:'medium', timeStyle:'short'});
 
-  // Render budget section primero (si data lo tiene)
-  renderBudgetByProduct();
+  // Wire tabs + sub-tabs y restaurar vista activa según URL hash
+  wireTabs();
 
-  // Populate funnel filters
+  // Render vista Presupuesto (header + KPIs + modo Actual default)
+  renderPresupuestoHeader();
+  renderModoActual();
+
+  // Populate funnel filters (vista Dashboard)
   populateFunnelSelectors();
 
   // View mode toggle (daily / weekly)
