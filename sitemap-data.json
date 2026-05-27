@@ -1,0 +1,938 @@
+{
+  "meta": {
+    "generated_at": "2026-05-27T15:29:52-05:00",
+    "domain": "proper.com.pe",
+    "total_urls_blog": 105,
+    "unique_topics": 74,
+    "duplicates_to_301": 31
+  },
+  "summary": {
+    "inversiones": 49,
+    "rentas": 17,
+    "revisar": 8
+  },
+  "by_sitemap_source": {
+    "page": 24,
+    "post": 81
+  },
+  "categories_wp": [
+    {
+      "name": "Inicios",
+      "count": 20
+    },
+    {
+      "name": "Inversiones",
+      "count": 19
+    },
+    {
+      "name": "Alquileres",
+      "count": 17
+    },
+    {
+      "name": "Estrategia",
+      "count": 17
+    },
+    {
+      "name": "Finanzas",
+      "count": 12
+    },
+    {
+      "name": "Videos y Recursos",
+      "count": 7
+    }
+  ],
+  "buckets": {
+    "inversiones": [
+      {
+        "slug": "las-11-principales-estrategias-de-inversion-inmobilaria-que-debes-conocer",
+        "stem": "las-11-principales-estrategias-de-inversion-inmobilaria-que-debes-conocer",
+        "title": "11 estrategias de inversión inmobiliaria que debes conocer",
+        "canonical_url": "https://proper.com.pe/las-11-principales-estrategias-de-inversion-inmobilaria-que-debes-conocer/",
+        "wp_categories": [
+          "Estrategia"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "3-razones-para-comprar-un-departamento-para-alquilar",
+        "stem": "3-razones-para-comprar-un-departamento-para-alquilar",
+        "title": "3 razones para comprar un departamento para alquilar",
+        "canonical_url": "https://proper.com.pe/3-razones-para-comprar-un-departamento-para-alquilar/",
+        "wp_categories": [
+          "Estrategia"
+        ],
+        "duplicate_urls": [
+          "https://proper.com.pe/blog/3-razones-para-comprar-un-departamento-para-alquilar-proper/"
+        ],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "5-formas-de-invertir-en-bienes-raices-en-peru-en-2023",
+        "stem": "5-formas-de-invertir-en-bienes-raices-en-peru-en-2023",
+        "title": "5 formas de invertir en bienes raíces en Perú en 2023",
+        "canonical_url": "https://proper.com.pe/5-formas-de-invertir-en-bienes-raices-en-peru-en-2023/",
+        "wp_categories": [
+          "Inversiones"
+        ],
+        "duplicate_urls": [
+          "https://proper.com.pe/blog/5-formas-de-invertir-en-bienes-raices-en-peru-en-2023-proper/"
+        ],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "compra-de-deuda-hipotecaria-como-estrategia-de-inversion",
+        "stem": "compra-de-deuda-hipotecaria-como-estrategia-de-inversion",
+        "title": "Compra de deuda hipotecaria como estrategia de inversión",
+        "canonical_url": "https://proper.com.pe/compra-de-deuda-hipotecaria-como-estrategia-de-inversion/",
+        "wp_categories": [
+          "Estrategia"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "conoce-el-valor-esperado-de-una-inversion-inmobiliaria",
+        "stem": "conoce-el-valor-esperado-de-una-inversion-inmobiliaria",
+        "title": "Conoce el valor esperado de una inversión inmobiliaria",
+        "canonical_url": "https://proper.com.pe/conoce-el-valor-esperado-de-una-inversion-inmobiliaria/",
+        "wp_categories": [
+          "Finanzas"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "conoce-las-distintas-formas-de-invertir-y-generar-ingresos-en-bienes-raices",
+        "stem": "conoce-las-distintas-formas-de-invertir-y-generar-ingresos-en-bienes-raices",
+        "title": "Conoce las distintas formas de invertir y generar ingresos en bienes raíces (sus ventajas y desventajas)",
+        "canonical_url": "https://proper.com.pe/conoce-las-distintas-formas-de-invertir-y-generar-ingresos-en-bienes-raices/",
+        "wp_categories": [
+          "Estrategia"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "conoce-los-terminos-o-acronimos-mas-usados-en-inversion-inmobiliaria",
+        "stem": "conoce-los-terminos-o-acronimos-mas-usados-en-inversion-inmobiliaria",
+        "title": "Conoce los términos o acrónimos más usados en inversión inmobiliaria",
+        "canonical_url": "https://proper.com.pe/conoce-los-terminos-o-acronimos-mas-usados-en-inversion-inmobiliaria/",
+        "wp_categories": [
+          "Inicios"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "consejos-para-invertir-en-bienes-raices-en-peru",
+        "stem": "consejos-para-invertir-en-bienes-raices-en-peru",
+        "title": "Consejos para invertir en bienes raíces en Perú",
+        "canonical_url": "https://proper.com.pe/consejos-para-invertir-en-bienes-raices-en-peru/",
+        "wp_categories": [
+          "Inversiones"
+        ],
+        "duplicate_urls": [
+          "https://proper.com.pe/blog/consejos-para-invertir-en-bienes-raices-en-peru-proper/"
+        ],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "cuanto-pagan-los-vendedores-de-propiedades-en-los-costos-de-cierre",
+        "stem": "cuanto-pagan-los-vendedores-de-propiedades-en-los-costos-de-cierre",
+        "title": "Costos de cierre: ¿Qué son y cuánto pagan los vendedores?",
+        "canonical_url": "https://proper.com.pe/cuanto-pagan-los-vendedores-de-propiedades-en-los-costos-de-cierre/",
+        "wp_categories": [
+          "Inversiones"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "cuales-son-los-costos-de-comprar-y-vender-un-inmueble",
+        "stem": "cuales-son-los-costos-de-comprar-y-vender-un-inmueble",
+        "title": "Cuáles son los costos de comprar y vender un inmueble",
+        "canonical_url": "https://proper.com.pe/cuales-son-los-costos-de-comprar-y-vender-un-inmueble/",
+        "wp_categories": [
+          "Inversiones"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "cuanto-dinero-se-necesita-para-invertir-en-bienes-raices",
+        "stem": "cuanto-dinero-se-necesita-para-invertir-en-bienes-raices",
+        "title": "Cuánto dinero se necesita para invertir en Bienes Raíces",
+        "canonical_url": "https://proper.com.pe/cuanto-dinero-se-necesita-para-invertir-en-bienes-raices/",
+        "wp_categories": [
+          "Inicios",
+          "Inversiones"
+        ],
+        "duplicate_urls": [
+          "https://proper.com.pe/blog/cuanto-dinero-se-necesita-para-invertir-en-bienes-raices-proper/"
+        ],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "como-analizar-l-flujo-de-un-departamento-para-inversion",
+        "stem": "como-analizar-l-flujo-de-un-departamento-para-inversion",
+        "title": "Cómo analizar el flujo de un departamento para inversión",
+        "canonical_url": "https://proper.com.pe/como-analizar-l-flujo-de-un-departamento-para-inversion/",
+        "wp_categories": [
+          "Inversiones"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "como-calcular-el-rendimiento-de-una-inversion-inmobiliaria",
+        "stem": "como-calcular-el-rendimiento-de-una-inversion-inmobiliaria",
+        "title": "Cómo calcular el rendimiento de una inversión inmobiliaria",
+        "canonical_url": "https://proper.com.pe/como-calcular-el-rendimiento-de-una-inversion-inmobiliaria/",
+        "wp_categories": [
+          "Finanzas"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "como-calcular-el-roi-en-una-inversion-inmobiliaria",
+        "stem": "como-calcular-el-roi-en-una-inversion-inmobiliaria",
+        "title": "Cómo calcular el ROI en una inversión inmobiliaria",
+        "canonical_url": "https://proper.com.pe/como-calcular-el-roi-en-una-inversion-inmobiliaria/",
+        "wp_categories": [
+          "Estrategia"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "como-calcular-el-valor-de-un-inmueble-en-peru",
+        "stem": "como-calcular-el-valor-de-un-inmueble-en-peru",
+        "title": "Cómo calcular el valor de un inmueble en Perú",
+        "canonical_url": "https://proper.com.pe/como-calcular-el-valor-de-un-inmueble-en-peru/",
+        "wp_categories": [
+          "Finanzas"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "como-calcular-la-tir-en-una-inversion-inmobiliaria",
+        "stem": "como-calcular-la-tir-en-una-inversion-inmobiliaria",
+        "title": "Cómo calcular la TIR en una Inversión Inmobiliaria",
+        "canonical_url": "https://proper.com.pe/como-calcular-la-tir-en-una-inversion-inmobiliaria/",
+        "wp_categories": [
+          "Estrategia",
+          "Finanzas",
+          "Inicios"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "como-funciona-el-impuesto-a-la-renta-en-el-mundo-inmobiliario-2",
+        "stem": "como-funciona-el-impuesto-a-la-renta-en-el-mundo-inmobiliario",
+        "title": "Cómo funciona el impuesto a la renta al invertir en inmuebles",
+        "canonical_url": "https://proper.com.pe/como-funciona-el-impuesto-a-la-renta-en-el-mundo-inmobiliario-2/",
+        "wp_categories": [
+          "Finanzas"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "como-funcionan-las-etapas-de-un-proyecto-inmobiliario-en-peru-2",
+        "stem": "como-funcionan-las-etapas-de-un-proyecto-inmobiliario-en-peru",
+        "title": "Cómo funcionan las etapas de un proyecto inmobiliario en Perú",
+        "canonical_url": "https://proper.com.pe/como-funcionan-las-etapas-de-un-proyecto-inmobiliario-en-peru-2/",
+        "wp_categories": [
+          "Finanzas"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "como-ganar-dinero-invirtiendo-en-inmuebles",
+        "stem": "como-ganar-dinero-invirtiendo-en-inmuebles",
+        "title": "Cómo ganar dinero invirtiendo en inmuebles",
+        "canonical_url": "https://proper.com.pe/como-ganar-dinero-invirtiendo-en-inmuebles/",
+        "wp_categories": [
+          "Inversiones"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "como-hacer-dinero-con-bienes-raices",
+        "stem": "como-hacer-dinero-con-bienes-raices",
+        "title": "Cómo hacer dinero con bienes raíces",
+        "canonical_url": "https://proper.com.pe/como-hacer-dinero-con-bienes-raices/",
+        "wp_categories": [
+          "Inicios"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "como-hacer-un-plan-financiero-personal",
+        "stem": "como-hacer-un-plan-financiero-personal",
+        "title": "Cómo hacer un plan financiero personal",
+        "canonical_url": "https://proper.com.pe/como-hacer-un-plan-financiero-personal/",
+        "wp_categories": [
+          "Inicios"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "como-invertir-en-bienes-raices-desde-cero",
+        "stem": "como-invertir-en-bienes-raices-desde-cero",
+        "title": "Cómo invertir en Bienes Raíces desde cero",
+        "canonical_url": "https://proper.com.pe/como-invertir-en-bienes-raices-desde-cero/",
+        "wp_categories": [
+          "Finanzas"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "como-invertir-en-departamentos-para-alquilar",
+        "stem": "como-invertir-en-departamentos-para-alquilar",
+        "title": "Cómo invertir en departamentos para alquilar",
+        "canonical_url": "https://proper.com.pe/como-invertir-en-departamentos-para-alquilar/",
+        "wp_categories": [
+          "Estrategia",
+          "Inicios"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "rentabilidad-en-inversiones-inmobiliarias",
+        "stem": "rentabilidad-en-inversiones-inmobiliarias",
+        "title": "Cómo obtener rentabilidad en mis inversiones inmobiliarias",
+        "canonical_url": "https://proper.com.pe/rentabilidad-en-inversiones-inmobiliarias/",
+        "wp_categories": [
+          "Inversiones"
+        ],
+        "duplicate_urls": [
+          "https://proper.com.pe/blog/rentabilidad-en-inversiones-inmobiliarias-proper/"
+        ],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "como-saber-si-un-departamento-para-alquilar-es-rentable",
+        "stem": "como-saber-si-un-departamento-para-alquilar-es-rentable",
+        "title": "Cómo saber si un departamento para alquilar es rentable",
+        "canonical_url": "https://proper.com.pe/como-saber-si-un-departamento-para-alquilar-es-rentable/",
+        "wp_categories": [
+          "Estrategia",
+          "Inicios"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "como-valorizar-un-inmueble-para-invertir",
+        "stem": "como-valorizar-un-inmueble-para-invertir",
+        "title": "Cómo Valorizar un Inmueble para Invertir",
+        "canonical_url": "https://proper.com.pe/como-valorizar-un-inmueble-para-invertir/",
+        "wp_categories": [
+          "Estrategia"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "diferencia-entre-tir-y-roi-en-la-inversion-inmobiliaria",
+        "stem": "diferencia-entre-tir-y-roi-en-la-inversion-inmobiliaria",
+        "title": "Diferencia Entre TIR y ROI En La Inversión Inmobiliaria",
+        "canonical_url": "https://proper.com.pe/diferencia-entre-tir-y-roi-en-la-inversion-inmobiliaria/",
+        "wp_categories": [
+          "Estrategia"
+        ],
+        "duplicate_urls": [
+          "https://proper.com.pe/blog/diferencia-entre-tir-y-roi-en-la-inversion-inmobiliaria-proper/"
+        ],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "costo-de-oportunidad-al-invertir-en-inmuebles",
+        "stem": "costo-de-oportunidad-al-invertir-en-inmuebles",
+        "title": "El Costo de Oportunidad al invertir en inmuebles",
+        "canonical_url": "https://proper.com.pe/costo-de-oportunidad-al-invertir-en-inmuebles/",
+        "wp_categories": [
+          "Finanzas"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "el-credito-hipotecario-para-invertir-en-inmuebles",
+        "stem": "el-credito-hipotecario-para-invertir-en-inmuebles",
+        "title": "El crédito hipotecario para invertir en inmuebles",
+        "canonical_url": "https://proper.com.pe/el-credito-hipotecario-para-invertir-en-inmuebles/",
+        "wp_categories": [
+          "Inicios"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "errores-al-invertir-en-bienes-raices-en-peru-y-como-evitarlos",
+        "stem": "errores-al-invertir-en-bienes-raices-en-peru-y-como-evitarlos",
+        "title": "Errores al invertir en bienes raíces en Perú y cómo evitarlos",
+        "canonical_url": "https://proper.com.pe/errores-al-invertir-en-bienes-raices-en-peru-y-como-evitarlos/",
+        "wp_categories": [
+          "Estrategia",
+          "Inversiones"
+        ],
+        "duplicate_urls": [
+          "https://proper.com.pe/blog/errores-al-invertir-en-bienes-raices-en-peru-y-como-evitarlos-proper/"
+        ],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "guia-para-principiantes-como-invertir-en-inmuebles",
+        "stem": "guia-para-principiantes-como-invertir-en-inmuebles",
+        "title": "Guía para principiantes ¿Cómo invertir en inmuebles?",
+        "canonical_url": "https://proper.com.pe/guia-para-principiantes-como-invertir-en-inmuebles/",
+        "wp_categories": [
+          "Inicios",
+          "Inversiones"
+        ],
+        "duplicate_urls": [
+          "https://proper.com.pe/blog/guia-para-principiantes-como-invertir-en-inmuebles-proper/"
+        ],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "inversion-inmobiliaria-a-largo-plazo-estrategia-para-crear-riqueza",
+        "stem": "inversion-inmobiliaria-a-largo-plazo-estrategia-para-crear-riqueza",
+        "title": "Inversión inmobiliaria a largo plazo: Estrategia para crear riqueza",
+        "canonical_url": "https://proper.com.pe/inversion-inmobiliaria-a-largo-plazo-estrategia-para-crear-riqueza/",
+        "wp_categories": [
+          "Estrategia",
+          "Inversiones"
+        ],
+        "duplicate_urls": [
+          "https://proper.com.pe/blog/inversion-inmobiliaria-a-largo-plazo-estrategia-para-crear-riqueza-proper/"
+        ],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "invertir-en-inmuebles-es-una-buena-idea",
+        "stem": "invertir-en-inmuebles-es-una-buena-idea",
+        "title": "Invertir en inmuebles con retornos bajos puede ser una buena idea",
+        "canonical_url": "https://proper.com.pe/invertir-en-inmuebles-es-una-buena-idea/",
+        "wp_categories": [
+          "Inversiones"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "la-importancia-de-la-deuda-al-invertir-en-inmuebles",
+        "stem": "la-importancia-de-la-deuda-al-invertir-en-inmuebles",
+        "title": "La importancia de la deuda al invertir en inmuebles",
+        "canonical_url": "https://proper.com.pe/la-importancia-de-la-deuda-al-invertir-en-inmuebles/",
+        "wp_categories": [
+          "Finanzas"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "mejores-lugares-para-invertir-en-bienes-raices-en-peru-2023",
+        "stem": "mejores-lugares-para-invertir-en-bienes-raices-en-peru-2023",
+        "title": "Mejores lugares para invertir en bienes raíces en Perú 2023",
+        "canonical_url": "https://proper.com.pe/mejores-lugares-para-invertir-en-bienes-raices-en-peru-2023/",
+        "wp_categories": [
+          "Inversiones"
+        ],
+        "duplicate_urls": [
+          "https://proper.com.pe/blog/mejores-lugares-para-invertir-en-bienes-raices-en-peru-2023-proper/"
+        ],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "mejores-zonas-para-invertir-en-vivienda-en-lima",
+        "stem": "mejores-zonas-para-invertir-en-vivienda-en-lima",
+        "title": "Mejores zonas para invertir en vivienda en Lima",
+        "canonical_url": "https://proper.com.pe/mejores-zonas-para-invertir-en-vivienda-en-lima/",
+        "wp_categories": [
+          "Estrategia"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "mitos-y-verdades-que-debes-conocer-antes-de-invertir-en-bienes-raices-en-peru",
+        "stem": "mitos-y-verdades-que-debes-conocer-antes-de-invertir-en-bienes-raices-en-peru",
+        "title": "Mitos y Verdades de los Bienes Raíces en el Perú",
+        "canonical_url": "https://proper.com.pe/mitos-y-verdades-que-debes-conocer-antes-de-invertir-en-bienes-raices-en-peru/",
+        "wp_categories": [
+          "Inversiones"
+        ],
+        "duplicate_urls": [
+          "https://proper.com.pe/blog/mitos-y-verdades-que-debes-conocer-antes-de-invertir-en-bienes-raices-en-peru-proper/"
+        ],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "por-que-y-como-deberias-invertir-en-bienes-raices-siendo-joven",
+        "stem": "por-que-y-como-deberias-invertir-en-bienes-raices-siendo-joven",
+        "title": "Por qué deberías invertir en bienes raíces siendo joven",
+        "canonical_url": "https://proper.com.pe/por-que-y-como-deberias-invertir-en-bienes-raices-siendo-joven/",
+        "wp_categories": [
+          "Inversiones"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "riesgos-a-tomar-en-cuenta-al-invertir-en-bienes-raices",
+        "stem": "riesgos-a-tomar-en-cuenta-al-invertir-en-bienes-raices",
+        "title": "Riesgos a tomar en cuenta al invertir en bienes raíces",
+        "canonical_url": "https://proper.com.pe/riesgos-a-tomar-en-cuenta-al-invertir-en-bienes-raices/",
+        "wp_categories": [
+          "Finanzas"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "tipos-de-ingresos-de-los-inversionistas-trabajo-vs-activos",
+        "stem": "tipos-de-ingresos-de-los-inversionistas-trabajo-vs-activos",
+        "title": "Tipos de ingresos de los inversionistas, trabajo vs activos",
+        "canonical_url": "https://proper.com.pe/tipos-de-ingresos-de-los-inversionistas-trabajo-vs-activos/",
+        "wp_categories": [
+          "Inicios"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "tipos-de-inmuebles-para-invertir",
+        "stem": "tipos-de-inmuebles-para-invertir",
+        "title": "Tipos de inmuebles para invertir",
+        "canonical_url": "https://proper.com.pe/tipos-de-inmuebles-para-invertir/",
+        "wp_categories": [
+          "Estrategia"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "terminos-que-debes-conocer-al-invertir-en-bienes-raices",
+        "stem": "terminos-que-debes-conocer-al-invertir-en-bienes-raices",
+        "title": "Términos que debes conocer al invertir en bienes raíces",
+        "canonical_url": "https://proper.com.pe/terminos-que-debes-conocer-al-invertir-en-bienes-raices/",
+        "wp_categories": [
+          "Finanzas"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "ventajas-de-comprar-o-alquilar-un-departamento-entre-dos-personas",
+        "stem": "ventajas-de-comprar-o-alquilar-un-departamento-entre-dos-personas",
+        "title": "Ventajas de comprar o alquilar un departamento entre dos personas",
+        "canonical_url": "https://proper.com.pe/ventajas-de-comprar-o-alquilar-un-departamento-entre-dos-personas/",
+        "wp_categories": [
+          "Estrategia"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "cual-es-la-diferencia-entre-el-cap-rate-y-el-roi-en-bienes-raices",
+        "stem": "cual-es-la-diferencia-entre-el-cap-rate-y-el-roi-en-bienes-raices",
+        "title": "¿Cuál es la diferencia entre el Cap Rate y el ROI en bienes raíces?",
+        "canonical_url": "https://proper.com.pe/cual-es-la-diferencia-entre-el-cap-rate-y-el-roi-en-bienes-raices/",
+        "wp_categories": [
+          "Inversiones"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "como-hacer-mi-primera-inversion-inmobiliaria",
+        "stem": "como-hacer-mi-primera-inversion-inmobiliaria",
+        "title": "¿Cómo hacer mi primera inversión inmobiliaria?",
+        "canonical_url": "https://proper.com.pe/como-hacer-mi-primera-inversion-inmobiliaria/",
+        "wp_categories": [
+          "Inversiones"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "como-invertir-mi-afp-para-comprar-un-inmueble",
+        "stem": "como-invertir-mi-afp-para-comprar-un-inmueble",
+        "title": "¿Cómo invertir mi AFP para comprar un inmueble?",
+        "canonical_url": "https://proper.com.pe/como-invertir-mi-afp-para-comprar-un-inmueble/",
+        "wp_categories": [
+          "Estrategia",
+          "Inicios"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "por-que-comprar-un-departamento-para-alquilar-es-una-buena-inversion",
+        "stem": "por-que-comprar-un-departamento-para-alquilar-es-una-buena-inversion",
+        "title": "¿Por qué comprar un departamento para alquilar es una buena inversión?",
+        "canonical_url": "https://proper.com.pe/por-que-comprar-un-departamento-para-alquilar-es-una-buena-inversion/",
+        "wp_categories": [
+          "Inicios",
+          "Inversiones"
+        ],
+        "duplicate_urls": [
+          "https://proper.com.pe/blog/por-que-comprar-un-departamento-para-alquilar-es-una-buena-inversion-proper/"
+        ],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "que-es-el-caprate-y-como-entenderlo-al-invertir-en-inmuebles",
+        "stem": "que-es-el-caprate-y-como-entenderlo-al-invertir-en-inmuebles",
+        "title": "¿Qué es el Cap Rate y cómo entenderlo al invertir en inmuebles?",
+        "canonical_url": "https://proper.com.pe/que-es-el-caprate-y-como-entenderlo-al-invertir-en-inmuebles/",
+        "wp_categories": [
+          "Finanzas"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "que-es-proper-y-como-funciona",
+        "stem": "que-es-proper-y-como-funciona",
+        "title": "¿Qué es Proper y cómo funciona?",
+        "canonical_url": "https://proper.com.pe/que-es-proper-y-como-funciona/",
+        "wp_categories": [
+          "Inicios",
+          "Inversiones"
+        ],
+        "duplicate_urls": [
+          "https://proper.com.pe/blog/que-es-proper-y-como-funciona-proper/"
+        ],
+        "source_sitemap": "post"
+      }
+    ],
+    "rentas": [
+      {
+        "slug": "administrador-de-departamentos-en-peru-conceptos-clave",
+        "stem": "administrador-de-departamentos-en-peru-conceptos-clave",
+        "title": "Administrador de departamentos en Perú versus un corredor inmobiliario",
+        "canonical_url": "https://proper.com.pe/administrador-de-departamentos-en-peru-conceptos-clave/",
+        "wp_categories": [
+          "Alquileres"
+        ],
+        "duplicate_urls": [
+          "https://proper.com.pe/blog/administrador-de-departamentos-en-peru-conceptos-clave-2-proper/",
+          "https://proper.com.pe/administrador-de-departamentos-en-peru-conceptos-clave-2/"
+        ],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "asi-es-vivir-en-modo-departamentos-modernos-en-alquiler-en-san-miguel",
+        "stem": "asi-es-vivir-en-modo-departamentos-modernos-en-alquiler-en-san-miguel",
+        "title": "Así es vivir en MODO: departamentos modernos en alquiler en San Miguel",
+        "canonical_url": "https://proper.com.pe/asi-es-vivir-en-modo-departamentos-modernos-en-alquiler-en-san-miguel/",
+        "wp_categories": [
+          "Alquileres"
+        ],
+        "duplicate_urls": [
+          "https://proper.com.pe/blog/asi-es-vivir-en-modo-departamentos-modernos-en-alquiler-en-san-miguel-2-proper/",
+          "https://proper.com.pe/asi-es-vivir-en-modo-departamentos-modernos-en-alquiler-en-san-miguel-2/"
+        ],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "criterios-indispensables-a-la-hora-de-evaluar-a-un-inquilino",
+        "stem": "criterios-indispensables-a-la-hora-de-evaluar-a-un-inquilino",
+        "title": "Criterios indispensables a la hora de evaluar a un inquilino",
+        "canonical_url": "https://proper.com.pe/criterios-indispensables-a-la-hora-de-evaluar-a-un-inquilino/",
+        "wp_categories": [
+          "Alquileres"
+        ],
+        "duplicate_urls": [
+          "https://proper.com.pe/criterios-indispensables-a-la-hora-de-evaluar-a-un-inquilino-2/"
+        ],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "alquilar-mi-departamento",
+        "stem": "alquilar-mi-departamento",
+        "title": "Cómo alquilar tu departamento en tiempo récord",
+        "canonical_url": "https://proper.com.pe/alquilar-mi-departamento/",
+        "wp_categories": [
+          "Alquileres",
+          "Estrategia"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "como-alquilar-tu-departamento-rapido",
+        "stem": "como-alquilar-tu-departamento-rapido",
+        "title": "Cómo alquilar tu departamento rápido",
+        "canonical_url": "https://proper.com.pe/como-alquilar-tu-departamento-rapido/",
+        "wp_categories": [
+          "Alquileres",
+          "Inicios"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "como-elegir-al-inquilino-correcto-y-proteger-tu-inversion-inmobiliaria-2",
+        "stem": "como-elegir-al-inquilino-correcto-y-proteger-tu-inversion-inmobiliaria",
+        "title": "Cómo elegir al inquilino correcto y proteger tu inversión inmobiliaria",
+        "canonical_url": "https://proper.com.pe/como-elegir-al-inquilino-correcto-y-proteger-tu-inversion-inmobiliaria-2/",
+        "wp_categories": [
+          "Alquileres",
+          "Inicios"
+        ],
+        "duplicate_urls": [
+          "https://proper.com.pe/blog/como-elegir-al-inquilino-correcto-y-proteger-tu-inversion-inmobiliaria-2-proper/"
+        ],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "de-edificio-estudiantil-a-multifamily-institucional-la-reconversion-de-modo",
+        "stem": "de-edificio-estudiantil-a-multifamily-institucional-la-reconversion-de-modo",
+        "title": "De edificio estudiantil a multifamily institucional: la reconversión de MODO",
+        "canonical_url": "https://proper.com.pe/de-edificio-estudiantil-a-multifamily-institucional-la-reconversion-de-modo/",
+        "wp_categories": [
+          "Alquileres"
+        ],
+        "duplicate_urls": [
+          "https://proper.com.pe/blog/de-edificio-estudiantil-a-multifamily-institucional-la-reconversion-de-modo-2-proper/",
+          "https://proper.com.pe/de-edificio-estudiantil-a-multifamily-institucional-la-reconversion-de-modo-2/"
+        ],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "gastos-invertir-departamento-alquilar",
+        "stem": "gastos-invertir-departamento-alquilar",
+        "title": "Gastos a tener en cuenta al invertir en un departamento para alquilar",
+        "canonical_url": "https://proper.com.pe/gastos-invertir-departamento-alquilar/",
+        "wp_categories": [
+          "Alquileres",
+          "Inicios"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "gastos-invertir-departamento-para-alquilar",
+        "stem": "gastos-invertir-departamento-para-alquilar",
+        "title": "Gastos a tener en cuenta al invertir en un departamento para alquilar",
+        "canonical_url": "https://proper.com.pe/gastos-invertir-departamento-para-alquilar/",
+        "wp_categories": [
+          "Alquileres",
+          "Inicios"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "guia-definitiva-como-alquilar-un-inmueble-de-forma-segura",
+        "stem": "guia-definitiva-como-alquilar-un-inmueble-de-forma-segura",
+        "title": "Guía Definitiva: ¿Cómo alquilar un inmueble de forma segura?",
+        "canonical_url": "https://proper.com.pe/guia-definitiva-como-alquilar-un-inmueble-de-forma-segura/",
+        "wp_categories": [
+          "Alquileres",
+          "Inicios"
+        ],
+        "duplicate_urls": [
+          "https://proper.com.pe/blog/guia-definitiva-como-alquilar-un-inmueble-de-forma-segura-proper/"
+        ],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "inversion-inmobiliaria-conoce-sus-ventajas-y-desventajas",
+        "stem": "inversion-inmobiliaria-conoce-sus-ventajas-y-desventajas",
+        "title": "Inversión Inmobiliaria, conoce sus ventajas y desventajas",
+        "canonical_url": "https://proper.com.pe/inversion-inmobiliaria-conoce-sus-ventajas-y-desventajas/",
+        "wp_categories": [
+          "Alquileres",
+          "Inicios"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "morosidad-de-alquiler-casi-nula-en-lima-el-modelo-proper-rentas-para-propietarios-que-quieren-alquilar-su-departamento-sin-riesgos",
+        "stem": "morosidad-de-alquiler-casi-nula-en-lima-el-modelo-proper-rentas-para-propietarios-que-quieren-alquilar-su-departamento-sin-riesgos",
+        "title": "Morosidad de alquiler casi nula en Lima: el modelo Proper Rentas para propietarios que quieren alquilar su departamento sin riesgos",
+        "canonical_url": "https://proper.com.pe/morosidad-de-alquiler-casi-nula-en-lima-el-modelo-proper-rentas-para-propietarios-que-quieren-alquilar-su-departamento-sin-riesgos/",
+        "wp_categories": [
+          "Alquileres"
+        ],
+        "duplicate_urls": [
+          "https://proper.com.pe/blog/morosidad-de-alquiler-casi-nula-en-lima-el-modelo-proper-rentas-para-propietarios-que-quieren-alquilar-su-departamento-sin-riesgos-2-proper/",
+          "https://proper.com.pe/morosidad-de-alquiler-casi-nula-en-lima-el-modelo-proper-rentas-para-propietarios-que-quieren-alquilar-su-departamento-sin-riesgos-2/"
+        ],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "quiero-alquilar-mi-departamento-en-lima-que-debo-hacer",
+        "stem": "quiero-alquilar-mi-departamento-en-lima-que-debo-hacer",
+        "title": "Quiero alquilar mi departamento en Lima, ¿qué debo hacer?",
+        "canonical_url": "https://proper.com.pe/quiero-alquilar-mi-departamento-en-lima-que-debo-hacer/",
+        "wp_categories": [
+          "Alquileres"
+        ],
+        "duplicate_urls": [
+          "https://proper.com.pe/blog/quiero-alquilar-mi-departamento-en-lima-que-debo-hacer-2-proper/",
+          "https://proper.com.pe/quiero-alquilar-mi-departamento-en-lima-que-debo-hacer-2/"
+        ],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "radiografia-de-la-vivienda-en-el-peru-principales-indicadores-problematica-y-oportunidades",
+        "stem": "radiografia-de-la-vivienda-en-el-peru-principales-indicadores-problematica-y-oportunidades",
+        "title": "Radiografía de la vivienda en el Perú: principales indicadores, problemática y oportunidades",
+        "canonical_url": "https://proper.com.pe/radiografia-de-la-vivienda-en-el-peru-principales-indicadores-problematica-y-oportunidades/",
+        "wp_categories": [
+          "Alquileres"
+        ],
+        "duplicate_urls": [
+          "https://proper.com.pe/blog/radiografia-de-la-vivienda-en-el-peru-principales-indicadores-problematica-y-oportunidades-2-proper/",
+          "https://proper.com.pe/radiografia-de-la-vivienda-en-el-peru-principales-indicadores-problematica-y-oportunidades-2/"
+        ],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "san-miguel-el-distrito-limeno-que-mas-conviene-a-los-propietarios-que-alquilan",
+        "stem": "san-miguel-el-distrito-limeno-que-mas-conviene-a-los-propietarios-que-alquilan",
+        "title": "San Miguel: el distrito limeño que más conviene a los propietarios que alquilan",
+        "canonical_url": "https://proper.com.pe/san-miguel-el-distrito-limeno-que-mas-conviene-a-los-propietarios-que-alquilan/",
+        "wp_categories": [
+          "Alquileres"
+        ],
+        "duplicate_urls": [
+          "https://proper.com.pe/blog/san-miguel-el-distrito-limeno-que-mas-conviene-a-los-propietarios-que-alquilan-proper/"
+        ],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "que-gastos-debes-considerar-despues-de-comprar-un-departamento-para-alquilar-en-lima-2",
+        "stem": "que-gastos-debes-considerar-despues-de-comprar-un-departamento-para-alquilar-en-lima",
+        "title": "¿Qué gastos debes considerar después de comprar un departamento para alquilar en Lima?",
+        "canonical_url": "https://proper.com.pe/que-gastos-debes-considerar-despues-de-comprar-un-departamento-para-alquilar-en-lima-2/",
+        "wp_categories": [
+          "Alquileres",
+          "Inicios"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "tienes-un-inmueble-en-alquiler-esta-es-la-razon-por-la-que-deberias-delegarlo-a-un-administrador-profesional",
+        "stem": "tienes-un-inmueble-en-alquiler-esta-es-la-razon-por-la-que-deberias-delegarlo-a-un-administrador-profesional",
+        "title": "¿Tienes un inmueble en alquiler? Esta es la razón por la que deberías delegarlo a un administrador profesional",
+        "canonical_url": "https://proper.com.pe/tienes-un-inmueble-en-alquiler-esta-es-la-razon-por-la-que-deberias-delegarlo-a-un-administrador-profesional/",
+        "wp_categories": [
+          "Alquileres"
+        ],
+        "duplicate_urls": [
+          "https://proper.com.pe/blog/tienes-un-inmueble-en-alquiler-esta-es-la-razon-por-la-que-deberias-delegarlo-a-un-administrador-profesional-proper/",
+          "https://proper.com.pe/tienes-un-inmueble-en-alquiler-esta-es-la-razon-por-la-que-deberias-delegarlo-a-un-administrador-profesional-2/"
+        ],
+        "source_sitemap": "post"
+      }
+    ],
+    "revisar": [
+      {
+        "slug": "compra-de-departamentos-para-inversion",
+        "stem": "compra-de-departamentos-para-inversion",
+        "title": "Compra de departamentos para inversión: Una solución para los jóvenes del país?",
+        "canonical_url": "https://proper.com.pe/compra-de-departamentos-para-inversion/",
+        "wp_categories": [
+          "Videos y Recursos"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "tips-de-inversion-de-bienes-raices-en-peru",
+        "stem": "tips-de-inversion-de-bienes-raices-en-peru",
+        "title": "Conoce nuestros Tips de Inversión de bienes raíces en Perú",
+        "canonical_url": "https://proper.com.pe/tips-de-inversion-de-bienes-raices-en-peru/",
+        "wp_categories": [
+          "Videos y Recursos"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "construyendo-patrimonio-mediante-inversion-de-inmuebles",
+        "stem": "construyendo-patrimonio-mediante-inversion-de-inmuebles",
+        "title": "Construyendo patrimonio mediante Inversión de Inmuebles",
+        "canonical_url": "https://proper.com.pe/construyendo-patrimonio-mediante-inversion-de-inmuebles/",
+        "wp_categories": [
+          "Videos y Recursos"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "rentabilidad-departamentos-para-alquilar-vs-afp-en-peru",
+        "stem": "rentabilidad-departamentos-para-alquilar-vs-afp-en-peru",
+        "title": "Debo invertir mi AFP en la compra de un departamento para alquilarlo",
+        "canonical_url": "https://proper.com.pe/rentabilidad-departamentos-para-alquilar-vs-afp-en-peru/",
+        "wp_categories": [
+          "Videos y Recursos"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "educacion-financiera-inversion-inmobiliaria",
+        "stem": "educacion-financiera-inversion-inmobiliaria",
+        "title": "educacion financiera inversion inmobiliaria",
+        "canonical_url": "https://proper.com.pe/educacion-financiera-inversion-inmobiliaria/",
+        "wp_categories": [],
+        "duplicate_urls": [],
+        "source_sitemap": "page"
+      },
+      {
+        "slug": "invertir-en-inmuebles-o-comprar-acciones-en-la-bolsa",
+        "stem": "invertir-en-inmuebles-o-comprar-acciones-en-la-bolsa",
+        "title": "Invertir en inmuebles o en acciones en la bolsa",
+        "canonical_url": "https://proper.com.pe/invertir-en-inmuebles-o-comprar-acciones-en-la-bolsa/",
+        "wp_categories": [
+          "Videos y Recursos"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "invertir-vs-especular-masterclass-de-inversiones-inmobiliarias-asociacion-peru-proptech",
+        "stem": "invertir-vs-especular-masterclass-de-inversiones-inmobiliarias-asociacion-peru-proptech",
+        "title": "Invertir vs. Especular. Masterclass de Inversiones Inmobiliarias &#8211; Asociación Perú Proptech",
+        "canonical_url": "https://proper.com.pe/invertir-vs-especular-masterclass-de-inversiones-inmobiliarias-asociacion-peru-proptech/",
+        "wp_categories": [
+          "Videos y Recursos"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      },
+      {
+        "slug": "inversiones-en-el-sector-inmobiliario-en-peru",
+        "stem": "inversiones-en-el-sector-inmobiliario-en-peru",
+        "title": "Proper el primer broker digital de inversiones enfocado en el sector inmobiliario.",
+        "canonical_url": "https://proper.com.pe/inversiones-en-el-sector-inmobiliario-en-peru/",
+        "wp_categories": [
+          "Videos y Recursos"
+        ],
+        "duplicate_urls": [],
+        "source_sitemap": "post"
+      }
+    ]
+  }
+}

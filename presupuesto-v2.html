@@ -93,8 +93,205 @@
     background: var(--bg);
   }
   .topbar-inner {
-    display: flex; align-items: center; justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
     height: 60px;
+    gap: 24px;
+  }
+  .topbar-inner > .brand          { justify-self: start; }
+  .topbar-inner > .view-nav       { justify-self: center; }
+  .topbar-inner > .topbar-actions { justify-self: end; }
+  .view-nav { display: flex; gap: 4px; }
+  .view-tab {
+    height: 32px; padding: 0 14px;
+    display: inline-flex; align-items: center;
+    background: transparent;
+    border: 0;
+    font-family: inherit;
+    font-size: 13px; font-weight: 500;
+    color: var(--muted);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 140ms ease;
+  }
+  .view-tab:hover { color: var(--text); background: var(--bg-hover); }
+  .view-tab.active { color: var(--text); background: var(--bg-subtle); }
+  @media (max-width: 900px) {
+    .view-nav { display: none; }
+  }
+
+  /* ============ SITEMAP VIEW (KPI + filter + table) ============ */
+  .kpi-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 12px; margin-bottom: 24px;
+  }
+  .sm-kpi {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 18px 20px;
+  }
+  .sm-kpi-lbl {
+    font-size: 12px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.04em;
+    font-weight: 600;
+  }
+  .sm-kpi-num {
+    margin-top: 6px;
+    font-size: 32px; font-weight: 600;
+    color: var(--text); letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+  .sm-kpi-sub { margin-top: 4px; font-size: 12px; color: var(--muted); }
+  .sm-kpi.inversiones .sm-kpi-num { color: var(--accent); }
+  .sm-kpi.rentas .sm-kpi-num { color: var(--success); }
+  .sm-kpi.revisar .sm-kpi-num { color: var(--warning); }
+
+  .sm-toolbar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; margin-bottom: 16px; flex-wrap: wrap;
+  }
+  .filter-pills { display: flex; gap: 4px; flex-wrap: wrap; }
+  .filter-pill {
+    height: 34px; padding: 0 14px;
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text-2);
+    font-size: 13px; font-weight: 500; font-family: inherit;
+    cursor: pointer;
+    transition: all 140ms ease;
+  }
+  .filter-pill:hover { border-color: var(--border-strong); color: var(--text); }
+  .filter-pill.active {
+    background: var(--accent-bg);
+    border-color: var(--accent-border);
+    color: var(--accent);
+  }
+  .filter-pill .count {
+    font-variant-numeric: tabular-nums;
+    background: var(--bg-subtle);
+    padding: 1px 6px;
+    border-radius: var(--radius-xs);
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .filter-pill.active .count { background: var(--bg-card); color: var(--accent); }
+
+  .sm-search {
+    height: 34px; padding: 0 12px;
+    width: 280px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text);
+    font-size: 13px; font-family: inherit;
+  }
+  .sm-search:focus {
+    outline: none; border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-bg);
+  }
+
+  .sm-table-wrap {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+  .sm-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .sm-table thead th {
+    background: var(--bg-subtle);
+    color: var(--muted);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  .sm-table tbody td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .sm-table tbody tr:last-child td { border-bottom: none; }
+  .sm-table tbody tr:hover { background: var(--bg-hover); }
+
+  .sm-row-title { font-weight: 500; color: var(--text); line-height: 1.4; }
+  .sm-row-slug {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11px; color: var(--muted); margin-top: 2px;
+  }
+  .bucket-badge {
+    display: inline-flex; align-items: center;
+    padding: 2px 8px;
+    border-radius: var(--radius-xs);
+    font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.04em;
+    border: 1px solid;
+  }
+  .bucket-inversiones {
+    background: var(--accent-bg); color: var(--accent); border-color: var(--accent-border);
+  }
+  .bucket-rentas {
+    background: var(--success-bg); color: var(--success); border-color: var(--success-border);
+  }
+  .bucket-revisar {
+    background: var(--warning-bg); color: var(--warning); border-color: var(--warning-border);
+  }
+  .cat-chip {
+    display: inline-block;
+    padding: 1px 7px;
+    margin: 1px 2px 1px 0;
+    background: var(--bg-subtle);
+    border-radius: var(--radius-xs);
+    font-size: 11px;
+    color: var(--text-2);
+    border: 1px solid var(--border);
+  }
+  .dup-pill {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 2px 8px;
+    background: var(--danger-bg);
+    color: var(--danger);
+    border: 1px solid var(--danger-border);
+    border-radius: var(--radius-xs);
+    font-size: 11px; font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .dup-pill.zero {
+    background: var(--bg-subtle); color: var(--muted);
+    border-color: var(--border); cursor: default;
+  }
+  .canonical-link {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11px;
+    color: var(--accent);
+    word-break: break-all;
+  }
+  .dup-expanded {
+    background: var(--bg-subtle);
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .dup-expanded-lbl {
+    font-size: 11px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.04em;
+    font-weight: 600; margin-bottom: 6px;
+  }
+  .dup-expanded-list {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11px;
+  }
+  .dup-expanded-list a { display: block; padding: 2px 0; word-break: break-all; color: var(--accent); }
+  .dup-expanded-list a:hover { text-decoration: underline; }
+  @media (max-width: 900px) {
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .sm-search { width: 100%; }
   }
   .brand {
     display: flex; align-items: center; gap: 10px;
@@ -1008,6 +1205,10 @@
       <span class="brand-sep">/</span>
       <span class="brand-sub">Pauta</span>
     </div>
+    <nav class="view-nav">
+      <button type="button" class="view-tab active" data-view="presupuesto">Presupuesto</button>
+      <button type="button" class="view-tab" data-view="sitemap">Sitemap SEO</button>
+    </nav>
     <div class="topbar-actions">
       <button class="btn btn-icon" id="theme-btn" aria-label="Cambiar tema">
         <svg id="ico-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
@@ -1023,19 +1224,35 @@
 
 <div class="container">
 
-  <!-- =============== PAGE HEAD =============== -->
-  <div class="page-head">
-    <div>
-      <h1>Presupuesto</h1>
-      <div class="sub" id="page-sub">cargando…</div>
+  <!-- =============== VIEW: PRESUPUESTO =============== -->
+  <div id="view-presupuesto" class="view">
+    <div class="page-head">
+      <div>
+        <h1>Presupuesto</h1>
+        <div class="sub" id="page-sub">cargando…</div>
+      </div>
+      <div class="month-select" id="month-select">
+        <!-- llenado por JS -->
+      </div>
     </div>
-    <div class="month-select" id="month-select">
-      <!-- llenado por JS -->
+
+    <div id="content">
+      <div class="loading">cargando datos…</div>
     </div>
   </div>
 
-  <div id="content">
-    <div class="loading">cargando datos…</div>
+  <!-- =============== VIEW: SITEMAP SEO =============== -->
+  <div id="view-sitemap" class="view" style="display:none">
+    <div class="page-head">
+      <div>
+        <h1>Sitemap SEO</h1>
+        <div class="sub" id="sitemap-sub">cargando…</div>
+      </div>
+    </div>
+
+    <div id="sitemap-content">
+      <div class="loading">cargando datos…</div>
+    </div>
   </div>
 
   <div class="footer">
@@ -2117,6 +2334,209 @@
       <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
     </svg>`;
   }
+})();
+
+/* ============ TAB SWITCHER + SITEMAP VIEW ============ */
+(() => {
+  const tabs = document.querySelectorAll('.view-tab[data-view]');
+  const viewPresupuesto = document.getElementById('view-presupuesto');
+  const viewSitemap = document.getElementById('view-sitemap');
+  const refreshBtn = document.getElementById('refresh-btn');
+  let sitemapLoaded = false;
+  let smData = null;
+  let smFilter = 'todos';
+  let smSearch = '';
+
+  const escapeHtml = s => String(s).replace(/[&<>"']/g, c => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  })[c]);
+  const smPct = (n, total) => total ? Math.round(n / total * 100) + '%' : '—';
+
+  function setView(name) {
+    tabs.forEach(t => t.classList.toggle('active', t.dataset.view === name));
+    viewPresupuesto.style.display = name === 'presupuesto' ? '' : 'none';
+    viewSitemap.style.display = name === 'sitemap' ? '' : 'none';
+    if (refreshBtn) refreshBtn.style.display = name === 'presupuesto' ? '' : 'none';
+    if (location.hash.replace('#', '') !== name) {
+      history.replaceState(null, '', '#' + name);
+    }
+    if (name === 'sitemap' && !sitemapLoaded) {
+      sitemapLoaded = true;
+      loadSitemap();
+    }
+  }
+
+  function loadSitemap() {
+    fetch('./sitemap-data.json?v=' + Date.now())
+      .then(r => r.json())
+      .then(d => { smData = d; renderSitemap(); })
+      .catch(err => {
+        document.getElementById('sitemap-content').innerHTML =
+          `<div class="loading" style="color:var(--danger)">Error cargando sitemap-data.json: ${escapeHtml(err.message)}</div>`;
+      });
+  }
+
+  function renderSitemap() {
+    const m = smData.meta;
+    const s = smData.summary;
+    const total = s.inversiones + s.rentas + s.revisar;
+
+    document.getElementById('sitemap-sub').textContent =
+      `${m.unique_topics} blogs únicos · ${m.total_urls_blog} URLs en sitemap · ${m.duplicates_to_301} duplicadas para 301 · ${m.domain}`;
+
+    const kpi = `
+      <div class="kpi-grid">
+        <div class="sm-kpi">
+          <div class="sm-kpi-lbl">Total temas únicos</div>
+          <div class="sm-kpi-num">${total}</div>
+          <div class="sm-kpi-sub">de ${m.total_urls_blog} URLs (${m.duplicates_to_301} duplicadas)</div>
+        </div>
+        <div class="sm-kpi inversiones">
+          <div class="sm-kpi-lbl">Inversiones</div>
+          <div class="sm-kpi-num">${s.inversiones}</div>
+          <div class="sm-kpi-sub">${smPct(s.inversiones, total)} del total</div>
+        </div>
+        <div class="sm-kpi rentas">
+          <div class="sm-kpi-lbl">Rentas</div>
+          <div class="sm-kpi-num">${s.rentas}</div>
+          <div class="sm-kpi-sub">${smPct(s.rentas, total)} del total</div>
+        </div>
+        <div class="sm-kpi revisar">
+          <div class="sm-kpi-lbl">Revisar</div>
+          <div class="sm-kpi-num">${s.revisar}</div>
+          <div class="sm-kpi-sub">sin categoría WP clara</div>
+        </div>
+      </div>
+    `;
+
+    const toolbar = `
+      <div class="sm-toolbar">
+        <div class="filter-pills">
+          <button class="filter-pill ${smFilter === 'todos' ? 'active' : ''}" data-sm-filter="todos">
+            Todos <span class="count">${total}</span>
+          </button>
+          <button class="filter-pill ${smFilter === 'inversiones' ? 'active' : ''}" data-sm-filter="inversiones">
+            Inversiones <span class="count">${s.inversiones}</span>
+          </button>
+          <button class="filter-pill ${smFilter === 'rentas' ? 'active' : ''}" data-sm-filter="rentas">
+            Rentas <span class="count">${s.rentas}</span>
+          </button>
+          <button class="filter-pill ${smFilter === 'revisar' ? 'active' : ''}" data-sm-filter="revisar">
+            Revisar <span class="count">${s.revisar}</span>
+          </button>
+        </div>
+        <input class="sm-search" id="sm-search" type="search" placeholder="Buscar título, slug, URL, categoría…" value="${escapeHtml(smSearch)}">
+      </div>
+    `;
+
+    const rows = [];
+    for (const b of ['inversiones', 'rentas', 'revisar']) {
+      if (smFilter !== 'todos' && smFilter !== b) continue;
+      for (const item of smData.buckets[b]) rows.push({ ...item, bucket: b });
+    }
+    const q = smSearch.trim().toLowerCase();
+    const filtered = q ? rows.filter(r =>
+      r.title.toLowerCase().includes(q)
+      || r.slug.toLowerCase().includes(q)
+      || r.canonical_url.toLowerCase().includes(q)
+      || r.wp_categories.some(c => c.toLowerCase().includes(q))
+    ) : rows;
+    filtered.sort((a, b) => a.title.localeCompare(b.title, 'es'));
+
+    const tableRows = filtered.length ? filtered.map(r => {
+      const dupCount = r.duplicate_urls.length;
+      const dupBtn = dupCount === 0
+        ? `<span class="dup-pill zero">0</span>`
+        : `<button class="dup-pill" data-sm-stem="${escapeHtml(r.stem)}">+${dupCount} URL${dupCount > 1 ? 's' : ''}</button>`;
+      const cats = r.wp_categories.length
+        ? r.wp_categories.map(c => `<span class="cat-chip">${escapeHtml(c)}</span>`).join('')
+        : `<span class="cat-chip" style="color:var(--muted)">sin info</span>`;
+      return `
+        <tr data-sm-stem="${escapeHtml(r.stem)}">
+          <td>
+            <div class="sm-row-title">${escapeHtml(r.title)}</div>
+            <div class="sm-row-slug">${escapeHtml(r.slug)}</div>
+          </td>
+          <td><span class="bucket-badge bucket-${r.bucket}">${r.bucket}</span></td>
+          <td>${cats}</td>
+          <td>${dupBtn}</td>
+          <td><a class="canonical-link" href="${escapeHtml(r.canonical_url)}" target="_blank" rel="noopener">${escapeHtml(r.canonical_url.replace(/^https?:\/\//, ''))}</a></td>
+        </tr>
+      `;
+    }).join('') : `
+      <tr><td colspan="5" style="text-align:center;color:var(--muted);padding:32px">
+        Sin resultados para "${escapeHtml(smSearch)}"
+      </td></tr>
+    `;
+
+    const table = `
+      <div class="sm-table-wrap">
+        <table class="sm-table">
+          <thead>
+            <tr>
+              <th>Blog</th>
+              <th>Bucket</th>
+              <th>Categorías WP</th>
+              <th>Duplicados</th>
+              <th>URL canónica</th>
+            </tr>
+          </thead>
+          <tbody>${tableRows}</tbody>
+        </table>
+      </div>
+    `;
+
+    document.getElementById('sitemap-content').innerHTML = kpi + toolbar + table;
+
+    document.querySelectorAll('.filter-pill[data-sm-filter]').forEach(btn => {
+      btn.addEventListener('click', () => { smFilter = btn.dataset.smFilter; renderSitemap(); });
+    });
+    const searchEl = document.getElementById('sm-search');
+    if (searchEl) {
+      searchEl.addEventListener('input', e => {
+        smSearch = e.target.value;
+        renderSitemap();
+        const el = document.getElementById('sm-search');
+        if (el) { el.focus(); el.setSelectionRange(smSearch.length, smSearch.length); }
+      });
+    }
+    document.querySelectorAll('.dup-pill[data-sm-stem]').forEach(btn => {
+      btn.addEventListener('click', () => toggleDupRow(btn.dataset.smStem));
+    });
+  }
+
+  function toggleDupRow(stem) {
+    const row = document.querySelector(`tr[data-sm-stem="${stem}"]`);
+    if (!row) return;
+    const next = row.nextElementSibling;
+    if (next && next.classList.contains('dup-row')) { next.remove(); return; }
+    let item = null;
+    for (const b of ['inversiones', 'rentas', 'revisar']) {
+      const found = smData.buckets[b].find(x => x.stem === stem);
+      if (found) { item = found; break; }
+    }
+    if (!item) return;
+    const tr = document.createElement('tr');
+    tr.className = 'dup-row';
+    tr.innerHTML = `
+      <td colspan="5" class="dup-expanded">
+        <div class="dup-expanded-lbl">URLs duplicadas — candidatas a 301 → canónica</div>
+        <div class="dup-expanded-list">
+          ${item.duplicate_urls.map(u => `<a href="${escapeHtml(u)}" target="_blank" rel="noopener">${escapeHtml(u)}</a>`).join('')}
+        </div>
+      </td>
+    `;
+    row.parentNode.insertBefore(tr, row.nextSibling);
+  }
+
+  tabs.forEach(t => t.addEventListener('click', () => setView(t.dataset.view)));
+
+  const initial = (location.hash.replace('#', '') === 'sitemap') ? 'sitemap' : 'presupuesto';
+  setView(initial);
+  window.addEventListener('hashchange', () => {
+    const v = location.hash.replace('#', '') === 'sitemap' ? 'sitemap' : 'presupuesto';
+    setView(v);
+  });
 })();
 </script>
 
