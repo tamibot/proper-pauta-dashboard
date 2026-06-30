@@ -1,0 +1,23 @@
+// Prisma schema — Postgres propio en Railway.
+// La tabla `snapshots` la alimenta el ETL (Python) y la lee la web.
+// Usamos @@map / @map a snake_case para que el SQL del lado Python sea limpio.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Snapshot {
+  id          Int      @id @default(autoincrement())
+  kind        String   @default("budget") // permite multi-métrica a futuro
+  generatedAt DateTime @map("generated_at") // timestamp del ETL
+  payload     Json // el dict completo que hoy es data.json
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@index([kind, createdAt])
+  @@map("snapshots")
+}

@@ -1,88 +1,27 @@
-# CLAUDE.md — proper-pauta-dashboard (público)
+# CLAUDE.md — proper-pauta-dashboard
 
-> Este es el repo **público** que sirve el dashboard en GitHub Pages.
-> Es solo el frontend (`index.html` + `app.js` + `data.json`).
->
-> **La fuente de verdad y toda la lógica de generación vive en el repo privado `tamibot/proper-ia`** —
-> específicamente en `dashboards/inversion-pauta/`. Si trabajás con este repo, **leé primero ese
-> CLAUDE.md detallado** para entender el cableado completo.
+Repo **fuente de verdad** del dashboard interno de inversión en pauta de Proper. Migrado de sitio estático (GitHub Pages) a web funcional en **Railway**. Leé el `README.md` para la arquitectura completa.
 
-## Quick start
+## Layout
+- `etl/` — FastAPI. `POST /run` corre `build_data.py` → snapshot JSONB en Postgres. `GET /health`.
+- `web/` — Next.js 15 + Prisma. `/api/data` (lee snapshot), `/api/refresh` (dispara ETL).
+- `n8n/` — workflow `rds-proxy` (importar en la instancia n8n).
+- `legacy/` — dashboard estático viejo (no tocar; referencia).
 
-- **Live:** https://tamibot.github.io/proper-pauta-dashboard/
-- **Stack:** HTML estático + Tailwind CDN + Chart.js CDN + Flatpickr CDN — sin build step
-- **`data.json`** se regenera offline desde el repo privado (`build-data.py`).
-  Acá solo se commitea el JSON ya generado.
+## Cableado crítico
+- El ETL **no** consulta el RDS directo — el RDS solo allowlistea a **n8n**. `build_data.py` manda el SQL por webhook (`N8N_WEBHOOK_URL`, header `X-Proxy-Secret`=`N8N_PROXY_SECRET`). Flag `USE_N8N` (true en prod). El n8n vive en el proyecto Railway `proper-grateful-communication` (servicio Primary = `primary-production-0299.up.railway.app`).
+- La tabla `snapshots` la crea el ETL (`db.ensure_schema()`), no Prisma migrate.
+- Secrets (Meta/Google/n8n/RDS) van como **variables en Railway**, nunca en el repo. Ver `etl/.env.example` y `web/.env.example`.
 
-## Cómo trabajar acá
+## Railway
+- Proyecto `proper-pauta-dashboard` · workspace *tamibot's Projects* · entorno `production`.
+- Servicios: `etl` (root `etl/`), `web` (root `web/`), `Postgres`. Auto-deploy en push a `main` (setear Watch Paths `etl/**`, `web/**`).
 
-### Si vas a tocar SOLO frontend (HTML/CSS/JS):
-1. Editás `index.html` o `app.js`
-2. Si tocás JS, bumpea el cache-buster en `index.html`:
-   ```html
-   <script src="./app.js?v=12"></script>   <!-- subir de 11 a 12, etc -->
-   ```
-3. Test local:
-   ```bash
-   python3 -m http.server 8080
-   # abrir http://localhost:8080
-   ```
-4. Commit + push a `main` → GitHub Pages redeploya en ~30-60s
+## Convenciones
+- NO commitear `.env`, `node_modules/`, `.next/`.
+- Si tocás cómo se **calculan** los datos → `etl/build_data.py`. Si tocás cómo se **ven** → `web/app/page.tsx` + `web/lib/budget.ts`.
+- Tope de budget y lógica de Inversiones/Rentas viven en `web/lib/budget.ts` y `etl/build_data.py`.
 
-### Si necesitás regenerar `data.json` (datos frescos):
-Ese trabajo se hace desde el repo privado:
-```bash
-cd /path/to/proper-ia/dashboards/inversion-pauta
-./refresh.sh
-# El script regenera data.json, lo copia acá, hace commit y push
-```
-
-## Estructura
-
-```
-.
-├── index.html      # Estructura DOM (2 vistas: Presupuesto + Dashboard)
-├── app.js          # Vanilla JS — render + simulador + chart.js
-├── data.json       # ~250KB. Generado offline. NO editarlo a mano.
-├── README.md       # Doc de usuario final
-└── CLAUDE.md       # Este archivo
-```
-
-## Las 2 vistas
-
-| Vista | Qué muestra |
-|---|---|
-| 💰 **Presupuesto** | Tope mensual S/9,300 con split Inversiones (S/7,900) / Rentas (S/1,400), simulador editable, histórico 6 meses |
-| 📊 **Dashboard** | Embudo de conversión, charts leads/CPL/canales, detalle Meta/Google, tabla diaria |
-
-## Convenciones críticas
-
-- **NO hardcodear datos** — todo viene de `data.json`
-- **NO hacer llamadas a APIs** desde el frontend (CORS + token leakage)
-- **Tope estricto S/9,300** en el simulador — si total ≠ 9300, botón Guardar bloqueado
-- **MODO y ARISE NO se incluyen** en el budget Inv+Ren (tienen su propio budget separado)
-- **Los IDs HTML importantes** del Presupuesto están todos en `index.html` con prefijos claros:
-  `kpi-*`, `inv-*`, `rnt-*`, `sim-*`, `hist-*`, `actual-*`, `comp-*`
-
-## ⚠️ Lo que NO está en este repo (pero podrías necesitar)
-
-- **Credenciales** Meta/Google/Postgres → en `tamibot/proper-ia/credenciales/` (privado)
-- **`build-data.py`** (el ETL que genera data.json) → en `tamibot/proper-ia/dashboards/inversion-pauta/`
-- **`CAMPAIGN_ID_TO_CATEGORY`** (el classifier de campañas Meta) → en `build-data.py`
-- **`refresh.sh`** (orquestador de regen + push) → en `tamibot/proper-ia/dashboards/inversion-pauta/`
-
-Si necesitás cambiar cómo se calculan los datos (no cómo se ven), tenés que ir al repo privado.
-
-## Cambios recientes (changelog corto)
-
-### 2026-05-26
-- v11: histórico 6 meses + classifier por ID de campaña
-- v10: vistas separadas Presupuesto/Dashboard + Simulador editable
-- v9: sección Budget Mes en Curso (Inv + Ren, Meta + Google)
-- v8: fix TZ bug en range picker
-
-## Owner
-
-- `tamibot / nezarethpatino77`
-- nezareth.la.10@gmail.com
-- Proper Inversiones (Lima, Perú)
+## Pendientes conocidos
+- La web no tiene auth — agregar control de acceso si queda pública.
+- Rotar los tokens Meta/Google (estuvieron hardcodeados en el ETL viejo de `proper-ia`).
