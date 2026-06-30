@@ -1,0 +1,21 @@
+# Dependencias
+node_modules/
+
+# Build Next.js
+.next/
+out/
+next-env.d.ts
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Entorno / secretos — NUNCA commitear. Van como variables en Railway.
+.env
+.env.local
+.env*.local
+
+# OS
+.DS_Store
